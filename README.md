@@ -1,7 +1,7 @@
 ## This repository contains the files for the original "Early Access" version of TFRSG for archival purposes. TFRSG will be joining efforts with the "The South Burns" project, therefore the original project will be shelved indefinitely in favor of the new one.
 ## The following README is only kept for archival and currently does not represent future plans for TFRSG or TSB
 
-#THE FIRE RISES: SOUTHERN GIANT
+# THE FIRE RISES: SOUTHERN GIANT
 
 ## Introduction
 With the US in turmoil and the rest of the world powers fighting over their own spheres of influence, the nation of Brazil seemingly stands alone in a chaotic world. With the challenges wrought by Covid-19, an oil crisis and the descending of the world into extremist ideologies and wars, Brazil has a tough challenge ahead of itself: Will it avoid the fires, become a worthy leading force in South America and survive in the new world order? Or will it succumb to the fires and forge a new path for itself? But most importantly - will Brazil finally break its shackles and become the world power it had always been promised?
