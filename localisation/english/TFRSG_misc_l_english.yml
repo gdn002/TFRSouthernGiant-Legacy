@@ -1,0 +1,30 @@
+﻿l_english:
+ #Misc Tooltips
+ TFRSG_add_campaign_slot_tt: "We will gain a §YCampaign Slot§!."
+ TFRSG_inherited_templates_hint_tt: "§CHINT: You can find inherited division templates from The Federative Republic of Brazil under decomissioned templates.§!"
+ #Debug Decisions
+ BRA_DEBUG_trigger_civil_war: "Trigger The §RBrazilian Civil War§!"
+ BRA_DEBUG_trigger_civil_war_desc: "Let's get the party started right away!"
+ BRA_DEBUG_force_chamber_elections: "Force §YChamber of Deputies§! Elections"
+ BRA_DEBUG_force_chamber_elections_desc: "Would this count as a coup attempt?"
+ BRA_DEBUG_gimme_osorio: "Gib Osório Pl0x"
+ BRA_DEBUG_gimme_osorio_desc: "Couldn't you wait for the next major update?"
+ BRA_DEBUG_force_2022_elections: "Force §YThe 2022 Elections§!"
+ BRA_DEBUG_force_2022_elections_desc: "This will probably break a lot of stuff but sure go ahead."
+ BRA_DEBUG_force_2026_elections: "Force §YThe 2026 Elections§!"
+ BRA_DEBUG_2022_elections_cheat_PT: "§Y2022 Elections:§! Cheat £GFX_PT_logo §tPT§! Popularity"
+ BRA_DEBUG_2022_elections_cheat_PT_desc: "CERVEJA E PICANHA PARA TODOS OS BRASILEIROS"
+ BRA_DEBUG_2022_elections_cheat_PSDB: "§Y2022 Elections:§! Cheat £GFX_PSDB_logo §2PSDB§! Popularity"
+ BRA_DEBUG_2022_elections_cheat_PSDB_desc: "O BRASIL É DO CENTRÃO"
+ BRA_DEBUG_2022_elections_cheat_PL: "§Y2022 Elections:§! Cheat £GFX_PL_logo §7PL§! Popularity"
+ BRA_DEBUG_2022_elections_cheat_PL_desc: "TEM QUE ACABAR COM TUDO ISSO DAÍ TAOQUEI?"
+ TFRSG_DEBUG_trigger_test_decision: "TRFSG Trigger Test Decision"
+ TFRSG_DEBUG_trigger_test_decision_desc: "This is here just for whenever the dev needs to test some particularly \"special\" triggers. Otherwise, does fuck all."
+ #Music
+ TFRSG_capital_enslavement: "Sepultura - Capital Enslavement"
+ TFRSG_indigena_futurista: "Katú Mirim - Indígena Futurista"
+ TFRSG_ratos_no_poder: "Seiva Bruta - Ratos no Poder"
+ TFRSG_america: "Punkzilla! - América"
+ #Ideologies
+ integralism: "Integralism"
+ integralism_desc: "\n\n\n\n£GFX_Ideology_Integralism\n\n\n\n\n\n§YIntegralism§! is an interpretation of Catholic social teaching that argues its principles should be the basis of public law and policy within civil society. Integralism is also anti-pluralist, seeking the Catholic faith to be dominant in civil and religious matters and rejecting the secular state. Integralism can also refer to a set of theories that advocate a fully integrated social and political order based on a doctrine of human nature, focusing purely on achieving political and social integration, unity and uniformity even in non-Catholic contexts. As an intellectual and political movement, integralism emerged during the 19th and early 20th century polemics within the Catholic Church, especially in France, as an opposition to modernism and liberalism. Variants of integralism have also formed in Spain, Portugal and Brazil, with some maintaining a fringe following to this day."

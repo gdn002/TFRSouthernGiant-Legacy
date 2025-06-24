@@ -1,0 +1,4187 @@
+add_namespace = Brazil
+add_namespace = Brazil.civilwar
+
+####################################################################################################################################################################
+# Brazil Events
+####################################################################################################################################################################
+
+# The Forever Country of The Future
+country_event = {
+	id = Brazil.1
+	title = Brazil.1.t
+	desc = Brazil.1.d
+	picture = GFX_BRA_brazil_start
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.1.a
+	}
+}
+
+# Everything coming to plan
+country_event = {
+	id = Brazil.2
+	title = Brazil.2.t
+	desc = Brazil.2.d
+	picture = GFX_BRA_palacio_planalto_contemplation
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			scoped_play_song = "TFRSG_ratos_no_poder"
+		}
+	}
+
+	option = {
+		name = Brazil.2.a
+		hidden_effect = {
+			country_event = {
+				id = Brazil.20
+				days = 1
+			}
+		}
+	}
+}
+
+# Brazilians repatriated from Wuhan
+country_event = {
+	id = Brazil.3
+	title = Brazil.3.t
+	desc = Brazil.3.d
+	picture = GFX_BRA_covid_repatriation
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	# Default choice
+	option = {
+		name = Brazil.3.a
+		hidden_effect = {
+			# First covid cases in Brazil
+			country_event = {
+				id = Brazil.11
+				days = 28
+			}
+		}
+	}
+	# Bring em all home
+	option = {
+		name = Brazil.3.b
+		add_command_power = -10
+		add_political_power = 50
+		hidden_effect = {
+			# First covid cases in Brazil
+			country_event = {
+				id = Brazil.11
+				days = 13
+			}
+		}
+	}
+}
+
+# Political Tit for Tat
+country_event = {
+	id = Brazil.4
+	title = Brazil.4.t
+	desc = Brazil.4.d
+	picture = GFX_BRA_centrao_comic
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.4.a
+	}
+}
+
+# Bolsonaro reshuffles the cabinet
+country_event = {
+	id = Brazil.5
+	title = Brazil.5.t
+	desc = Brazil.5.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.5.a
+		swap_ideas = {
+			add_idea = BRA_braga_netto_theorist
+			remove_idea = BRA_fernando_azevedo_theorist		
+		}	
+	}
+}
+
+# Bolsonaro purges the federal police
+country_event = {
+	id = Brazil.6
+	title = Brazil.6.t
+	desc = Brazil.6.d
+	picture = GFX_BRA_bolsonaro_press_pf
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.6.a
+		country_event = {
+			id = Brazil.7
+			days = 7
+		}
+	}
+}
+
+# Sergio Moro quits the ministry of justice
+country_event = {
+	id = Brazil.7
+	title = Brazil.7.t
+	desc = Brazil.7.d
+	picture = GFX_BRA_bolsonaro_moro_rift
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.7.a
+		swap_ideas = {
+			add_idea = BRA_andre_mendonca_int
+			remove_idea = BRA_sergio_moro_int		
+		}		
+		set_country_flag = BRA_moro_quits_flag
+	}
+}
+
+# Bolsonaro bypasses quarantine to rally up his followers
+country_event = {
+	id = Brazil.8
+	title = Brazil.8.t
+	desc = Brazil.8.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.8.a
+	}
+}
+
+# Bolsonaro schmoozes with the centrão
+country_event = {
+	id = Brazil.9
+	title = Brazil.9.t
+	desc = Brazil.9.d
+	picture = GFX_BRA_bolsonaro_meeting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.9.a
+	}
+}
+
+# Centrão candidate Ricardo Barros endorsed for leadership
+country_event = {
+	id = Brazil.10
+	title = Brazil.10.t
+	desc = Brazil.10.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.10.a
+	}
+}
+
+# First covid cases in Brazil
+country_event = {
+	id = Brazil.11
+	title = Brazil.11.t
+	desc = Brazil.11.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = Brazil.17
+				days = 14
+			}			
+		}
+	}
+
+	option = {
+		name = Brazil.11.a
+	}
+}
+
+# Bolsonaro's "little flu" speech about covid
+country_event = {
+	id = Brazil.12
+	title = Brazil.12.t
+	desc = Brazil.12.d
+	picture = GFX_BRA_bolsonaro_speech
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.12.a
+		country_event = {
+			id = Brazil.78
+			days = 30
+			random_days = 20
+		}
+		set_country_flag = BRA_little_flu_acknowledged_flag
+	}
+}
+
+# Emergency covid welfare fund
+country_event = {
+	id = Brazil.13
+	title = Brazil.13.t
+	desc = Brazil.13.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.13.a
+		add_timed_idea =  {
+			idea = BRA_emergency_covid_welfare_fund1
+			months = 3
+		}
+		hidden_effect = {
+			country_event = {
+				id = Brazil.14
+				days = 80
+			}
+		}
+	}
+}
+
+# Emergency covid welfare fund extension
+country_event = {
+	id = Brazil.14
+	title = Brazil.14.t
+	desc = Brazil.14.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	# Extend the welfare period
+	option = {
+		name = Brazil.14.a
+		add_political_power = -25
+		set_temp_variable = { BRA_election_approval_rating_pl_var_temp = 0.025 }
+		BRA_add_election_approval_rating_pl = yes;
+		modify_timed_idea = {
+			idea = BRA_emergency_covid_welfare_fund1
+			months = 4
+		}
+	}
+	# Extend, but reduce the benefits
+	option = {
+		name = Brazil.14.b
+		modify_timed_idea = {
+			idea = BRA_emergency_covid_welfare_fund1
+			months = 4
+		}
+		swap_ideas = {
+			remove_idea = BRA_emergency_covid_welfare_fund1
+    		add_idea = BRA_emergency_covid_welfare_fund2
+		}
+	}
+	# No extension
+	option = {
+		name = Brazil.14.c
+		add_political_power = 50
+	}
+}
+
+# Mandetta fired from ministry of health
+country_event = {
+	id = Brazil.15
+	title = Brazil.15.t
+	desc = Brazil.15.d
+	picture = GFX_BRA_mandetta_fired
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.15.a
+	}
+}
+
+# Oil crisis in Brazil
+country_event = {
+	id = Brazil.16
+	title = Brazil.16.t
+	desc = Brazil.16.d
+	picture = GFX_BRA_oil_crisis
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			add_ideas = BRA_oil_crisis_idea
+		}
+	}
+
+	option = {
+		name = Brazil.16.a
+		effect_tooltip = {
+			add_ideas = BRA_oil_crisis_idea
+		}
+	}
+}
+
+# Covid Outbreak in Brazil!
+country_event = {
+	id = Brazil.17
+	title = Brazil.17.t
+	desc = Brazil.17.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			add_ideas = BRA_coronavirus_pandemic_idea4
+			set_country_flag = BRA_coronavirus_strikes
+			activate_mission = BRA_handle_covid_mission
+
+			news_event = {
+				id = Brazil.13
+				days = 20
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.17.a
+		effect_tooltip = {
+			add_ideas = BRA_coronavirus_pandemic_idea4
+			activate_mission = BRA_handle_covid_mission
+		}
+		focus_unlock = yes
+	}
+}
+
+# Call for Covid CPI
+country_event = {
+	id = Brazil.18
+	title = Brazil.18.t
+	desc = Brazil.18.d
+	picture = GFX_BRA_covid_trials_propaganda
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = Brazil.19
+				days = 30
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.18.a
+	}
+}
+
+# Covid Trials begin
+country_event = {
+	id = Brazil.19
+	title = Brazil.19.t
+	desc = Brazil.19.d
+	picture = GFX_BRA_covid_trials_hearing
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = BRA_covid_trials_started
+			mark_focus_tree_layout_dirty = yes			
+			load_oob = "BRA_Covid_Trials"
+			country_event = {
+				id = Brazil.29
+				days = 15
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.19.a
+		focus_unlock = yes
+	}
+}
+
+# Chamber of Deputies intro
+country_event = {
+	id = Brazil.20
+	title = Brazil.20.t
+	desc = Brazil.20.d
+	picture = GFX_BRA_chamber_voting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = BRA_chamber_of_deputies_enabled
+		}
+	}
+
+	option = {
+		name = Brazil.20.a
+		custom_effect_tooltip = BRA_chamber_of_deputies_enabled_tt
+		hidden_effect = {
+			country_event = {
+				id = Brazil.21
+				days = 1
+			}
+		}
+	}
+}
+
+# Amazonian Jungle intro
+country_event = {
+	id = Brazil.21
+	title = Brazil.21.t
+	desc = Brazil.21.d
+	picture = GFX_BRA_amazon_wasteland
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = BRA_amazonian_preservation_mechanic_enabled
+		}
+	}
+
+	option = {
+		name = Brazil.21.a
+		custom_effect_tooltip = BRA_amazonian_preservation_mechanic_enabled_tt
+	}
+}
+
+# Lula's acquittal country event
+country_event = {
+	id = Brazil.22
+	title = Brazil.22.t
+	desc = Brazil.22.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			# Lula announces campaign
+			country_event = {
+				id = Brazil.27
+				days = 51
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.22.a
+
+		add_popularity = {
+			ideology = social_democrat
+			popularity = 0.01
+		}
+		set_temp_variable = { BRA_election_approval_rating_pt_var_temp = 0.025 }
+		BRA_add_election_approval_rating_pt = yes;
+	}
+}
+
+# Dummy self-coup event 
+country_event = {
+	id = Brazil.23
+	title = Brazil.23.t
+	desc = Brazil.23.d
+	picture = GFX_BRA_dark_xandao
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			scoped_sound_effect = TFRSG_meus_instintos_mais_primitivos
+			scoped_play_song = "one_minute_of_silence"
+		}
+	}
+
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.23.a
+	}
+}
+
+# Bolsonaro's response to Trump's election
+country_event = {
+	id = Brazil.24
+	title = Brazil.24.t
+	desc = Brazil.24.d
+	picture = GFX_BRA_bolsonaro_trump_best_buddies
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.24.a
+		add_popularity = {
+			ideology = conservative
+			popularity = 0.01
+		}
+		set_temp_variable = { BRA_election_approval_rating_pl_var_temp = 0.05 }
+		BRA_add_election_approval_rating_pl = yes;
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = -0.015
+   	 		tooltip_side = BRA_radicalization_side
+		}
+	}
+}
+
+# Bolsonaro's response to Biden's election
+country_event = {
+	id = Brazil.25
+	title = Brazil.25.t
+	desc = Brazil.25.d
+	picture = GFX_BRA_bolsonaro_sad
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.25.a
+		add_popularity = {
+			ideology = conservative
+			popularity = -0.01
+		}
+		set_temp_variable = { BRA_election_approval_rating_pl_var_temp = -0.05 }
+		BRA_add_election_approval_rating_pl = yes;
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = 0.015
+   	 		tooltip_side = BRA_stabilization_side
+		}
+	}
+}
+
+# Brazilian Popular Front forms
+country_event = {
+	id = Brazil.26
+	title = Brazil.26.t
+	desc = Brazil.26.d
+	picture = GFX_BRA_popular_front_march
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = BRA_popular_front_formed	
+
+			# Popular Front backs Lula
+			country_event = {
+				id = Brazil.28
+				days = 346
+			}		
+		}
+	}
+
+	option = {
+		name = Brazil.26.a
+		add_popularity = {
+			ideology = libertarian_socialist
+			popularity = 0.025
+		}
+		add_popularity = {
+			ideology = communist
+			popularity = 0.025
+		}
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = -0.025
+   	 		tooltip_side = BRA_radicalization_side
+		}
+	}
+}
+
+# Lula announces campaign
+country_event = {
+	id = Brazil.27
+	title = Brazil.27.t
+	desc = Brazil.27.d
+	picture = GFX_BRA_lula_election_campaign
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}	
+
+	option = {
+		name = Brazil.27.a
+		add_popularity = {
+			ideology = social_democrat
+			popularity = 0.025
+		}
+		set_temp_variable = { BRA_election_approval_rating_pt_var_temp = 0.1 }
+		BRA_add_election_approval_rating_pt = yes;
+	}
+}
+
+# Popular Front backs Lula
+country_event = {
+	id = Brazil.28
+	title = Brazil.28.t
+	desc = Brazil.28.d
+	picture = GFX_BRA_popular_front_supports_lula
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.28.a
+		add_popularity = {
+			ideology = social_democrat
+			popularity = 0.025
+		}
+		set_temp_variable = { BRA_election_approval_rating_pt_var_temp = 0.025 }
+		BRA_add_election_approval_rating_pt = yes;
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = 0.015
+   	 		tooltip_side = BRA_stabilization_side
+		}
+	}
+}
+
+# COVID TRIALS 1 - Intro
+country_event = {
+	id = Brazil.29
+	title = Brazil.29.t
+	desc = Brazil.29.d
+	picture = GFX_BRA_covid_trials_hearing
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		set_variable = { BRA_covid_trials_score_var = 6 }
+		hidden_effect = {
+			BRA_covid_trials_events = yes
+		}
+	}
+
+	option = {
+		name = Brazil.29.a
+		custom_effect_tooltip = BRA_covid_trials_score_tt
+	}
+}
+
+# COVID TRIALS 2A - Health minister fired
+country_event = {
+	id = Brazil.30
+	title = Brazil.30.t
+	desc = Brazil.30.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		subtract_from_variable = { BRA_covid_trials_score_var = 1 }
+	}
+
+	option = {
+		name = Brazil.30.a
+		add_political_power = -25
+		set_temp_variable = { BRA_election_approval_rating_pl_var_temp = -0.05 }
+		BRA_add_election_approval_rating_pl = yes;	
+		custom_effect_tooltip = BRA_covid_trials_score_negative_tt
+	}
+}
+
+# COVID TRIALS 2B - Health minister heeded
+country_event = {
+	id = Brazil.31
+	title = Brazil.31.t
+	desc = Brazil.31.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.31.a
+		add_political_power = 25
+	}
+}
+
+# COVID TRIALS 3A - Political conspiracy
+country_event = {
+	id = Brazil.32
+	title = Brazil.32.t
+	desc = Brazil.32.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		subtract_from_variable = { BRA_covid_trials_score_var = 1 }
+	}
+
+	option = {
+		name = Brazil.32.a
+		add_political_power = -25
+		set_temp_variable = { BRA_election_approval_rating_pl_var_temp = -0.05 }
+		BRA_add_election_approval_rating_pl = yes;	
+		custom_effect_tooltip = BRA_covid_trials_score_negative_tt
+	}
+}
+
+# COVID TRIALS 3B - Political status-quo
+country_event = {
+	id = Brazil.33
+	title = Brazil.33.t
+	desc = Brazil.33.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		add_to_variable = { BRA_covid_trials_score_var = 1 }
+	}
+
+	option = {
+		name = Brazil.33.a
+		add_political_power = 50
+		set_temp_variable = { BRA_election_approval_rating_psdb_var_temp = 0.15 }
+		BRA_add_election_approval_rating_psdb = yes;
+		custom_effect_tooltip = BRA_covid_trials_score_positive_tt
+	}
+}
+
+# COVID TRIALS 4A - Covid not stabilized
+country_event = {
+	id = Brazil.34
+	title = Brazil.34.t
+	desc = Brazil.34.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		subtract_from_variable = { BRA_covid_trials_score_var = 1 }
+	}
+
+	option = {
+		name = Brazil.34.a
+		add_political_power = -25
+		set_temp_variable = { BRA_election_approval_rating_pl_var_temp = -0.05 }
+		BRA_add_election_approval_rating_pl = yes;	
+		custom_effect_tooltip = BRA_covid_trials_score_negative_tt
+	}
+}
+
+# COVID TRIALS 4B - Covid was stabilized
+country_event = {
+	id = Brazil.35
+	title = Brazil.35.t
+	desc = Brazil.35.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.35.a
+		add_political_power = 50
+		set_temp_variable = { BRA_election_approval_rating_pl_var_temp = 0.05 }
+		BRA_add_election_approval_rating_pl = yes;	
+	}
+}
+
+# COVID TRIALS 5A - Impeachment
+country_event = {
+	id = Brazil.36
+	title = Brazil.36.t
+	desc = Brazil.36.d
+	picture = GFX_BRA_covid_trials_discussion
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.36.a
+		add_political_power = -200
+		add_stability = -0.05
+		set_temp_variable = { BRA_election_approval_rating_pl_var_temp = -0.1 }
+		BRA_add_election_approval_rating_pl = yes;
+		set_politics = {
+			ruling_party = authoritarian_democrat
+			last_election = "2018.10.26"
+			election_frequency = 48
+			elections_allowed = yes
+		}
+		custom_effect_tooltip = BRA_bolsonaro_banned_from_politics_tooltip
+		hidden_effect = {
+			set_country_flag = BRA_bolsonaro_banned_from_politics_flag
+			country_event = {
+				id = Brazil.87
+				days = 3
+			}
+		}
+	}
+}
+
+# COVID TRIALS 5B - Exoneration
+country_event = {
+	id = Brazil.37
+	title = Brazil.37.t
+	desc = Brazil.37.d
+	picture = GFX_BRA_covid_trials_discussion
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	# Keep Bolsonaro
+	option = {
+		name = Brazil.37.a
+		add_political_power = -200
+		add_stability = -0.05
+		set_temp_variable = { BRA_election_approval_rating_pl_var_temp = -0.05 }
+		BRA_add_election_approval_rating_pl = yes;
+		BRA_jair_bolsonaro_char = { 
+			add_country_leader_trait = BRA_severely_damaged_reputation
+		}
+		set_portraits = {
+			character = BRA_jair_bolsonaro_char
+			civilian = { large ="GFX_BRA_jair_bolsonaro_sad" }
+		}
+	}
+	# Resign Bolsonaro
+	option = {
+		name = Brazil.37.b
+		add_political_power = -100
+		add_stability = 0.05
+		set_temp_variable = { BRA_election_approval_rating_pl_var_temp = -0.05 }
+		BRA_add_election_approval_rating_pl = yes;
+		set_politics = {
+			ruling_party = authoritarian_democrat
+			last_election = "2018.10.26"
+			election_frequency = 48
+			elections_allowed = yes
+		}
+		custom_effect_tooltip = BRA_bolsonaro_banned_from_politics_tooltip
+		hidden_effect = {
+			set_country_flag = BRA_bolsonaro_banned_from_politics_flag
+			country_event = {
+				id = Brazil.87
+				days = 3
+			}
+		}
+	}
+}
+
+# COVID TRIALS 5C - Inconclusive
+country_event = {
+	id = Brazil.38
+	title = Brazil.38.t
+	desc = Brazil.38.d
+	picture = GFX_BRA_covid_trials_discussion
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	# Standard
+	option = {
+		name = Brazil.38.a
+		add_political_power = -50
+		set_temp_variable = { BRA_election_approval_rating_pl_var_temp = -0.025 }
+		BRA_add_election_approval_rating_pl = yes;
+		BRA_jair_bolsonaro_char = { 
+			add_country_leader_trait = BRA_damaged_reputation
+		}
+		set_portraits = {
+			character = BRA_jair_bolsonaro_char
+			civilian = { large ="GFX_BRA_jair_bolsonaro_sad" }
+		}
+	}
+}
+
+# COVID TRIALS 5D - Accquital
+country_event = {
+	id = Brazil.39
+	title = Brazil.39.t
+	desc = Brazil.39.d
+	picture = GFX_BRA_covid_trials_discussion
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.39.a
+		add_political_power = 100
+		set_temp_variable = { BRA_election_approval_rating_pl_var_temp = 0.05 }
+		BRA_add_election_approval_rating_pl = yes;
+		BRA_jair_bolsonaro_char = { 
+			add_country_leader_trait = BRA_vindicated_reputation
+		}
+	}
+}
+
+# 2022 Elections Race
+country_event = {
+	id = Brazil.40
+	title = Brazil.40.t
+	desc = Brazil.40.d
+	picture = GFX_BRA_elections_slip_n_slide
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+		NOT = { has_country_flag = BRA_2022_elections_suspended_flag }
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = BRA_2022_elections_started_flag
+			mark_focus_tree_layout_dirty = yes
+
+			# Covid-19 fadeout fallback
+			if = {
+				limit = {
+					NOT = { has_completed_focus = BRA_covid_recovery_policy }
+				}
+				activate_mission = BRA_covid_fadeout_mission
+			}
+
+			# Oil Crisis fallback
+			if = {
+				limit = {
+					NOT = { has_completed_focus = BRA_drop_import_parity_policy }
+					NOT = { has_completed_focus = BRA_look_to_russian_oil }
+				}
+				activate_mission = BRA_oil_crisis_fadeout_mission
+			}
+		}	
+	}
+
+	option = {
+		name = Brazil.40.a
+		focus_unlock = yes
+	}
+}
+
+# Choosing a candidate
+country_event = {
+	id = Brazil.41
+	title = Brazil.41.t
+	desc = Brazil.41.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	# Lula
+	option = {
+		name = Brazil.41.a
+		complete_national_focus = BRA_2022_together_for_brazil
+		add_popularity = {
+			ideology = social_democrat
+			popularity = 0.01
+		}
+		activate_mission = BRA_2022_elections_opponents_mission
+		ai_chance = {
+			base = 40
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = {
+						rule = Brazil_2022_election_winner
+						option = Brazil_2022_election_winner_2
+					}
+					has_game_rule = {
+						rule = Brazil_2022_election_winner
+						option = Brazil_2022_election_winner_3
+					}
+				}
+			}
+		}
+	}
+	# Alckmin
+	option = {
+		name = Brazil.41.b
+		complete_national_focus = BRA_2022_uniting_brazil
+		add_popularity = {
+			ideology = social_liberal
+			popularity = 0.01
+		}
+		activate_mission = BRA_2022_elections_opponents_mission
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = {
+						rule = Brazil_2022_election_winner
+						option = Brazil_2022_election_winner_1
+					}
+					has_game_rule = {
+						rule = Brazil_2022_election_winner
+						option = Brazil_2022_election_winner_3
+					}
+				}
+			}
+		}
+	}
+	# Bolsonaro
+	option = {
+		name = Brazil.41.c
+		complete_national_focus = BRA_2022_god_country_family
+		add_popularity = {
+			ideology = conservative
+			popularity = 0.01
+		}
+		activate_mission = BRA_2022_elections_opponents_mission
+		ai_chance = {
+			base = 40
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = {
+						rule = Brazil_2022_election_winner
+						option = Brazil_2022_election_winner_1
+					}
+					has_game_rule = {
+						rule = Brazil_2022_election_winner
+						option = Brazil_2022_election_winner_2
+					}
+				}
+			}
+			modifier = {
+    		    add = -10
+    		    BRA_jair_bolsonaro_char = { has_trait = BRA_damaged_reputation }
+    		}
+			modifier = {
+    		    add = -15
+    		    BRA_jair_bolsonaro_char = { has_trait = BRA_severely_damaged_reputation }
+    		}
+			modifier = {
+    		    add = -20
+    		    has_country_flag = BRA_bolsonaro_banned_from_politics_flag
+    		}
+		}
+	}
+}
+
+# Lula's VP choice
+country_event = {
+	id = Brazil.42
+	title = Brazil.42.t
+	desc = Brazil.42.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	# Haddad
+	option = {
+		name = Brazil.42.a
+		add_political_power = 50
+	}
+	# Dilma
+	option = {
+		name = Brazil.42.b
+		add_political_power = -100
+		custom_effect_tooltip = BRA_dilma_vp_pick_tooltip
+		hidden_effect = {
+			set_country_flag = BRA_dilma_vp_pick_flag
+		}
+	}
+}
+
+# Bolsonaro's family candidate pick
+country_event = {
+	id = Brazil.43
+	title = Brazil.43.t
+	desc = Brazil.43.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	# Flavio
+	option = {
+		name = Brazil.43.a
+		set_temp_variable = { BRA_election_approval_rating_pl_var_temp = 0.025 }
+		BRA_add_election_approval_rating_pl = yes;
+		set_variable = { BRA_2022_elections_bolsonaro_candidate = 1 }
+		custom_effect_tooltip = BRA_2022_elections_candidate_flavio_tooltip
+	}
+	# Carlos
+	option = {
+		name = Brazil.43.b
+		add_stability = 0.05
+		set_variable = { BRA_2022_elections_bolsonaro_candidate = 2 }
+		custom_effect_tooltip = BRA_2022_elections_candidate_carlos_tooltip
+	}
+	# Eduardo
+	option = {
+		name = Brazil.43.c
+		add_political_power = 50
+		set_variable = { BRA_2022_elections_bolsonaro_candidate = 3 }
+		custom_effect_tooltip = BRA_2022_elections_candidate_eduardo_tooltip
+	}
+	# YOLO it, run Jair
+	option = {
+		trigger = {
+			NOT = {
+				has_country_flag = BRA_bolsonaro_banned_from_politics_flag
+			}
+		}
+		name = Brazil.43.e
+		add_war_support = 0.05
+		custom_effect_tooltip = BRA_2022_elections_candidate_jair_tooltip
+	}
+}
+
+# Creation of PIX
+country_event = {
+	id = Brazil.44
+	title = Brazil.44.t
+	desc = Brazil.44.d
+	picture = GFX_BRA_pix_smartphones
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.44.a
+		add_political_power = 50
+		set_temp_variable = { society_development_var_temp = 0.05 }
+		add_society_development = yes
+	}
+}
+
+# 2022 Elections Countdown Start (Hidden)
+country_event = {
+	id = Brazil.45
+	hidden = yes
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		activate_mission = BRA_2022_elections_countdown_mission
+	}
+
+	option = {
+		name = Brazil.45.a
+	}
+}
+
+# Lula victory in 2022
+country_event = {
+	id = Brazil.46
+	title = Brazil.46.t
+	desc = Brazil.46.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			news_event = {
+				id = Brazilnews.4
+				hours = 18
+			}
+			country_event = {
+				id = Brazil.59
+				days = 15
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.46.a
+		trigger = {
+			has_completed_focus = BRA_2022_together_for_brazil
+		}
+		complete_national_focus = BRA_2022_love_wins
+	}
+	option = {
+		name = Brazil.46.b
+		trigger = {
+			NOT = { has_completed_focus = BRA_2022_together_for_brazil }
+		}
+		complete_national_focus = BRA_2022_love_wins
+	}
+}
+
+# Alckmin victory in 2022
+country_event = {
+	id = Brazil.47
+	title = Brazil.47.t
+	desc = Brazil.47.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			news_event = {
+				id = Brazilnews.5
+				hours = 18
+			}
+			country_event = {
+				id = Brazil.60
+				days = 15
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.47.a
+		trigger = {
+			has_completed_focus = BRA_2022_uniting_brazil
+		}
+		complete_national_focus = BRA_2022_reason_prevails
+	}
+	option = {
+		name = Brazil.47.b
+		trigger = {
+			NOT = { has_completed_focus = BRA_2022_uniting_brazil }
+		}
+		complete_national_focus = BRA_2022_reason_prevails
+	}
+}
+
+# Jair Bolsonaro victory in 2022
+country_event = {
+	id = Brazil.48
+	title = Brazil.48.t
+	desc = Brazil.48.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			news_event = {
+				id = Brazilnews.6
+				hours = 18
+			}
+			country_event = {
+				id = Brazil.61
+				days = 15
+			}
+
+			set_portraits = {
+				character = BRA_jair_bolsonaro_char
+				civilian = { large ="GFX_BRA_Jair_Bolsonaro_reelection" }
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.48.a
+		trigger = {
+			has_completed_focus = BRA_2022_god_country_family
+		}
+		complete_national_focus = BRA_2022_patriotic_victory
+	}
+	option = {
+		name = Brazil.48.b
+		trigger = {
+			NOT = { has_completed_focus = BRA_2022_god_country_family }
+		}
+		complete_national_focus = BRA_2022_patriotic_victory
+	}
+}
+
+# Bolsonaro family victory in 2022
+country_event = {
+	id = Brazil.49
+	title = Brazil.49.t
+	desc = Brazil.49.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			news_event = {
+				id = Brazilnews.7
+				hours = 18
+			}
+			country_event = {
+				id = Brazil.61
+				days = 15
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.49.a
+		trigger = {
+			has_completed_focus = BRA_2022_god_country_family
+		}
+		complete_national_focus = BRA_2022_patriotic_victory
+	}
+	option = {
+		name = Brazil.49.b
+		trigger = {
+			NOT = { has_completed_focus = BRA_2022_god_country_family }
+		}
+		complete_national_focus = BRA_2022_patriotic_victory
+	}
+}
+
+# Chamber of Deputies elections event (repeatable)
+country_event = {
+	id = Brazil.50
+	title = Brazil.50.t
+	desc = Brazil.50.d
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			BRA_chamber_of_deputies_elections = yes
+		}
+	}
+
+	option = {
+		name = Brazil.50.a
+		custom_effect_tooltip = BRA_chamber_of_deputies_election_results_tt
+	}
+}
+
+# Presidential inauguration switch (hidden)
+country_event = {
+	id = Brazil.51
+	hidden = yes
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+		NOT = { has_country_flag = BRA_2022_elections_suspended_flag }
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_country_flag = BRA_2022_elections_lula_won_flag
+			}
+			country_event = {
+				id = Brazil.52
+				hours = 12
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = BRA_2022_elections_alckmin_won_flag
+			}
+			country_event = {
+				id = Brazil.53
+				hours = 12
+			}
+			BR1 = {
+				set_politics = {
+				    ruling_party = social_liberal
+				    elections_allowed = yes
+			    	last_election = "2022.10.27"
+			    	election_frequency = 48
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					NOT = { has_variable = BRA_2022_elections_bolsonaro_candidate }
+				}
+				country_event = {
+					id = Brazil.54
+					hours = 12
+				}
+			}
+			else = {
+				country_event = {
+					id = Brazil.55
+					hours = 12
+				}
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.51.a
+	}
+}
+
+# Lula's inauguration
+country_event = {
+	id = Brazil.52
+	title = Brazil.52.t
+	desc = Brazil.52.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			clr_country_flag = BRA_reactionary_administration_flag
+			set_country_flag = BRA_progressive_administration_flag
+			set_politics = {
+			    ruling_party = social_democrat
+			    elections_allowed = yes
+			    last_election = "2022.10.27"
+			    election_frequency = 48
+			}			
+			# New coalition
+			end_coalition = yes
+			set_temp_variable = { coalition_partner_var_temp = token:social_democrat }
+			add_to_coalition = yes
+			if = {
+				limit = { has_completed_focus = BRA_2022_mingle_with_popular_front }
+				set_temp_variable = { coalition_partner_var_temp = token:libertarian_socialist }
+				add_to_coalition = yes
+				set_temp_variable = { coalition_partner_var_temp = token:communist }
+				add_to_coalition = yes
+			}		
+			# Cabinet
+			if = {
+				limit = {
+					has_country_flag = BRA_dilma_vp_pick_flag
+				}
+				add_ideas = {
+					BRA_dilma_rousseff_hog
+					BRA_fernando_haddad_eco
+				}
+			}
+			else = {
+				add_ideas = BRA_fernando_haddad_hog
+			}
+			add_ideas = {
+				BRA_mauro_vieira_for
+				BRA_carlos_favaro_sec
+				BRA_flavio_dino_int
+				BRA_jose_mucio_theorist
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.52.a
+		effect_tooltip = {
+			set_politics = {
+			    ruling_party = social_democrat
+			    elections_allowed = yes
+			    last_election = "2022.10.27"
+			    election_frequency = 48
+			}
+		}
+		remove_ideas = BRA_progressive_opposition_idea
+	}
+}
+
+# Alckmin's inauguration
+country_event = {
+	id = Brazil.53
+	title = Brazil.53.t
+	desc = Brazil.53.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			clr_country_flag = BRA_reactionary_administration_flag
+			set_country_flag = BRA_centrist_administration_flag
+			set_politics = {
+			    ruling_party = social_liberal
+			    elections_allowed = yes
+			    last_election = "2022.10.27"
+			    election_frequency = 48
+			}
+			# New coalition
+			end_coalition = yes
+			set_temp_variable = { coalition_partner_var_temp = token:social_liberal }
+			add_to_coalition = yes
+			set_temp_variable = { coalition_partner_var_temp = token:market_liberal }
+			add_to_coalition = yes
+			# Cabinet
+
+		}
+	}
+
+	option = {
+		name = Brazil.53.a
+		effect_tooltip = {
+			set_politics = {
+			    ruling_party = social_liberal
+			    elections_allowed = yes
+			    last_election = "2022.10.27"
+			    election_frequency = 48
+			}
+		}
+	}
+}
+
+# Jair Bolsonaro's inauguration
+country_event = {
+	id = Brazil.54
+	title = Brazil.54.t
+	desc = Brazil.54.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_politics = {
+			    ruling_party = conservative
+			    elections_allowed = yes
+			    last_election = "2022.10.27"
+			    election_frequency = 48
+			}
+			set_portraits = {
+				character = BRA_jair_bolsonaro_char
+				civilian = { large = "GFX_BRA_Jair_Bolsonaro_reelection" }
+			}
+			# Cabinet
+		}
+	}
+
+	option = {
+		name = Brazil.54.a
+		add_political_power = 100
+	}
+}
+
+# Bolsonaro son's inauguration
+country_event = {
+	id = Brazil.55
+	title = Brazil.55.t
+	desc = Brazil.55.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = {
+					    var = BRA_2022_elections_bolsonaro_candidate
+					    value = 1
+					    compare = equals
+					}
+				}
+				promote_character = BRA_flavio_bolsonaro_char
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+					    var = BRA_2022_elections_bolsonaro_candidate
+					    value = 2
+					    compare = equals
+					}
+				}
+				promote_character = BRA_carlos_bolsonaro_char
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+					    var = BRA_2022_elections_bolsonaro_candidate
+					    value = 3
+					    compare = equals
+					}
+				}
+				promote_character = BRA_eduardo_bolsonaro_char
+			}
+			set_politics = {
+			    ruling_party = conservative
+			    elections_allowed = yes
+			    last_election = "2022.10.27"
+			    election_frequency = 48
+			}
+			# Cabinet
+
+		}
+	}
+
+	option = {
+		name = Brazil.55.a
+		effect_tooltip = {
+			if = {
+				limit = {
+					check_variable = {
+					    var = BRA_2022_elections_bolsonaro_candidate
+					    value = 1
+					    compare = equals
+					}
+				}
+				promote_character = BRA_flavio_bolsonaro_char
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+					    var = BRA_2022_elections_bolsonaro_candidate
+					    value = 2
+					    compare = equals
+					}
+				}
+				promote_character = BRA_carlos_bolsonaro_char
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+					    var = BRA_2022_elections_bolsonaro_candidate
+					    value = 3
+					    compare = equals
+					}
+				}
+				promote_character = BRA_eduardo_bolsonaro_char
+			}
+			set_politics = {
+			    ruling_party = conservative
+			    elections_allowed = yes
+			    last_election = "2022.10.27"
+			    election_frequency = 48
+			}
+		}
+	}
+}
+
+# Reaction to the 2ACW
+country_event = {
+	id = Brazil.56
+	title = Brazil.56.t
+	desc = Brazil.56.d
+	picture = GFX_BRA_bolsonaro_speech
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.56.a 
+		add_stability = -0.15
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = -0.1
+   	 		tooltip_side = BRA_radicalization_side
+		}
+		country_event = {
+			id = Brazil.57
+			days = 3
+		}
+	}
+}
+
+# 2ACW Refugees
+country_event = {
+	id = Brazil.57
+	title = Brazil.57.t
+	desc = Brazil.57.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.57.a
+		add_timed_idea = {
+    		idea = BRA_brazilian_2acw_refugees_idea
+    		days = 90
+		}
+	}
+}
+
+# Reaction to the Colombian CW
+country_event = {
+	id = Brazil.58
+	title = Brazil.58.t
+	desc = Brazil.58.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.58.a
+		add_stability = -0.05
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = -0.05
+   	 		tooltip_side = BRA_radicalization_side
+		}
+	}
+}
+
+# 2022 Election protests against Lula
+country_event = {
+	id = Brazil.59
+	title = Brazil.59.t
+	desc = Brazil.59.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {			
+			if = {
+				limit = {
+					is_power_balance_in_range = {
+    					id = BRA_political_radicalization_balance
+					    range > BRA_low_radicalization_range
+					}
+				}
+				# Protests dissolve before they get bad
+				country_event = {
+					id = Brazil.62
+					days = 15
+				}
+			}
+			else = {
+				# Protests escalate
+				set_country_flag = BRA_2022_election_protests_far_right_flag
+				country_event = {
+					id = Brazil.63
+					days = 15
+				}
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.59.a
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = -0.015
+   	 		tooltip_side = BRA_radicalization_side
+		}
+		mark_focus_tree_layout_dirty = yes
+		focus_unlock = yes
+	}
+}
+
+# 2022 Election protests against Alckmin
+country_event = {
+	id = Brazil.60
+	title = Brazil.60.t
+	desc = Brazil.60.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					is_power_balance_in_range = {
+    					id = BRA_political_radicalization_balance
+					    range > BRA_low_radicalization_range
+					}
+				}
+				# Protests dissolve before they get bad
+				country_event = {
+					id = Brazil.62
+					days = 15
+				}
+			}
+			else = {
+				# Protests escalate 
+				if = {
+					limit = {
+						# Election protests path is based on which candidate got 2n place
+						check_variable = { BRA_election_approval_rating_pt_var > BRA_election_approval_rating_pl_var }
+					}
+					# Far left path
+					set_country_flag = BRA_2022_election_protests_far_left_flag
+					country_event = {
+						id = Brazil.69
+						days = 15
+					}
+				}
+				else = {
+					# Far right path
+					set_country_flag = BRA_2022_election_protests_far_right_flag
+					country_event = {
+						id = Brazil.63
+						days = 15
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.60.a
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = -0.015
+   	 		tooltip_side = BRA_radicalization_side
+		}
+		mark_focus_tree_layout_dirty = yes
+		focus_unlock = yes
+	}
+}
+
+# 2022 Election protests against Bolsonaro
+country_event = {
+	id = Brazil.61
+	title = Brazil.61.t
+	desc = Brazil.61.d
+	picture = GFX_BRA_2022_protests
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					is_power_balance_in_range = {
+    					id = BRA_political_radicalization_balance
+					    range > BRA_low_radicalization_range
+					}
+				}
+				# Protests dissolve before they get bad
+				country_event = {
+					id = Brazil.62
+					days = 15
+				}
+			}
+			else = {
+				# Protests escalate
+				set_country_flag = BRA_2022_election_protests_far_left_flag
+				country_event = {
+					id = Brazil.69
+					days = 15
+				}
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.61.a
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = -0.015
+   	 		tooltip_side = BRA_radicalization_side
+		}
+		mark_focus_tree_layout_dirty = yes
+		focus_unlock = yes
+	}
+}
+
+# 2022 Election protests wind down
+country_event = {
+	id = Brazil.62
+	title = Brazil.62.t
+	desc = Brazil.62.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.62.a
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = 0.05
+   	 		tooltip_side = BRA_stabilization_side
+		}
+		remove_ideas = BRA_2022_election_protests_idea
+	}
+}
+
+# Far-Right protesters gather around army HQs
+country_event = {
+	id = Brazil.63
+	title = Brazil.63.t
+	desc = Brazil.63.d
+	picture = GFX_BRA_2022_encampments
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					is_power_balance_in_range = {
+    					id = BRA_political_radicalization_balance
+					    range > BRA_low_radicalization_range
+					}
+				}
+				# Wind down
+				country_event = {
+					id = Brazil.62
+					days = 15
+				}
+			}
+			else = {
+				# Escalation - blockades
+				country_event = {
+					id = Brazil.64
+					days = 10
+				}
+
+				# Safeguard to prevent the civil war from happening if the game rules shouldn't allow it
+				if = {
+					limit = {
+						is_ai = yes
+						OR = {
+							AND = {
+								# Civil war won't happen on default historical
+								has_game_rule = {
+									rule = Brazil_civil_war_setting
+									option = DEFAULT
+								}
+								is_historical_focus_on = yes
+							}
+							# Has rule to prevent civil war
+							has_game_rule = {
+								rule = Brazil_civil_war_setting
+								option = Brazil_civil_war_setting_2
+							}
+						}
+					}
+					hidden_effect = {
+						set_power_balance = {
+							id = BRA_political_radicalization_balance
+							left_side = BRA_radicalization_side
+							right_side = BRA_stabilization_side
+							set_value = 0.15
+						}
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.63.a
+		add_command_power = -30
+		army_experience = -25
+		add_ideas = BRA_2022_election_protests_idea
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = -0.025
+   	 		tooltip_side = BRA_radicalization_side
+		}
+	}
+}
+
+# Far-Right protesters block highways
+country_event = {
+	id = Brazil.64
+	title = Brazil.64.t
+	desc = Brazil.64.d
+	picture = GFX_BRA_2022_blockade
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					is_power_balance_in_range = {
+    					id = BRA_political_radicalization_balance
+					    range > BRA_low_radicalization_range
+					}
+				}
+				# Wind down
+				country_event = {
+					id = Brazil.62
+					days = 15
+				}
+			}
+			else_if = {
+				limit = {
+					is_power_balance_in_range = {
+    					id = BRA_political_radicalization_balance
+					    range < BRA_high_radicalization_range
+					}
+				}
+				# Escalation - bombing succeeds
+				country_event = {
+					id = Brazil.66
+					days = 14
+				}
+			}
+			else = {
+				# Escalation - bombing fails
+				country_event = {
+					id = Brazil.65
+					days = 14
+				}
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.64.a
+		add_stability = -0.1
+		damage_building = {
+			type = infrastructure
+			state = 501
+			damage = 1
+		}
+		damage_building = {
+			type = infrastructure
+			state = 496
+			damage = 1
+		}
+		damage_building = {
+			type = infrastructure
+			state = 505
+			damage = 1
+		}
+		damage_building = {
+			type = infrastructure
+			state = 280
+			damage = 1
+		}
+		damage_building = {
+			type = infrastructure
+			state = 499
+			damage = 1
+		}
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = -0.05
+   	 		tooltip_side = BRA_radicalization_side
+		}
+	}
+}
+
+# Far-Right bombing attempt fails
+country_event = {
+	id = Brazil.65
+	title = Brazil.65.t
+	desc = Brazil.65.d
+	picture = GFX_BRA_2022_bomb_squad
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					is_power_balance_in_range = {
+    					id = BRA_political_radicalization_balance
+					    range < BRA_high_radicalization_range
+					}
+				}
+				# Escalation - power grid attacks
+				country_event = {
+					id = Brazil.67
+					days = 10
+				}
+			}
+			else = {
+				# Escalation - Brasilia invasion
+				country_event = {
+					id = Brazil.68
+					days = 15
+				}
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.65.a
+		add_stability = -0.05
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = -0.01
+   	 		tooltip_side = BRA_radicalization_side
+		}	
+	}
+}
+
+# Far-Right bombing attempt succeeds
+country_event = {
+	id = Brazil.66
+	title = Brazil.66.t
+	desc = Brazil.66.d
+	picture = GFX_BRA_2022_airport_bombed
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			# Escalation - power grid attacks
+			country_event = {
+				id = Brazil.67
+				days = 10
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.66.a
+		add_stability = -0.3
+		damage_building = {
+			type = air_base
+			state = 1445
+			damage = 5
+		}
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = -0.15
+   	 		tooltip_side = BRA_radicalization_side
+		}
+	}
+}
+
+# Far-Right attacks the power grid
+country_event = {
+	id = Brazil.67
+	title = Brazil.67.t
+	desc = Brazil.67.d
+	picture = GFX_BRA_2022_grid_attacks
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			# Escalation - Brasilia invasion
+			country_event = {
+				id = Brazil.68
+				days = 5
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.67.a
+		add_stability = -0.2
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = -0.1
+   	 		tooltip_side = BRA_radicalization_side
+		}
+		every_core_state = {
+			damage_building = {
+				type = infrastructure
+				damage = 0.5
+			}
+		}
+	}
+}
+
+# Far-Right invades Brasilia
+country_event = {
+	id = Brazil.68
+	title = Brazil.68.t
+	desc = Brazil.68.d
+	picture = GFX_BRA_brasilia_riots
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					is_power_balance_in_range = {
+    					id = BRA_political_radicalization_balance
+					    range < BRA_severe_radicalization_range
+					}
+				}
+				# Mlitary Forces GLO
+				country_event = {
+					id = Brazil.77
+					days = 3
+				}
+			}
+			else = {
+				# Military Suggests GLO
+				if = {
+					limit = {
+						has_country_flag = BRA_progressive_administration_flag
+					}
+					country_event = {
+						id = Brazil.74
+						days = 3
+					}
+				}
+				else = {
+					country_event = {
+						id = Brazil.75
+						days = 3
+					}
+				}			
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.68.a
+		add_stability = -0.1
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = -0.075
+   	 		tooltip_side = BRA_radicalization_side
+		}
+		1445 = { set_demilitarized_zone = yes }
+	}
+}
+
+# Far-left gathers around government buildings
+country_event = {
+	id = Brazil.69
+	title = Brazil.69.t
+	desc = Brazil.69.d
+	picture = GFX_BRA_2022_left_protests
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			
+			if = {
+				limit = {
+					is_power_balance_in_range = {
+    					id = BRA_political_radicalization_balance
+					    range > BRA_low_radicalization_range
+					}
+				}
+				# Wind down
+				country_event = {
+					id = Brazil.62
+					days = 15
+				}
+			}
+			else_if = {
+				limit = {
+					is_power_balance_in_range = {
+    					id = BRA_political_radicalization_balance
+					    range < BRA_high_radicalization_range
+					}
+				}
+				# Escalation - bombing succeeds
+				country_event = {
+					id = Brazil.71
+					days = 10
+				}
+			}
+			else = {
+				# Escalation - bombing fails
+				country_event = {
+					id = Brazil.70
+					days = 10
+				}
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.69.a
+		add_political_power = -150
+		add_ideas = BRA_2022_election_protests_idea
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = -0.025
+   	 		tooltip_side = BRA_radicalization_side
+		}
+	}
+}
+
+# Far-Left bombing attempt fails
+country_event = {
+	id = Brazil.70
+	title = Brazil.70.t
+	desc = Brazil.70.d
+	picture = GFX_BRA_2022_bomb_squad
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			# Escalation - general strikes
+			country_event = {
+				id = Brazil.72
+				days = 14
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.70.a	
+		add_stability = -0.05
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = -0.015
+   	 		tooltip_side = BRA_radicalization_side
+		}	
+	}
+}
+
+# Far-Left bombing attempt succeeds
+country_event = {
+	id = Brazil.71
+	title = Brazil.71.t
+	desc = Brazil.71.d
+	picture = GFX_BRA_2022_car_bomb
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			# Escalation - general strikes
+			country_event = {
+				id = Brazil.72
+				days = 14
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.71.a
+		add_political_power = -150
+		add_stability = -0.2
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = -0.2
+   	 		tooltip_side = BRA_radicalization_side
+		}
+		damage_building = {
+			type = office_park
+			state = 1460
+			damage = 1
+		}
+		damage_building = {
+			type = office_park
+			state = 1463
+			damage = 1
+		}
+		damage_building = {
+			type = industrial_complex
+			state = 1462
+			damage = 1
+		}
+	}
+}
+
+# Far-left enforces general strikes
+country_event = {
+	id = Brazil.72
+	title = Brazil.72.t
+	desc = Brazil.72.d
+	picture = GFX_BRA_2022_general_strike
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			# Escalation - Brasilia invasion
+			country_event = {
+				id = Brazil.73
+				days = 15
+			}
+
+			# Safeguard to prevent the civil war from happening if the game rules shouldn't allow it
+			if = {
+				limit = {
+					is_ai = yes
+					OR = {
+						AND = {
+							# Civil war won't happen on default historical
+							has_game_rule = {
+								rule = Brazil_civil_war_setting
+								option = DEFAULT
+							}
+							is_historical_focus_on = yes
+						}
+						# Has rule to prevent civil war
+						has_game_rule = {
+							rule = Brazil_civil_war_setting
+							option = Brazil_civil_war_setting_2
+						}
+					}
+				}
+				set_power_balance = {
+					id = BRA_political_radicalization_balance
+					left_side = BRA_radicalization_side
+					right_side = BRA_stabilization_side
+					set_value = 0.15
+				}
+			}
+		}	
+	}
+
+	option = {
+		name = Brazil.72.a
+		add_timed_idea = {
+			idea = BRA_general_strikes_idea
+			days = 60
+		}
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = -0.1
+   	 		tooltip_side = BRA_radicalization_side
+		}
+	}
+}
+
+# Far-left invades Brasilia
+country_event = {
+	id = Brazil.73
+	title = Brazil.73.t
+	desc = Brazil.73.d
+	picture = GFX_BRA_brasilia_riots_mst
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					is_power_balance_in_range = {
+    					id = BRA_political_radicalization_balance
+					    range < BRA_severe_radicalization_range
+					}
+				}
+				# Mlitary Forces GLO
+				country_event = {
+					id = Brazil.77
+					days = 3
+				}
+			}
+			else = {
+				# Military Suggests GLO
+				if = {
+					limit = {
+						has_country_flag = BRA_reactionary_administration_flag
+					}
+					country_event = {
+						id = Brazil.76
+						days = 3
+					}
+				}
+				else = {
+					country_event = {
+						id = Brazil.75
+						days = 3
+					}
+				}			
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.73.a
+		add_stability = -0.1
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = -0.05
+   	 		tooltip_side = BRA_radicalization_side
+		}
+		1445 = { set_demilitarized_zone = yes }
+	}
+}
+
+# Guarantee of Law and Order proposed to Lula (GLO)
+country_event = {
+	id = Brazil.74
+	title = Brazil.74.t
+	desc = Brazil.74.d
+	picture = GFX_BRA_lula_and_high_command
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	# Refuse - activates pacification mission
+	option = {
+		name = Brazil.74.a
+		add_political_power = -200
+		activate_mission = BRA_2022_elections_protests_pacification_mission
+		hidden_effect = {
+			add_ideas = BRA_2022_election_protests_pacification_idea
+		}
+
+		ai_chance = {
+			base = 50
+			modifier = {
+				# Gamerule to force the civil war
+				factor = 0
+				has_game_rule = {
+					rule = Brazil_civil_war_setting
+					option = Brazil_civil_war_setting_1
+				}
+			}
+		}
+	}
+	# Accept - leads to the CIVIL WAR
+	option = {
+		name = Brazil.74.b
+		trigger = {
+			is_power_balance_in_range = {
+    			id = BRA_political_radicalization_balance
+			    range < BRA_medium_radicalization_range
+			}
+		}
+		add_command_power = -10
+		country_event = {
+			id = Brazil.civilwar.1
+			days = 2
+		}
+		custom_effect_tooltip = BRA_civil_war_last_warning_tt
+
+		ai_chance = {
+			base = 50
+			modifier = {
+				# Gamerule to prevent the civil war
+				factor = 0
+				has_game_rule = {
+					rule = Brazil_civil_war_setting
+					option = Brazil_civil_war_setting_2
+				}
+			}
+			modifier = {
+				# Civil war won't happen on default historical
+				factor = 0
+				has_game_rule = {
+					rule = Brazil_civil_war_setting
+					option = DEFAULT
+				}
+				is_historical_focus_on = yes
+			}
+		}
+		
+	}
+}
+
+# Guarantee of Law and Order proposed to Alckmin (GLO)
+country_event = {
+	id = Brazil.75
+	title = Brazil.75.t
+	desc = Brazil.75.d
+	picture = GFX_BRA_alckmin_and_high_command
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	# Refuse - activates pacification mission
+	option = {
+		name = Brazil.75.a
+		add_political_power = -200
+		activate_mission = BRA_2022_elections_protests_pacification_mission
+		hidden_effect = {
+			add_ideas = BRA_2022_election_protests_pacification_idea
+		}
+
+		ai_chance = {
+			base = 50
+			modifier = {
+				# Gamerule to force the civil war
+				factor = 0
+				has_game_rule = {
+					rule = Brazil_civil_war_setting
+					option = Brazil_civil_war_setting_1
+				}
+			}
+		}
+	}
+	# Accept - leads to the CIVIL WAR
+	option = {
+		name = Brazil.75.b
+		trigger = {
+			is_power_balance_in_range = {
+    			id = BRA_political_radicalization_balance
+			    range < BRA_medium_radicalization_range
+			}
+		}
+		add_command_power = -10
+		country_event = {
+			id = Brazil.civilwar.1
+			days = 2
+		}
+		custom_effect_tooltip = BRA_civil_war_last_warning_tt
+
+		ai_chance = {
+			base = 50
+			modifier = {
+				# Gamerule to prevent the civil war
+				factor = 0
+				has_game_rule = {
+					rule = Brazil_civil_war_setting
+					option = Brazil_civil_war_setting_2
+				}
+			}
+			modifier = {
+				# Civil war won't happen on default historical
+				factor = 0
+				has_game_rule = {
+					rule = Brazil_civil_war_setting
+					option = DEFAULT
+				}
+				is_historical_focus_on = yes
+			}
+		}
+	}
+}
+
+# Guarantee of Law and Order proposed to Bolsonaro (GLO)
+country_event = {
+	id = Brazil.76
+	title = Brazil.76.t
+	desc = Brazil.76.d
+	picture = GFX_BRA_bolsonaro_and_high_command
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	# Refuse - activates pacification mission
+	option = {
+		name = Brazil.76.a
+		add_political_power = -50
+		activate_mission = BRA_2022_elections_protests_pacification_mission
+		hidden_effect = {
+			add_ideas = BRA_2022_election_protests_pacification_idea
+		}
+
+		ai_chance = {
+			base = 50
+			modifier = {
+				# Gamerule to force the civil war
+				factor = 0
+				has_game_rule = {
+					rule = Brazil_civil_war_setting
+					option = Brazil_civil_war_setting_1
+				}
+			}
+		}
+	}
+	# Accept - leads to the CIVIL WAR
+	option = {
+		name = Brazil.76.b
+		add_command_power = -10
+		country_event = {
+			id = Brazil.civilwar.1
+			days = 2
+		}
+		custom_effect_tooltip = BRA_civil_war_last_warning_tt
+
+		ai_chance = {
+			base = 50
+			modifier = {
+				# Gamerule to prevent the civil war
+				factor = 0
+				has_game_rule = {
+					rule = Brazil_civil_war_setting
+					option = Brazil_civil_war_setting_2
+				}
+			}
+			modifier = {
+				# Civil war won't happen on default historical
+				factor = 0
+				has_game_rule = {
+					rule = Brazil_civil_war_setting
+					option = DEFAULT
+				}
+				is_historical_focus_on = yes
+			}
+		}
+	}
+}
+
+# Military forces GLO
+country_event = {
+	id = Brazil.77
+	title = Brazil.77.t
+	desc = Brazil.77.d
+	picture = GFX_BRA_army_officers_meeting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	# No choice - leads to the CIVIL WAR
+	option = {
+		name = Brazil.77.a
+		country_event = {
+			id = Brazil.civilwar.1
+			days = 2
+		}
+		custom_effect_tooltip = BRA_civil_war_last_warning_no_choice_tt
+	}
+}
+
+# Bolsonaro Covid Ramble 1
+country_event = {
+	id = Brazil.78
+	title = Brazil.78.t
+	desc = Brazil.78.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+		NOT = { has_completed_focus = BRA_contain_president }
+		OR = {
+			has_idea = BRA_coronavirus_pandemic_idea
+			has_idea = BRA_coronavirus_pandemic_idea1
+			has_idea = BRA_coronavirus_pandemic_idea2
+			has_idea = BRA_coronavirus_pandemic_idea3
+			has_idea = BRA_coronavirus_pandemic_idea4
+		}
+		has_country_leader = {
+			character = BRA_jair_bolsonaro_char
+			ruling_only = yes
+		}
+	}
+
+	option = {
+		name = Brazil.78.a
+		add_days_mission_timeout = {
+		    mission = BRA_handle_covid_mission
+		    days = -20
+		}
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = -0.01
+   	 		tooltip_side = BRA_radicalization_side
+		}
+		hidden_effect = {
+			country_event = {
+				id = Brazil.79
+				days = 30
+				random_days = 20
+			}
+		}
+	}
+}
+
+# Bolsonaro Covid Ramble 2
+country_event = {
+	id = Brazil.79
+	title = Brazil.79.t
+	desc = Brazil.79.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+		NOT = { has_completed_focus = BRA_contain_president }
+		OR = {
+			has_idea = BRA_coronavirus_pandemic_idea
+			has_idea = BRA_coronavirus_pandemic_idea1
+			has_idea = BRA_coronavirus_pandemic_idea2
+			has_idea = BRA_coronavirus_pandemic_idea3
+			has_idea = BRA_coronavirus_pandemic_idea4
+		}
+		has_country_leader = {
+			character = BRA_jair_bolsonaro_char
+			ruling_only = yes
+		}
+	}
+
+	option = {
+		name = Brazil.79.a
+		add_days_mission_timeout = {
+		    mission = BRA_handle_covid_mission
+		    days = -20
+		}
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = -0.01
+   	 		tooltip_side = BRA_radicalization_side
+		}
+		hidden_effect = {
+			country_event = {
+				id = Brazil.80
+				days = 30
+				random_days = 20
+			}
+		}
+	}
+}
+
+# Bolsonaro Covid Ramble 3
+country_event = {
+	id = Brazil.80
+	title = Brazil.80.t
+	desc = Brazil.80.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+		NOT = { has_completed_focus = BRA_contain_president }
+		OR = {
+			has_idea = BRA_coronavirus_pandemic_idea
+			has_idea = BRA_coronavirus_pandemic_idea1
+			has_idea = BRA_coronavirus_pandemic_idea2
+			has_idea = BRA_coronavirus_pandemic_idea3
+			has_idea = BRA_coronavirus_pandemic_idea4
+		}
+		has_country_leader = {
+			character = BRA_jair_bolsonaro_char
+			ruling_only = yes
+		}
+	}
+
+	option = {
+		name = Brazil.80.a
+		add_days_mission_timeout = {
+		    mission = BRA_handle_covid_mission
+		    days = -20
+		}
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = -0.01
+   	 		tooltip_side = BRA_radicalization_side
+		}
+		hidden_effect = {
+			country_event = {
+				id = Brazil.81
+				days = 30
+				random_days = 20
+			}
+		}
+	}
+}
+
+# Bolsonaro Covid Ramble 4
+country_event = {
+	id = Brazil.81
+	title = Brazil.81.t
+	desc = Brazil.81.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+		NOT = { has_completed_focus = BRA_contain_president }
+		OR = {
+			has_idea = BRA_coronavirus_pandemic_idea
+			has_idea = BRA_coronavirus_pandemic_idea1
+			has_idea = BRA_coronavirus_pandemic_idea2
+			has_idea = BRA_coronavirus_pandemic_idea3
+			has_idea = BRA_coronavirus_pandemic_idea4
+		}
+		has_country_leader = {
+			character = BRA_jair_bolsonaro_char
+			ruling_only = yes
+		}
+	}
+
+	option = {
+		name = Brazil.81.a
+		add_days_mission_timeout = {
+		    mission = BRA_handle_covid_mission
+		    days = -20
+		}
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = -0.01
+   	 		tooltip_side = BRA_radicalization_side
+		}
+		hidden_effect = {
+			country_event = {
+				id = Brazil.82
+				days = 30
+				random_days = 20
+			}
+		}
+	}
+}
+
+# Bolsonaro Covid Ramble 5
+country_event = {
+	id = Brazil.82
+	title = Brazil.82.t
+	desc = Brazil.82.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+		NOT = { has_completed_focus = BRA_contain_president }
+		OR = {
+			has_idea = BRA_coronavirus_pandemic_idea
+			has_idea = BRA_coronavirus_pandemic_idea1
+			has_idea = BRA_coronavirus_pandemic_idea2
+			has_idea = BRA_coronavirus_pandemic_idea3
+			has_idea = BRA_coronavirus_pandemic_idea4
+		}
+		has_country_leader = {
+			character = BRA_jair_bolsonaro_char
+			ruling_only = yes
+		}
+	}
+
+	option = {
+		name = Brazil.82.a
+		add_days_mission_timeout = {
+		    mission = BRA_handle_covid_mission
+		    days = -20
+		}
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = -0.01
+   	 		tooltip_side = BRA_radicalization_side
+		}
+		hidden_effect = {
+			country_event = {
+				id = Brazil.83
+				days = 30
+				random_days = 20
+			}
+		}
+	}
+}
+
+# Bolsonaro Covid Ramble 6
+country_event = {
+	id = Brazil.83
+	title = Brazil.83.t
+	desc = Brazil.83.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+		NOT = { has_completed_focus = BRA_contain_president }
+		OR = {
+			has_idea = BRA_coronavirus_pandemic_idea
+			has_idea = BRA_coronavirus_pandemic_idea1
+			has_idea = BRA_coronavirus_pandemic_idea2
+			has_idea = BRA_coronavirus_pandemic_idea3
+			has_idea = BRA_coronavirus_pandemic_idea4
+		}
+		has_country_leader = {
+			character = BRA_jair_bolsonaro_char
+			ruling_only = yes
+		}
+	}
+
+	option = {
+		name = Brazil.83.a
+		add_days_mission_timeout = {
+		    mission = BRA_handle_covid_mission
+		    days = -20
+		}
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = -0.01
+   	 		tooltip_side = BRA_radicalization_side
+		}
+		hidden_effect = {
+			country_event = {
+				id = Brazil.84
+				days = 30
+				random_days = 20
+			}
+		}
+	}
+}
+
+# Bolsonaro catches Covid
+country_event = {
+	id = Brazil.84
+	title = Brazil.84.t
+	desc = Brazil.84.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+		NOT = { has_completed_focus = BRA_contain_president }
+		OR = {
+			has_idea = BRA_coronavirus_pandemic_idea
+			has_idea = BRA_coronavirus_pandemic_idea1
+			has_idea = BRA_coronavirus_pandemic_idea2
+			has_idea = BRA_coronavirus_pandemic_idea3
+			has_idea = BRA_coronavirus_pandemic_idea4
+		}
+		has_country_leader = {
+			character = BRA_jair_bolsonaro_char
+			ruling_only = yes
+		}
+	}
+
+	option = {
+		name = Brazil.84.a
+		add_stability = -0.1
+		add_war_support = -0.1
+		set_temp_variable = { BRA_election_approval_rating_pl_var_temp = -0.025 }
+		BRA_add_election_approval_rating_pl = yes;
+		add_days_mission_timeout = {
+		    mission = BRA_handle_covid_mission
+		    days = -50
+		}
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = -0.05
+   	 		tooltip_side = BRA_radicalization_side
+		}
+	}
+}
+
+# Dealing with the oil crisis
+country_event = {
+	id = Brazil.85
+	title = Brazil.85.t
+	desc = Brazil.85.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.85.a
+	}
+}
+
+# Dealing with covid
+country_event = {
+	id = Brazil.86
+	title = Brazil.86.t
+	desc = Brazil.86.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.86.a
+	}
+}
+
+# Concerns regarding military president
+country_event = {
+	id = Brazil.87
+	title = Brazil.87.t
+	desc = Brazil.87.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.87.a
+	}
+}
+
+# Military takeover offered
+country_event = {
+	id = Brazil.88
+	title = Brazil.88.t
+	desc = Brazil.88.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.88.a
+		mark_focus_tree_layout_dirty = yes
+	}
+}
+
+# 2022 Election protests pacified
+country_event = {
+	id = Brazil.89
+	title = Brazil.89.t
+	desc = Brazil.89.d
+	picture = GFX_BRA_army_officers_meeting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.89.a
+	}
+}
+
+# Integralists intro
+country_event = {
+	id = Brazil.90
+	title = Brazil.90.t
+	desc = Brazil.90.d
+	picture = GFX_BRA_porta_dos_fundos_attack
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = Brazil.91
+				days = 400
+				random_days = 60
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.90.a
+		add_popularity = {
+			ideology = fascist
+			popularity = 0.025
+		}
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = -0.015
+   	 		tooltip_side = BRA_radicalization_side
+		}
+	}
+}
+
+# Monarchists intro
+country_event = {
+	id = Brazil.91
+	title = Brazil.91.t
+	desc = Brazil.91.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	option = {
+		name = Brazil.91.a
+		add_popularity = {
+			ideology = nationalist
+			popularity = 0.025
+		}
+		add_power_balance_value = {
+    		id = BRA_political_radicalization_balance
+    		value = -0.015
+   	 		tooltip_side = BRA_radicalization_side
+		}
+	}
+}
+
+# Rio Grande do Sul 2024 floods
+country_event = {
+	id = Brazil.92
+	title = Brazil.92.t
+	desc = Brazil.92.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			is_brazilian_unifier = yes
+			tag = SUL
+		}
+		owns_state = 502
+	}
+
+	option = {
+		name = Brazil.92.a
+		502 = {
+			damage_building = {
+			  type = infrastructure
+			  damage = 2
+			}
+		}
+		hidden_effect = {
+			news_event = {
+				id = Brazilnews.3
+				hours = 6
+			}
+		}
+	}
+}
+
+# 2022 Elections Suspended
+country_event = {
+	id = Brazil.93
+	title = Brazil.93.t
+	desc = Brazil.93.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		original_tag = BRA
+	}
+
+	option = {
+		name = Brazil.93.a
+		mark_focus_tree_layout_dirty = yes
+		focus_unlock = yes
+	}
+}
+
+####################################################################################################################################################################
+# Brazilian Civil War Events
+####################################################################################################################################################################
+
+# Military crackdown in Brasilia
+country_event = {
+	id = Brazil.civilwar.1
+	title = Brazil.civilwar.1.t
+	desc = Brazil.civilwar.1.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = Brazil.civilwar.2
+				days = 3
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.civilwar.1.a	
+	}
+}
+
+# Martial law declared in DF
+country_event = {
+	id = Brazil.civilwar.2
+	title = Brazil.civilwar.2.t
+	desc = Brazil.civilwar.2.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = Brazil.civilwar.3
+				days = 3
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.civilwar.2.a
+	}
+}
+
+# Politicians advised against travelling to Brasilia
+country_event = {
+	id = Brazil.civilwar.3
+	title = Brazil.civilwar.3.t
+	desc = Brazil.civilwar.3.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = Brazil.civilwar.4
+				days = 6
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.civilwar.3.a
+	}
+}
+
+# Security zone declared in DF
+country_event = {
+	id = Brazil.civilwar.4
+	title = Brazil.civilwar.4.t
+	desc = Brazil.civilwar.4.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = BRA_reactionary_administration_flag }
+				# Lula/Alckmin set up opposition govt
+				country_event = {
+					id = Brazil.civilwar.6
+					days = 9
+				}
+			}
+			else = {
+				# Lula/Alckmin set up emergency govt
+				country_event = {
+					id = Brazil.civilwar.5
+					days = 9
+				}
+			}		
+			# SPAWN MILITARY JUNTA IN DF
+			1445 = { set_demilitarized_zone = no }
+			BR2 = {
+				transfer_state = 1445
+				add_state_core = 1445
+				BRA_civil_war_tag_setup = yes
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.civilwar.4.a
+		effect_tooltip = {
+			BR2 = {
+				transfer_state = 1445
+			}			
+		}
+	}
+}
+
+# Emergency government set up in Rio (if Lula or Alckmin won the elections)
+country_event = {
+	id = Brazil.civilwar.5
+	title = Brazil.civilwar.5.t
+	desc = Brazil.civilwar.5.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		# SPAWN FED GOVT IN RIO
+		hidden_effect = {
+			BR1 = {
+				transfer_state = 1460
+				add_state_core = 1460
+				BRA_civil_war_tag_setup = yes
+			}
+			country_event = {
+				id = Brazil.civilwar.7
+				days = 3
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.civilwar.5.a
+		effect_tooltip = {
+			BR1 = {
+				transfer_state = 1460
+			}
+		}
+	}
+}
+
+# Opposition government set up in Rio (if a Bolsonaro won the elections)
+country_event = {
+	id = Brazil.civilwar.6
+	title = Brazil.civilwar.6.t
+	desc = Brazil.civilwar.6.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		# SPAWN FED GOVT IN RIO
+		hidden_effect = {
+			BR1 = {
+				transfer_state = 1460
+				add_state_core = 1460
+				BRA_civil_war_tag_setup = yes
+			}
+			country_event = {
+				id = Brazil.civilwar.7
+				days = 3
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.civilwar.6.a
+		effect_tooltip = {
+			BR1 = {
+				transfer_state = 1460
+			}
+		}
+	}
+}
+
+# Lira tries to takes control of the crumbling Brazilian establishment
+country_event = {
+	id = Brazil.civilwar.7
+	title = Brazil.civilwar.7.t
+	desc = Brazil.civilwar.7.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = Brazil.civilwar.8
+				days = 6
+			}		
+		}
+	}
+
+	option = {
+		name = Brazil.civilwar.7.a
+		promote_character = BRA_arthur_lira_char
+		end_coalition = yes
+		set_politics = {
+    		ruling_party = market_liberal
+			last_election = "2022.10.27"
+			election_frequency = 48
+			elections_allowed = yes
+		}
+	}
+}
+
+# Popular Front breaks away from PT
+country_event = {
+	id = Brazil.civilwar.8
+	title = Brazil.civilwar.8.t
+	desc = Brazil.civilwar.8.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = Brazil.civilwar.9
+				days = 6
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.civilwar.8.a
+	}
+}
+
+# Army brigades cut comms
+country_event = {
+	id = Brazil.civilwar.9
+	title = Brazil.civilwar.9.t
+	desc = Brazil.civilwar.9.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = Brazil.civilwar.10
+				days = 12
+			}
+			delete_unit = { }
+
+			# Federal Gov generals
+			set_nationality = {
+    			target_country = BR1
+    			character = BRA_marco_freire_gomes_char
+			}
+			set_nationality = {
+    			target_country = BR1
+    			character = BRA_tomas_ribeiro_paiva_char
+			}
+			set_nationality = {
+    			target_country = BR1
+    			character = BRA_andre_miranda_char
+			}
+			set_nationality = {
+    			target_country = BR1
+    			character = BRA_guido_naves_char
+			}
+			set_nationality = {
+    			target_country = BR1
+    			character = BRA_marcos_sampaio_olsen_char
+			}
+
+			# Military Junta generals
+			set_nationality = {
+    			target_country = BR2
+    			character = BRA_luiz_estorilho_char
+			}
+			set_nationality = {
+    			target_country = BR2
+    			character = BRA_almir_garnier_santos_char
+			}
+			set_nationality = {
+    			target_country = BR2
+    			character = BRA_kleber_nunes_char
+			}	
+			set_nationality = {
+    			target_country = BR2
+    			character = BRA_guilherme_cabral_char
+			}	
+			set_nationality = {
+    			target_country = BR2
+    			character = BRA_julio_cesar_arruda_char
+			}	
+			set_nationality = {
+    			target_country = BR2
+    			character = BRA_richard_fernandez_char
+			}
+
+			# Breakaway generals
+			set_nationality = {
+    			target_country = SUL
+    			character = BRA_hertz_pires_char
+			}
+			set_nationality = {
+    			target_country = AMZ
+    			character = BRA_augusto_costa_neves_char
+			}
+			set_nationality = {
+    			target_country = AMZ
+    			character = BRA_vendramin_nunes_char
+			}	
+
+			# Equipment transfer - 50% to Junta, 25% to Government	
+			send_equipment_fraction = {
+			    value = 0.5
+			    target = BR2
+			}
+			send_equipment_fraction = {
+			    value = 0.5
+			    target = BR1
+			}
+			transfer_navy = {
+			    target = BR1
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.civilwar.9.a		
+	}
+}
+
+# Popular Front takes over Salvador
+country_event = {
+	id = Brazil.civilwar.10
+	title = Brazil.civilwar.10.t
+	desc = Brazil.civilwar.10.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		# SPAWN POPULAR FRONT IN SALVADOR
+		hidden_effect = {
+			BR3 = {
+				transfer_state = 1462
+				add_state_core = 1462
+				BRA_civil_war_tag_setup = yes
+			}
+			country_event = {
+				id = Brazil.civilwar.11
+				days = 9
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.civilwar.10.a
+		effect_tooltip = {
+			BR3 = {
+				transfer_state = 1462
+			}
+		}
+	}
+}
+
+# Standoff between the three factions 
+country_event = {
+	id = Brazil.civilwar.11
+	title = Brazil.civilwar.11.t
+	desc = Brazil.civilwar.11.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = Brazil.civilwar.12
+				days = 12
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.civilwar.11.a
+	}
+}
+
+# State of São Paulo declares neutrality
+country_event = {
+	id = Brazil.civilwar.12
+	title = Brazil.civilwar.12.t
+	desc = Brazil.civilwar.12.d
+	picture = GFX_SPA_tarcisio_statement
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			SPA = {
+				transfer_state = 501
+				transfer_state = 1463
+			}
+			country_event = {
+				id = Brazil.civilwar.13
+				days = 6
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.civilwar.12.a
+		effect_tooltip = {
+			SPA = {
+				transfer_state = 501
+				transfer_state = 1463
+			}
+		}
+	}
+}
+
+# Communications with northern states interrupted
+country_event = {
+	id = Brazil.civilwar.13
+	title = Brazil.civilwar.13.t
+	desc = Brazil.civilwar.13.d
+	picture = GFX_AMZ_native_march
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = Brazil.civilwar.14
+				days = 12
+			}
+			AMZ = {
+				transfer_state = 495
+				transfer_state = 905
+				transfer_state = 906
+				transfer_state = 1447
+				transfer_state = 1448
+				transfer_state = 1449
+				transfer_state = 1450
+				transfer_state = 1459
+				add_state_core = 495
+				add_state_core = 905
+				add_state_core = 906
+				add_state_core = 1447
+				add_state_core = 1448
+				add_state_core = 1449
+				add_state_core = 1450
+				add_state_core = 1459
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.civilwar.13.a
+		effect_tooltip = {
+			AMZ = {
+				transfer_state = 495
+				transfer_state = 905
+				transfer_state = 906
+				transfer_state = 1447
+				transfer_state = 1448
+				transfer_state = 1449
+				transfer_state = 1450
+				transfer_state = 1459
+			}
+		}
+	}
+}
+
+# Southern states declare independence
+country_event = {
+	id = Brazil.civilwar.14
+	title = Brazil.civilwar.14.t
+	desc = Brazil.civilwar.14.d
+	picture = GFX_SUL_sul_eh_meu_pais_march
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = Brazil.civilwar.15
+				days = 9
+			}
+			SUL = {
+				transfer_state = 502
+				transfer_state = 503
+				transfer_state = 1458	
+
+				country_event = {
+					id = Sul.1
+					days = 20
+				}			
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.civilwar.14.a
+		effect_tooltip = {
+			SUL = {
+				transfer_state = 502
+				transfer_state = 503
+				transfer_state = 1458
+			}
+		}
+	}
+}
+
+# Lira's government collapses - POINT OF NO RETURN
+country_event = {
+	id = Brazil.civilwar.15
+	title = Brazil.civilwar.15.t
+	desc = Brazil.civilwar.15.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BRA
+	}
+
+	# Play as FEDERAL GOVERNMENT
+	option = {
+		name = Brazil.civilwar.15.a
+		custom_effect_tooltip = BRA_civil_war_pick_government_tt		
+		hidden_effect = {		
+			BR1 = { change_tag_from = BRA }
+			BRA_civil_war_setup = yes
+		}
+	}
+	# Play as MILITARY JUNTA
+	option = {
+		name = Brazil.civilwar.15.b
+		custom_effect_tooltip = BRA_civil_war_pick_junta_tt		
+		hidden_effect = {		
+			BR2 = { change_tag_from = BRA }	
+			BRA_civil_war_setup = yes	
+		}
+	}
+	# Play as POPULAR FRONT
+	option = {		
+		name = Brazil.civilwar.15.c
+		custom_effect_tooltip = BRA_civil_war_pick_front_tt
+		hidden_effect = {		
+			BR3 = { change_tag_from = BRA }
+			BRA_civil_war_setup = yes
+		}
+	}
+}

@@ -1,0 +1,920 @@
+######################################################
+# Federal Government of Brazil Focus Tree
+# By gdn001
+######################################################
+
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+
+focus_tree = {
+	id = BR1_Focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 20
+			original_tag = BR1
+		}
+	}
+
+    # ------------------------------------------------------------ CIVIL WAR FOCUSES ------------------------------------------------------------
+	# Intended duration: Until the civil war is done
+    focus = {
+		id = BR1_cw_secure_rio
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		x = 0
+		y = 0
+		cost = 3
+		allow_branch = {		
+			NOT = {
+				has_global_flag = BRA_civil_war_ended_flag
+			}
+		}
+		available_if_capitulated = no
+		cancelable = no
+		ai_will_do = {
+			base = 1
+		}
+		available = {
+			hidden_trigger = {
+				has_global_flag = BRA_civil_war_started_flag
+			}
+		}
+		completion_reward = {
+			# Emergency government secured in Rio
+			add_stability = 0.15
+			country_event = {
+				id = Brazil.libs.1
+				days = 2
+			}			
+		}
+	}
+
+    focus = {
+		id = BR1_cw_reassemble_house_of_deputies
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR1_cw_secure_rio
+		x = 0
+		y = 1
+		cost = 1
+		prerequisite = {
+			focus = BR1_cw_secure_rio
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# We reassemble a provisional house of deputies in Rio, albeit many of the elected officials are missing...
+			add_ideas = { BR1_broad_coalition_idea }
+			if = {
+				limit = { BRA = { has_country_flag = BRA_2022_elections_lula_won_flag } }
+				set_power_balance = {
+					id = BR1_federal_gov_balance_of_power
+					left_side = BR1_lula_side
+					right_side = BR1_alckmin_side
+					set_value = -0.3
+				}
+			}
+			else_if = {
+				limit = { BRA = { has_country_flag = BRA_2022_elections_alckmin_won_flag } }
+				set_power_balance = {
+					id = BR1_federal_gov_balance_of_power
+					left_side = BR1_lula_side
+					right_side = BR1_alckmin_side
+					set_value = 0.3
+				}
+			}
+			else = {
+				set_power_balance = {
+					id = BR1_federal_gov_balance_of_power
+					left_side = BR1_lula_side
+					right_side = BR1_alckmin_side
+					set_value = 0
+				}
+			}
+			add_political_power = 100
+
+			country_event = {
+				id = Brazil.libs.2
+				days = 1
+			}
+		}
+	}
+
+    focus = {
+		id = BR1_cw_recover_brazilian_core
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR1_cw_reassemble_house_of_deputies
+		x = 0
+		y = 1
+		cost = 1
+		prerequisite = {
+			focus = BR1_cw_reassemble_house_of_deputies
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			custom_effect_tooltip = BR1_cw_recover_brazilian_core_tt
+			hidden_effect = {
+				transfer_state = 496
+				transfer_state = 500
+				transfer_state = 1457
+				add_state_core = 496
+				add_state_core = 500
+				add_state_core = 1457 
+			}
+			country_event = {
+				id = Brazil.libs.4
+				days = 3
+			}  		
+		}
+	}
+
+    focus = {
+		id = BR1_cw_prepare_for_the_inevitable
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR1_cw_recover_brazilian_core
+		x = 0
+		y = 1
+		cost = 1
+		prerequisite = {
+			focus = BR1_cw_recover_brazilian_core
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# We'll have to choose our strategy for the impending civil war    
+			add_war_support = 0.05
+			country_event = {
+				id = Brazil.libs.3
+				hours = 6
+			}
+		}
+	}
+
+	focus = {
+		id = BR1_cw_declare_state_of_emergency
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR1_cw_prepare_for_the_inevitable
+		x = 0
+		y = 1
+		cost = 2
+		allow_branch = {
+			has_global_flag = BRA_civil_war_ongoing_flag
+		}
+		prerequisite = {
+			focus = BR1_cw_prepare_for_the_inevitable
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# We are in a state of emergency!
+			custom_effect_tooltip = BRA_civil_war_coring_unlocked_tt
+			unlock_decision_tooltip = BR1_cw_attack_junta
+			add_ideas = BR1_state_of_emergency_idea
+			BRA_civil_war_add_claims = yes
+			set_country_flag = BRA_civil_war_reintegration_allowed_flag
+		}
+	}
+
+	# MILITARY MINI-BRANCH
+	# Focus on reforming the military
+	focus = {
+		id = BR1_cw_address_loyalist_army
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR1_cw_declare_state_of_emergency
+		x = -4
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = BR1_cw_declare_state_of_emergency
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Rally up the army loyalists
+			BR1_improve_command_insecurity = yes
+			add_political_power = -50
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = BR1_cw_european_attaches
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR1_cw_address_loyalist_army
+		x = 0
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = BR1_cw_address_loyalist_army
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Request European military training aid
+			FRA = {
+				country_event = {
+					id = Brazil.libs.5
+					days = 2
+				}
+			}
+			GER = {
+				country_event = {
+					id = Brazil.libs.5
+					days = 2
+				}
+			}
+			ENG = {
+				country_event = {
+					id = Brazil.libs.5
+					days = 2
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = BR1_cw_republican_military_education
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR1_cw_address_loyalist_army
+		x = -2
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = BR1_cw_address_loyalist_army
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Purge pro-coup reactionary thought out of military education
+			country_lock_all_division_template = no
+			custom_effect_tooltip = TFRSG_inherited_templates_hint_tt
+			BR1_improve_command_insecurity = yes
+			set_temp_variable = { military_development_var_temp = 0.25 }
+			add_military_development = yes
+		}
+	}
+
+	focus = {
+		id = BR1_cw_repeal_the_amnesty_law
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR1_cw_european_attaches
+		x = 0
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = BR1_cw_republican_military_education
+		}
+		prerequisite = {
+			focus = BR1_cw_european_attaches
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Repeal the 79 amnesty law and crush pro-military coup sentiment
+			unlock_decision_tooltip = BR1_cw_campaign_new_brazilian_army
+			add_political_power = -100
+			BR1_improve_command_insecurity = yes
+			set_temp_variable = { military_development_var_temp = 0.5 }
+			add_military_development = yes
+		}
+	}
+
+	# POLITICAL MINI BRANCH
+	# Navigate the political crisis
+	focus = {
+		id = BR1_cw_assemble_the_broad_coalition
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR1_cw_declare_state_of_emergency
+		x = 0
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = BR1_cw_declare_state_of_emergency
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Unite all republican parties under an emergency coalition
+			add_political_power = -100
+			add_stability = 0.05
+			set_temp_variable = { coalition_partner_var_temp = token:market_liberal }
+			add_to_coalition = yes
+			set_temp_variable = { coalition_partner_var_temp = token:conservative }
+			add_to_coalition = yes
+		}
+	}
+
+	focus = {
+		id = BR1_cw_shield_the_people
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR1_cw_assemble_the_broad_coalition
+		x = -2
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = BR1_cw_assemble_the_broad_coalition
+		}
+		prerequisite = {
+			focus = BR1_cw_address_loyalist_army
+		}
+		mutually_exclusive = {
+			focus = BR1_cw_the_republic_above_all
+			focus = BR1_cw_placate_the_economy
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Focus on social democratic measures to win the Brazilian people over
+			unlock_decision_tooltip = BR1_cw_campaign_brazil_for_all
+			add_stability = 0.15
+			set_temp_variable = { poverty_development_var_temp = 0.25 }
+			add_poverty_development = yes
+			add_power_balance_value = {
+			    id = BR1_federal_gov_balance_of_power
+			    value = -0.05
+			    tooltip_side = BR1_lula_side
+			}
+		}
+	}
+
+	focus = {
+		id = BR1_cw_the_republic_above_all
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR1_cw_assemble_the_broad_coalition
+		x = 0
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = BR1_cw_assemble_the_broad_coalition
+		}
+		mutually_exclusive = {
+			focus = BR1_cw_shield_the_people
+			focus = BR1_cw_placate_the_economy
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Focus on reinforcing the Brazilian institutional powers
+			unlock_decision_tooltip = BR1_cw_campaign_fight_for_democracy
+			add_war_support = 0.15
+			set_temp_variable = { society_development_var_temp = 0.25 }
+			add_society_development = yes
+		}
+	}
+
+	focus = {
+		id = BR1_cw_placate_the_economy
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR1_cw_assemble_the_broad_coalition
+		x = 2
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = BR1_cw_assemble_the_broad_coalition
+		}
+		prerequisite = {
+			focus = BR1_cw_propaganda_contracts_with_globo
+		}
+		mutually_exclusive = {
+			focus = BR1_cw_the_republic_above_all
+			focus = BR1_cw_shield_the_people
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Focus on economic protections and subsidies to keep the elites on the side of the government
+			unlock_decision_tooltip = BR1_cw_campaign_defenders_of_the_economy
+			if = {
+				limit = { has_idea = BR1_economic_crisis_idea }
+				swap_ideas = {
+					remove_idea = BR1_economic_crisis_idea
+					add_idea = BR1_economic_crisis_idea1
+				}
+			}
+			else = {
+				remove_ideas = BR1_economic_crisis_idea
+			}
+			set_temp_variable = { industrial_development_var_temp = 0.25 }
+			add_industrial_development = yes
+			add_power_balance_value = {
+			    id = BR1_federal_gov_balance_of_power
+			    value = 0.05
+			    tooltip_side = BR1_alckmin_side
+			}
+		}
+	}
+
+	focus = {
+		id = BR1_cw_the_employment_law_project
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR1_cw_shield_the_people
+		x = 0
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = BR1_cw_shield_the_people
+			focus = BR1_cw_the_republic_above_all
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# PL do Emprego - focus on right-to-work projects to get Brazilians off informal employment and mobilize the economy
+			unlock_decision_tooltip = BR1_cw_campaign_your_right_to_work
+			remove_ideas = BRA_informalized_economy_idea
+			set_temp_variable = { poverty_development_var_temp = 0.25 }
+			add_poverty_development = yes
+			add_power_balance_value = {
+			    id = BR1_federal_gov_balance_of_power
+			    value = -0.1
+			    tooltip_side = BR1_lula_side
+			}
+		}
+	}
+
+	focus = {
+		id = BR1_cw_anti_coup_constitutional_ammend
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR1_cw_the_republic_above_all
+		x = 0
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = BR1_cw_shield_the_people
+			focus = BR1_cw_the_republic_above_all
+			focus = BR1_cw_placate_the_economy
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# PEC Antigolpe - codify punishment against the military junta masterminds 
+			unlock_decision_tooltip = BR1_cw_campaign_to_overcome_our_past
+			add_political_power = 100
+			set_temp_variable = { society_development_var_temp = 0.25 }
+			add_society_development = yes
+		}
+	}
+
+	focus = {
+		id = BR1_cw_the_budget_law_project
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR1_cw_placate_the_economy
+		x = 0
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = BR1_cw_placate_the_economy
+			focus = BR1_cw_the_republic_above_all
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# PL do Orçamento - ensure the Brazilian budget can sustain itself during the crisis
+			unlock_decision_tooltip = BR1_cw_campaign_fiscal_responsibility
+			set_temp_variable = { income_var_temp = 2500 }
+			add_income = yes
+			add_power_balance_value = {
+			    id = BR1_federal_gov_balance_of_power
+			    value = 0.1
+			    tooltip_side = BR1_alckmin_side
+			}
+		}
+	}
+
+	# PROPAGANDA MINI-BRANCH
+	# Keep the country stable and unlock powerful propaganda bonuses
+	focus = {
+		id = BR1_cw_propaganda_contracts_with_globo
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR1_cw_declare_state_of_emergency
+		x = 4
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = BR1_cw_declare_state_of_emergency
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Use TV Globo to run propaganda
+			add_political_power = 100
+			custom_effect_tooltip = TFRSG_add_campaign_slot_tt
+			add_campaign_slot = yes
+			add_ideas = {
+				BR1_TV_globo_propaganda_idea
+			}
+			BR2 = {
+				add_ideas = {
+					BR1_TV_globo_propaganda_idea_enemy
+				}
+			}
+			BR3 = {
+				add_ideas = {
+					BR1_TV_globo_propaganda_idea_enemy
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = BR1_cw_reach_out_international_community
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR1_cw_propaganda_contracts_with_globo
+		x = 0
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = BR1_cw_propaganda_contracts_with_globo
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Appeal to the international community for humanitarian and diplomatic aid			
+			add_political_power = 200
+			add_stability = 0.15
+		}
+	}
+
+	focus = {
+		id = BR1_cw_economic_stimulus_package
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR1_cw_propaganda_contracts_with_globo
+		x = 2
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = BR1_cw_propaganda_contracts_with_globo
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Inject life into the Brazilian economy at a cost
+			set_temp_variable = { debt_var_temp = 5000 }
+			add_debt = yes
+			if = {
+				limit = { has_idea = BR1_economic_crisis_idea }
+				swap_ideas = {
+					remove_idea = BR1_economic_crisis_idea
+					add_idea = BR1_economic_crisis_idea1
+				}
+			}
+			else = {
+				remove_ideas = BR1_economic_crisis_idea
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = office_park
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = BR1_cw_reintroduce_common_sense_regulations
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR1_cw_reach_out_international_community
+		x = 0
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = BR1_cw_reach_out_international_community
+		}
+		prerequisite = {
+			focus = BR1_cw_economic_stimulus_package
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Use the extraordinary conditions to implement economic regulations lost under Bolsonaro
+			unlock_decision_tooltip = BR1_cw_campaign_all_inclusive_economy
+			set_temp_variable = { academic_development_var_temp = 0.25 }
+			add_academic_development = yes
+			set_temp_variable = { farming_development_var_temp = 0.25 }
+			add_farming_development = yes
+			set_temp_variable = { industrial_development_var_temp = 0.25 }
+			add_industrial_development = yes
+		}
+	}
+
+	focus = {
+		id = BR1_cw_appeal_to_the_un
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR1_cw_anti_coup_constitutional_ammend
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = BR1_cw_anti_coup_constitutional_ammend
+		}
+		prerequisite = {
+			focus = BR1_cw_the_employment_law_project
+			focus = BR1_cw_the_budget_law_project
+		}
+		prerequisite = {
+			focus = BR1_cw_repeal_the_amnesty_law
+			focus = BR1_cw_reintroduce_common_sense_regulations
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# COME DRINK YOUR CORN SYRUP
+			# Spawn an allied UN mission in Amapá and enables declaring war on other unifiers
+			unlock_decision_tooltip = BR1_cw_attack_front
+			unlock_decision_tooltip = BR1_cw_attack_amazon
+			unlock_decision_tooltip = BR1_cw_attack_fascists
+			add_war_support = 0.15
+			country_event = {
+				id = Brazil.libs.10
+				days = 3
+			}
+		}
+	}
+
+	focus = {
+		id = BR1_cw_the_republic_endures
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR1_cw_appeal_to_the_un
+		x = 0
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = BR1_cw_appeal_to_the_un
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = BRA_civil_war_unifiers_defeated_tt
+				NOT = {
+					country_exists = BR2
+					country_exists = BR3					
+				}
+				OR = {
+					NOT = { country_exists = BR4 }
+					has_subject = BR4
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			if = {
+				limit = { country_exists = BR4 }
+				annex_country = { target = BR4 }
+			}
+			if = {
+				limit = { country_exists = UNB }
+				annex_country = { target = UNB }
+			}
+		}
+	}
+
+	focus = {
+		id = BR1_reclaim_sao_paulo
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR1_cw_the_republic_endures
+		x = -1
+		y = 1
+		cost = 2
+		allow_branch = {
+			has_completed_focus = BR1_cw_the_republic_endures
+		}
+		prerequisite = {
+			focus = BR1_cw_the_republic_endures
+		}
+		bypass = {
+			NOT = { country_exists = SPA }
+		}		
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# São Paulo breakaway ultimatum
+			SPA = {
+				country_event = {
+					id = Brazil.libs.11
+					days = 3
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = BR1_reclaim_the_south
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR1_cw_the_republic_endures
+		x = 1
+		y = 1
+		cost = 2
+		allow_branch = {
+			has_completed_focus = BR1_cw_the_republic_endures
+		}
+		prerequisite = {
+			focus = BR1_cw_the_republic_endures
+		}	
+		bypass = {
+			NOT = { country_exists = SUL }
+		}		
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Sul breakaway ultimatum
+			SUL = {
+				country_event = {
+					id = Brazil.libs.14
+					days = 3
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = BR1_a_victory_for_democracy
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR1_reclaim_sao_paulo
+		x = 1
+		y = 1
+		cost = 1
+		prerequisite = {
+			focus = BR1_reclaim_sao_paulo
+		}
+		prerequisite = {
+			focus = BR1_reclaim_the_south
+		}
+		available = {
+			has_war = no
+			custom_trigger_tooltip = {
+				tooltip = BRA_civil_war_breakaways_defeated_tt
+				NOT = {
+					country_exists = AMZ
+					country_exists = SPA
+					country_exists = SUL
+				}
+			}
+		}		
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# The civil war will be over!
+			add_stability = 0.25
+			add_war_support = 0.05
+			BRA_civil_war_end = yes
+
+			country_event = {
+				id = Brazil.timeline.13
+				days = 7
+			}
+
+			hidden_effect = {
+				news_event = {
+					id = Brazilnews.9
+					hours = 12
+				}
+			}
+
+			set_variable = { global.TFRSG_active_BRA_tag = BR1 }
+		}
+	}
+}

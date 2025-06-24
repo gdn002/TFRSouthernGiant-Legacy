@@ -1,0 +1,279 @@
+## Pre-2022 Elections BOP between radicalization and stabilization ##
+BRA_political_radicalization_balance = {
+	initial_value = 0
+	left_side = BRA_radicalization_side
+	right_side = BRA_stabilization_side
+	decision_category = BRA_political_radicalization_category
+
+	# Center
+	range = {
+		id = BRA_medium_radicalization_range
+		min = -0.2
+		max = 0.2
+		modifier = {
+			political_power_factor = -0.15
+			social_democrat_drift = 0.02
+			conservative_drift = 0.02
+
+			custom_modifier_tooltip = BRA_low_civil_war_chance_tooltip
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	# Radicalization Side
+	side = {
+		id = BRA_radicalization_side
+		icon = GFX_BRA_bop_radicalization
+		range = {
+			id = BRA_total_radicalization_range
+			min = -1
+			max = -0.8
+			modifier = {
+				political_power_factor = -0.3
+				stability_factor = -0.25
+				libertarian_socialist_drift = 0.02
+				authoritarian_democrat_drift = 0.02
+				communist_drift = 0.01
+			    nationalist_drift = 0.01
+
+				custom_modifier_tooltip = BRA_high_civil_war_chance_tooltip
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = BRA_severe_radicalization_range
+			min = -0.8
+			max = -0.5
+			modifier = {
+				political_power_factor = -0.25
+				stability_factor = -0.15
+				libertarian_socialist_drift = 0.02
+				authoritarian_democrat_drift = 0.02
+				social_democrat_drift = 0.01
+			    conservative_drift = 0.01
+
+				custom_modifier_tooltip = BRA_medium_civil_war_chance_tooltip
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = BRA_high_radicalization_range
+			min = -0.5
+			max = -0.2
+			modifier = {
+				political_power_factor = -0.2
+				stability_factor = -0.05
+				libertarian_socialist_drift = 0.01
+				authoritarian_democrat_drift = 0.01
+				social_democrat_drift = 0.02
+			    conservative_drift = 0.02
+
+				custom_modifier_tooltip = BRA_low_civil_war_chance_tooltip
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+	}
+
+	# Stabilization Side
+	side = {
+		id = BRA_stabilization_side
+		icon = GFX_BRA_bop_stabilization
+		range = {
+			id = BRA_low_radicalization_range
+			min = 0.2
+			max = 0.5
+			modifier = {
+				political_power_factor = -0.1
+				social_liberal_drift = 0.01
+				social_democrat_drift = 0.01
+			    conservative_drift = 0.01
+
+				custom_modifier_tooltip = BRA_no_civil_war_chance_tooltip
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = BRA_waning_radicalization_range
+			min = 0.5
+			max = 0.8
+			modifier = {
+				political_power_factor = -0.05
+				stability_factor = 0.05
+				social_liberal_drift = 0.02
+				social_democrat_drift = 0.01
+			    conservative_drift = 0.01
+
+				custom_modifier_tooltip = BRA_no_civil_war_chance_tooltip
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = BRA_stabilization_range
+			min = 0.8
+			max = 1
+			modifier = {
+				stability_factor = 0.15
+				social_liberal_drift = 0.04
+
+				custom_modifier_tooltip = BRA_no_civil_war_chance_tooltip
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+	}
+}
+
+## Political alignment BOP for the presidential terms ##
+BRA_political_alignment_balance = {
+	initial_value = 0
+	left_side = BRA_progressive_side
+	right_side = BRA_reactionary_side
+	decision_category = BRA_political_radicalization_bop_category
+
+	# Center
+	range = {
+		id = BRA_balanced_alignment_range
+		min = -0.15
+		max = 0.15
+		modifier = {
+			social_liberal_drift = 0.01
+			market_liberal_drift = 0.01
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	# Progressivism Side
+	side = {
+		id = BRA_progressive_side
+		icon = GFX_BRA_progressive_side
+		range = {
+			id = BRA_strong_radical_range
+			min = -1
+			max = -0.8
+			modifier = {
+				libertarian_socialist_drift = 0.02
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = BRA_leaning_radical_range
+			min = -0.8
+			max = -0.6
+			modifier = {
+				libertarian_socialist_drift = 0.01
+				social_democrat_drift = 0.01
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = BRA_strong_reformist_range
+			min = -0.6
+			max = -0.4
+			modifier = {
+				social_democrat_drift = 0.02
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = BRA_leaning_reformist_range
+			min = -0.4
+			max = -0.15
+			modifier = {
+				social_democrat_drift = 0.01
+				social_liberal_drift = 0.01
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+	}
+
+	# Reactionary Side
+	side = {
+		id = BRA_reactionary_side
+		icon = GFX_BRA_reactionary_side
+		range = {
+			id = BRA_leaning_conservative_range
+			min = 0.15
+			max = 0.4
+			modifier = {
+				market_liberal_drift = 0.01
+			    conservative_drift = 0.01
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = BRA_strong_conservative_range
+			min = 0.4
+			max = 0.6
+			modifier = {
+				conservative_drift = 0.02
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = BRA_leaning_reactionary_range
+			min = 0.6
+			max = 0.8
+			modifier = {
+				authoritarian_democrat_drift = 0.01
+				conservative_drift = 0.01
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = BRA_strong_reactionary_range
+			min = 0.8
+			max = 1
+			modifier = {
+				authoritarian_democrat_drift = 0.02
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+	}
+}

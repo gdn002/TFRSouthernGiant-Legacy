@@ -1,0 +1,470 @@
+﻿focus = {
+	current = "BRA_second_half_of_bolsonaro"
+	progress = 20
+}
+
+division_template = {
+	name = "Polícia Militar"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+		militia = { x = 0 y = 3 }
+	}
+	support = {
+		military_police = {
+			x = 0
+			y = 0
+		}
+	}
+	priority = 0
+
+	override_model = southamerican_gfx_infantry_entity
+}
+
+division_template = {
+	name = "Comando Militar"
+	is_locked = yes
+	
+	regiments = {						
+		bus = { x = 0 y = 0 }
+	}
+	priority = 2
+
+	override_model = southamerican_gfx_motorized_entity
+}
+
+division_template = {
+	name = "Brigada de Infantaria Motorizada"
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 0 y = 3 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+	}
+
+	override_model = southamerican_gfx_motorized_entity
+}
+
+division_template = {
+	name = "Brigada de Infantaria Mecanizada"
+
+	regiments = {
+		light_mechanized = { x = 0 y = 0 }
+		light_mechanized = { x = 0 y = 1 }
+		light_mechanized = { x = 0 y = 2 }
+		light_mechanized = { x = 0 y = 3 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+	}
+
+	override_model = southamerican_gfx_mechanized_entity
+}
+
+division_template = {
+	name = "Brigada de Infantaria Blindada"
+
+	regiments = {
+		mechanized = { x = 0 y = 0 }
+		mechanized = { x = 0 y = 1 }
+		mechanized = { x = 0 y = 2 }
+		mechanized = { x = 0 y = 3 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+	}
+
+	override_model = southamerican_gfx_mechanized_entity
+}
+
+division_template = {
+	name = "Brigada de Cavalaria Mecanizada"
+
+	regiments = {
+		mechanized = { x = 0 y = 0 }
+		mechanized = { x = 0 y = 1 }
+		mechanized = { x = 0 y = 2 }
+		mechanized = { x = 0 y = 3 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+	}
+
+	support = {
+		engineer = { x = 0 y = 0 }
+		spaa_company = { x = 0 y = 1 }
+		light_tank_recon = { x = 0 y = 2 }
+		artillery_brigade = { x = 0 y = 3 }
+	}
+
+	override_model = southamerican_gfx_mechanized_entity
+}
+
+division_template = {
+	name = "Brigada de Cavalaria Blindada"
+
+	regiments = {
+		modern_armor = { x = 0 y = 0 }
+		modern_armor = { x = 0 y = 1 }
+		modern_armor = { x = 0 y = 2 }
+		modern_armor = { x = 0 y = 3 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		mechanized = { x = 2 y = 0 }
+		mechanized = { x = 2 y = 1 }
+		modern_sp_artillery_brigade = { x = 3 y = 0 }
+	}
+
+	support = {
+		spaa_company = { x = 0 y = 0 }
+	}
+
+	override_model = modern_armor_entity
+}
+
+division_template = {
+	name = "Corpo de Fuzileiros Navais"
+
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		amphibious_mechanized = { x = 0 y = 1 }
+		amphibious_mechanized = { x = 0 y = 2 }
+		modern_sp_artillery_brigade = { x = 1 y = 0 }
+		marine = { x = 2 y = 0 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+	}
+
+	override_model = southamerican_gfx_mechanized_entity
+}
+
+division_template = {
+	name = "Brigada de Infantaria de Selva"
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		special_forces = { x = 0 y = 3 }
+		artillery_brigade = { x = 0 y = 4 }
+	}
+	support = {
+		signal_company = { x = 0 y = 0 }
+		logistics_company = { x = 0 y = 1 }
+	}
+
+	override_model = southamerican_gfx_infantry_entity
+}
+
+division_template = {
+	name = "Brigada de Infantaria Leve de Montanha"
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		recce = { x = 0 y = 3 }
+		artillery = { x = 0 y = 4 }
+	}
+	support = {
+		signal_company = { x = 0 y = 0 }
+		logistics_company = { x = 0 y = 1 }
+	}
+
+	override_model = southamerican_gfx_infantry_entity
+}
+
+division_template = {
+	name = "Brigada de Infantaria Leve (Aeromovel)"
+
+	regiments = {
+		paratrooper = { x = 0 y = 0 }
+		paratrooper = { x = 0 y = 1 }
+		paratrooper = { x = 0 y = 2 }
+		paratrooper = { x = 0 y = 3 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+	}
+
+	override_model = southamerican_gfx_infantry_entity
+}
+
+division_template = {
+	name = "Brigada de Infantaria de Fronteira"
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+	}
+	support = {
+		signal_company = { x = 0 y = 0 }
+	}
+
+	override_model = southamerican_gfx_infantry_entity
+}
+
+division_template = {
+	name = "Brigada de Infantaria Leve"
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+		artillery_brigade = { x = 1 y = 0 }
+	}
+
+	support = {
+		engineer = { x = 0 y = 0 }
+	}
+
+	override_model = southamerican_gfx_infantry_entity
+}
+
+units = {
+	# COMANDO MILITAR
+	division = {
+		name = "Com. Mil. Amazonia"
+		location = 15029
+		division_template = "Comando Militar"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "Com. Mil. Leste"
+		location = 15010
+		division_template = "Comando Militar"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "Com. Mil. Norte"
+		location = 12853
+		division_template = "Comando Militar"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "Com. Mil. Nordeste"
+		location = 5168
+		division_template = "Comando Militar"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "Com. Mil. Oeste"
+		location = 10959
+		division_template = "Comando Militar"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "Com. Mil. Planalto"
+		location = 14977
+		division_template = "Comando Militar"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "Com. Mil. Sudeste"
+		location = 15006
+		division_template = "Comando Militar"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "Com. Mil. Sul"
+		location = 10447
+		division_template = "Comando Militar"
+		start_experience_factor = 0.5		
+	}
+
+	# BRIGADA DE INFANTARIA DE SELVA
+	division = {
+		name = "1a Bda Inf Sl"
+		location = 5214
+		division_template = "Brigada de Infantaria de Selva"
+		start_experience_factor = 0.6		
+	}
+	division = {
+		name = "2a Bda Inf Sl"
+		location = 12919
+		division_template = "Brigada de Infantaria de Selva"
+		start_experience_factor = 0.6		
+	}
+	division = {
+		name = "16a Bda Inf Sl"
+		location = 15024
+		division_template = "Brigada de Infantaria de Selva"
+		start_experience_factor = 0.6		
+	}
+	division = {
+		name = "17a Bda Inf Sl"
+		location = 14985
+		division_template = "Brigada de Infantaria de Selva"
+		start_experience_factor = 0.6		
+	}
+	division = {
+		name = "22a Bda Inf Sl"
+		location = 14995
+		division_template = "Brigada de Infantaria de Selva"
+		start_experience_factor = 0.6		
+	}
+	division = {
+		name = "23a Bda Inf Sl"
+		location = 2214
+		division_template = "Brigada de Infantaria de Selva"
+		start_experience_factor = 0.6		
+	}
+
+	# BRIGADA DE INFANTARIA MOTORIZADA
+	division = {
+		name = "3a Bda Inf Mtz"
+		location = 8140
+		division_template = "Brigada de Infantaria Motorizada"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "7a Bda Inf Mtz"
+		location = 10933
+		division_template = "Brigada de Infantaria Motorizada"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "8a Bda Inf Mtz"
+		location = 7638
+		division_template = "Brigada de Infantaria Motorizada"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "9a Bda Inf Mtz"
+		location = 15010
+		division_template = "Brigada de Infantaria Motorizada"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "10a Bda Inf Mtz"
+		location = 5168
+		division_template = "Brigada de Infantaria Motorizada"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "13a Bda Inf Mtz"
+		location = 2111
+		division_template = "Brigada de Infantaria Motorizada"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "14a Bda Inf Mtz"
+		location = 10405
+		division_template = "Brigada de Infantaria Motorizada"
+		start_experience_factor = 0.5		
+	}
+
+	# BRIGADA DE INFANTARIA LEVE DE MONTANHA	
+	division = {
+		name = "4a Bda Inf L Mth"
+		location = 12334
+		division_template = "Brigada de Infantaria Leve de Montanha"
+		start_experience_factor = 0.6		
+	}
+
+	# BRIGADA DE CAVALARIA BLINDADA
+	division = {
+		name = "5a Bda C Bld"
+		location = 8239
+		division_template = "Brigada de Cavalaria Blindada"
+		start_experience_factor = 0.5		
+	}
+
+	# BRIGADA DE INFANTARIA BLINDADA
+	division = {
+		name = "6a Bda Inf Bld"
+		location = 1598
+		division_template = "Brigada de Infantaria Blindada"
+		start_experience_factor = 0.5		
+	}
+
+	# BRIGADA DE INFANTARIA LEVEL AEROMOVEL
+	division = {
+		name = "12a Bda Inf L Amv"
+		location = 15009
+		division_template = "Brigada de Infantaria Leve (Aeromovel)"
+		start_experience_factor = 0.5		
+	}
+
+	# BRIGADA DE INFANTARIA MECANIZADA
+	division = {
+		name = "11a Bda Inf Mec"
+		location = 10360
+		division_template = "Brigada de Infantaria Mecanizada"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "15a Bda Inf Mec"
+		location = 5178
+		division_template = "Brigada de Infantaria Mecanizada"
+		start_experience_factor = 0.5		
+	}
+
+	# BRIGADA DE INFANTARIA DE FRONTEIRA
+	division = {
+		name = "18a Bda Inf Fron"
+		location = 8189
+		division_template = "Brigada de Infantaria de Fronteira"
+		start_experience_factor = 0.5		
+	}
+
+	# BRIGADA DE CAVALARIA MECANIZADA
+	division = {
+		name = "1a Bda C Mec"
+		location = 1585
+		division_template = "Brigada de Cavalaria Mecanizada"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "2a Bda C Mec"
+		location = 4575
+		division_template = "Brigada de Cavalaria Mecanizada"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "3a Bda C Mec"
+		location = 4604
+		division_template = "Brigada de Cavalaria Mecanizada"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "4a Bda C Mec"
+		location = 10959
+		division_template = "Brigada de Cavalaria Mecanizada"
+		start_experience_factor = 0.5		
+	}
+
+	division = {
+		name = "Corpo de Fuzileiros Navais"
+		location = 15010
+		division_template = "Corpo de Fuzileiros Navais"
+		start_experience_factor = 0.6		
+	}
+}
+
+instant_effect = {
+	add_equipment_to_stockpile = {
+		type = motorized_equipment_1
+		amount = 800
+		producer = BRA
+	}
+	
+	add_equipment_to_stockpile = {
+		type = train_equipment_1
+		amount = 10
+		producer = BRA
+	}
+}

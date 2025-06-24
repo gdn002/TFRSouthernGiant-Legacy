@@ -1,0 +1,79 @@
+﻿division_template = {
+	name = "Brazilian Militia"
+	is_locked = yes
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+		militia = { x = 0 y = 3 }
+	}
+}
+
+units = {
+	division = {
+		name = "1a Milícia Republicana"
+		location = 15010
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "2a Milícia Republicana"
+		location = 15011
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "3a Milícia Republicana"
+		location = 8148
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "4a Milícia Republicana"
+		location = 10999
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "5a Milícia Republicana"
+		location = 12977
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "6a Milícia Republicana"
+		location = 10931
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "7a Milícia Republicana"
+		location = 12996
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "8a Milícia Republicana"
+		location = 8148
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "Com. Mil. Leste"
+		location = 15010
+		division_template = "Comando Militar"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "3a Bda Inf Mtz"
+		location = 8140
+		division_template = "Brigada de Infantaria Motorizada"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "9a Bda Inf Mtz"
+		location = 15010
+		division_template = "Brigada de Infantaria Motorizada"
+		start_experience_factor = 0.5		
+	}
+}

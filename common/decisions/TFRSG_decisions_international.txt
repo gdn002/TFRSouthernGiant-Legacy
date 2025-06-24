@@ -1,0 +1,83 @@
+# INJECT DECISIONS INTO OTHER COUNTRIES REGARDING BRAZIL
+
+# Soviet Union ADS decisions
+SOV_ADS_category = {
+    SOV_invite_brazil_to_ads = {
+		visible = {
+			hidden_trigger = {
+				has_completed_focus = SOV_support_new_pink_red_tide
+				BRA = {
+                    OR = {
+                        has_government = social_democrat
+                        has_government = libertarian_socialist
+                    }
+					
+				}
+			}
+		}
+		icon = GFX_SOV_decision_sponsor_communists
+		available = {
+			hidden_trigger = {
+				tag = SOV
+			}
+		}
+		modifier = {
+		}
+		ai_will_do = {
+			base = 10
+		}
+		fire_only_once = yes
+		days_remove = 5
+		cost = 15
+		remove_effect = {
+			BRA = {
+				country_event = {
+					id = russia.3
+					days = 1
+					random_days = 7
+				}
+			}
+		}
+	}
+
+    SOV_invite_commie_brazil_to_ads = {
+		visible = {
+			hidden_trigger = {
+				has_completed_focus = SOV_support_new_pink_red_tide
+				BR3 = {
+                    exists = yes	
+					OR = {
+                        has_government = social_democrat
+                        has_government = libertarian_socialist
+                        has_government = communist
+                        has_government = totalitarian_socialist
+                    }	
+				}
+			}
+		}
+		icon = GFX_SOV_decision_sponsor_communists
+		available = {
+            has_global_flag = BRA_civil_war_ended_flag
+			hidden_trigger = {
+				tag = SOV
+			}
+		}
+		modifier = {
+		}
+		ai_will_do = {
+			base = 10
+		}
+		fire_only_once = yes
+		days_remove = 5
+		cost = 15
+		remove_effect = {
+			BR3 = {
+				country_event = {
+					id = russia.3
+					days = 1
+					random_days = 7
+				}
+			}
+		}
+	}
+}

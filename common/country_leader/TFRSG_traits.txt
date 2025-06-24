@@ -1,0 +1,72 @@
+leader_traits = {
+    BRA_former_car_wash_judge = {
+		random = no
+		operation_cost = -0.15
+        intelligence_agency_defense = -0.1
+        intel_network_gain_factor = 0.1
+        decryption_power_factor = 0.05
+		low_stability_weekly = 0.002
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+    BRA_coup_sympathizer = {
+        random = no
+        political_power_cost = 0.08
+        stability_factor = -0.06
+
+        ai_will_do = {
+			factor = 1
+		}
+    }
+
+    BRA_military_politician = {
+		random = no
+        political_power_gain = 0.05
+		stability_factor = -0.05
+		consumer_goods_factor = -0.1
+		nationalist_drift = 0.01
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+    BRA_serial_centrist = {
+		random = no
+		political_power_gain = 0.1
+        stability_factor = 0.05
+		business_value_factor = 0.15
+		tax_business_rate_factor = -0.15
+		income_growth_factor  = 0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	BRA_damaged_reputation = {
+		random = no
+		political_power_gain = -0.05
+	}
+
+	BRA_severely_damaged_reputation = {
+		random = no
+		political_power_gain = -0.1
+	}
+
+	BRA_vindicated_reputation = {
+		random = no
+		political_power_gain = 0.08
+	}
+
+	hos_revolutionary_fervor = {
+		random = no
+		political_power_gain = 0.3
+		libertarian_socialist_drift = 0.02
+		communist_drift = 0.02
+		totalitarian_socialist_drift = 0.02
+	}
+}

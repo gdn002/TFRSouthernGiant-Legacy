@@ -1,0 +1,1622 @@
+# DECISIONS EXCLUSIVE TO THE FEDERATIVE REPUBLIC OF BRAZIL (BRA)
+
+#### POLITICAL RADICALIZATION BOP ####
+BRA_political_radicalization_category = {
+	BRA_patriotic_marches = {
+		cancel_if_not_visible = yes
+		days_re_enable = 30
+		days_remove = 15
+		cost = 25
+		visible = {
+			NOT = {
+				has_country_flag = BRA_2022_elections_over_flag
+			}
+		}
+		available = {
+			NOT = {
+				has_country_flag = BRA_is_taking_action_radicalization_bop
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BRA_is_taking_action_radicalization_bop
+			}
+ 		}
+		modifier = {
+			war_support_weekly = 0.001
+			conservative_drift = 0.01
+			market_liberal_drift = 0.01
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BRA_is_taking_action_radicalization_bop
+			}
+			add_power_balance_value = {
+    			id = BRA_political_radicalization_balance
+			    value = -0.015
+			    tooltip_side = BRA_radicalization_side
+			}
+		}
+	}
+	BRA_pro_democracy_marches = {
+		cancel_if_not_visible = yes
+		days_re_enable = 30
+		days_remove = 15
+		cost = 25
+		visible = {
+			NOT = {
+				has_country_flag = BRA_2022_elections_over_flag
+			}
+		}
+		available = {
+			NOT = {
+				has_country_flag = BRA_is_taking_action_radicalization_bop
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BRA_is_taking_action_radicalization_bop
+			}
+ 		}
+		modifier = {
+			stability_weekly = 0.001
+			social_democrat_drift = 0.01
+			social_liberal_drift = 0.01
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BRA_is_taking_action_radicalization_bop
+			}
+			add_power_balance_value = {
+    			id = BRA_political_radicalization_balance
+			    value = 0.015
+			    tooltip_side = BRA_stabilization_side
+			}
+		}
+	}
+	BRA_small_business_marches = {
+		cancel_if_not_visible = yes
+		days_re_enable = 30
+		days_remove = 15
+		cost = 25
+		visible = {
+			NOT = {
+				has_country_flag = BRA_2022_elections_over_flag
+			}
+		}
+		available = {
+			NOT = {
+				has_country_flag = BRA_is_taking_action_radicalization_bop
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BRA_is_taking_action_radicalization_bop
+			}
+ 		}
+		modifier = {
+			political_power_gain = 0.01
+			market_liberal_drift = 0.01
+			social_liberal_drift = 0.01
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BRA_is_taking_action_radicalization_bop
+			}
+			add_power_balance_value = {
+    			id = BRA_political_radicalization_balance
+			    value = 0.015
+			    tooltip_side = BRA_stabilization_side
+			}
+		}
+	}
+	BRA_popular_front_marches = {
+		cancel_if_not_visible = yes
+		days_re_enable = 30
+		days_remove = 15
+		cost = 25
+		visible = {
+			NOT = {
+				has_country_flag = BRA_2022_elections_over_flag
+			}
+			has_country_flag = BRA_popular_front_formed
+		}
+		available = {			
+			NOT = {
+				has_country_flag = BRA_is_taking_action_radicalization_bop
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BRA_is_taking_action_radicalization_bop
+			}
+ 		}
+		modifier = {
+			political_power_cost = 0.1
+			libertarian_socialist_drift = 0.01
+			communist_drift = 0.01
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BRA_is_taking_action_radicalization_bop
+			}
+			add_power_balance_value = {
+    			id = BRA_political_radicalization_balance
+			    value = -0.025
+			    tooltip_side = BRA_radicalization_side
+			}
+		}
+	}
+	BRA_pro_military_marches = {
+		cancel_if_not_visible = yes
+		days_re_enable = 30
+		days_remove = 15
+		cost = 25
+		visible = {
+			NOT = {
+				has_country_flag = BRA_2022_elections_over_flag
+			}
+		}
+		available = {			
+			NOT = {
+				has_country_flag = BRA_is_taking_action_radicalization_bop
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BRA_is_taking_action_radicalization_bop
+			}
+ 		}
+		modifier = {
+			stability_weekly = -0.005
+			war_support_weekly = 0.005
+			authoritarian_democrat_drift = 0.01
+			nationalist_drift = 0.01
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BRA_is_taking_action_radicalization_bop
+			}
+			add_power_balance_value = {
+    			id = BRA_political_radicalization_balance
+			    value = -0.025
+			    tooltip_side = BRA_radicalization_side
+			}
+		}
+	}
+
+	## Post Elections
+	BRA_curtail_agitation = {
+		cancel_if_not_visible = yes
+		days_re_enable = 20
+		days_remove = 15
+		cost = 50
+		visible = {
+			OR = {
+				has_completed_focus = BRA_2022_bolsonarisms_last_stand
+				has_completed_focus = BRA_2022_republic_on_trial
+				has_completed_focus = BRA_2022_the_lefts_true_colors
+			}
+		}
+		available = {
+			has_idea = BRA_2022_election_protests_idea
+			NOT = {
+				has_country_flag = BRA_is_taking_action_radicalization_bop
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BRA_is_taking_action_radicalization_bop
+			}
+ 		}
+		modifier = {
+			political_power_cost = 0.1
+			power_balance_daily = 0.001
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BRA_is_taking_action_radicalization_bop
+			}
+			add_power_balance_value = {
+    			id = BRA_political_radicalization_balance
+			    value = 0.05
+			    tooltip_side = BRA_stabilization_side
+			}
+		}
+	}
+
+	BRA_disperse_protests = {
+		cancel_if_not_visible = yes
+		days_re_enable = 20
+		days_remove = 15
+		custom_cost_trigger = {
+            command_power > 10
+        }
+        custom_cost_text = 10cp_cost
+		visible = {
+			OR = {
+				has_completed_focus = BRA_2022_bolsonarisms_last_stand
+				has_completed_focus = BRA_2022_republic_on_trial
+				has_completed_focus = BRA_2022_the_lefts_true_colors
+			}
+		}
+		available = {
+			has_idea = BRA_2022_election_protests_idea
+			NOT = {
+				has_country_flag = BRA_is_taking_action_radicalization_bop
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BRA_is_taking_action_radicalization_bop
+			}
+ 		}
+		modifier = {
+			political_power_cost = 0.1
+			command_power_gain = -0.1
+			power_balance_daily = 0.005
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BRA_is_taking_action_radicalization_bop
+			}
+			add_stability = -0.025
+			add_power_balance_value = {
+    			id = BRA_political_radicalization_balance
+			    value = 0.05
+			    tooltip_side = BRA_stabilization_side
+			}
+		}
+	}
+
+	BRA_fan_up_radicalism = {
+		cancel_if_not_visible = yes
+		days_re_enable = 20
+		days_remove = 15
+		cost = 25
+		visible = {
+			OR = {
+				has_completed_focus = BRA_2022_bolsonarisms_last_stand
+				has_completed_focus = BRA_2022_republic_on_trial
+				has_completed_focus = BRA_2022_the_lefts_true_colors
+			}
+		}
+		available = {
+			has_idea = BRA_2022_election_protests_idea
+			NOT = {
+				has_country_flag = BRA_is_taking_action_radicalization_bop
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BRA_is_taking_action_radicalization_bop
+			}
+ 		}
+		modifier = {
+			political_power_cost = 0.1
+			power_balance_daily = -0.001
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BRA_is_taking_action_radicalization_bop
+			}
+			add_stability = -0.05
+			add_power_balance_value = {
+    			id = BRA_political_radicalization_balance
+			    value = -0.05
+			    tooltip_side = BRA_radicalization_side
+			}
+		}
+	}
+}
+
+#### 2022 ELECTIONS ####
+BRA_2022_elections_category = {
+	BRA_2022_elections_countdown_mission = {
+		priority = 10
+		days_mission_timeout = 90
+		activation = {
+			always = no
+		}
+		available = {
+			has_country_flag = BRA_2022_elections_suspended_flag
+		}
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		is_good = yes
+		ai_will_do = {
+			base = 50
+		}
+		timeout_effect = {
+			BRA_get_2022_elections_result = yes			
+		}
+	}
+
+	BRA_2022_elections_opponents_mission = {
+		priority = 10
+		available = {
+			has_country_flag = BRA_2022_elections_over_flag
+		}
+		days_mission_timeout = 20
+		activation = {
+			always = no
+		}
+		visible = {
+		}
+		fire_only_once = no
+		cancel_if_not_visible = yes
+		fixed_random_seed = no
+		is_good = no
+		ai_will_do = {
+			base = 50
+		}
+		timeout_effect = {
+			if = {
+				limit = {
+					NOT = { has_completed_focus = BRA_2022_together_for_brazil }
+				}
+				random_list = {
+					25 = {
+
+					}
+					50 = {
+						set_temp_variable = { BRA_election_approval_rating_pt_var_temp = 0.005 }
+						BRA_add_election_approval_rating_pt = yes
+						add_popularity = {
+							ideology = social_democrat
+							popularity = 0.005
+						}
+					}
+					25 = {
+						set_temp_variable = { BRA_election_approval_rating_pt_var_temp = 0.01 }
+						BRA_add_election_approval_rating_pt = yes
+						add_popularity = {
+							ideology = social_democrat
+							popularity = 0.01
+						}
+					}
+				}			
+			}
+			if = {
+				limit = {
+					NOT = { has_completed_focus = BRA_2022_uniting_brazil }
+				}
+				random_list = {
+					25 = {
+						
+					}
+					50 = {
+						set_temp_variable = { BRA_election_approval_rating_psdb_var_temp = 0.005 }
+						BRA_add_election_approval_rating_psdb = yes
+						add_popularity = {
+							ideology = social_liberal
+							popularity = 0.005
+						}
+					}
+					25 = {
+						set_temp_variable = { BRA_election_approval_rating_psdb_var_temp = 0.01 }
+						BRA_add_election_approval_rating_psdb = yes
+						add_popularity = {
+							ideology = social_liberal
+							popularity = 0.01
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_completed_focus = BRA_2022_god_country_family }
+				}
+				random_list = {
+					25 = {
+						
+					}
+					50 = {
+						set_temp_variable = { BRA_election_approval_rating_pl_var_temp = 0.005 }
+						BRA_add_election_approval_rating_pl = yes
+						add_popularity = {
+							ideology = conservative
+							popularity = 0.005
+						}
+					}
+					25 = {
+						set_temp_variable = { BRA_election_approval_rating_pl_var_temp = 0.01 }
+						BRA_add_election_approval_rating_pl = yes
+						add_popularity = {
+							ideology = conservative
+							popularity = 0.01
+						}
+					}
+				}
+			}
+			activate_mission = BRA_2022_elections_opponents_mission
+		}
+	}
+
+	BRA_2022_elections_socdem_campaign = {
+		cancel_if_not_visible = yes
+		days_re_enable = 20
+		days_remove = 15
+		cost = 50
+		visible = {
+			has_completed_focus = BRA_2022_reinvigorate_social_democracy
+			NOT = {
+				has_country_flag = BRA_2022_elections_over_flag
+			}
+		}
+		available = {
+			NOT = {
+				has_country_flag = BRA_is_campaigning_flag
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BRA_is_campaigning_flag
+			}
+ 		}
+		modifier = {
+			political_power_cost = 0.05
+			social_democrat_drift = 0.01
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BRA_is_campaigning_flag
+			}
+			set_temp_variable = { BRA_election_approval_rating_pt_var_temp = 0.025 }
+			BRA_add_election_approval_rating_pt = yes;
+			add_power_balance_value = {
+    			id = BRA_political_radicalization_balance
+			    value = 0.01
+			    tooltip_side = BRA_stabilization_side
+			}
+		}
+	}
+
+	BRA_2022_elections_popular_front_campaign = {
+		cancel_if_not_visible = yes
+		days_re_enable = 20
+		days_remove = 15
+		cost = 50
+		visible = {
+			has_completed_focus = BRA_2022_mingle_with_popular_front
+			NOT = {
+				has_country_flag = BRA_2022_elections_over_flag
+			}
+		}
+		available = {
+			NOT = {
+				has_country_flag = BRA_is_campaigning_flag
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BRA_is_campaigning_flag
+			}
+ 		}
+		modifier = {
+			political_power_cost = 0.1
+			social_democrat_drift = 0.02
+			libertarian_socialist_drift = 0.01
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BRA_is_campaigning_flag
+			}
+			set_temp_variable = { BRA_election_approval_rating_pt_var_temp = 0.05 }
+			BRA_add_election_approval_rating_pt = yes;
+			add_power_balance_value = {
+    			id = BRA_political_radicalization_balance
+			    value = -0.01
+			    tooltip_side = BRA_radicalization_side
+			}
+		}
+	}
+
+	BRA_2022_elections_grassroots_campaign = {
+		cancel_if_not_visible = yes
+		days_re_enable = 20
+		days_remove = 15
+		cost = 75
+		visible = {
+			has_completed_focus = BRA_2022_grassroots_campaigns
+			NOT = {
+				has_country_flag = BRA_2022_elections_over_flag
+			}
+		}
+		available = {
+			NOT = {
+				has_country_flag = BRA_is_campaigning_flag
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BRA_is_campaigning_flag
+			}
+ 		}
+		modifier = {
+			political_power_cost = 0.1
+			social_democrat_drift = 0.02
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BRA_is_campaigning_flag
+			}
+			set_temp_variable = { BRA_election_approval_rating_pt_var_temp = 0.05 }
+			BRA_add_election_approval_rating_pt = yes;
+		}
+	}
+
+	BRA_2022_elections_normalcy_campaign = {
+		cancel_if_not_visible = yes
+		days_re_enable = 20
+		days_remove = 15
+		cost = 50
+		visible = {
+			has_completed_focus = BRA_2022_stand_for_normalcy
+			NOT = {
+				has_country_flag = BRA_2022_elections_over_flag
+			}
+		}
+		available = {
+			NOT = {
+				has_country_flag = BRA_is_campaigning_flag
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BRA_is_campaigning_flag
+			}
+ 		}
+		modifier = {
+			political_power_cost = 0.05
+			social_liberal_drift = 0.01
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BRA_is_campaigning_flag
+			}
+			set_temp_variable = { BRA_election_approval_rating_psdb_var_temp = 0.025 }
+			BRA_add_election_approval_rating_psdb = yes;
+			add_power_balance_value = {
+    			id = BRA_political_radicalization_balance
+			    value = 0.01
+			    tooltip_side = BRA_stabilization_side
+			}
+		}
+	}
+
+	BRA_2022_elections_centrao_campaign = {
+		cancel_if_not_visible = yes
+		days_re_enable = 20
+		days_remove = 15
+		cost = 50
+		visible = {
+			has_completed_focus = BRA_2022_gather_centrao_support
+			NOT = {
+				has_country_flag = BRA_2022_elections_over_flag
+			}
+		}
+		available = {
+			NOT = {
+				has_country_flag = BRA_is_campaigning_flag
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BRA_is_campaigning_flag
+			}
+ 		}
+		modifier = {
+			political_power_cost = 0.1
+			social_liberal_drift = 0.02
+			market_liberal_drift = 0.01
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BRA_is_campaigning_flag
+			}
+			set_temp_variable = { BRA_election_approval_rating_psdb_var_temp = 0.05 }
+			BRA_add_election_approval_rating_psdb = yes;
+			set_temp_variable = { BRA_centrao_influence_var_temp = 0.0025 }
+			BRA_add_centrao_influence = yes
+		}
+	}
+
+	BRA_2022_elections_media_campaign = {
+		cancel_if_not_visible = yes
+		days_re_enable = 20
+		days_remove = 15
+		cost = 75
+		visible = {
+			has_completed_focus = BRA_2022_propaganda_overdrive
+			NOT = {
+				has_country_flag = BRA_2022_elections_over_flag
+			}
+		}
+		available = {
+			NOT = {
+				has_country_flag = BRA_is_campaigning_flag
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BRA_is_campaigning_flag
+			}
+ 		}
+		modifier = {
+			political_power_cost = 0.1
+			social_democrat_drift = 0.02
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BRA_is_campaigning_flag
+			}
+			set_temp_variable = { BRA_election_approval_rating_psdb_var_temp = 0.05 }
+			BRA_add_election_approval_rating_psdb = yes;
+			add_power_balance_value = {
+    			id = BRA_political_radicalization_balance
+			    value = 0.025
+			    tooltip_side = BRA_stabilization_side
+			}
+		}
+	}
+
+	BRA_2022_elections_patriotic_campaign = {
+		cancel_if_not_visible = yes
+		days_re_enable = 20
+		days_remove = 15
+		cost = 50
+		visible = {
+			has_completed_focus = BRA_2022_cruzade_for_brazil
+			NOT = {
+				has_country_flag = BRA_2022_elections_over_flag
+			}
+		}
+		available = {
+			NOT = {
+				has_country_flag = BRA_is_campaigning_flag
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BRA_is_campaigning_flag
+			}
+ 		}
+		modifier = {
+			political_power_cost = 0.05
+			conservative_drift = 0.01
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BRA_is_campaigning_flag
+			}
+			set_temp_variable = { BRA_election_approval_rating_pl_var_temp = 0.025 }
+			BRA_add_election_approval_rating_pl = yes;
+			add_war_support = 0.025
+		}
+	}
+
+	BRA_2022_elections_attack_institutions_campaign = {
+		cancel_if_not_visible = yes
+		days_re_enable = 20
+		days_remove = 15
+		cost = 50
+		visible = {
+			has_completed_focus = BRA_2022_no_holding_back
+			NOT = {
+				has_country_flag = BRA_2022_elections_over_flag
+			}
+		}
+		available = {
+			NOT = {
+				has_country_flag = BRA_is_campaigning_flag
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BRA_is_campaigning_flag
+			}
+ 		}
+		modifier = {
+			political_power_cost = 0.1
+			conservative_drift = 0.02
+			authoritarian_democrat_drift = 0.01
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BRA_is_campaigning_flag
+			}
+			set_temp_variable = { BRA_election_approval_rating_pl_var_temp = 0.05 }
+			BRA_add_election_approval_rating_pl = yes;
+			add_power_balance_value = {
+    			id = BRA_political_radicalization_balance
+			    value = -0.01
+			    tooltip_side = BRA_radicalization_side
+			}
+		}
+	}
+
+	BRA_2022_elections_social_media_campaign = {
+		cancel_if_not_visible = yes
+		days_re_enable = 20
+		days_remove = 15
+		cost = 75
+		visible = {
+			has_completed_focus = BRA_2022_social_media_campaign
+			NOT = {
+				has_country_flag = BRA_2022_elections_over_flag
+			}
+		}
+		available = {
+			NOT = {
+				has_country_flag = BRA_is_campaigning_flag
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BRA_is_campaigning_flag
+			}
+ 		}
+		modifier = {
+			political_power_cost = 0.1
+			conservative_drift = 0.02
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BRA_is_campaigning_flag
+			}
+			set_temp_variable = { BRA_election_approval_rating_pl_var_temp = 0.05 }
+			BRA_add_election_approval_rating_pl = yes;
+			add_power_balance_value = {
+    			id = BRA_political_radicalization_balance
+			    value = -0.005
+			    tooltip_side = BRA_radicalization_side
+			}
+		}
+	}
+
+	BRA_2022_elections_attack_bolsonaro = {
+		cancel_if_not_visible = yes
+		fire_only_once = yes
+		days_remove = 25
+		cost = 150
+		visible = {
+			has_completed_focus = BRA_2022_the_last_stretch
+			NOT = {
+				has_country_flag = BRA_2022_elections_over_flag
+				has_completed_focus = BRA_2022_god_country_family
+			}
+		}
+		complete_effect = {
+			add_stability = -0.05
+			add_power_balance_value = {
+    			id = BRA_political_radicalization_balance
+			    value = -0.025
+			    tooltip_side = BRA_radicalization_side
+			}
+ 		}
+		modifier = {
+			political_power_cost = 0.25
+			conservative_drift = -0.02
+		}
+		remove_effect = {
+			set_temp_variable = { BRA_election_approval_rating_pl_var_temp = -0.1 }
+			BRA_add_election_approval_rating_pl = yes;
+		}
+	}
+
+	BRA_2022_elections_attack_alckmin = {
+		cancel_if_not_visible = yes
+		fire_only_once = yes
+		days_remove = 25
+		cost = 150
+		visible = {
+			has_completed_focus = BRA_2022_the_last_stretch
+			NOT = {			
+				has_country_flag = BRA_2022_elections_over_flag
+				has_completed_focus = BRA_2022_uniting_brazil
+			}
+		}
+		complete_effect = {
+			add_stability = -0.05
+			add_power_balance_value = {
+    			id = BRA_political_radicalization_balance
+			    value = -0.025
+			    tooltip_side = BRA_radicalization_side
+			}
+ 		}
+		modifier = {
+			political_power_cost = 0.25
+			social_liberal_drift = -0.02
+		}
+		remove_effect = {
+			set_temp_variable = { BRA_election_approval_rating_psdb_var_temp = -0.1 }
+			BRA_add_election_approval_rating_psdb = yes;
+		}
+	}
+
+	BRA_2022_elections_attack_lula = {
+		cancel_if_not_visible = yes
+		fire_only_once = yes
+		days_remove = 25
+		cost = 150
+		visible = {
+			has_completed_focus = BRA_2022_the_last_stretch
+			NOT = {
+				has_country_flag = BRA_2022_elections_over_flag
+				has_completed_focus = BRA_2022_together_for_brazil
+			}
+		}
+		complete_effect = {
+			add_stability = -0.05
+			add_power_balance_value = {
+    			id = BRA_political_radicalization_balance
+			    value = -0.025
+			    tooltip_side = BRA_radicalization_side
+			}
+ 		}
+		modifier = {
+			political_power_cost = 0.25
+			social_democrat_drift = -0.02
+		}
+		remove_effect = {
+			set_temp_variable = { BRA_election_approval_rating_pt_var_temp = -0.1 }
+			BRA_add_election_approval_rating_pt = yes;
+		}
+	}
+
+	BRA_2022_elections_police_blockades = {
+		cancel_if_not_visible = yes
+		fire_only_once = yes
+		days_remove = 5
+		custom_cost_trigger = {
+            command_power > 10
+        }
+        custom_cost_text = 10cp_cost
+		visible = {
+			has_completed_focus = BRA_2022_the_last_stretch
+			has_completed_focus = BRA_2022_god_country_family
+			NOT = {
+				has_country_flag = BRA_2022_elections_over_flag
+			}
+		}
+		complete_effect = {
+			hidden_effect = { 
+                add_command_power = -10 
+            }
+			add_stability = -0.1
+			add_power_balance_value = {
+    			id = BRA_political_radicalization_balance
+			    value = -0.05
+			    tooltip_side = BRA_radicalization_side
+			}
+ 		}
+		modifier = {
+			political_power_cost = 0.25
+		}
+		remove_effect = {
+			set_temp_variable = { BRA_election_approval_rating_pt_var_temp = -0.1 }
+			BRA_add_election_approval_rating_pt = yes;
+		}
+	}
+
+	BRA_2022_elections_protests_pacification_mission = {
+		priority = 10
+		days_mission_timeout = 20
+		activation = {
+			always = no
+		}
+		available = {
+			always = no
+		}
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		is_good = yes
+		ai_will_do = {
+			base = 50
+		}
+		timeout_effect = {
+			remove_ideas = BRA_2022_election_protests_idea
+			1445 = { set_demilitarized_zone = no }
+			country_event = {
+				id = Brazil.89
+				days = 3
+			}
+			hidden_effect = {
+				remove_ideas = BRA_2022_election_protests_pacification_idea
+			}
+		}
+	}
+}
+
+#### CHAMBER OF DEPUTIES ####
+BRA_chamber_of_deputies_category = {
+	BRA_discuss_parliamentary_ammendments = {
+		cancel_if_not_visible = yes
+		days_re_enable = 15
+		days_remove = 7
+		custom_cost_trigger = {
+			always = yes
+		}
+		custom_cost_text = dx_more_than_50M
+		available = {
+		}
+		ai_will_do = {
+			base = 1
+		}
+		complete_effect = {
+			set_temp_variable = { debt_var_temp = 0.05 }
+			add_debt = yes
+ 		}
+		remove_effect = {
+			set_temp_variable = { BRA_chamber_centrao_support_var_temp = 5 }
+			BRA_add_centrao_support_random = yes
+		}
+	}
+	BRA_secret_budget_arrangements = {
+		cancel_if_not_visible = yes
+		days_re_enable = 15
+		days_remove = 7
+		custom_cost_trigger = {
+			always = yes
+		}
+		custom_cost_text = dx_more_than_50M
+		available = {
+		}
+		ai_will_do = {
+			base = 1
+		}
+		complete_effect = {
+			set_temp_variable = { debt_var_temp = 0.05 }
+			add_debt = yes
+ 		}
+		remove_effect = {
+			set_temp_variable = { BRA_chamber_centrao_support_var_temp = 10 }
+			BRA_add_centrao_support_random = yes
+
+			set_temp_variable = { BRA_centrao_influence_var_temp = 0.005 }
+			BRA_add_centrao_influence = yes
+		}
+	}
+	BRA_lobby_for_centrists = {
+		cancel_if_not_visible = yes
+		cost = 25
+		days_re_enable = 30
+        days_remove = 15
+		available = {
+		}
+		ai_will_do = {
+			base = 1
+		}
+		modifier = { 
+            political_power_cost = 0.1
+        }
+		remove_effect = {
+			set_temp_variable = { BRA_chamber_centrao_support_var_temp = 25 }
+			BRA_add_centrao_support_random = yes
+
+			set_temp_variable = { BRA_centrao_influence_var_temp = 0.025 }
+			BRA_add_centrao_influence = yes
+		}
+	}
+	BRA_meet_with_chamber_president = {
+		cancel_if_not_visible = yes
+		cost = 50
+		days_re_enable = 90
+        days_remove = 15
+		available = {
+		}
+		ai_will_do = {
+			base = 1
+		}
+		modifier = { 
+            political_power_cost = 0.1
+        }
+		remove_effect = {
+			set_temp_variable = { BRA_chamber_centrao_support_var_temp = 25 }
+			BRA_add_centrao_support_random = yes
+		}
+	}
+	BRA_combat_centrao_influence = {
+		cancel_if_not_visible = yes
+		cost = 50
+		days_re_enable = 60
+        days_remove = 15
+		available = {
+		}
+		ai_will_do = {
+			base = 1
+		}
+		modifier = { 
+            political_power_cost = 0.1
+        }
+		remove_effect = {
+			set_temp_variable = { BRA_centrao_influence_var_temp = -0.05 }
+			BRA_add_centrao_influence = yes
+		}
+	}
+
+	BRA_petrobras_state_shares_mission = {
+		priority = 10
+		days_mission_timeout = 200
+		activation = {
+			always = no
+		}
+		available = {
+			always = no
+		}
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		is_good = yes
+		ai_will_do = {
+			base = 50
+		}
+		timeout_effect = {
+			BRA_decrease_oil_crisis = yes
+			add_ideas = BRA_petrobras_statized_idea1
+		}
+	}
+
+	BRA_oil_crisis_fadeout_mission = {
+		priority = 10
+		available = {
+			hidden_trigger = {	
+			    NOT = {
+					has_idea = BRA_oil_crisis_idea
+					has_idea = BRA_oil_crisis_idea1
+					has_idea = BRA_oil_crisis_idea2
+				}
+			}
+		}
+		days_mission_timeout = 200
+		activation = {
+			always = no
+		}
+		fire_only_once = no
+		is_good = yes
+		ai_will_do = {
+			base = 50
+		}
+		timeout_effect = {
+			BRA_decrease_oil_crisis = yes
+			if = {
+			    limit = {
+			        OR = {
+						has_idea = BRA_oil_crisis_idea
+						has_idea = BRA_oil_crisis_idea1
+						has_idea = BRA_oil_crisis_idea2
+					}
+			    }
+			    activate_mission = BRA_oil_crisis_fadeout_mission
+			}			
+		}
+	}
+}
+
+#### COVID-19 PANDEMIC ####
+BRA_coronavirus_category = {
+	BRA_handle_covid_mission = {
+		priority = 10
+		available = {
+			OR = {
+				has_completed_focus = BRA_covid_stabilization
+				has_completed_focus = BRA_covid_recovery_policy
+			}
+		}
+		days_mission_timeout = BRA_handle_covid_days_var
+		activation = {
+			always = no
+		}
+		fire_only_once = no
+		is_good = no
+		ai_will_do = {
+			base = 50
+		}
+		timeout_effect = {
+			BRA_increase_corona = yes
+			set_temp_variable = { BRA_election_approval_rating_pl_var_temp = -0.025 }
+			BRA_add_election_approval_rating_pl = yes;
+			activate_mission = BRA_handle_covid_mission
+		}
+	}
+	BRA_minor_lockdowns_decision = {		
+		cancel_if_not_visible = yes
+		days_re_enable = 30
+		days_remove = 15
+		cost = 25
+		visible = {
+			has_active_mission = BRA_handle_covid_mission
+			has_completed_focus = BRA_heed_mandettas_concerns
+		}
+		ai_will_do = {
+			base = 1
+		}
+		modifier = {
+			power_balance_daily = -0.0025
+		}
+		remove_effect = {
+			add_stability = -0.05
+			add_days_mission_timeout = {
+   				mission = BRA_handle_covid_mission
+    			days = 20
+			}
+		}
+	}
+	BRA_mask_mandates_decision = {
+		cancel_if_not_visible = yes
+		days_remove = 20
+		fire_only_once = yes
+		cost = 50
+		visible = {
+			has_active_mission = BRA_handle_covid_mission
+			has_completed_focus = BRA_heed_mandettas_concerns
+		}
+		ai_will_do = {
+			base = 1
+		}
+		modifier = {
+			power_balance_daily = -0.001
+		}
+		remove_effect = {
+			add_stability = -0.025
+			set_temp_variable = { BRA_covid_mission_days_temp = 20 }
+			BRA_add_days_corona_pandemic = yes
+		}
+	}
+	BRA_higiene_guidelines_decision = {
+		cancel_if_not_visible = yes
+		days_remove = 20
+		fire_only_once = yes
+		cost = 50
+		visible = {
+			has_active_mission = BRA_handle_covid_mission
+			has_completed_focus = BRA_grant_state_municipal_autonomy
+		}
+		ai_will_do = {
+			base = 1
+		}
+		remove_effect = {	
+			add_stability = 0.05	
+			set_temp_variable = { BRA_covid_mission_days_temp = 20 }
+			BRA_add_days_corona_pandemic = yes
+		}
+	}
+	BRA_experimental_treatments_decision = {
+		cancel_if_not_visible = yes
+		days_re_enable = 30
+		days_remove = 15
+		cost = 15
+		visible = {
+			has_active_mission = BRA_handle_covid_mission
+			has_completed_focus = BRA_push_precocious_treatments
+		}
+		available = {			
+			has_country_leader = {
+				character = BRA_jair_bolsonaro_char
+				ruling_only = yes
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+		modifier = {
+			conservative_drift = 0.02
+		}
+		remove_effect = {
+			add_political_power = 75
+			set_temp_variable = { BRA_covid_mission_days_temp = -5 }
+			BRA_add_days_corona_pandemic = yes
+		}
+	}
+	BRA_covid_fadeout_mission = {
+		priority = 10
+		available = {
+			hidden_trigger = {	
+			    NOT = {
+					has_idea = BRA_coronavirus_pandemic_idea
+					has_idea = BRA_coronavirus_pandemic_idea1
+					has_idea = BRA_coronavirus_pandemic_idea2
+					has_idea = BRA_coronavirus_pandemic_idea3
+					has_idea = BRA_coronavirus_pandemic_idea4
+				}
+			}
+		}
+		days_mission_timeout = BRA_covid_fadeout_days_var
+		activation = {
+			always = no
+		}
+		visible = {
+		}
+		fire_only_once = no
+		cancel_if_not_visible = yes
+		is_good = yes
+		ai_will_do = {
+			base = 50
+		}
+		timeout_effect = {
+			BRA_decrease_corona = yes
+			if = {
+			    limit = {
+			        OR = {
+						has_idea = BRA_coronavirus_pandemic_idea
+						has_idea = BRA_coronavirus_pandemic_idea1
+						has_idea = BRA_coronavirus_pandemic_idea2
+						has_idea = BRA_coronavirus_pandemic_idea3
+					}
+			    }
+			    activate_mission = BRA_covid_fadeout_mission
+			}			
+		}
+	}
+	BRA_covid_vaccine_mission = {
+		priority = 10
+		days_mission_timeout = 500
+		activation = {
+			always = no
+		}
+		available = {
+			always = no
+		}
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		is_good = yes
+		ai_will_do = {
+			base = 50
+		}
+		timeout_effect = {
+			custom_effect_tooltip = BRA_covid_vaccine_mission_tt
+			hidden_effect = {
+				remove_ideas = {
+					BRA_coronavirus_pandemic_idea
+					BRA_coronavirus_pandemic_idea1
+					BRA_coronavirus_pandemic_idea2
+					BRA_coronavirus_pandemic_idea3
+					BRA_coronavirus_pandemic_idea4
+				}
+			}
+		}
+	}
+}
+
+#### SOUTH AMERICAN SPHERE OF INFLUENCE ####
+BRA_south_american_sphere_category = {
+    # Help the Republic of Colombia win the war
+	BRA_intervene_in_colombia_decision = {
+		icon = GFX_decision_SOV_colombia_operation
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		days_remove = 20
+		cost = 100
+		allowed = {
+			original_tag = BRA
+		}
+		visible = {
+			has_global_flag = COL_civil_war_flag
+			NOT = { has_global_flag = COL_civil_war_ended_flag }
+		}
+		available = {
+			country_exists = COL
+		}
+		cancel_trigger = {
+			NOT = { country_exists = COL }
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 25
+				has_government = social_democrat
+				COL = { has_government = social_democrat }
+			}
+			modifier = {
+				add = 5
+				has_government = social_liberal
+			}
+			modifier = {
+				add = 25
+				has_government = conservative
+				COL = { has_government = nationalist }
+			}
+		}
+		complete_effect = {
+			# Gives Colombia boosts and Brazilian volunteers for the civil war
+		}
+	}
+    # Counter-coup operation in Colombia
+	BRA_counter_coup_operation_in_colombia_decision = {
+		icon = GFX_decision_SOV_colombia_operation
+		cancel_if_not_visible = yes
+		days_remove = 20
+		custom_cost_trigger = {
+            command_power > 30
+        }
+        custom_cost_text = 30cp_cost
+		allowed = {
+			original_tag = BRA
+		}
+		visible = {
+			has_global_flag = COL_civil_war_flag
+			NOT = { has_global_flag = COL_civil_war_ended_flag }
+		}
+		available = {
+			country_exists = COL
+			COL = { has_government = nationalist }
+			if = {
+				limit = { 
+					is_ai = no
+					has_dlc = "La Resistance" 
+				}
+				network_national_coverage = {
+				    target = COL
+				    value > 30
+				}
+			}
+		}
+		cancel_trigger = {
+			OR = {
+				NOT = { country_exists = COL }
+				NOT = { COL = { has_government = nationalist }  }
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 25
+				has_government = social_democrat
+			}
+			modifier = {
+				add = 5
+				has_government = social_liberal
+			}
+		}
+		complete_effect = {
+			# Gustavo Petro will be rescued and put back in power
+			custom_effect_tooltip = SOV_initiate_operation_otel_moskva_tt
+			hidden_effect = {
+				COL = {
+					add_stability = 0.15
+					set_politics = {
+						ruling_party = social_democrat
+					}
+				}
+				country_event = { id = russia.719 hours = 10 }
+			}
+		}
+	}
+	# Peacekeeping operation in Colombia
+    BRA_peacekeeping_mission_in_colombia_decision = {
+		icon = GFX_decision_SOV_colombia_operation
+		cancel_if_not_visible = yes
+		cost = 150
+		allowed = {
+			original_tag = BRA
+		}
+		visible = {
+			has_global_flag = COL_civil_war_flag
+			NOT = { has_global_flag = COL_civil_war_ended_flag }
+		}
+		available = {
+
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				OR = {
+					has_government = social_democrat
+					has_government = social_liberal
+				}
+				NOT = { country_exists = COL }
+			}
+			modifier = {
+				add = 5
+				has_government = conservative
+				NOT = { country_exists = COL }
+			}
+		}
+		complete_effect = {
+			# Brazil will intervene in the Colombian civil war and declare war on all factions (including the Republic of Colombia)
+			# If Brazil defeats all of them, a restoration government will be installed under Brazilian supervision
+			# If all but one faction controls all of Colombia and Brazil is pushed out of the country, they will be able to whitepeace Brazil and end the civil war 
+		}
+	}
+    # Recognize the Venezuelan election results
+    BRA_recognize_venezuelan_elections_decision = {
+		cancel_if_not_visible = yes
+		cost = 0
+		allowed = {
+			original_tag = BRA
+		}
+		visible = {
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 1
+		}
+		complete_effect = {
+
+		}
+	}
+    ## MALVINES/FALKLANDS CRISIS ##
+	BRA_malvines_crisis_mission = {
+		days_mission_timeout = 60
+		is_good = no
+		allowed = {
+			original_tag = BRA
+		}
+		activation = {
+			always = no
+		}
+		available = {
+			has_global_flag = LATAM_malvines_crisis_averted
+		}
+		ai_will_do = {
+			base = 1
+		}
+		timeout_effect = {
+			# The second Falklands War will happen!
+		}
+		complete_effect = {
+			# The second Falklands War is avoided, kudos!
+		}
+	}
+	## Decisions to favor Argentina and transfer the Malvines
+    BRA_malvines_crisis_favor_ARG_decision = {
+		cancel_if_not_visible = yes
+		cost = 0
+		allowed = {
+			original_tag = BRA
+		}
+		visible = {
+            has_global_flag = SOV_first_nato_war_victory
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 1
+		}
+		complete_effect = {
+			
+		}
+	}
+	## Decisions to favor the UK and keep the status quo
+	BRA_malvines_crisis_favor_ENG_decision = {
+		cancel_if_not_visible = yes
+		cost = 0
+		allowed = {
+			original_tag = BRA
+		}
+		visible = {
+            has_global_flag = SOV_first_nato_war_victory
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 1
+		}
+		complete_effect = {
+
+		}
+	}
+	## ESSEQUIBO CRISIS ##
+	BRA_essequibo_crisis_mission = {
+		days_mission_timeout = 60
+		is_good = no
+		allowed = {
+			original_tag = BRA
+		}
+		activation = {
+			always = no
+		}
+		available = {
+			has_global_flag = LATAM_essequibo_crisis_averted
+		}
+		ai_will_do = {
+			base = 1
+		}
+		timeout_effect = {
+			# The Essequibo War will happen!
+		}
+		complete_effect = {
+			# The Essequibo War is avoided, kudos!
+		}
+	}
+    # Mediate the essequibo crisis between VEN and GUY
+    BRA_mediate_essequibo_crisis_decision = {
+		cancel_if_not_visible = yes
+		cost = 0
+		allowed = {
+			original_tag = BRA
+		}
+		visible = {
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 1
+		}
+		complete_effect = {
+
+		}
+	}
+    # Mediate the Patagonian separatist movement if Milei's reforms fail
+    BRA_mediate_patagonia_crisis_decision = {
+		cancel_if_not_visible = yes
+		cost = 0
+		allowed = {
+			original_tag = BRA
+		}
+		visible = {
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 1
+		}
+		complete_effect = {
+
+		}
+	}
+    # Push for the formation of an united Guyanan Federation
+    BRA_push_for_guyanan_federation_decision = {
+		cancel_if_not_visible = yes
+		cost = 0
+		allowed = {
+			original_tag = BRA
+		}
+		visible = {
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 1
+		}
+		complete_effect = {
+
+		}
+	}
+    # Recognize the independence of French Guyana
+    BRA_recognize_cayenne_decision = {
+		cancel_if_not_visible = yes
+		cost = 0
+		allowed = {
+			original_tag = BRA
+		}
+		visible = {
+            country_exists = CAY
+            CAY = {
+                has_idea = LATAM_unrecognized_state
+            }
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 1
+		}
+		complete_effect = {
+
+		}
+	}
+    # Recognize the independence of Curaçao
+    BRA_recognize_curacao_decision = {
+		cancel_if_not_visible = yes
+		cost = 0
+		allowed = {
+			original_tag = BRA
+		}
+		visible = {
+            country_exists = CUR
+            CUR = {
+                has_idea = LATAM_unrecognized_state
+            }
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 1
+		}
+		complete_effect = {
+
+		}
+	}
+}

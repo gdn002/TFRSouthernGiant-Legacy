@@ -1,0 +1,47 @@
+﻿l_english:
+ #Leaders
+ #Focuses
+ #_desc: ""
+ #: ""
+ #_desc: ""
+ #: ""
+ #_desc: ""
+ #: ""
+ #_desc: ""
+ #: ""
+ #_desc: ""
+ #: ""
+ #_desc: ""
+ #Ideas
+ #Decision Categories
+ #Missions
+ #Decisions
+ #Country Flag
+ #Tooltips
+ #Faction
+ #Parties
+ SPA_national_socialist_party: "§ROUTLAWED§!"
+ SPA_national_socialist_party_long: "§ROUTLAWED§!"
+ SPA_fascist_party: "FIB - SP"
+ SPA_fascist_party_long: "Brazilian Integralist Front - São Paulo"
+ SPA_nationalist_party: "EB - SP"
+ SPA_nationalist_party_long: "Brazilian Army - São Paulo"
+ SPA_authoritarian_democrat_party: "GOV - SP"
+ SPA_authoritarian_democrat_party_long: "São Paulo Government Authority"
+ SPA_conservative_party: "PL - SP" 
+ SPA_conservative_party_long: "Liberal Party - São Paulo" 
+ SPA_market_liberal_party: "UNIÃO/PP/PSD - SP" 
+ SPA_market_liberal_party_long: "Brazil Union/Progressives/Social Democratic Party - São Paulo" 
+ SPA_social_liberal_party: "MDB/PSDB - SP" 
+ SPA_social_liberal_party_long: "Brazilian Democratic Movement Party/Brazilian Social Democracy Party - São Paulo" 
+ SPA_social_democrat_party: "PT - SP" 
+ SPA_social_democrat_party_long: "Workers' Party - São Paulo" 
+ SPA_libertarian_socialist_party: "PSOL - SP"
+ SPA_libertarian_socialist_party_long: "Socialism and Freedom Party - São Paulo" 
+ SPA_communist_party: "PCB - SP" 
+ SPA_communist_party_long: "Brazilian Communist Party - São Paulo"
+ SPA_totalitarian_socialist_party: "PCO - SP" 
+ SPA_totalitarian_socialist_party_long: "Worker's Cause Party - São Paulo"
+ #Country
+ #Summary
+ #Events

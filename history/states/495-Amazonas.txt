@@ -1,0 +1,27 @@
+state={
+	# Southern Amazonas
+	id=495
+	name="STATE_495"
+	provinces={
+		1979 5232 8185 8254 12965 14582 14986 14987 15022 15025 15026 
+	}
+	resources = {
+		chromium=4.000
+	}
+	manpower=661000
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+
+	history = {
+		owner = BRA
+		add_core_of = BRA
+		buildings = {
+			infrastructure = 1
+		}
+
+		victory_points = { 12965 1 }
+
+		add_dynamic_modifier = { modifier = BRA_amazonian_jungle_state_dynamic }
+	}
+}

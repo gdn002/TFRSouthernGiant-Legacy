@@ -1,0 +1,966 @@
+#### POWER STRUGGLE BOP ####
+BR2_junta_power_struggle_category = {
+	BR2_hold_presidential_parades = {
+		cancel_if_not_visible = yes
+		days_re_enable = 30
+		days_remove = 15
+		cost = 30
+		available = {
+			NOT = { has_country_flag = BR2_is_taking_action_power_struggle_bop }
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 25
+				has_country_flag = BR2_AI_favor_president_flag
+				is_power_balance_in_range = {
+    				id = BR2_junta_power_struggle
+    				range > BR2_high_president_control_range
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BR2_is_taking_action_power_struggle_bop
+			}
+ 		}
+		modifier = {
+			stability_weekly = 0.003
+			conservative_drift = 0.025
+			authoritarian_democrat_drift = 0.025
+			power_balance_daily = -0.005
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BR2_is_taking_action_power_struggle_bop
+			}
+			add_stability = 0.025
+		}
+	}
+
+	BR2_hold_military_parades = {
+		cancel_if_not_visible = yes
+		days_re_enable = 30
+		days_remove = 15
+		cost = 30
+		available = {
+			NOT = { has_country_flag = BR2_is_taking_action_power_struggle_bop }
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 25
+				NOT = { has_country_flag = BR2_AI_favor_president_flag }
+				is_power_balance_in_range = {
+    				id = BR2_junta_power_struggle
+    				range < BR2_high_military_control_range
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BR2_is_taking_action_power_struggle_bop
+			}
+			add_command_power = -5
+ 		}
+		modifier = {
+			war_support_weekly = 0.003
+			nationalist_drift = 0.025
+			authoritarian_democrat_drift = 0.025
+			power_balance_daily = 0.005
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BR2_is_taking_action_power_struggle_bop
+			}
+			add_war_support = 0.025
+		}
+	}
+
+	BR2_reaffirm_commitment_to_democracy = {
+		cancel_if_not_visible = yes
+		days_re_enable = 30
+		days_remove = 15
+		cost = 50	
+		visible = {
+			has_completed_focus = BR2_cw_the_presidential_mandate
+		}
+		available = {
+			NOT = { has_country_flag = BR2_is_taking_action_power_struggle_bop }
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 50
+				has_country_flag = BR2_AI_favor_president_flag
+				is_power_balance_in_range = {
+    				id = BR2_junta_power_struggle
+    				range > BR2_high_president_control_range
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BR2_is_taking_action_power_struggle_bop
+			}
+ 		}
+		modifier = {
+			stability_weekly = 0.003
+			conservative_drift = 0.05
+			market_liberal_drift = 0.05
+			social_liberal_drift = 0.05
+			power_balance_daily = -0.005
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BR2_is_taking_action_power_struggle_bop
+			}
+			add_stability = 0.05
+			add_power_balance_value = {
+    			id = BR2_junta_power_struggle
+			    value = -0.025
+			    tooltip_side = BR2_president_side
+			}
+			add_days_mission_timeout = {
+    			mission = BR2_counter_coup_uprising_mission
+    			days = 10
+			}
+			add_days_mission_timeout = {
+    			mission = BR2_integralist_uprising_mission
+    			days = -10
+			}
+		}
+	}
+
+	BR2_pacify_fascist_military_cells = {
+		cancel_if_not_visible = yes
+		days_re_enable = 30
+		days_remove = 15
+		cost = 50	
+		visible = {
+			has_completed_focus = BR2_cw_the_army_plan
+		}
+		available = {
+			NOT = { has_country_flag = BR2_is_taking_action_power_struggle_bop }
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 50
+				NOT = { has_country_flag = BR2_AI_favor_president_flag }
+				is_power_balance_in_range = {
+    				id = BR2_junta_power_struggle
+    				range < BR2_high_military_control_range
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BR2_is_taking_action_power_struggle_bop
+			}
+ 		}
+		modifier = {
+			authoritarian_democrat_drift = 0.05
+			nationalist_drift = 0.05
+			fascist_drift = -0.05
+			national_socialist_drift = -0.05
+			power_balance_daily = 0.005
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BR2_is_taking_action_power_struggle_bop
+			}
+			add_stability = 0.025
+			add_war_support = -0.05
+			add_power_balance_value = {
+    			id = BR2_junta_power_struggle
+			    value = 0.025
+			    tooltip_side = BR2_military_side
+			}
+			add_days_mission_timeout = {
+    			mission = BR2_integralist_uprising_mission
+    			days = 10
+			}
+			add_days_mission_timeout = {
+    			mission = BR2_counter_coup_uprising_mission
+    			days = -10
+			}
+		}
+	}
+}
+
+#### CIVIL WAR ####
+BRA_civil_war_category = {
+	BR2_operation_ustra_mission = {
+		available = {
+            always = no
+		}
+		war_with_on_timeout = BR1
+		days_mission_timeout = 15
+		activation = {
+			always = no
+		}
+		available = {
+			always = no
+		}
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		is_good = yes
+		ai_will_do = {
+			base = 50
+		}
+		timeout_effect = {
+			add_timed_idea = {
+   	 			idea = BR2_operation_ustra_idea
+    			days = 30
+			}
+			declare_war_on = {
+    			target = BR1
+    			type = annex_everything
+			}
+			BRA_civil_war_start = yes
+		}
+	}
+
+	BR2_operation_angico_mission = {
+		available = {
+            always = no
+		}
+		war_with_on_timeout = BR3
+		days_mission_timeout = 15
+		activation = {
+			always = no
+		}
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		is_good = yes
+		ai_will_do = {
+			base = 50
+		}
+		timeout_effect = {
+			add_timed_idea = {
+   	 			idea = BR2_operation_angico_idea
+    			days = 30
+			}
+			declare_war_on = {
+    			target = BR3
+    			type = annex_everything
+			}
+			BRA_civil_war_start = yes
+		}
+	}
+
+	BR2_operation_selva_mission = {
+		available = {
+            always = no
+		}
+		war_with_on_timeout = AMZ
+		days_mission_timeout = 15
+		activation = {
+			always = no
+		}
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		is_good = yes
+		ai_will_do = {
+			base = 50
+		}
+		timeout_effect = {
+			add_timed_idea = {
+   	 			idea = BR2_operation_selva_idea
+    			days = 30
+			}
+			declare_war_on = {
+    			target = AMZ
+    			type = annex_everything
+			}
+			BRA_civil_war_start = yes
+		}
+	}
+
+	BR2_operation_apocalipse_mission = {
+		available = {
+            always = no
+		}
+		war_with_on_timeout = BR1
+		war_with_on_timeout = BR3
+		war_with_on_timeout = AMZ
+		days_mission_timeout = 15
+		activation = {
+			always = no
+		}
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		is_good = yes
+		ai_will_do = {
+			base = 50
+		}
+		timeout_effect = {
+			add_timed_idea = {
+   	 			idea = BR2_operation_apocalipse_idea
+    			days = 30
+			}
+			declare_war_on = {
+    			target = BR1
+    			type = annex_everything
+			}
+			declare_war_on = {
+    			target = BR3
+    			type = annex_everything
+			}
+			declare_war_on = {
+    			target = AMZ
+    			type = annex_everything
+			}
+			BRA_civil_war_start = yes
+		}
+	}
+	
+    BR2_integralist_uprising_mission = {
+		priority = 10
+		allowed = {
+			tag = BR2
+		}
+		available = {
+			OR = {
+				has_completed_focus = BR2_the_dust_settles
+				has_country_flag = BR2_uprising_flag
+			}
+		}
+		days_mission_timeout = 200
+		activation = {
+			always = no
+		}
+		fire_only_once = no
+		cancel_if_not_visible = yes
+		is_good = no
+		ai_will_do = {
+			base = 50
+		}
+		timeout_effect = {
+			set_country_flag = BR2_uprising_flag
+			hidden_effect = {
+				BR4 = {
+					add_ideas = BR4_integralist_front_idea
+				}
+			}
+			add_stability = -0.25
+			add_war_support = -0.1
+			country_event = {
+				id = Brazil.junta.13
+				hours = 6
+			}
+		}
+	}
+
+    BR2_monarchist_uprising_mission = {
+		priority = 10
+		allowed = {
+			tag = BR2
+		}
+		available = {
+            OR = {
+				has_completed_focus = BR2_the_dust_settles
+				has_country_flag = BR2_uprising_flag
+			}
+		}
+		days_mission_timeout = 250
+		activation = {
+			always = no
+		}
+		fire_only_once = no
+		cancel_if_not_visible = yes
+		is_good = no
+		ai_will_do = {
+			base = 50
+		}
+		timeout_effect = {
+			set_country_flag = BR2_uprising_flag
+			hidden_effect = {
+				BR4 = {
+					add_ideas = BR4_national_restoration_idea
+					set_politics = {
+					    ruling_party = nationalist
+					    elections_allowed = no
+					}
+				}
+			}
+			add_stability = -0.25
+			add_war_support = -0.1
+			country_event = {
+				id = Brazil.junta.14
+				hours = 6
+			}
+		}
+	}
+
+    BR2_counter_coup_uprising_mission = {
+		priority = 10
+		allowed = {
+			tag = BR2
+		}
+		available = {
+            OR = {
+				has_completed_focus = BR2_the_dust_settles
+				has_country_flag = BR2_uprising_flag
+			}
+		}
+		days_mission_timeout = 200
+		activation = {
+			always = no
+		}
+		fire_only_once = no
+		cancel_if_not_visible = yes
+		is_good = no
+		ai_will_do = {
+			base = 50
+		}
+		timeout_effect = {
+			set_country_flag = BR2_uprising_flag
+			hidden_effect = {
+				BR4 = {
+					add_ideas = BR4_fight_for_democracy_idea
+					set_politics = {
+					    ruling_party = authoritarian_democrat
+					    elections_allowed = no
+					}
+					set_cosmetic_tag = BR4_mnpd
+				}
+			}
+			add_stability = -0.25
+			add_war_support = -0.1
+			country_event = {
+				id = Brazil.junta.15
+				hours = 6
+			}
+		}
+	}
+
+	BR2_cw_attack_government = {
+		allowed = {
+			tag = BR2
+		}
+		visible = {
+			has_completed_focus = BR2_cw_reclaiming_our_nation
+			country_exists = BR1
+			NOT = { has_war_with = BR1 }
+		}
+		ai_will_do = {
+			base = 25
+			modifier = {
+				add = 75
+				has_war = no
+			}
+		}
+        cost = 75
+		days_remove = 20
+		war_with_on_remove = BR1
+		complete_effect = {
+			add_command_power = -10
+			add_days_mission_timeout = {
+    			mission = BR2_counter_coup_uprising_mission
+    			days = -20
+			}
+			add_days_mission_timeout = {
+    			mission = BR2_integralist_uprising_mission
+    			days = 20
+			}
+		}
+		remove_effect = {
+			declare_war_on = {
+    			target = BR1
+    			type = annex_everything
+			}
+		}
+	}
+
+	BR2_cw_attack_front = {
+		allowed = {
+			tag = BR2
+		}
+		visible = {
+			has_completed_focus = BR2_cw_reclaiming_our_nation
+			country_exists = BR3
+			NOT = { has_war_with = BR3 }
+		}
+		ai_will_do = {
+			base = 25
+			modifier = {
+				add = 75
+				has_war = no
+			}
+		}
+		cost = 50
+		days_remove = 20
+		war_with_on_remove = BR3
+		complete_effect = {
+			add_command_power = -10
+			add_days_mission_timeout = {
+    			mission = BR2_counter_coup_uprising_mission
+    			days = -20
+			}
+			add_days_mission_timeout = {
+    			mission = BR2_integralist_uprising_mission
+    			days = 20
+			}
+		}
+		remove_effect = {
+			declare_war_on = {
+    			target = BR3
+    			type = annex_everything
+			}
+		}
+	}
+
+	BR2_cw_attack_amazon = {
+		allowed = {
+			tag = BR2
+		}
+		visible = {
+			has_completed_focus = BR2_cw_reclaiming_our_nation
+			country_exists = AMZ
+			NOT = { has_war_with = AMZ }
+		}
+		ai_will_do = {
+			base = 25
+			modifier = {
+				add = 75
+				has_war = no
+			}
+		}
+        cost = 25
+		days_remove = 20
+		war_with_on_remove = AMZ
+		complete_effect = {
+			add_command_power = -10
+			add_days_mission_timeout = {
+    			mission = BR2_counter_coup_uprising_mission
+    			days = -20
+			}
+			add_days_mission_timeout = {
+    			mission = BR2_integralist_uprising_mission
+    			days = 20
+			}
+		}
+		remove_effect = {
+			declare_war_on = {
+    			target = AMZ
+    			type = annex_everything
+			}
+		}
+	}
+
+	BR2_cw_negotiate_paraguay_access = {
+		allowed = {
+			tag = BR2
+		}
+		visible = {
+			has_completed_focus = BR2_cw_the_fire_rises_in_brazil
+			NOT = { has_country_flag = developed_country }
+		}
+		available = {
+			is_neighbor_of = PAR
+			PAR = {
+				has_opinion = {
+    				target = BR2
+    				value > 30
+				}
+			}
+		}
+		ai_will_do = {
+			base = 50
+		}
+		cost = 100
+		days_remove = 50
+		fire_only_once = yes
+		modifier = {
+			political_power_cost = 0.01
+		}
+		remove_effect = {
+			custom_effect_tooltip = BR2_cw_unlock_arms_market_tt
+			set_country_flag = developed_country
+			add_stability = 0.05
+		}
+	}
+
+	BR2_cw_establish_sea_access = {
+		allowed = {
+			tag = BR2
+		}
+		visible = {
+			has_completed_focus = BR2_cw_reclaiming_our_nation
+			NOT = { has_country_flag = developed_country }
+		}
+		available = {
+			any_controlled_state = {
+				naval_base > 0
+			}
+		}
+		ai_will_do = {
+			base = 100
+		}
+		cancel_trigger = {
+			NOT = {
+				any_controlled_state = {
+					naval_base > 0
+				}
+			}
+		}
+		custom_cost_trigger = {
+            command_power > 10
+        }
+        custom_cost_text = 10cp_cost
+		days_remove = 10
+		fire_only_once = no
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -10
+			}
+		}
+		modifier = {
+			political_power_cost = 0.01
+		}
+		remove_effect = {
+			custom_effect_tooltip = BR2_cw_unlock_arms_market_tt
+			set_country_flag = developed_country
+			add_stability = 0.15
+		}
+	}
+
+	BR2_cw_address_pro_democracy_movement = {
+		allowed = {
+			tag = BR2
+		}
+		visible = {
+			has_completed_focus = BR2_cw_address_constitutional_crisis
+			has_active_mission = BR2_counter_coup_uprising_mission
+		}
+		available = {			
+			NOT = { has_country_flag = BR2_is_raiding_flag }
+		}
+		ai_will_do = {
+			base = 15
+		}
+		cost = 50
+		days_re_enable = 60
+		days_remove = 30
+		cancel_if_not_visible = yes
+		modifier = {
+			political_power_cost = 0.1
+		}
+		complete_effect = {
+			set_country_flag = BR2_is_raiding_flag
+		}
+		cancel_effect = {
+			clr_country_flag = BR2_is_raiding_flag
+		}
+		remove_effect = {
+			clr_country_flag = BR2_is_raiding_flag
+			add_stability = 0.05
+			add_days_mission_timeout = {
+    			mission = BR2_counter_coup_uprising_mission
+    			days = 50
+			}
+		}
+	}
+
+	BR2_cw_suspend_state_of_siege = {
+		allowed = {
+			tag = BR2
+		}
+		visible = {
+			has_completed_focus = BR2_cw_within_the_four_lines
+			has_active_mission = BR2_counter_coup_uprising_mission
+		}
+		available = {			
+			NOT = { has_country_flag = BR2_is_raiding_flag }
+		}
+		ai_will_do = {
+			base = 25
+		}
+		cost = 100
+		days_remove = 50
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		modifier = {
+			political_power_cost = 0.01
+		}
+		complete_effect = {
+			set_country_flag = BR2_is_raiding_flag
+		}
+		cancel_effect = {
+			clr_country_flag = BR2_is_raiding_flag
+		}
+		remove_effect = {
+			clr_country_flag = BR2_is_raiding_flag
+			add_stability = 0.15
+			remove_ideas = {
+				BR2_martial_law_idea
+			}
+			remove_mission = BR2_counter_coup_uprising_mission
+		}
+	}
+
+	BR2_cw_raid_fascist_hideouts = {
+		allowed = {
+			tag = BR2
+		}
+		visible = {
+			has_completed_focus = BR2_cw_purge_extremist_cells
+			has_active_mission = BR2_integralist_uprising_mission
+		}
+		available = {			
+			NOT = { has_country_flag = BR2_is_raiding_flag }
+		}
+		ai_will_do = {
+			base = 15
+		}
+		custom_cost_trigger = {
+            command_power > 10
+        }
+        custom_cost_text = 10cp_cost
+		days_re_enable = 60
+		days_remove = 30
+		cancel_if_not_visible = yes
+		modifier = {
+			command_power_gain = -0.1
+		}
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -10				
+			}
+			set_country_flag = BR2_is_raiding_flag
+		}
+		cancel_effect = {
+			clr_country_flag = BR2_is_raiding_flag
+		}
+		remove_effect = {
+			clr_country_flag = BR2_is_raiding_flag
+			add_stability = 0.05
+			add_days_mission_timeout = {
+    			mission = BR2_integralist_uprising_mission
+    			days = 50
+			}
+		}
+	}
+
+	BR2_cw_arrest_fascist_elements = {
+		allowed = {
+			tag = BR2
+		}
+		visible = {
+			has_completed_focus = BR2_cw_purge_extremism_in_military
+			has_active_mission = BR2_integralist_uprising_mission
+		}
+		available = {
+			NOT = { has_country_flag = BR2_is_raiding_flag }
+		}
+		ai_will_do = {
+			base = 100
+		}
+		custom_cost_trigger = {
+            command_power > 40
+        }
+        custom_cost_text = 40cp_cost
+		days_remove = 50
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		modifier = {
+			command_power_gain = -0.5
+		}
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -40
+			}
+			set_country_flag = BR2_is_raiding_flag
+		}
+		cancel_effect = {
+			clr_country_flag = BR2_is_raiding_flag
+		}
+		remove_effect = {
+			clr_country_flag = BR2_is_raiding_flag
+			add_stability = 0.1
+			add_war_support = -0.1
+			remove_mission = BR2_integralist_uprising_mission
+		}
+	}
+
+	BR2_cw_anti_monarchist_cyberwarfare = {
+		allowed = {
+			tag = BR2
+		}
+		visible = {
+			has_completed_focus = BR2_cw_reclaiming_our_nation
+			has_active_mission = BR2_monarchist_uprising_mission
+		}
+		available = {
+			NOT = { has_country_flag = BR2_is_raiding_flag }
+		}
+		ai_will_do = {
+			base = 15
+		}
+		custom_cost_trigger = {
+            command_power > 10
+        }
+        custom_cost_text = 10cp_cost
+		days_re_enable = 60
+		days_remove = 30
+		cancel_if_not_visible = yes
+		modifier = {
+			command_power_gain = -0.1
+		}
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -10
+			}
+			set_country_flag = BR2_is_raiding_flag
+		}
+		cancel_effect = {
+			clr_country_flag = BR2_is_raiding_flag
+		}
+		remove_effect = {
+			clr_country_flag = BR2_is_raiding_flag
+			add_days_mission_timeout = {
+    			mission = BR2_monarchist_uprising_mission
+    			days = 50
+			}
+		}
+	}
+
+	BR2_cw_criminalize_monarchist_sentiment = {
+		allowed = {
+			tag = BR2
+		}
+		visible = {
+			has_completed_focus = BR2_cw_appeal_to_brazilian_patriotism
+			has_active_mission = BR2_monarchist_uprising_mission
+		}
+		available = {
+			NOT = { has_country_flag = BR2_is_raiding_flag }
+		}
+		ai_will_do = {
+			base = 100
+		}
+		custom_cost_trigger = {
+            command_power > 40
+        }
+        custom_cost_text = 40cp_cost
+		days_remove = 30
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		modifier = {
+			command_power_gain = -0.01
+		}
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -40
+			}
+			set_country_flag = BR2_is_raiding_flag
+		}
+		cancel_effect = {
+			clr_country_flag = BR2_is_raiding_flag
+		}
+		remove_effect = {
+			clr_country_flag = BR2_is_raiding_flag
+			add_political_power = 100
+			add_popularity = {
+			    ideology = nationalist
+			    popularity = -0.25
+			}
+			remove_mission = BR2_monarchist_uprising_mission
+		}
+	}
+
+	BR2_cw_clamp_down_on_freedoms = {
+		allowed = {
+			tag = BR2
+		}
+		visible = {
+			has_active_mission = BR2_counter_coup_uprising_mission
+		}
+		available = {
+			has_completed_focus = BR2_cw_reclaiming_our_nation
+		}
+		ai_will_do = {
+			base = 1
+		}
+		cost = 25
+		days_remove = 30
+		days_re_enable = 60
+		modifier = {
+			resistance_decay = 1.5
+			resistance_target = -0.3
+			compliance_growth = 1.5
+			authoritarian_democrat_drift = 0.01
+			nationalist_drift = 0.01
+			conservative_drift = 0.01
+			fascist_drift = 0.01
+		}
+		remove_effect = {
+			add_political_power = 50
+			add_days_mission_timeout = {
+				mission = BR2_counter_coup_uprising_mission
+				days = -30
+			}
+		}
+	}
+
+	BR2_cw_appeal_to_traditions = {
+		allowed = {
+			tag = BR2
+		}
+		visible = {
+			has_active_mission = BR2_integralist_uprising_mission
+		}
+		available = {
+			has_completed_focus = BR2_cw_reclaiming_our_nation
+		}
+		ai_will_do = {
+			base = 1
+		}
+		cost = 25
+		days_remove = 30
+		days_re_enable = 60
+		modifier = {
+			stability_weekly = 0.015
+			political_power_factor = 0.5
+		}
+		remove_effect = {
+			add_stability = 0.1
+			add_days_mission_timeout = {
+				mission = BR2_integralist_uprising_mission
+				days = -30
+			}
+		}
+	}
+
+	BR2_cw_rally_patriotism = {
+		allowed = {
+			tag = BR2
+		}
+		visible = {
+			has_active_mission = BR2_monarchist_uprising_mission
+		}
+		available = {
+			has_completed_focus = BR2_cw_reclaiming_our_nation
+		}
+		ai_will_do = {
+			base = 1
+		}
+		cost = 25
+		days_remove = 30
+		days_re_enable = 60
+		modifier = {
+			war_support_weekly = 0.015
+			weekly_casualties_war_support = 0.015
+			army_morale_factor = 0.5
+		}
+		remove_effect = {
+			add_war_support = 0.1
+			add_days_mission_timeout = {
+				mission = BR2_monarchist_uprising_mission
+				days = -30
+			}
+		}
+	}
+}

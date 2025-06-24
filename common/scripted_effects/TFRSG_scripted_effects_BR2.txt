@@ -1,0 +1,59 @@
+# Spawns the insurgency randomly throughout the Military Junta's territories
+BR2_civil_war_implosion = {  
+    hidden_effect = {
+        random_core_state = {
+            prioritize = { 505 }
+            transfer_state_to = BR4
+            create_unit = {
+		    	division = "name = \"Milícia Insurgente\" division_template = \"Brazilian Militia\"  start_experience_factor = 0.0"
+		    	allow_spawning_on_enemy_provs = yes
+		    	owner = BR4
+                count = 4
+		    }
+        }
+        every_core_state = {
+            add_claim_by = BR4
+        }     
+    }
+    add_timed_idea = {
+        idea = BR4_insurgency_deception_enemy_idea
+        days = 40
+    }
+    BR4 = {
+        set_variable = { BR4_insurgency_cost_var = 0 }
+        declare_war_on = {
+            target = BR2
+            type = annex_everything
+        }
+        add_timed_idea = {
+            idea = BR4_insurgent_deception_idea
+            days = 40
+        }
+    }  
+}
+
+BR2_endgame_content = {
+    ## Sets up post-civil war skeleton content for this tag
+    if = {
+        # BOLSONARO
+        limit = { has_government = authoritarian_democrat }
+        change_gov_type_presidential_dictatorship = yes
+        change_economy_type_oligopolistic_capitalism = yes
+    }
+    else = {
+        # MILITARY
+        change_gov_type_military_dictatorship = yes
+        change_economy_type_military_controlled_economy = yes
+    }
+
+    set_cosmetic_tag = BR2_reunified
+    remove_ideas = {
+        BR2_martial_law_idea
+        BR2_political_opposition_idea
+        BR2_constitutional_crisis_idea
+        BR2_constitutional_crisis_idea1
+        BR2_trigger_happy_military_idea
+        BR2_dutiful_military_idea
+        BR2_bolsonarist_militias_idea
+    }
+}

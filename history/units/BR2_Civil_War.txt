@@ -1,0 +1,97 @@
+﻿division_template = {
+	name = "Brazilian Militia"
+	is_locked = yes
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+		militia = { x = 0 y = 3 }
+	}
+}
+
+units = {
+	division = {
+		name = "1a Milícia Patriota"
+		location = 14977
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "2a Milícia Patriota"
+		location = 14974
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "3a Milícia Patriota"
+		location = 14975
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "4a Milícia Patriota"
+		location = 14978
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "5a Milícia Patriota"
+		location = 8140
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "6a Milícia Patriota"
+		location = 10959
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "7a Milícia Patriota"
+		location = 14982
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "8a Milícia Patriota"
+		location = 14985
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "13a Bda Inf Mtz"
+		location = 2111
+		division_template = "Brigada de Infantaria Motorizada"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "18a Bda Inf Fron"
+		location = 8189
+		division_template = "Brigada de Infantaria de Fronteira"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "4a Bda C Mec"
+		location = 10959
+		division_template = "Brigada de Cavalaria Mecanizada"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "17a Bda Inf Sl"
+		location = 14985
+		division_template = "Brigada de Infantaria de Selva"
+		start_experience_factor = 0.6		
+	}
+	division = {
+		name = "Com. Mil. Oeste"
+		location = 10959
+		division_template = "Comando Militar"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "Com. Mil. Planalto"
+		location = 14977
+		division_template = "Comando Militar"
+		start_experience_factor = 0.5		
+	}
+}

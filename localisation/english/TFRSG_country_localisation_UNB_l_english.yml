@@ -1,0 +1,48 @@
+﻿l_english:
+ #Leaders
+ #Focuses
+ #_desc: ""
+ #: ""
+ #_desc: ""
+ #: ""
+ #_desc: ""
+ #: ""
+ #_desc: ""
+ #: ""
+ #_desc: ""
+ #: ""
+ #_desc: ""
+ #Ideas
+ UNB_peacekeeping_mission_idea: "U.N. Peacekeeping Mission"
+ #Decision Categories
+ #Missions
+ #Decisions
+ #Country Flag
+ #Tooltips
+ #Faction
+ #Parties
+ UNB_national_socialist_party: "§ROUTLAWED§!"
+ UNB_national_socialist_party_long: "§ROUTLAWED§!"
+ UNB_fascist_party: "§ROUTLAWED§!"
+ UNB_fascist_party_long: "§ROUTLAWED§!"
+ UNB_nationalist_party: "§ROUTLAWED§!"
+ UNB_nationalist_party_long: "§ROUTLAWED§!"
+ UNB_authoritarian_democrat_party: "§ROUTLAWED§!"
+ UNB_authoritarian_democrat_party_long: "§ROUTLAWED§!"
+ UNB_conservative_party: "§ROUTLAWED§!"
+ UNB_conservative_party_long: "§ROUTLAWED§!"
+ UNB_market_liberal_party: "§ROUTLAWED§!"
+ UNB_market_liberal_party_long: "§ROUTLAWED§!"
+ UNB_social_liberal_party: "U.N. Provisional Authority"
+ UNB_social_liberal_party_long: "U.N. Provisional Authority"
+ UNB_social_democrat_party: "§ROUTLAWED§!"
+ UNB_social_democrat_party_long: "§ROUTLAWED§!"
+ UNB_libertarian_socialist_party: "§ROUTLAWED§!"
+ UNB_libertarian_socialist_party_long: "§ROUTLAWED§!"
+ UNB_communist_party: "§ROUTLAWED§!"
+ UNB_communist_party_long: "§ROUTLAWED§!"
+ UNB_totalitarian_socialist_party: "§ROUTLAWED§!"
+ UNB_totalitarian_socialist_party_long: "§ROUTLAWED§!"
+ #Country
+ #Summary
+ #Events

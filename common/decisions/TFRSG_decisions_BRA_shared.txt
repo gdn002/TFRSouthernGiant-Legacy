@@ -1,0 +1,421 @@
+# DECISIONS SHARED BETWEEN ALL BRAZILIAN UNIFIERS (BRA, BR1, BR2, BR3, AMZ, SPA, SUL, UNB)
+
+# AMAZONIAN JUNGLE ACTIONS
+BRA_amazonian_jungle_category = {
+
+    # Police intervention
+	BRA_police_intervention_in_amazon_decision = {
+        days_re_enable = 120
+        days_remove = 90
+		custom_cost_trigger = {
+            command_power > 10
+        }
+        custom_cost_text = 10cp_cost
+		visible = {
+            check_variable = {
+                modifier@amazonian_preservation_monthly < 0
+            }
+		}
+        available = {
+            NOT = {
+                has_country_flag = BRA_amazonian_intervention_ongoing
+            }
+        }
+		ai_will_do = {
+			base = 1
+            modifier = {
+                add = 1
+                check_variable = { global.BRA_amazonian_preservation_var < 80 }
+            }
+            modifier = {
+                factor = 15
+                has_country_flag = BRA_progressive_administration_flag
+            }
+		}
+        complete_effect = {
+            hidden_effect = { 
+                set_country_flag = BRA_amazonian_intervention_ongoing
+            }
+        }
+        modifier = { 
+            amazonian_preservation_monthly = 0.05
+            command_power_gain = -0.05
+        }
+        remove_effect = { 
+            hidden_effect = { 
+                clr_country_flag = BRA_amazonian_intervention_ongoing
+            }
+        }
+	}
+
+    # Military intervention
+	BRA_military_intervention_in_amazon_decision = {
+        days_re_enable = 150
+        days_remove = 120
+        custom_cost_trigger = {
+            command_power > 20
+        }
+        custom_cost_text = 20cp_cost
+		visible = {
+            check_variable = {
+                modifier@amazonian_preservation_monthly < 0
+            }
+		}
+        available = {
+            NOT = {
+                has_country_flag = BRA_amazonian_intervention_ongoing
+            }
+        }
+		ai_will_do = {
+			base = 1
+            modifier = {
+                add = 1
+                check_variable = { global.BRA_amazonian_preservation_var < 80 }
+            }
+            modifier = {
+                factor = 15
+                has_country_flag = BRA_progressive_administration_flag
+            }
+		}
+        complete_effect = {
+            hidden_effect = { 
+                add_command_power = -10 
+                set_country_flag = BRA_amazonian_intervention_ongoing
+            }
+        }
+        modifier = { 
+            amazonian_preservation_monthly = 0.15
+            command_power_gain = -0.1
+        }
+        remove_effect = { 
+            hidden_effect = { 
+                clr_country_flag = BRA_amazonian_intervention_ongoing
+            }
+        }
+	}
+
+    # Small preserve
+	BRA_amazonian_jungle_small_preserve = {    
+        days_re_enable = 120
+        days_remove = 90
+        custom_cost_trigger = {
+			has_political_power > 50
+		}
+        custom_cost_text = dx_more_than_5B_and_50pp
+        ai_hint_pp_cost = 50
+		visible = {
+            check_variable = {
+                BRA_amazonian_preservation_var < 100
+            }
+		}
+        available = {
+            NOT = {
+                has_country_flag = BRA_amazonian_intervention_ongoing
+            }
+        }
+		ai_will_do = {
+			base = 1
+            modifier = {
+                add = 1
+                check_variable = { global.BRA_amazonian_preservation_var < 80 }
+            }
+            modifier = {
+                factor = 15
+                has_country_flag = BRA_progressive_administration_flag
+            }
+		}
+        complete_effect = {
+            hidden_effect = { 
+                add_political_power = -50             	
+                set_country_flag = BRA_amazonian_intervention_ongoing
+            }
+            set_temp_variable = { debt_var_temp = 5 }
+			add_debt = yes
+        }
+        remove_effect = { 
+            hidden_effect = { 
+                clr_country_flag = BRA_amazonian_intervention_ongoing
+            }
+            set_temp_variable = { BRA_amazonian_preservation_var_temp = 0.5 }
+            BRA_add_amazonian_preservation = yes
+        }
+	}
+
+    BRA_amazonian_jungle_large_preserve = {    
+        days_re_enable = 160
+        days_remove = 120
+        custom_cost_trigger = {
+			has_political_power > 50
+		}
+        custom_cost_text = dx_more_than_10B_and_50pp
+        ai_hint_pp_cost = 50
+		visible = {
+            check_variable = {
+                BRA_amazonian_preservation_var < 100
+            }
+		}
+        available = {
+            NOT = {
+                has_country_flag = BRA_amazonian_intervention_ongoing
+            }
+        }
+		ai_will_do = {
+			base = 1
+            modifier = {
+                add = 1
+                check_variable = { global.BRA_amazonian_preservation_var < 80 }
+            }
+            modifier = {
+                factor = 15
+                has_country_flag = BRA_progressive_administration_flag
+            }
+		}
+        complete_effect = {
+            hidden_effect = { 
+                add_political_power = -50             	
+                set_country_flag = BRA_amazonian_intervention_ongoing
+            }
+            set_temp_variable = { debt_var_temp = 10 }
+			add_debt = yes
+        }
+        remove_effect = { 
+            hidden_effect = { 
+                clr_country_flag = BRA_amazonian_intervention_ongoing
+            }
+            set_temp_variable = { BRA_amazonian_preservation_var_temp = 1 }
+            BRA_add_amazonian_preservation = yes
+        }
+	}
+}
+
+# CIVIL WAR DECISIONS
+BRA_civil_war_category = {
+    BRA_recruit_targeted_decision = {
+		icon = USA_recruit_militia
+		cost = 15
+		days_remove = 15
+		fire_only_once = yes
+		target_array = BRA.core_states
+		state_target = yes
+		on_map_mode = map_only
+		allowed = {
+			is_brazilian_civilwar_faction = yes
+		}
+		target_trigger = {
+			FROM = {
+				OR = {
+					is_claimed_by = ROOT
+					is_core_of = ROOT
+				}
+				is_controlled_by = ROOT
+			}
+		}
+		visible = {
+			has_country_flag = BRA_civil_war_recruitment_allowed_flag
+		}
+		available = {
+			NOT = {
+				has_country_flag = BRA_civil_war_recruiting_flag
+			}
+		}
+        ai_will_do = {
+			base = 50
+		}
+		complete_effect = {
+			set_country_flag = BRA_civil_war_recruiting_flag
+		}
+		remove_effect = {
+			clr_country_flag = BRA_civil_war_recruiting_flag
+			BRA_civil_war_recruitment_scripted_effect = yes
+		}
+		cancel_effect = {
+			clr_country_flag = BRA_civil_war_recruiting_flag
+		}
+	}
+    BRA_reintegrate_targeted_decision = {
+		icon = GFX_decision_generic_recore
+		cost = 20
+		days_remove = 30
+		fire_only_once = no
+		target_array = BRA.core_states
+		state_target = yes
+		on_map_mode = map_only
+		allowed = {
+			is_brazilian_unifier = yes
+		}
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT
+				NOT = {
+					is_core_of = ROOT
+				}
+			}
+		}
+		available = {
+			FROM = {
+                resistance < 20
+                compliance > 10
+            }
+		}
+		visible = {
+			has_country_flag = BRA_civil_war_reintegration_allowed_flag
+		}
+        ai_will_do = {
+			base = 100
+		}
+		remove_effect = {
+			FROM = {
+                add_core_of = ROOT
+			    remove_claim_by = ROOT
+            }
+		}
+	}
+
+    # Decision only available to NPC AI unifiers in the rare chance they win the civil war
+    BRA_cw_npc_ai_reunify_decision = {
+		allowed = {
+            OR = {
+                tag = UNB
+                tag = BR4
+            }	
+		}
+        visible = {
+            is_ai = yes
+            if = {
+                limit = { TAG = BR4 }
+                has_cosmetic_tag = BR4_mnpd
+            }
+        }
+		available = {
+            has_war = no
+            NOT = {
+                country_exists = BR1
+                country_exists = BR2
+                country_exists = BR3               
+            }
+			if = {
+                limit = { TAG = UNB }
+                NOT = { country_exists = BR4 }
+            }
+		}
+		cost = 0
+		days_remove = 50
+		fire_only_once = yes
+		remove_effect = {
+            BRA = {
+                every_core_state = {
+                    transfer_state_to = ROOT
+                    add_core_of = ROOT
+                }
+            }
+            if = { 
+                limit = { TAG = BR4 }
+                set_cosmetic_tag = BR4_restored
+            }
+            else = {
+                set_cosmetic_tag = UNB_reunified
+            }
+		}
+        ai_will_do = {
+			base = 1000
+		}
+	}
+
+    AMZ_cw_call_popular_front = {
+		allowed = {
+			tag = AMZ
+		}
+        visible = {
+            is_puppet = no
+        }
+		available = {
+            has_war = yes
+			country_exists = BR3
+		}
+        cancel_trigger = {
+            OR = {
+                has_capitulated = yes
+                NOT = { country_exists = BR3 }
+                is_puppet = yes
+            }
+        }
+		cost = 25
+		days_remove = 20
+		fire_only_once = yes
+		remove_effect = {
+			BR3 = {
+                country_event = {
+                    id = Brazil.commie.6                   
+                }
+            }
+		}
+        ai_will_do = {
+			base = 100
+		}
+	}
+
+    UNB_cw_united_nations_mission = {
+		allowed = {
+			tag = UNB
+		}
+		days_mission_timeout = 20
+		activation = {
+			always = no
+		}
+		available = {
+			always = no
+		}
+		fire_only_once = yes
+		cancel_if_not_visible = yes
+		is_good = yes
+		ai_will_do = {
+			base = 50
+		}
+		timeout_effect = {
+			hidden_effect = {
+				delete_unit_template_and_units = { division_template = "Comando Militar" }
+				delete_unit_template_and_units = { division_template = "Brigada de Infantaria Motorizada" }
+				delete_unit_template_and_units = { division_template = "Brigada de Infantaria Mecanizada" }
+				delete_unit_template_and_units = { division_template = "Brigada de Infantaria Blindada" }
+				delete_unit_template_and_units = { division_template = "Brigada de Cavalaria Mecanizada" }
+				delete_unit_template_and_units = { division_template = "Brigada de Cavalaria Blindada" }
+				delete_unit_template_and_units = { division_template = "Corpo de Fuzileiros Navais" }
+				delete_unit_template_and_units = { division_template = "Brigada de Infantaria de Selva" }
+				delete_unit_template_and_units = { division_template = "Brigada de Infantaria Leve de Montanha" }
+				delete_unit_template_and_units = { division_template = "Brigada de Infantaria Leve (Aeromovel)" }
+				delete_unit_template_and_units = { division_template = "Brigada de Infantaria de Fronteira" }
+				delete_unit_template_and_units = { division_template = "Brigada de Infantaria Leve" }
+
+				load_oob = "UNB_Civil_War"
+                set_country_flag = developed_country
+			}
+            give_military_access = BR1
+            declare_war_on = {
+                target = AMZ
+                type = annex_everything
+            }
+            declare_war_on = {
+                target = BR2
+                type = annex_everything
+            }
+            declare_war_on = {
+                target = BR3
+                type = annex_everything
+            }
+            if = {
+                limit = {
+                    country_exists = BR4
+                    NOT = { BR4 = { has_cosmetic_tag = BR4_mnpd } }
+                }
+                declare_war_on = {
+                    target = BR4
+                    type = annex_everything
+                }
+            }           
+            news_event = {
+                id = Brazilnews.libs.1 
+                hours = 6         
+            }
+		}
+	}
+}

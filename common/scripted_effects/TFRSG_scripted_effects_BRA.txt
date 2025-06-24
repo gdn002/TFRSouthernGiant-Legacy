@@ -1,0 +1,1336 @@
+@NUM_DAYS_2024 = 738760
+
+## AMAZON JUNGLE MECHANIC
+BRA_add_amazonian_preservation = {
+	custom_effect_tooltip = BRA_add_amazonian_preservation_tooltip
+	add_to_variable = {
+		var = global.BRA_amazonian_preservation_var
+		value = BRA_amazonian_preservation_var_temp
+	}
+	clamp_variable = {
+		var = global.BRA_amazonian_preservation_var
+		min = 0
+		max = 100
+	}
+	
+	BRA_recalculate_amazonian_preservation_dynamic_vars = yes
+}
+
+BRA_recalculate_amazonian_preservation_dynamic_vars = {
+	# Dynamic var interpolates between 70 and 90
+	set_temp_variable = { amazonian_preservation_lerp = global.BRA_amazonian_preservation_var }
+	subtract_from_temp_variable = { amazonian_preservation_lerp = 80 }
+	clamp_temp_variable = {
+		var = amazonian_preservation_lerp
+		min = -10
+		max = 10
+	}
+	divide_temp_variable = { amazonian_preservation_lerp = 10 }
+	
+	log = "TFRSG Amazonian preservation lerp value - [?amazonian_preservation_lerp]"
+
+	set_variable = { global.BRA_amazonian_preservation_dyn_var = amazonian_preservation_lerp }
+	set_variable = { global.BRA_amazonian_preservation_pos_dyn_var = amazonian_preservation_lerp }
+	set_variable = { global.BRA_amazonian_preservation_neg_dyn_var = amazonian_preservation_lerp }
+
+	clamp_variable = {
+		var = BRA_amazonian_preservation_pos_dyn_var
+		min = 0
+		max = 1
+	}
+	clamp_variable = {
+		var = BRA_amazonian_preservation_neg_dyn_var
+		min = -1
+		max = 0
+	}
+
+	# Set dynamic modifier vars
+	set_variable = { global.BRA_amazon_stability_factor_dyn_var = 0.2 }
+    set_variable = { global.BRA_amazon_pp_factor_dyn_var = 0.3 }
+    set_variable = { global.BRA_amazon_research_speed_dyn_var = 0.15 }
+    set_variable = { global.BRA_amazon_society_development_dyn_var = 0.025 }
+    set_variable = { global.BRA_amazon_academic_development_dyn_var = 0.01 }
+	set_variable = { global.BRA_amazon_production_speed_infra_dyn_var = -1.5 }
+    set_variable = { global.BRA_amazon_production_speed_rail_dyn_var = -2 }
+	set_variable = { global.BRA_amazon_production_speed_hub_dyn_var = -1.5 }
+    set_variable = { global.BRA_amazon_local_build_slots_dyn_var = -0.25 }
+    set_variable = { global.BRA_amazon_local_resources_dyn_var = -0.3 }
+    set_variable = { global.BRA_amazon_local_supplies_dyn_var = -0.5 }
+
+	log = "TFRSG Amazonian preservation raw infra var - [?global.BRA_amazon_production_speed_infra_dyn_var]"
+
+	# Calculate dynamic vars based on factors
+    multiply_variable = { global.BRA_amazon_stability_factor_dyn_var = global.BRA_amazonian_preservation_dyn_var }
+    multiply_variable = { global.BRA_amazon_pp_factor_dyn_var = global.BRA_amazonian_preservation_dyn_var }
+    multiply_variable = { global.BRA_amazon_research_speed_dyn_var = global.BRA_amazonian_preservation_pos_dyn_var }
+    multiply_variable = { global.BRA_amazon_society_development_dyn_var = global.BRA_amazonian_preservation_dyn_var }
+    multiply_variable = { global.BRA_amazon_academic_development_dyn_var = global.BRA_amazonian_preservation_pos_dyn_var }
+	multiply_variable = { global.BRA_amazon_production_speed_infra_dyn_var = global.BRA_amazonian_preservation_pos_dyn_var }
+    multiply_variable = { global.BRA_amazon_production_speed_rail_dyn_var = global.BRA_amazonian_preservation_pos_dyn_var }
+	multiply_variable = { global.BRA_amazon_production_speed_hub_dyn_var = global.BRA_amazonian_preservation_pos_dyn_var }
+    multiply_variable = { global.BRA_amazon_local_build_slots_dyn_var = global.BRA_amazonian_preservation_dyn_var }
+    multiply_variable = { global.BRA_amazon_local_resources_dyn_var = global.BRA_amazonian_preservation_dyn_var }
+    multiply_variable = { global.BRA_amazon_local_supplies_dyn_var = global.BRA_amazonian_preservation_pos_dyn_var }
+
+	log = "TFRSG Amazonian preservation calculated infra var - [?global.BRA_amazon_production_speed_infra_dyn_var]"
+}
+
+## CHAMBER OF DEPUTIES MECHANIC
+BRA_add_centrao_influence = {
+	custom_effect_tooltip = BRA_add_centrao_influence_tooltip
+	add_to_variable = {
+		var = BRA_centrao_influence_var
+		value = BRA_centrao_influence_var_temp
+	}
+	multiply_temp_variable = {
+		var = BRA_centrao_influence_var_temp
+		value = 0.1
+	}
+	add_to_variable = {
+		var = BRA_centrao_influence_dynamic_var
+		value = BRA_centrao_influence_var_temp
+	}
+	clamp_variable = {
+		var = BRA_centrao_influence_var
+		min = 0
+		max = 1
+	}
+	clamp_variable = {
+		var = BRA_centrao_influence_dynamic_var
+		min = 0
+		max = 1
+	}
+}
+
+BRA_add_centrao_support = {
+	custom_effect_tooltip = BRA_add_centrao_support_tooltip
+	add_to_variable = {
+		var = BRA_chamber_centrao_support_var
+		value = BRA_chamber_centrao_support_var_temp
+	}
+	clamp_variable = {
+		var = BRA_chamber_centrao_support_var
+		min = 0
+		max = BRA_chamber_centrao_seats_var
+	}
+
+	BRA_chamber_of_deputies_recalculate_support = yes
+}
+
+BRA_add_centrao_support_random = {
+	custom_effect_tooltip = BRA_add_centrao_support_random_tooltip
+	set_temp_variable_to_random = {
+		var = random_var_temp
+		min = 1
+		max = BRA_chamber_centrao_support_var_temp
+		integer = yes
+	}
+
+	add_to_variable = {
+		var = BRA_chamber_centrao_support_var
+		value = random_var_temp
+	}
+	clamp_variable = {
+		var = BRA_chamber_centrao_support_var
+		min = 0
+		max = BRA_chamber_centrao_seats_var
+	}
+
+	BRA_chamber_of_deputies_recalculate_support = yes
+}
+
+BRA_remove_centrao_support = {
+	custom_effect_tooltip = BRA_remove_centrao_support_tooltip
+	subtract_from_variable = {
+		var = BRA_chamber_centrao_support_var
+		value = BRA_chamber_centrao_support_var_temp
+	}
+	clamp_variable = {
+		var = BRA_chamber_centrao_support_var
+		min = 0
+		max = BRA_chamber_centrao_seats_var
+	}
+
+	BRA_chamber_of_deputies_recalculate_support = yes
+}
+
+BRA_remove_centrao_support_random = {
+	custom_effect_tooltip = BRA_remove_centrao_support_random_tooltip
+	set_temp_variable_to_random = {
+		var = random_var_temp
+		min = 1
+		max = BRA_chamber_centrao_support_var_temp
+		integer = yes
+	}
+
+	subtract_from_variable = {
+		var = BRA_chamber_centrao_support_var
+		value = random_var_temp
+	}
+	clamp_variable = {
+		var = BRA_chamber_centrao_support_var
+		min = 0
+		max = BRA_chamber_centrao_seats_var
+	}
+
+	BRA_chamber_of_deputies_recalculate_support = yes
+}
+
+BRA_chamber_of_deputies_recalculate_support = {
+	set_variable = { BRA_chamber_total_support_var = 0 }
+	if = {
+		limit = {
+			has_country_flag = BRA_progressive_administration_flag
+		}
+
+		add_to_variable = { BRA_chamber_total_support_var = BRA_chamber_progressive_seats_var }
+		add_to_variable = { BRA_chamber_total_support_var = BRA_chamber_centrao_support_var }
+	}
+	if = {
+		limit = {
+			has_country_flag = BRA_centrist_administration_flag
+		}
+
+		add_to_variable = { BRA_chamber_total_support_var = BRA_chamber_progressive_support_var }
+		add_to_variable = { BRA_chamber_total_support_var = BRA_chamber_centrao_seats_var }
+		add_to_variable = { BRA_chamber_total_support_var = BRA_chamber_reactionary_support_var }
+	}
+	if = {
+		limit = {
+			has_country_flag = BRA_reactionary_administration_flag
+		}
+
+		add_to_variable = { BRA_chamber_total_support_var = BRA_chamber_reactionary_seats_var }
+		add_to_variable = { BRA_chamber_total_support_var = BRA_chamber_centrao_support_var }
+	}
+}
+
+BRA_chamber_of_deputies_elections = {
+	custom_effect_tooltip = BRA_chamber_of_deputies_elections_tooltip
+
+	# Define ideology weights
+	# Progressives
+	set_temp_variable = { BRA_ucod_p_weight = party_popularity@totalitarian_socialist }
+	add_to_temp_variable = { BRA_ucod_p_weight = party_popularity@communist }
+	add_to_temp_variable = { BRA_ucod_p_weight = party_popularity@libertarian_socialist }
+	add_to_temp_variable = { BRA_ucod_p_weight = party_popularity@social_democrat }
+	log = "TFRSG Chamber of Deputies: Progressive weight - [?BRA_ucod_p_weight]"
+
+	# Centrists
+	set_temp_variable = { BRA_ucod_c_weight = party_popularity@social_liberal }
+	add_to_temp_variable = { BRA_ucod_c_weight = party_popularity@market_liberal }
+	set_temp_variable  = { BRA_ucod_c_boost = BRA_ucod_c_weight }
+	multiply_temp_variable = { BRA_ucod_c_boost = BRA_centrao_influence_var }
+	add_to_temp_variable = { BRA_ucod_c_weight = BRA_ucod_c_boost }
+	log = "TFRSG Chamber of Deputies: Centrist weight - [?BRA_ucod_c_weight]"
+
+	# Reactionaries
+	set_temp_variable = { BRA_ucod_r_weight = party_popularity@conservative }
+	add_to_temp_variable = { BRA_ucod_r_weight = party_popularity@authoritarian_democrat }
+	add_to_temp_variable = { BRA_ucod_r_weight = party_popularity@nationalist }
+	add_to_temp_variable = { BRA_ucod_r_weight = party_popularity@fascist }
+	add_to_temp_variable = { BRA_ucod_r_weight = party_popularity@national_socialist }
+	log = "TFRSG Chamber of Deputies: Reactionary weight - [?BRA_ucod_c_weight]"
+
+	# Total weight
+	set_temp_variable = { BRA_ucod_total = BRA_ucod_p_weight }
+	add_to_temp_variable = { BRA_ucod_total = BRA_ucod_c_weight }
+	add_to_temp_variable = { BRA_ucod_total = BRA_ucod_r_weight }
+	log = "TFRSG Chamber of Deputies: Total weight - [?BRA_ucod_total]"
+
+	# Get percentages
+	divide_temp_variable = { BRA_ucod_p_weight = BRA_ucod_total }
+	divide_temp_variable = { BRA_ucod_c_weight = BRA_ucod_total }
+	divide_temp_variable = { BRA_ucod_r_weight = BRA_ucod_total }
+
+	# Distribute seats
+	set_variable = { BRA_chamber_progressive_seats_var = BRA_chamber_total_seats_var }
+	multiply_variable = { BRA_chamber_progressive_seats_var = BRA_ucod_p_weight }
+	round_variable = BRA_chamber_progressive_seats_var
+	log = "TFRSG Chamber of Deputies: Progressive seats - [?BRA_chamber_progressive_seats_var]"
+
+	set_variable = { BRA_chamber_centrao_seats_var = BRA_chamber_total_seats_var }
+	multiply_variable = { BRA_chamber_centrao_seats_var = BRA_ucod_c_weight }
+	round_variable = BRA_chamber_centrao_seats_var
+	log = "TFRSG Chamber of Deputies: Centrist seats - [?BRA_chamber_centrao_seats_var]"
+
+	set_variable = { BRA_chamber_reactionary_seats_var = BRA_chamber_total_seats_var }
+	multiply_variable = { BRA_chamber_reactionary_seats_var = BRA_ucod_r_weight }
+	round_variable = BRA_chamber_reactionary_seats_var
+	log = "TFRSG Chamber of Deputies: Reactionary seats - [?BRA_chamber_reactionary_seats_var]"
+
+	# TODO - Check for missing or extra seats
+	set_temp_variable = { BRA_ucod_seats_var = BRA_chamber_progressive_seats_var }
+	add_to_temp_variable = { BRA_ucod_seats_var = BRA_chamber_centrao_seats_var }
+	add_to_temp_variable = { BRA_ucod_seats_var = BRA_chamber_reactionary_seats_var }
+
+	BRA_chamber_of_deputies_recalculate_support = yes
+}
+
+## 2022 ELECTIONS MECHANIC
+BRA_add_election_approval_rating_pt = {
+	custom_effect_tooltip = BRA_add_election_approval_rating_pt_tooltip
+	set_temp_variable = {
+		target = 1
+	}
+	add_to_variable = {
+		var = BRA_election_approval_rating_pt_var
+		value = BRA_election_approval_rating_pt_var_temp
+	}
+	BRA_election_var_balancer = yes
+}
+
+BRA_add_election_approval_rating_psdb = {
+	custom_effect_tooltip = BRA_add_election_approval_rating_psdb_tooltip
+	set_temp_variable = {
+		target = 2
+	}
+	add_to_variable = {
+		var = BRA_election_approval_rating_psdb_var
+		value = BRA_election_approval_rating_psdb_var_temp
+	}
+	BRA_election_var_balancer = yes
+}
+
+BRA_add_election_approval_rating_pl = {
+	custom_effect_tooltip = BRA_add_election_approval_rating_pl_tooltip
+	set_temp_variable = {
+		target = 3
+	}
+	add_to_variable = {
+		var = BRA_election_approval_rating_pl_var
+		value = BRA_election_approval_rating_pl_var_temp
+	}
+	BRA_election_var_balancer = yes
+}
+
+BRA_election_var_balancer = {
+	# Shamelessly ripped from the Russian elections mechanic, kudos RU-TFR devs
+	if = {
+		limit = {
+			check_variable = {
+				target = 1
+			}
+		}
+		divide_temp_variable = {
+			BRA_election_approval_rating_pt_var_temp = 5
+		}
+		multiply_temp_variable = {
+			BRA_election_approval_rating_pt_var_temp = -1
+		}
+		add_to_variable = {
+			BRA_election_approval_rating_psdb_var = BRA_election_approval_rating_pt_var_temp
+		}
+		add_to_variable = {
+			BRA_election_approval_rating_pl_var = BRA_election_approval_rating_pt_var_temp
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				target = 2
+			}
+		}
+		divide_temp_variable = {
+			BRA_election_approval_rating_psdb_var_temp = 5
+		}
+		multiply_temp_variable = {
+			BRA_election_approval_rating_psdb_var_temp = -1
+		}
+		add_to_variable = {
+			BRA_election_approval_rating_pt_var = BRA_election_approval_rating_psdb_var_temp
+		}
+		add_to_variable = {
+			BRA_election_approval_rating_pl_var = BRA_election_approval_rating_psdb_var_temp
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				target = 3
+			}
+		}
+		divide_temp_variable = {
+			BRA_election_approval_rating_pl_var_temp = 5
+		}
+		multiply_temp_variable = {
+			BRA_election_approval_rating_pl_var_temp = -1
+		}
+		add_to_variable = {
+			BRA_election_approval_rating_psdb_var = BRA_election_approval_rating_pl_var_temp
+		}
+		add_to_variable = {
+			BRA_election_approval_rating_pt_var = BRA_election_approval_rating_pl_var_temp
+		}
+	}
+	set_temp_variable = {
+		total_popularity = 0
+	}
+	clamp_variable = {
+		var = BRA_election_approval_rating_pl_var
+		min = 0
+		max = 1
+	}
+	add_to_temp_variable = {
+		total_popularity = BRA_election_approval_rating_pl_var
+	}
+	clamp_variable = {
+		var = BRA_election_approval_rating_pt_var
+		min = 0
+		max = 1
+	}
+	add_to_temp_variable = {
+		total_popularity = BRA_election_approval_rating_pt_var
+	}
+	clamp_variable = {
+		var = BRA_election_approval_rating_psdb_var
+		min = 0
+		max = 1
+	}
+	add_to_temp_variable = {
+		total_popularity = BRA_election_approval_rating_psdb_var
+	}
+	if = {
+		limit = {
+			check_variable = {
+				total_popularity > 1
+			}
+		}
+		subtract_from_temp_variable = {
+			total_popularity = 1
+		}
+		hidden_effect = {
+			random_list = {
+				10 = {
+					modifier = {
+						factor = 0
+						check_variable = {
+							BRA_election_approval_rating_pt_var < total_popularity
+						}
+					}
+					subtract_from_variable = {
+						BRA_election_approval_rating_pt_var = total_popularity
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						check_variable = {
+							BRA_election_approval_rating_psdb_var < total_popularity
+						}
+					}
+					subtract_from_variable = {
+						BRA_election_approval_rating_psdb_var = total_popularity
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						check_variable = {
+							BRA_election_approval_rating_pl_var < total_popularity
+						}
+					}
+					subtract_from_variable = {
+						BRA_election_approval_rating_pl_var = total_popularity
+					}
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				total_popularity < 1
+			}
+		}
+		subtract_from_temp_variable = {
+			total_popularity = 1
+		}
+		multiply_temp_variable = {
+			total_popularity = -1
+		}
+		hidden_effect = {
+			random_list = {
+				10 = {
+					add_to_variable = {
+						BRA_election_approval_rating_pt_var = total_popularity
+					}
+				}
+				10 = {
+					add_to_variable = {
+						BRA_election_approval_rating_psdb_var = total_popularity
+					}
+				}
+				10 = {
+					add_to_variable = {
+						BRA_election_approval_rating_pl_var = total_popularity
+					}
+				}
+			}
+		}
+	}
+	set_temp_variable = {
+		BRA_election_approval_rating_pl_var_temp = 0
+	}
+	set_temp_variable = {
+		BRA_election_approval_rating_pt_var_temp = 0
+	}
+	set_temp_variable = {
+		BRA_election_approval_rating_psdb_var_temp = 0
+	}
+}
+
+BRA_get_2022_elections_result = {
+	custom_effect_tooltip = BRA_get_2022_elections_result_tooltip
+	hidden_effect = {
+		set_country_flag = BRA_2022_elections_over_flag
+		# Chamber elections
+		country_event = {
+			id = Brazil.50
+			days = 7
+		}
+		if = {
+			# AI ELECTIONS BLOCK #
+			# AI gets a free pass and always has its chosen candidate win
+			limit = { is_ai = yes }
+			if = {
+				# Lula victory
+				limit = { has_completed_focus = BRA_2022_together_for_brazil }
+				set_country_flag = BRA_2022_elections_lula_won_flag
+				country_event = {
+					id = Brazil.46
+					hours = 6
+				}
+			}
+			else_if = {
+				# Alckmin victory
+				limit = { has_completed_focus = BRA_2022_uniting_brazil }
+				set_country_flag = BRA_2022_elections_alckmin_won_flag
+				country_event = {
+					id = Brazil.47
+					hours = 6
+				}
+			}
+			else = {
+				# Bolsonaro victory
+				set_country_flag = BRA_2022_elections_bolsonaro_won_flag
+				if = {
+					limit = {
+						NOT = { has_variable = BRA_2022_elections_bolsonaro_candidate }
+					}
+					# Jair
+					country_event = {
+						id = Brazil.48
+						hours = 6
+					}
+				}
+				else = {
+					# Not Jair
+					country_event = {
+						id = Brazil.49
+						hours = 6
+					}
+				}
+			}
+		}
+		else = {
+			# PLAYER ELECTIONS BLOCK #
+			# As a player you gotta actually win it
+			if = {
+				limit = {
+					check_variable = { BRA_election_approval_rating_psdb_var > BRA_election_approval_rating_pt_var }
+					check_variable = { BRA_election_approval_rating_psdb_var > BRA_election_approval_rating_pl_var }
+				}
+				# Alckmin victory
+				set_country_flag = BRA_2022_elections_alckmin_won_flag
+				country_event = {
+					id = Brazil.47
+					hours = 6
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { BRA_election_approval_rating_pl_var > BRA_election_approval_rating_pt_var }
+				}
+				# Bolsonaro victory
+				set_country_flag = BRA_2022_elections_bolsonaro_won_flag
+				if = {
+					limit = {
+						NOT = { has_variable = BRA_2022_elections_bolsonaro_candidate }
+					}
+					# Jair
+					country_event = {
+						id = Brazil.48
+						hours = 6
+					}
+				}
+				else = {
+					# Not Jair
+					country_event = {
+						id = Brazil.49
+						hours = 6
+					}
+				}
+			}
+			else = {
+				# Lula victory
+				set_country_flag = BRA_2022_elections_lula_won_flag
+				country_event = {
+					id = Brazil.46
+					hours = 6
+				}
+			}
+		}
+		mark_focus_tree_layout_dirty = yes
+
+		# Safeguard to force the civil war from happening if the game rules say so
+		if = {
+			limit = {
+				is_ai = yes
+				# Has rule to force civil war
+				has_game_rule = {
+					rule = Brazil_civil_war_setting
+					option = Brazil_civil_war_setting_1
+				}
+			}
+			set_power_balance = {
+				id = BRA_political_radicalization_balance
+				left_side = BRA_radicalization_side
+				right_side = BRA_stabilization_side
+				set_value = -0.75
+			}
+		}
+	}
+}
+
+## COVID-19 MECHANIC
+BRA_increase_corona = {
+	custom_effect_tooltip = BRA_increase_corona_tooltip
+	add_power_balance_value = {
+    	id = BRA_political_radicalization_balance
+    	value = -0.015
+   	 	tooltip_side = BRA_radicalization_side
+	}
+	if = {
+		limit = {
+			has_idea = BRA_coronavirus_pandemic_idea4
+		}
+		swap_ideas = {
+			remove_idea = BRA_coronavirus_pandemic_idea4
+			add_idea = BRA_coronavirus_pandemic_idea3
+		}
+		hidden_effect = {
+			# Mass graves in the Amazon
+			news_event = {
+				id = Brazilnews.2
+				days = 14
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = BRA_little_flu_acknowledged_flag }
+				}
+				# Bolsonaro acknowledges covid
+				country_event = {
+					id = Brazil.12
+					days = 1
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = BRA_coronavirus_pandemic_idea3
+		}
+		swap_ideas = {
+			remove_idea = BRA_coronavirus_pandemic_idea3
+			add_idea = BRA_coronavirus_pandemic_idea2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = BRA_coronavirus_pandemic_idea2
+		}
+		swap_ideas = {
+			remove_idea = BRA_coronavirus_pandemic_idea2
+			add_idea = BRA_coronavirus_pandemic_idea1
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = BRA_coronavirus_pandemic_idea1
+		}
+		swap_ideas = {
+			remove_idea = BRA_coronavirus_pandemic_idea1
+			add_idea = BRA_coronavirus_pandemic_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = BRA_coronavirus_pandemic_idea
+		}
+		add_stability = -0.05
+	}
+	else = {
+		add_ideas = BRA_coronavirus_pandemic_idea4
+	}
+}
+
+BRA_decrease_corona = {
+	custom_effect_tooltip = BRA_decrease_corona_tooltip
+	if = {
+		limit = {
+			has_idea = BRA_coronavirus_pandemic_idea
+		}
+		swap_ideas = {
+			remove_idea = BRA_coronavirus_pandemic_idea
+			add_idea = BRA_coronavirus_pandemic_idea1
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = BRA_coronavirus_pandemic_idea1
+		}
+		swap_ideas = {
+			remove_idea = BRA_coronavirus_pandemic_idea1
+			add_idea = BRA_coronavirus_pandemic_idea2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = BRA_coronavirus_pandemic_idea2
+		}
+		swap_ideas = {
+			remove_idea = BRA_coronavirus_pandemic_idea2
+			add_idea = BRA_coronavirus_pandemic_idea3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = BRA_coronavirus_pandemic_idea3
+		}
+		swap_ideas = {
+			remove_idea = BRA_coronavirus_pandemic_idea3
+			add_idea = BRA_coronavirus_pandemic_idea4
+		}
+	}
+	# The player is expected to remove the last level of covid by finishing vaccine research
+	#else_if = {
+	#	limit = {
+	#		has_idea = BRA_coronavirus_pandemic_idea4
+	#	}
+	#	remove_ideas = BRA_coronavirus_pandemic_idea4
+	#}
+}
+
+BRA_add_days_corona_pandemic = {
+	hidden_effect = {
+		add_to_variable = { 
+			BRA_handle_covid_days_var = BRA_covid_mission_days_temp
+		}
+		add_days_mission_timeout = {
+   			mission = BRA_handle_covid_mission
+    		days = BRA_covid_mission_days_temp
+		}
+		if = {
+			# Cap at 50 days minimum
+			limit = {
+				check_variable = { BRA_handle_covid_days_var < 50 }
+			}
+			set_variable = { BRA_handle_covid_days_var < 50 }
+		}
+	}
+	if = {
+		limit = { 
+			check_variable = { BRA_covid_mission_days_temp < 0 }
+		}
+		multiply_temp_variable = { BRA_covid_mission_days_temp = -1}
+		custom_effect_tooltip = BRA_remove_days_corona_pandemic_tt
+	}
+	else = {
+		custom_effect_tooltip = BRA_add_days_corona_pandemic_tt
+	}
+}
+
+BRA_add_days_corona_recovery = {
+	hidden_effect = {
+		add_to_variable = { 
+			BRA_covid_fadeout_days_var = BRA_covid_mission_days_temp
+		}
+		add_days_mission_timeout = {
+   			mission = BRA_covid_fadeout_mission
+    		days = BRA_covid_mission_days_temp
+		}
+		if = {
+			# Cap at 50 days minimum
+			limit = {
+				check_variable = { BRA_covid_fadeout_days_var < 50 }
+			}
+			set_variable = { BRA_covid_fadeout_days_var < 50 }
+		}
+	}
+	if = {
+		limit = { 
+			check_variable = { BRA_covid_mission_days_temp < 0 }
+		}
+		multiply_temp_variable = { BRA_covid_mission_days_temp = -1}
+		custom_effect_tooltip = BRA_remove_days_corona_recovery_tt
+	}
+	else = {	
+		custom_effect_tooltip = BRA_add_days_corona_recovery_tt
+	}
+}
+
+## COVID TRIALS EVENT FLOW
+BRA_covid_trials_events = {
+	if = {
+		limit = {
+			has_completed_focus = BRA_fire_mandetta
+		}
+		country_event = {
+			id = Brazil.30
+			days = 15
+		}
+	}
+	else_if = {
+		limit = {
+			has_completed_focus = BRA_heed_mandettas_concerns
+		}
+		country_event = {
+			id = Brazil.31
+			days = 15
+		}
+	}
+
+	if = {
+		limit = {
+			has_completed_focus = BRA_reshuffle_cabinet
+		}
+		country_event = {
+			id = Brazil.32
+			days = 30
+		}
+	}
+	else_if = {
+		limit = {
+			has_completed_focus = BRA_work_with_centrao
+		}
+		country_event = {
+			id = Brazil.33
+			days = 30
+		}
+	}
+
+	if = {
+		limit = {
+			NOT = {
+				has_completed_focus = BRA_covid_stabilization
+			}
+		}
+		country_event = {
+			id = Brazil.34
+			days = 45
+		}
+	}
+	else = {
+		country_event = {
+			id = Brazil.35
+			days = 45
+		}
+	}
+}
+
+# COVID TRIALS OUTCOMES REFERENCE - The outcome uses a score system to evaluate the government's Covid-19 performance
+# The government starts with a score of 6, with events based on focus choices potentially increasing or lowering it
+# Also for each level of Covid-19 pandemic severity, one point is deducted
+# 0 or less -> Impeachment
+# 1-2 -> Exoneration
+# 3-4 -> Inconclusive
+# 5 or greater -> acquittal
+BRA_covid_trials_outcome = {
+	custom_effect_tooltip = BRA_covid_trials_outcome_tooltip
+	if = {
+		limit = { has_idea = BRA_coronavirus_pandemic_idea3 }
+		subtract_from_variable = { BRA_covid_trials_score_var = 1 }
+	}
+	else_if = {
+		limit = { has_idea = BRA_coronavirus_pandemic_idea2 }
+		subtract_from_variable = { BRA_covid_trials_score_var = 2 }
+	}
+	else_if = {
+		limit = { has_idea = BRA_coronavirus_pandemic_idea1 }
+		subtract_from_variable = { BRA_covid_trials_score_var = 3 }
+	}
+	else_if = {
+		limit = { has_idea = BRA_coronavirus_pandemic_idea }
+		subtract_from_variable = { BRA_covid_trials_score_var = 4 }
+	}
+
+	hidden_effect = {
+		if = {
+			limit = {
+				check_variable = { BRA_covid_trials_score_var < 1 }
+			}
+	
+			# Impeached
+			country_event = {
+				id = Brazil.36
+				days = 5
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { BRA_covid_trials_score_var < 3 }
+			}
+	
+			# Exonerated
+			country_event = {
+				id = Brazil.37
+				days = 5
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { BRA_covid_trials_score_var < 5 }
+			}
+	
+			# Inconclusive
+			country_event = {
+				id = Brazil.38
+				days = 5
+			}
+		}
+		else = {	
+			# Acquitted
+			country_event = {
+				id = Brazil.39
+				days = 5
+			}
+		}
+	}
+}
+
+## OIL CRISIS
+BRA_decrease_oil_crisis = {
+	if = {
+		limit = {
+			has_idea = BRA_oil_crisis_idea
+		}
+		swap_ideas = {
+			remove_idea = BRA_oil_crisis_idea
+			add_idea = BRA_oil_crisis_idea1
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = BRA_oil_crisis_idea1
+		}
+		swap_ideas = {
+			remove_idea = BRA_oil_crisis_idea1
+			add_idea = BRA_oil_crisis_idea2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = BRA_oil_crisis_idea2
+		}
+		remove_ideas = BRA_oil_crisis_idea2
+	}
+}
+
+## CIVIL WAR
+BRA_civil_war_tag_setup = {
+	hidden_effect = {
+		# Sets up bi-yearly relay events for civil war tags, with the appropriate day offset accounted for
+		set_variable = { TFRSG_days_into_2024_var = num_days }
+		subtract_from_variable = { TFRSG_days_into_2024_var = NUM_DAYS_2024 }
+		country_event = {
+			id = Brazil.timeline.2
+		}
+	}
+}
+
+BRA_civil_war_setup = {
+	hidden_effect = {
+		set_global_flag = BRA_civil_war_started_flag
+		# Federal Gov
+		BR1 = {
+			inherit_technology = BRA
+			if = {
+				limit = {
+					is_ai = yes
+					has_game_rule = {
+						rule = Brazil_civil_war_winner
+						option = Brazil_civil_war_winner_1
+					}
+				}
+				hidden_effect = {
+					add_ideas = { BRA_civil_war_gamerule_blessing }
+				}
+			}
+		}
+		# Military Junta
+		BR2 = {
+			inherit_technology = BRA
+			if = {
+				limit = {
+					is_ai = yes
+					has_game_rule = {
+						rule = Brazil_civil_war_winner
+						option = Brazil_civil_war_winner_2
+					}
+				}
+				hidden_effect = {
+					add_ideas = { BRA_civil_war_gamerule_blessing }
+				}
+			}
+		}
+		# Popular Front
+		BR3 = {
+			inherit_technology = BRA
+			if = {
+				limit = {
+					is_ai = yes
+					has_game_rule = {
+						rule = Brazil_civil_war_winner
+						option = Brazil_civil_war_winner_3
+					}
+				}
+				hidden_effect = {
+					add_ideas = { BRA_civil_war_gamerule_blessing }
+				}
+			}
+		}
+		# Junta Breakaways
+		BR4 = {
+			inherit_technology = BRA
+			if = {
+				limit = {
+					is_ai = yes
+					OR = {
+						has_game_rule = {
+							rule = Brazil_civil_war_winner
+							option = Brazil_civil_war_winner_4
+						}
+						has_game_rule = {
+							rule = Brazil_civil_war_winner
+							option = Brazil_civil_war_winner_5
+						}
+					}
+				}
+				hidden_effect = {
+					add_ideas = { BRA_civil_war_gamerule_blessing }
+				}
+			}
+		}
+
+		# Other Breakaways
+		AMZ = {
+			load_oob = "AMZ_Civil_War"
+		}
+		SPA = {
+			load_oob = "SPA_Civil_War"
+		}
+		SUL = {
+			load_oob = "SUL_Civil_War"
+		}
+	}
+}
+
+BRA_civil_war_start = {
+	hidden_effect = {
+		set_global_flag = BRA_civil_war_ongoing_flag
+
+		BR1 = {
+			mark_focus_tree_layout_dirty = yes
+			add_ideas = { BRA_brazilian_civil_war_idea }
+			BRA_civil_war_get_strategy_idea = yes
+		}
+		BR2 = {
+			mark_focus_tree_layout_dirty = yes
+			add_ideas = { BRA_brazilian_civil_war_idea }
+		}
+		BR3 = {
+			mark_focus_tree_layout_dirty = yes
+			add_ideas = { BRA_brazilian_civil_war_idea }
+			BRA_civil_war_get_strategy_idea = yes
+		}
+		SUL = {
+			add_ideas = { BRA_brazilian_civil_war_idea }
+		}
+		SPA = {
+			add_ideas = { BRA_brazilian_civil_war_idea }
+		}
+		AMZ = {
+			add_ideas = { BRA_brazilian_civil_war_idea }
+		}
+		UNB = {
+			add_ideas = { BRA_brazilian_civil_war_idea }
+		}
+
+		hidden_effect = {
+			news_event = {
+				id = Brazilnews.8
+				hours = 6				
+			}
+		}
+	}	
+}
+
+BRA_civil_war_get_strategy_idea = {
+	if = {
+		limit = {
+			has_country_flag = BRA_cw_picked_defense
+		}
+		add_timed_idea = {
+		    idea = BRA_civil_war_defense_idea
+		    days = 30
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = BRA_cw_picked_maneuver
+		}
+		add_timed_idea = {
+		    idea = BRA_civil_war_maneuver_idea
+		    days = 30
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = BRA_cw_picked_offense
+		}
+		add_timed_idea = {
+		    idea = BRA_civil_war_offense_idea
+		    days = 30
+		}
+	}
+}
+
+BRA_civil_war_end = {
+	custom_effect_tooltip = BRA_civil_war_end_tt
+	hidden_effect = {
+		set_global_flag = BRA_civil_war_ended_flag
+		clr_global_flag = BRA_civil_war_ongoing_flag	
+
+		clr_country_flag = developed_country
+		clr_country_flag = shithole_country
+
+		set_country_flag = BRA_amazonian_preservation_mechanic_enabled	
+
+		if = {
+			limit = {
+				NOT = {
+					has_dynamic_modifier = { modifier = BRA_amazonian_jungle_dynamic }
+				}
+			}
+			add_dynamic_modifier = { modifier = BRA_amazonian_jungle_dynamic }
+		}
+
+		remove_ideas = {
+			BRA_brazilian_civil_war_idea
+			BRA_civil_war_gamerule_blessing
+		}
+
+		# Clear other unifiers' cores and claims
+		if = {
+			limit = { NOT = { tag = BR1 } }
+			BRA = {
+				every_core_state = {
+					remove_claim_by = BR1
+					remove_core_of = BR1
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { tag = BR2 } }
+			BRA = {
+				every_core_state = {
+					remove_claim_by = BR2
+					remove_core_of = BR2
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { tag = BR3 } }
+			BRA = {
+				every_core_state = {
+					remove_claim_by = BR3
+					remove_core_of = BR3
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { tag = BR4 } }
+			BRA = {
+				every_core_state = {
+					remove_claim_by = BR4
+					remove_core_of = BR4
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { tag = UNB } }
+			BRA = {
+				every_core_state = {
+					remove_claim_by = UNB
+					remove_core_of = UNB
+				}
+			}
+		}
+	}
+
+	BRA_civil_war_core_all = yes
+}
+
+BRA_civil_war_add_claims = {
+	custom_effect_tooltip = BRA_civil_war_add_claims_tt
+	hidden_effect = {
+		BRA = {
+			every_core_state = {
+				limit = {
+					NOT = {
+						is_core_of = ROOT
+					}
+				}
+				add_claim_by = ROOT
+			}
+		}
+	}
+}
+
+BRA_civil_war_core_all = {
+	custom_effect_tooltip = BRA_civil_war_core_all_tt
+	hidden_effect = {
+		BRA = {
+			every_core_state = {
+				remove_claim_by = ROOT
+				add_core_of = ROOT
+			}
+		}
+	}
+}
+
+BRA_civil_war_get_state_recruitment_value = {
+	if = {
+		# Small States (2 units)
+        limit = {
+            OR = {
+				state = 495
+				state = 498
+				state = 504
+				state = 905
+				state = 906
+				state = 908
+				state = 1447
+				state = 1449
+				state = 1450
+				state = 1453
+				state = 1454
+				state = 1455
+				state = 1457
+				state = 1459
+				state = 1461
+            }
+        }
+		set_temp_variable = { BRA_civil_war_recruit_value_temp = 2 }
+    }
+	else_if = {
+		# Medium States (3 units)
+        limit = {
+            OR = {
+				state = 280
+				state = 497
+				state = 500			
+				state = 503
+				state = 505
+				state = 1445
+				state = 1446
+				state = 1448
+				state = 1451
+				state = 1452
+				state = 1456
+				state = 1458				
+            }
+        }
+		set_temp_variable = { BRA_civil_war_recruit_value_temp = 3 }
+    }
+	else_if = {
+		# Large States (4 units)
+        limit = {
+            OR = {
+				state = 496
+				state = 499
+				state = 501
+				state = 502
+				state = 1460
+				state = 1462
+				state = 1463
+            }
+        }
+		set_temp_variable = { BRA_civil_war_recruit_value_temp = 4 }
+    }
+
+	log = "TFRSG Popular Front state value - [?BRA_civil_war_recruit_value_temp]"
+}
+
+BRA_civil_war_recruitment_scripted_effect = {
+	FROM = {
+		set_temp_variable = { BRA_civil_war_recruit_value_temp = 1 }
+        BRA_civil_war_get_state_recruitment_value = yes	
+        create_unit = {
+			division = "name = \"Milícia\" division_template = \"Brazilian Militia\"  start_experience_factor = 0.0"
+			allow_spawning_on_enemy_provs = yes
+			owner = ROOT
+            count = BRA_civil_war_recruit_value_temp
+		}
+    }
+}
+
+BRA_endgame_content = {
+    ## Sets up post-civil war skeleton content for this tag
+	if = {
+        # LULA
+        limit = {
+            has_country_flag = BRA_progressive_administration_flag
+        }
+		country_event = {
+			id = Brazil.timeline.9
+			hours = 12
+		}
+		set_power_balance = {
+		    id = BRA_political_alignment_balance
+		    left_side = BRA_progressive_side
+		    right_side = BRA_reactionary_side
+			set_value = -0.15
+		}
+    }
+	else_if = {
+        # ALCKMIN
+        limit = {
+            has_country_flag = BRA_centrist_administration_flag
+        }
+		country_event = {
+			id = Brazil.timeline.10
+			hours = 12
+		}
+		set_power_balance = {
+		    id = BRA_political_alignment_balance
+		    left_side = BRA_progressive_side
+		    right_side = BRA_reactionary_side
+			set_value = 0
+		}
+    }
+    else = {
+        # BOLSONARO
+		country_event = {
+			id = Brazil.timeline.11
+			hours = 12
+		}
+		set_power_balance = {
+		    id = BRA_political_alignment_balance
+		    left_side = BRA_progressive_side
+		    right_side = BRA_reactionary_side
+			set_value = 0.15
+		}
+    }
+}

@@ -1,0 +1,30 @@
+﻿l_english:
+ #Focus
+ #Ideas
+ #Decisions
+ #Missions
+ #Country Flags
+ #Tooltips
+ #Parties
+ PAR_national_socialist_party: "§ROUTLAWED§!"
+ PAR_national_socialist_party_long: "§ROUTLAWED§!"
+ PAR_fascist_party: "§ROUTLAWED§!"
+ PAR_fascist_party_long: "§ROUTLAWED§!"
+ PAR_nationalist_party: "EP"
+ PAR_nationalist_party_long: "Paraguayan Army"
+ PAR_authoritarian_democrat_party: "PPQ"
+ PAR_authoritarian_democrat_party_long: "Beloved Fatherland Party"
+ PAR_conservative_party: "ANR-PC" 
+ PAR_conservative_party_long: "National Republican Association - Colorado Party" 
+ PAR_social_liberal_party: "PLRA" 
+ PAR_social_liberal_party_long: "Authentic Radical Liberal Party" 
+ PAR_social_democrat_party: "PEN" 
+ PAR_social_democrat_party_long: "National Encounter Party" 
+ PAR_libertarian_socialist_party: "P-MAS"
+ PAR_libertarian_socialist_party_long: "Movement For Socialism Party" 
+ PAR_communist_party: "PPL" 
+ PAR_communist_party_long: "Free Fatherland Party"
+ PAR_totalitarian_socialist_party: "§ROUTLAWED§!" 
+ PAR_totalitarian_socialist_party_long: "§ROUTLAWED§!"
+ #Events
+ #World Tension

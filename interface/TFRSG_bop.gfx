@@ -1,0 +1,7 @@
+spriteTypes = {
+    ### RADICALIZATION BOP ###
+    spriteType = {
+		name = "GFX_BRA_radicalization_balance"
+		texturefile = "gfx/interface/ideas/generic/BRA_radicalization_balance.png"
+	}
+}

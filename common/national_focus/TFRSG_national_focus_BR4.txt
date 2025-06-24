@@ -1,0 +1,560 @@
+######################################################
+# Brazilian Integralist Front/National Restoration Union Focus Tree
+# By gdn001
+######################################################
+
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+
+focus_tree = {
+	id = BR4_Focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 20
+			original_tag = BR4
+		}
+	}
+
+    # ------------------------------------------------------------ CIVIL WAR FOCUSES ------------------------------------------------------------
+	# Intended duration: Until the civil war is done
+    focus = {
+		id = BR4_cw_our_time_to_rise
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		x = 5
+		y = 0
+		cost = 2
+		allow_branch = {
+			NOT = {
+				has_global_flag = BRA_civil_war_ended_flag
+			}
+		}
+		available_if_capitulated = no
+		cancelable = no
+		ai_will_do = {
+			base = 1
+		}
+		available = {
+			hidden_trigger = {
+				has_global_flag = BRA_civil_war_started_flag
+			}
+		}
+		completion_reward = {
+			# The insurgency rises! Gives starting bonuses
+			add_political_power = 50
+			add_war_support = 0.15
+			BR4_civil_war_extend_insurgent_spirit_effect = yes
+		}
+	}
+
+	focus = {
+		id = BR4_cw_god
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		relative_position_id = BR4_cw_our_time_to_rise
+		x = 0
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = BR4_cw_our_time_to_rise
+		}
+		available_if_capitulated = no
+		cancelable = no
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Political/Stability boosts
+			add_political_power = 100
+			add_stability = 0.15
+		}
+	}  
+
+	focus = {
+		id = BR4_cw_country
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		relative_position_id = BR4_cw_god
+		x = 0
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = BR4_cw_god
+		}
+		available_if_capitulated = no
+		cancelable = no
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Claims and starting cores
+			BRA_civil_war_add_claims = yes
+			custom_effect_tooltip = BRA_civil_war_coring_unlocked_tt
+		}
+	} 
+
+	focus = {
+		id = BR4_cw_family
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		relative_position_id = BR4_cw_country
+		x = 0
+		y = 1
+		cost = 2
+		available = {
+			NOT = { country_exists = BR2 }
+		}
+		prerequisite = {
+			focus = BR4_cw_country
+		}
+		available_if_capitulated = no
+		cancelable = no
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# War support and unlocks attacks on other factions
+			unlock_decision_tooltip = BR4_cw_attack_government
+			unlock_decision_tooltip = BR4_cw_attack_front
+			add_war_support = 0.25
+		}
+	}
+
+	focus = {
+		id = BR4_cw_keep_the_momentum
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		relative_position_id = BR4_cw_family
+		x = 0
+		y = 1
+		cost = 2
+		available = {
+			NOT = { country_exists = BR2 }
+		}
+		prerequisite = {
+			focus = BR4_cw_family
+		}
+		available_if_capitulated = no
+		cancelable = no
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Boost to the insurrection spirit
+			add_political_power = 150
+			BR4_civil_war_extend_insurgent_spirit_effect = yes
+		}
+	}
+
+	focus = {
+		id = BR4_cw_great_patriotic_army
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		relative_position_id = BR4_cw_keep_the_momentum
+		x = 0
+		y = 1
+		cost = 2
+		available = {
+			NOT = { country_exists = BR2 }
+		}
+		prerequisite = {
+			focus = BR4_cw_keep_the_momentum
+		}
+		available_if_capitulated = no
+		cancelable = no
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Unlocks division training and spawns army reinforcements
+			country_lock_all_division_template = no
+			custom_effect_tooltip = TFRSG_inherited_templates_hint_tt
+			random_controlled_state = {
+				create_unit = {
+					division = "name = \"Bda Inf Mtz\" division_template = \"Brigada de Infantaria Motorizada\"  start_experience_factor = 0.0"
+					allow_spawning_on_enemy_provs = yes
+					owner = BR4
+            		count = 2
+				}
+				create_unit = {
+					division = "name = \"Bda C Mec\" division_template = \"Brigada de Cavalaria Mecanizada\"  start_experience_factor = 0.0"
+					allow_spawning_on_enemy_provs = yes
+					owner = BR4
+            		count = 1
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = BR4_cw_rise_of_integralism
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		relative_position_id = BR4_cw_family
+		x = -2
+		y = 1
+		cost = 2
+		available = {
+			has_government = fascist
+		}
+		prerequisite = {
+			focus = BR4_cw_family
+		}
+		mutually_exclusive = {
+			focus = BR4_cw_undo_the_great_mistake
+		}
+		available_if_capitulated = no
+		cancelable = no
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			add_political_power = 250
+			add_war_support = 0.1
+			add_popularity = { 
+				ideology = fascist
+				popularity = 0.15
+			}
+		}
+	}
+
+	focus = {
+		id = BR4_cw_the_new_greenshirts
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		relative_position_id = BR4_cw_rise_of_integralism
+		x = 0
+		y = 1
+		cost = 2
+		available = {
+			has_government = fascist
+		}
+		prerequisite = {
+			focus = BR4_cw_rise_of_integralism
+		}
+		available_if_capitulated = no
+		cancelable = no
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Unlocks militias and upgrades the insurrection spirit
+			swap_ideas = {
+			    remove_idea = BR4_insurgent_deception_idea
+			    add_idea = BR4_insurgent_deception_integralist_idea
+			}
+			BR4_civil_war_extend_insurgent_spirit_effect = yes
+		}
+	}
+
+	focus = {
+		id = BR4_cw_undo_the_great_mistake
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		relative_position_id = BR4_cw_family
+		x = 2
+		y = 1
+		cost = 2
+		available = {
+			has_government = nationalist
+		}
+		prerequisite = {
+			focus = BR4_cw_family
+		}
+		mutually_exclusive = {
+			focus = BR4_cw_rise_of_integralism
+		}
+		available_if_capitulated = no
+		cancelable = no
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			add_political_power = 100
+			add_war_support = 0.25
+			add_popularity = { 
+				ideology = nationalist
+				popularity = 0.15
+			}
+		}
+	}
+
+	focus = {
+		id = BR4_cw_royal_militias
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		relative_position_id = BR4_cw_undo_the_great_mistake
+		x = 0
+		y = 1
+		cost = 2
+		available = {
+			has_government = nationalist
+		}
+		prerequisite = {
+			focus = BR4_cw_undo_the_great_mistake
+		}
+		available_if_capitulated = no
+		cancelable = no
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Unlocks militias and upgrades the insurrection spirit
+			swap_ideas = {
+			    remove_idea = BR4_insurgent_deception_idea
+			    add_idea = BR4_insurgent_deception_monarchist_idea
+			}
+			BR4_civil_war_extend_insurgent_spirit_effect = yes
+		}
+	}
+
+	focus = {
+		id = BR4_cw_fan_brazilian_irredentism
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		relative_position_id = BR4_cw_great_patriotic_army
+		x = 0
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = BR4_cw_the_new_greenshirts
+			focus = BR4_cw_royal_militias
+		}
+		prerequisite = {
+			focus = BR4_cw_great_patriotic_army
+		}
+		available_if_capitulated = no
+		cancelable = no
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# General boost
+			BR4_civil_war_extend_insurgent_spirit_effect = yes
+			add_political_power = 100
+			add_stability = -0.05
+			add_war_support = 0.25
+		}
+	}
+
+	focus = {
+		id = BR4_cw_our_workers
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		relative_position_id = BR4_cw_fan_brazilian_irredentism
+		x = -2
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = BR4_cw_fan_brazilian_irredentism
+		}
+		available_if_capitulated = no
+		cancelable = no
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Industry boost
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = BR4_cw_our_nation
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		relative_position_id = BR4_cw_fan_brazilian_irredentism
+		x = 0
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = BR4_cw_fan_brazilian_irredentism
+		}
+		available_if_capitulated = no
+		cancelable = no
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Political boost
+			add_political_power = 250
+			add_stability = 0.25
+		}
+	}
+
+	focus = {
+		id = BR4_cw_our_soldiers
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		relative_position_id = BR4_cw_fan_brazilian_irredentism
+		x = 2
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = BR4_cw_fan_brazilian_irredentism
+		}
+		available_if_capitulated = no
+		cancelable = no
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Spawns bonus divisions
+		}
+	}
+
+	focus = {
+		id = BR4_cw_the_loose_ends
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		relative_position_id = BR4_cw_our_nation
+		x = 0
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = BR4_cw_our_nation
+			focus = BR4_cw_our_workers
+			focus = BR4_cw_our_soldiers
+		}		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = BRA_civil_war_unifiers_defeated_tt
+				NOT = {
+					country_exists = BR1
+					country_exists = BR2
+					country_exists = BR3
+				}
+			}
+		}
+		available_if_capitulated = no
+		cancelable = no
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Further boosts insurrection spirit and immediately prompts wars on the remaining breakaways
+			BR4_civil_war_extend_insurgent_spirit_effect = yes
+			add_war_support = 0.15
+			if = {
+				limit = { country_exists = AMZ }
+				declare_war_on = {
+					target = AMZ
+    				type = annex_everything
+				}
+			}
+			if = {
+				limit = { country_exists = SUL }
+				declare_war_on = {
+					target = SUL
+    				type = annex_everything
+				}
+			}
+			if = {
+				limit = { country_exists = SPA }
+				declare_war_on = {
+					target = SPA
+    				type = annex_everything
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = BR4_cw_our_inevitable_victory
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		relative_position_id = BR4_cw_the_loose_ends
+		x = 0
+		y = 1
+		cost = 2
+		prerequisite = {
+			focus = BR4_cw_the_loose_ends
+		}
+		available = {
+			has_war = no
+			custom_trigger_tooltip = {
+				tooltip = BRA_civil_war_breakaways_defeated_tt
+				NOT = {
+					country_exists = AMZ
+					country_exists = SPA
+					country_exists = SUL
+				}
+			}
+		}
+		available_if_capitulated = no
+		cancelable = no
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# The civil war will be over!
+			add_stability = 0.25
+			add_war_support = 0.05
+			BRA_civil_war_end = yes
+
+			remove_ideas = { BR4_total_anarchy_idea }
+
+			# Integralist End
+			if = {
+				limit = { has_government = fascist }
+				country_event = {
+					id = Brazil.timeline.16
+					days = 7
+				}
+				hidden_effect = {
+					news_event = {
+						id = Brazilnews.12
+						hours = 12
+					}
+				}
+			}		
+			# Monarchist End
+			else_if = {
+				limit = { has_government = nationalist }
+				country_event = {
+					id = Brazil.timeline.17
+					days = 7
+				}
+				hidden_effect = {
+					news_event = {
+						id = Brazilnews.13
+						hours = 12
+					}
+				}
+			}
+			set_variable = { global.TFRSG_active_BRA_tag = BR4 }
+		}
+	}
+}

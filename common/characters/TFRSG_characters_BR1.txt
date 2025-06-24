@@ -1,0 +1,34 @@
+characters = {
+	# FEDERAL GOV
+	BR1_lula_da_silva_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BR1/BR1_Lula_da_Silva_civilwar.png"
+			}
+		}
+		country_leader = {
+			ideology = social_democracy
+			traits = {
+				FRA_SocDem_Strongman
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+
+	BR1_geraldo_alckmin_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_Geraldo_Alckmin.png"
+			}
+		}
+		country_leader = {
+			ideology = centrist
+			traits = {
+				BRA_serial_centrist
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}			
+}

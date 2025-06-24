@@ -1,0 +1,29 @@
+state={
+	id=500
+	name="STATE_500"
+	resources={
+		oil=68.000
+		steel=8.000
+	}
+	provinces={
+		5172 8190 12996 15013 
+	}
+	manpower=9873000
+	buildings_max_level_factor=1.000
+	state_category=suburb
+	local_supplies=0.000
+
+	history = {
+		owner = BRA
+		add_core_of = BRA
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			dockyard = 1
+			nuclear_reactor = 1
+		}
+
+		victory_points = { 5172 1 }
+		victory_points = { 12996 5 }
+	}
+}

@@ -1,0 +1,54 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_BRA_Lula_da_Silva_sunglasses" 
+		texturefile = "gfx/leaders/BRA/BRA_Lula_da_Silva_sunglasses.png" 
+	}
+	spriteType = {
+		name = "GFX_BRA_Lula_da_Silva_hat" 
+		texturefile = "gfx/leaders/BRA/BRA_Lula_da_Silva_hat.png" 
+	}
+
+	spriteType = {
+		name = "GFX_BRA_Geraldo_Alckmin"  
+		texturefile = "gfx/leaders/BRA/BRA_Geraldo_Alckmin.png" 
+	}
+	spriteType = {
+		name = "GFX_BRA_Geraldo_Alckmin_Reelection"  
+		texturefile = "gfx/leaders/BRA/BRA_Geraldo_Alckmin_Reelection.png" 
+	}
+
+    spriteType = {
+		name = "GFX_BRA_jair_bolsonaro_mask"  
+		texturefile = "gfx/leaders/BRA/BRA_Jair_Bolsonaro_mask.png" 
+	}
+	spriteType = {
+		name = "GFX_BRA_jair_bolsonaro_sad"  
+		texturefile = "gfx/leaders/BRA/BRA_Jair_Bolsonaro_sad.png" 
+	}
+	spriteType = {
+		name = "GFX_BRA_Jair_Bolsonaro_reelection"  
+		texturefile = "gfx/leaders/BRA/BRA_Jair_Bolsonaro_reelection.png" 
+	}
+	spriteType = {
+		name = "GFX_BRA_Jair_Bolsonaro_sunglasses"  
+		texturefile = "gfx/leaders/BRA/BRA_Jair_Bolsonaro_sunglasses.png" 
+	}
+
+	spriteType = {
+		name = "GFX_BRA_Flavio_Bolsonaro_reelection"  
+		texturefile = "gfx/leaders/BRA/BRA_Flavio_Bolsonaro_Reelection.png" 
+	}
+	spriteType = {
+		name = "GFX_BRA_Eduardo_Bolsonaro_reelection"  
+		texturefile = "gfx/leaders/BRA/BRA_Eduardo_Bolsonaro_Reelection.png" 
+	}
+	spriteType = {
+		name = "GFX_BRA_Carlos_Bolsonaro_reelection"  
+		texturefile = "gfx/leaders/BRA/BRA_Carlos_Bolsonaro_Reelection.png" 
+	}
+
+	spriteType = {
+		name = "GFX_BR3_Leo_Pericles_president"  
+		texturefile = "gfx/leaders/BR3/BR3_Leo_Pericles_president.png" 
+	}
+}

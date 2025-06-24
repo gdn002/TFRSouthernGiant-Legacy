@@ -1,0 +1,154 @@
+spriteTypes = {
+	#BRA 
+	## INTRO
+	SpriteType = {
+		name = "GFX_focus_BRA_second_half_of_bolsonaro"
+		texturefile = "gfx/interface/goals/BRA/BRA_second_half_of_bolsonaro.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_political_tit_for_tat"
+		texturefile = "gfx/interface/goals/BRA/BRA_political_tit_for_tat.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_reshuffle_cabinet"
+		texturefile = "gfx/interface/goals/BRA/BRA_reshuffle_cabinet.png"
+	}	
+	SpriteType = {
+		name = "GFX_focus_BRA_purge_federal_police"
+		texturefile = "gfx/interface/goals/BRA/BRA_purge_federal_police.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_rally_followers"
+		texturefile = "gfx/interface/goals/BRA/BRA_rally_followers.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_secure_allies"
+		texturefile = "gfx/interface/goals/BRA/BRA_secure_allies.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_work_with_centrao"
+		texturefile = "gfx/interface/goals/BRA/BRA_work_with_centrao.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_ministries_for_support"
+		texturefile = "gfx/interface/goals/BRA/BRA_ministries_for_support.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_give_up_chamber"
+		texturefile = "gfx/interface/goals/BRA/BRA_give_up_chamber.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_strong_presidency"
+		texturefile = "gfx/interface/goals/BRA/BRA_strong_presidency.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_initiate_self_coup"
+		texturefile = "gfx/interface/goals/BRA/BRA_initiate_self_coup.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_dealing_with_little_flu"
+		texturefile = "gfx/interface/goals/BRA/BRA_dealing_with_little_flu.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_fire_mandetta"
+		texturefile = "gfx/interface/goals/BRA/BRA_fire_mandetta.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_herd_immunity_policy"
+		texturefile = "gfx/interface/goals/BRA/BRA_herd_immunity_policy.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_grant_state_municipal_autonomy"
+		texturefile = "gfx/interface/goals/BRA/BRA_grant_state_municipal_autonomy.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_push_precocious_treatments"
+		texturefile = "gfx/interface/goals/BRA/BRA_push_precocious_treatments.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_heed_mandetta"
+		texturefile = "gfx/interface/goals/BRA/BRA_heed_mandetta.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_issue_lockdowns"
+		texturefile = "gfx/interface/goals/BRA/BRA_issue_lockdowns.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_contain_president"
+		texturefile = "gfx/interface/goals/BRA/BRA_contain_president.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_covid_stabilization"
+		texturefile = "gfx/interface/goals/BRA/BRA_covid_stabilization.png"
+	}
+	## COVID TRIALS
+	SpriteType = {
+		name = "GFX_focus_BRA_covid_trials_focus"
+		texturefile = "gfx/interface/goals/BRA/BRA_covid_trials_focus.png"
+	}
+	## 2022 ELECTIONS
+	SpriteType = {
+		name = "GFX_focus_BRA_the_2022_race"
+		texturefile = "gfx/interface/goals/BRA/BRA_the_2022_race.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_2022_together_for_brazil"
+		texturefile = "gfx/interface/goals/BRA/BRA_2022_together_for_brazil.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_2022_reinvigorate_social_democracy"
+		texturefile = "gfx/interface/goals/BRA/BRA_2022_reinvigorate_social_democracy.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_2022_mingle_with_popular_front"
+		texturefile = "gfx/interface/goals/BRA/BRA_2022_mingle_with_popular_front.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_2022_sideline_popular_front"
+		texturefile = "gfx/interface/goals/BRA/BRA_2022_sideline_popular_front.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_2022_grassroots_campaigns"
+		texturefile = "gfx/interface/goals/BRA/BRA_2022_grassroots_campaigns.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_2022_uniting_brazil"
+		texturefile = "gfx/interface/goals/BRA/BRA_2022_uniting_brazil.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_2022_stand_for_normalcy"
+		texturefile = "gfx/interface/goals/BRA/BRA_2022_stand_for_normalcy.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_2022_gather_centrao_support"
+		texturefile = "gfx/interface/goals/BRA/BRA_2022_gather_centrao_support.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_2022_propaganda_overdrive"
+		texturefile = "gfx/interface/goals/BRA/BRA_2022_propaganda_overdrive.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_2022_god_country_family"
+		texturefile = "gfx/interface/goals/BRA/BRA_2022_god_country_family.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_2022_cruzade_for_brazil"
+		texturefile = "gfx/interface/goals/BRA/BRA_2022_cruzade_for_brazil.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_2022_moderated_tone"
+		texturefile = "gfx/interface/goals/BRA/BRA_2022_moderated_tone.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_2022_no_holding_back"
+		texturefile = "gfx/interface/goals/BRA/BRA_2022_no_holding_back.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_2022_social_media_campaign"
+		texturefile = "gfx/interface/goals/BRA/BRA_2022_social_media_campaign.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_BRA_2022_the_last_stretch"
+		texturefile = "gfx/interface/goals/BRA/BRA_2022_the_last_stretch.png"
+	}
+}

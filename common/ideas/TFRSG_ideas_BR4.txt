@@ -1,0 +1,111 @@
+ideas = {
+	## NATIONAL SPIRITS ##
+	country = {	
+		BR4_insurgent_deception_idea = {
+			allowed = {
+				original_tag = BR4
+			}
+			modifier = {
+				modifier_army_sub_unit_militia_attack_factor = 0.5
+				modifier_army_sub_unit_militia_defence_factor = 0.5
+				modifier_army_sub_unit_militia_speed_factor = 0.15
+				modifier_army_sub_unit_militia_max_org_factor = 0.15
+				modifier_army_sub_unit_militia_org_recovery_cap_factor = 0.15
+			}
+		}
+
+		BR4_insurgent_deception_integralist_idea = {
+			name = BR4_insurgent_deception_idea
+			allowed = {
+				original_tag = BR4
+			}
+			modifier = {
+				modifier_army_sub_unit_militia_attack_factor = 0.5
+				modifier_army_sub_unit_militia_defence_factor = 0.65
+				modifier_army_sub_unit_militia_speed_factor = 0.15
+				modifier_army_sub_unit_militia_max_org_factor = 0.25
+				modifier_army_sub_unit_militia_org_recovery_cap_factor = 0.15
+			}
+		}
+
+		BR4_insurgent_deception_monarchist_idea = {
+			name = BR4_insurgent_deception_idea
+			allowed = {
+				original_tag = BR4
+			}
+			modifier = {
+				modifier_army_sub_unit_militia_attack_factor = 0.65
+				modifier_army_sub_unit_militia_defence_factor = 0.5
+				modifier_army_sub_unit_militia_speed_factor = 0.25
+				modifier_army_sub_unit_militia_max_org_factor = 0.15
+				modifier_army_sub_unit_militia_org_recovery_cap_factor = 0.2
+			}
+		}
+
+		BR4_insurgency_deception_enemy_idea = {
+			name = BR4_insurgent_deception_idea
+			allowed = {
+				original_tag = BR2
+			}
+			modifier = {
+				army_org_factor = -0.6
+				army_morale_factor = -0.4
+				dig_in_speed_factor = -0.6
+				initiative_factor = -0.5
+			}
+		}
+
+		BR4_total_anarchy_idea = {
+			allowed = {
+				original_tag = BR4
+			}
+			modifier = {
+				stability_factor = -0.5
+				stability_weekly = -0.005
+				political_power_gain = -0.2
+				max_planning_factor = -0.5	
+				production_speed_buildings_factor = -0.5
+				industry_free_repair_factor = -0.8
+				consumer_goods_factor = 0.35
+				production_factory_efficiency_gain_factor = -0.25
+				production_factory_max_efficiency_factor = -0.3
+				line_change_production_efficiency_factor = -0.5
+			}
+		}
+
+		BR4_fight_for_democracy_idea = {
+			allowed = {
+				original_tag = BR4
+			}
+			modifier = {
+				surrender_limit = 1
+				fascist_drift = -0.02
+				nationalist_drift = -0.02
+				authoritarian_democrat_drift = -0.02
+				non_core_manpower = 0.25
+			}
+		}
+
+		BR4_integralist_front_idea = {
+			allowed = {
+				original_tag = BR4
+			}
+			modifier = {
+				surrender_limit = 1
+				fascist_drift = 0.02
+				non_core_manpower = 0.25
+			}
+		}	
+
+		BR4_national_restoration_idea = {
+			allowed = {
+				original_tag = BR4
+			}
+			modifier = {
+				surrender_limit = 1
+				nationalist_drift = 0.02
+				non_core_manpower = 0.25
+			}
+		}
+	}	
+}	

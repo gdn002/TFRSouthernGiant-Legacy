@@ -1,0 +1,256 @@
+	capital = 1462
+
+	oob = "BRA_Unifier_2020"
+
+	recruit_character = BR3_leo_pericles_char
+	recruit_character = BR3_guilherme_boulos_char
+	recruit_character = BR3_rui_costa_pimenta_char
+ 	recruit_character = BR3_leonel_radde_char
+	recruit_character = BR3_paulo_galo_char
+	recruit_character = BR3_pedro_che_char
+
+	set_research_slots = 3
+	set_convoys = 50
+	set_stability = 0.15
+	set_war_support = 0.15
+
+	set_country_flag = country_language_portuguese
+	set_country_flag = shithole_country
+
+	country_lock_all_division_template = yes
+
+	set_variable = { Russian_Influence = 0.05 }
+	set_variable = { Chinese_Influence = 0.25 }
+	set_variable = { American_Influence = 0.05 }
+	set_variable = { European_Influence = 0.05 }
+	set_variable = { PDO_Influence = 0.05 }
+	set_variable = { Sovereign_Influence = 0.55 }
+
+	add_ideas = {
+		# National Spirits
+		BRA_not_world_power_idea
+		BRA_systemic_corruption_idea
+		BRA_mass_homicide_idea
+		BRA_disjointed_geography_idea
+		BRA_agricultural_society_idea
+		BRA_rise_of_evangelism_idea
+		BRA_informalized_economy_idea
+		BR3_popular_front_idea
+		BR3_disorganized_warfare_idea
+		BR3_uncontrolled_industrial_output_idea
+
+		# Ministers
+
+		# Laws
+		civilian_mobilization
+		low_trade
+		medium_taxes
+		lower_welfare
+		lower_conscription
+		higher_female_service
+		higher_racial_integration
+		general_exemptions
+
+		# Development
+		medium_academic
+		high_farming
+		low_poverty
+		medium_industry
+		low_military
+		low_society
+
+		# Economy/Government
+		ZZZ_chaostic_economy
+ 		ZZZ_revolutionary_front
+
+		i_dont_wanna_fight
+	}
+
+	set_politics = {
+		ruling_party = communist
+		last_election = "2018.10.26"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	
+	set_popularities = {
+		totalitarian_socialist = 12
+		communist = 21
+		libertarian_socialist = 26
+		social_democrat = 14
+		social_liberal = 5
+		market_liberal = 3
+		conservative = 12
+		authoritarian_democrat = 7
+	}
+
+	# STARTING TECHS
+	set_technology = {
+		## Infantry ##
+		infantry_weapons1 = 1
+		infantry_weapons2 = 1
+		infantry_weapons3 = 1
+		upgraded_infantry_weapons1 = 1
+		infantry_rifle_upgrade = 1
+		infantry_rifle_upgrade2 = 1
+		support_weapons = 1
+		support_weapons2 = 1
+		night_vision = 1
+		night_vision2 = 1
+		body_armor = 1
+		camouflage = 1
+		camouflage2 = 1
+		motorised_infantry = 1
+		tech_mountaineers = 1
+		marines = 1
+		paratroopers = 1
+		tech_rangers = 1
+		
+		## Support Companies ##
+		tech_support = 1
+		tech_engineers = 1
+		tech_recon = 1
+		tech_military_police = 1
+		tech_maintenance_company = 1
+		tech_field_hospital = 1
+		tech_logistics_company = 1
+		tech_signal_company = 1
+		basic_train = 1
+		utility_helicopter_1 = 1
+		
+		## Armor ##
+		mechanised_infantry1 = 1
+		mechanised_infantry2 = 1
+		light_mechanized_infantry1 = 1
+		light_mechanized_infantry2 = 1
+		
+		## Artillery ##
+		gw_artillery = 1
+		interwar_antitank = 1
+		interwar_antiair = 1
+		tank_destroyer1 = 1
+		self_propelled_aa1 = 1
+		interwar_artillery = 1
+		sp_artillery1 = 1
+		rocket_artillery = 1
+		
+		## Engineering ##
+		electronic_mechanical_engineering = 1
+		power_plants = 1
+		power_plants1 = 1
+		energy_farms = 1
+		
+		## Industry ##
+		basic_machine_tools = 1
+		fuel_silos = 1
+		synth_oil_experiments = 1
+		
+		## Doctrines ##
+		fleet_in_being = 1
+	}
+	
+	# STARTING TECHS - ARMOR
+	if = {
+		limit = {
+			NOT = { has_dlc = "No Step Back" }
+		}
+		set_technology = {
+			main_battle_tank1 = 1
+			main_battle_tank2 = 1
+			main_battle_tank3 = 1
+			light_tank1 = 1
+			light_tank2 = 1
+			amphibious_tank1 = 1
+			amphibious_mechanized_infantry1 = 1
+		}
+	}
+	if = {
+		limit = {
+			has_dlc = "No Step Back"
+		}
+		set_technology = {
+			gwtank_chassis = 1
+			basic_medium_tank_chassis = 1
+			engine_tech_1 = 1
+			amphibious_tank_chassis = 1
+			amphibious_mechanized_infantry1 = 1
+			legacy_armor_designs = 1
+			armor_tech_1 = 1
+		}
+	}
+
+	# STARTING TECHS - AIR
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_technology = {
+				photo_reconnaisance = 1
+				aa_lmg = 1
+				engines_1 = 1
+				engines_2 = 1
+				early_bombs = 1
+				aircraft_construction = 1
+				iw_small_airframe = 1
+				basic_small_airframe = 1
+				iw_medium_airframe = 1
+				iw_large_airframe = 1
+				basic_large_airframe = 1
+			}
+		else = {
+			set_technology = {
+				CAS1 = 1
+				CAS2 = 1
+				cv_CAS1 = 1
+				cv_CAS2 = 1
+				fighter1 = 1
+				fighter2 = 1
+				fighter3 = 1
+				cv_fighter1 = 1
+				naval_bomber1 = 1
+				naval_bomber2 = 1
+				naval_bomber3 = 1
+				strategic_bomber1 = 1
+				strategic_bomber2 = 1
+				tactical_bomber1 = 1
+			}
+		}
+	}
+
+	# STARTING TECHS - NAVY
+	if = {
+		limit = { not = { has_dlc = "Man the Guns" } }
+		set_technology = {
+			early_destroyer = 1
+			basic_destroyer = 1
+			early_light_cruiser = 1
+			basic_light_cruiser = 1
+			early_heavy_cruiser = 1
+			basic_heavy_cruiser = 1
+			early_carrier = 1
+			early_submarine = 1
+			transport = 1
+		}
+	}
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		set_technology = {
+			early_ship_hull_light = 1
+			basic_ship_hull_light = 1
+			early_ship_hull_cruiser = 1
+			basic_ship_hull_cruiser = 1
+			early_ship_hull_carrier = 1
+			early_ship_hull_submarine = 1
+			smoke_generator = 1
+			sonar = 1
+			basic_depth_charges = 1
+			improved_airplane_launcher = 1
+			basic_cruiser_armor_scheme = 1
+			basic_torpedo = 1
+			basic_battery = 1
+			basic_light_battery = 1
+			basic_medium_battery = 1
+			#basic_secondary_battery = 1
+			mtg_transport = 1
+			basic_naval_mines = 1
+			submarine_mine_laying = 1
+		}
+	}

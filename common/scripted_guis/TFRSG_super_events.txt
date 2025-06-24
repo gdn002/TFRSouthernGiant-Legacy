@@ -1,0 +1,127 @@
+	scripted_gui = {
+		BRA_great_american_war_super_event = {
+			context_type = player_context
+			window_name = "BRA_great_american_war_super_event"
+
+			visible = {
+				has_country_flag = BRA_great_american_war_se_flag
+				NOT = {
+					has_global_flag = super_events_off_flag
+				}
+			}
+			
+			effects = {
+				Super_Event_Close_click = {
+					clr_country_flag = BRA_great_american_war_se_flag
+				}
+			}
+		}
+
+		BRA_great_american_war_brazil_victory_super_event = {
+			context_type = player_context
+			window_name = "BRA_great_american_war_brazil_victory_super_event"
+
+			visible = {
+				has_country_flag = BRA_great_american_war_brazil_victory_se_flag
+				NOT = {
+					has_global_flag = super_events_off_flag
+				}
+			}
+			
+			effects = {
+				Super_Event_Close_click = {
+					clr_country_flag = BRA_great_american_war_brazil_victory_se_flag
+				}
+			}
+		}
+		
+		BRA_amazonian_collapse_super_event = {
+			context_type = player_context
+			window_name = "BRA_amazonian_collapse_super_event"
+
+			visible = {
+				has_country_flag = BRA_amazonian_collapse_se_flag
+				NOT = {
+					has_global_flag = super_events_off_flag
+				}
+			}
+			
+			effects = {
+				Super_Event_Close_click = {
+					clr_country_flag = BRA_amazonian_collapse_se_flag
+				}
+			}
+		}
+
+		BRA_formation_of_ursal_super_event = {
+			context_type = player_context
+			window_name = "BRA_formation_of_ursal_super_event"
+
+			visible = {
+				has_global_flag = BRA_formation_of_ursal_se_flag
+				NOT = {
+					has_global_flag = super_events_off_flag
+				}
+			}
+			
+			effects = {
+				Super_Event_Close_click = {
+					clr_global_flag = BRA_formation_of_ursal_se_flag
+				}
+			}
+		}
+	
+		BRA_formation_of_ussa_super_event = {
+			context_type = player_context
+			window_name = "BRA_formation_of_ussa_super_event"
+
+			visible = {
+				has_country_flag = BRA_formation_of_ussa_se_flag
+				NOT = {
+					has_global_flag = super_events_off_flag
+				}
+			}
+			
+			effects = {
+				Super_Event_Close_click = {
+					clr_country_flag = BRA_formation_of_ussa_se_flag
+				}
+			}
+		}
+		
+		BRA_monarchy_restoration_super_event = {
+			context_type = player_context
+			window_name = "BRA_monarchy_restoration_super_event"
+
+			visible = {
+				has_country_flag = BRA_monarchy_restoration_se_flag
+				NOT = {
+					has_global_flag = super_events_off_flag
+				}
+			}
+			
+			effects = {
+				Super_Event_Close_click = {
+					clr_country_flag = BRA_monarchy_restoration_se_flag
+				}
+			}
+		}	
+		
+		BRA_ai_decolonization_super_event = {
+			context_type = player_context
+			window_name = "BRA_ai_decolonization_super_event"
+
+			visible = {
+				has_country_flag = BRA_ai_decolonization_se_flag
+				NOT = {
+					has_global_flag = super_events_off_flag
+				}
+			}
+			
+			effects = {
+				Super_Event_Close_click = {
+					clr_country_flag = BRA_ai_decolonization_se_flag
+				}
+			}
+		}	
+	}

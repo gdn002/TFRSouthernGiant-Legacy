@@ -1,0 +1,27 @@
+state={
+	id=1447
+	name="STATE_1447"
+	provinces={
+		4980 14995 14996 
+	}
+	resources={
+	}
+	manpower=794000
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+
+	history = {
+		owner = BRA
+		add_core_of = BRA
+		buildings = {
+			14995 = {
+				naval_base = 1
+			}
+		}
+
+		victory_points = { 14995 5 }
+
+		add_dynamic_modifier = { modifier = BRA_amazonian_jungle_state_dynamic }
+	}
+}

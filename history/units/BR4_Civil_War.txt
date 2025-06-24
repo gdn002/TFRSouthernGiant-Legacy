@@ -1,0 +1,85 @@
+﻿division_template = {
+	name = "Brazilian Militia"
+	is_locked = yes
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+		militia = { x = 0 y = 3 }
+	}
+}
+
+units = {
+	division = {
+		name = "1a Milícia Restauradora"
+		location = 8224
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "2a Milícia Restauradora"
+		location = 8224
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "3a Milícia Restauradora"
+		location = 8224
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "4a Milícia Restauradora"
+		location = 14983
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "5a Milícia Restauradora"
+		location = 14983
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "6a Milícia Restauradora"
+		location = 14983
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "7a Milícia Restauradora"
+		location = 14982
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "8a Milícia Restauradora"
+		location = 14982
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "9a Milícia Restauradora"
+		location = 14982
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "10a Milícia Restauradora"
+		location = 2111
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "11a Milícia Restauradora"
+		location = 2111
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "12a Milícia Restauradora"
+		location = 2111
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+}

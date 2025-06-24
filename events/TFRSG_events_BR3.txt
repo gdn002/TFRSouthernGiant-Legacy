@@ -1,0 +1,618 @@
+add_namespace = Brazil.commie
+
+###########################
+# Core Events
+###########################
+
+# Popular Front rises
+country_event = {
+	id = Brazil.commie.1
+	title = Brazil.commie.1.t
+	desc = Brazil.commie.1.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR3
+	}
+
+	option = {
+		name = Brazil.commie.1.a
+	}
+}
+
+# The factions of the worker's council 
+country_event = {
+	id = Brazil.commie.2
+	title = Brazil.commie.2.t
+	desc = Brazil.commie.2.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR3
+	}
+
+	option = {
+		name = Brazil.commie.2.a
+	}
+}
+
+# Revolutionary strategy
+country_event = {
+	id = Brazil.commie.3
+	title = Brazil.commie.3.t
+	desc = Brazil.commie.3.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR3
+	}
+
+	# Defensive
+	option = {
+		name = Brazil.commie.3.a
+		ai_chance = { base = 5 }
+		custom_effect_tooltip = BRA_when_civil_war_starts_tt
+		effect_tooltip = {
+		    add_timed_idea = {
+		        idea = BRA_civil_war_defense_idea
+		        days = 30
+		    }
+		}
+		set_country_flag = BRA_cw_picked_defense
+	}
+	# Speed
+	option = {
+		name = Brazil.commie.3.b
+		ai_chance = { base = 3 }
+		custom_effect_tooltip = BRA_when_civil_war_starts_tt
+		effect_tooltip = {
+		    add_timed_idea = {
+		        idea = BRA_civil_war_maneuver_idea
+		        days = 30
+		    }
+		}
+		set_country_flag = BRA_cw_picked_maneuver
+	}
+	# Offensive
+	option = {
+		name = Brazil.commie.3.c
+		ai_chance = { base = 2 }
+		custom_effect_tooltip = BRA_when_civil_war_starts_tt
+		effect_tooltip = {
+		    add_timed_idea = {
+		        idea = BRA_civil_war_offense_idea
+		        days = 30
+		    }
+		}
+		set_country_flag = BRA_cw_picked_offense
+	}
+}
+
+# Freeing convicts
+country_event = {
+	id = Brazil.commie.4
+	title = Brazil.commie.4.t
+	desc = Brazil.commie.4.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR3
+	}
+
+	# Convict soldiers
+	option = {
+		name = Brazil.commie.4.a
+		add_stability = -0.1
+		random_owned_controlled_state = {
+			create_unit = {
+				division = "name = \"Milícia Penal\" division_template = \"Brazilian Militia\"  start_experience_factor = 0.0"
+				allow_spawning_on_enemy_provs = yes
+				owner = ROOT
+        	    count = 3
+			}
+		}
+		random_owned_controlled_state = {
+			create_unit = {
+				division = "name = \"Milícia Penal\" division_template = \"Brazilian Militia\"  start_experience_factor = 0.0"
+				allow_spawning_on_enemy_provs = yes
+				owner = ROOT
+        	    count = 2
+			}
+		}
+	}
+	# Convict labor
+	option = {
+		name = Brazil.commie.4.b
+		add_stability = -0.1
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = ROOT
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = ROOT
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = ROOT
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	# Free convicts
+	option = {
+		name = Brazil.commie.4.c
+		add_political_power = 250
+		add_stability = -0.25
+		add_war_support = 0.15
+	}
+	# Do not free convicts
+	option = {
+		name = Brazil.commie.4.e
+		add_stability = 0.15
+	}
+}
+
+# Army brigades swayed to our side
+country_event = {
+	id = Brazil.commie.5
+	title = Brazil.commie.5.t
+	desc = Brazil.commie.5.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR3
+	}
+
+	option = {
+		name = Brazil.commie.5.a
+		BRA = {
+			set_nationality = {
+    			target_country = BR3
+    			character = BRA_miranda_netto_char
+			}
+		}
+		498 = {
+			create_unit = {
+				division = "name = \"7a Bda Inf Mtz\" division_template = \"Brigada de Infantaria Motorizada\"  start_experience_factor = 0.0"
+				allow_spawning_on_enemy_provs = yes
+				owner = BR3
+            	count = 1
+				prioritize_location = 10933
+			}
+		}
+		1456 = {
+			create_unit = {
+				division = "name = \"10a Bda Inf Mtz\" division_template = \"Brigada de Infantaria Motorizada\"  start_experience_factor = 0.0"
+				allow_spawning_on_enemy_provs = yes
+				owner = BR3
+            	count = 1
+				prioritize_location = 5168
+			}
+		}
+	}
+}
+
+# Amazon commune calls for help
+country_event = {
+	id = Brazil.commie.6
+	title = Brazil.commie.6.t
+	desc = Brazil.commie.6.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR3
+	}
+
+	# Accept
+	option = {
+		name = Brazil.commie.6.a
+		AMZ = { get_current_government_type = yes }
+		puppet = {
+    		target = AMZ
+    		end_wars = no
+		}
+		AMZ = { 
+			restore_previous_government_type = yes 
+			ROOT_inherit_current_scope_wars_effect = yes
+		}
+	}
+
+	# Refuse
+	option = {
+		name = Brazil.commie.6.b
+		add_war_support = -0.1
+		ai_chance = { 
+			base = 0
+		}
+	}
+}
+
+# Civil war unifiers defeated
+country_event = {
+	id = Brazil.commie.7
+	title = Brazil.commie.7.t
+	desc = Brazil.commie.7.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR3
+	}
+
+	option = {
+		name = Brazil.commie.7.a
+		swap_ruler_traits = { 
+			remove = hos_revolutioanry_spirit
+			add = hos_revolutionary_fervor
+		}
+		mark_focus_tree_layout_dirty = yes
+		focus_unlock = yes
+	}
+}
+
+# Amazon ultimatum
+country_event = {
+	id = Brazil.commie.8
+	title = Brazil.commie.8.t
+	desc = Brazil.commie.8.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = AMZ
+	}
+
+	# Accept
+	option = {
+		name = Brazil.commie.8.a
+		ai_chance = {
+			base = 50
+		}
+		BR3 = {
+			country_event = {
+				id = Brazil.commie.9
+				hours = 12
+			}
+		}		
+	}
+
+	# Decline
+	option = {
+		name = Brazil.commie.8.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				NOT = { is_puppet_of = BR3 }
+				add = 25
+			}
+		}
+		BR3 = {
+			country_event = {
+				id = Brazil.commie.10
+				hours = 12
+			}
+		}	
+	}
+}
+
+# Amazon ultimatum - accepted
+country_event = {
+	id = Brazil.commie.9
+	title = Brazil.commie.9.t
+	desc = Brazil.commie.9.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR3
+	}
+
+	option = {
+		name = Brazil.commie.9.a
+		annex_country = {
+			target = AMZ
+			transfer_troops = yes
+		}
+		hidden_effect = {
+			AMZ = {
+				every_core_state = {
+					add_core_of = BR3
+				}
+			}
+		}
+	}
+}
+
+# Amazon ultimatum - rejected
+country_event = {
+	id = Brazil.commie.10
+	title = Brazil.commie.10.t
+	desc = Brazil.commie.10.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR3
+	}
+
+	option = {
+		name = Brazil.commie.10.a
+		declare_war_on = {
+			target = AMZ
+    		type = annex_everything
+		}
+	}
+}
+
+# São Paulo ultimatum
+country_event = {
+	id = Brazil.commie.11
+	title = Brazil.commie.11.t
+	desc = Brazil.commie.11.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = SPA
+	}
+
+	# Accept
+	option = {
+		name = Brazil.commie.11.a
+		ai_chance = {
+			base = 5
+		}
+		BR3 = {
+			country_event = {
+				id = Brazil.commie.12
+				hours = 12
+			}
+		}	
+	}
+
+	# Decline
+	option = {
+		name = Brazil.commie.11.b
+		ai_chance = {
+			base = 50
+		}
+		BR3 = {
+			country_event = {
+				id = Brazil.commie.13
+				hours = 12
+			}
+		}
+	}
+}
+
+# São Paulo ultimatum - accepted
+country_event = {
+	id = Brazil.commie.12
+	title = Brazil.commie.12.t
+	desc = Brazil.commie.12.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR3
+	}
+
+	option = {
+		name = Brazil.commie.12.a
+		annex_country = {
+			target = SPA
+			transfer_troops = yes
+		}
+		hidden_effect = {
+			SPA = {
+				every_core_state = {
+					add_core_of = BR3
+				}
+			}
+		}
+	}
+}
+
+# São Paulo ultimatum - rejected
+country_event = {
+	id = Brazil.commie.13
+	title = Brazil.commie.13.t
+	desc = Brazil.commie.13.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR3
+	}
+
+	option = {
+		name = Brazil.commie.13.a
+		declare_war_on = {
+			target = SPA
+    		type = annex_everything
+		}
+	}
+}
+
+# Sul ultimatum
+country_event = {
+	id = Brazil.commie.14
+	title = Brazil.commie.14.t
+	desc = Brazil.commie.14.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = SUL
+	}
+
+	# Accept
+	option = {
+		name = Brazil.commie.14.a
+		ai_chance = {
+			base = 0
+			modifier = {
+				has_government = social_democrat
+				add = 5
+			}
+			modifier = {
+				OR = {
+					has_government = libertarian_socialist
+					has_government = totalitarian_socialist
+					has_government = communist
+				}
+				add = 50
+			}
+		}
+		BR3 = {
+			country_event = {
+				id = Brazil.commie.15
+				hours = 12
+			}
+		}	
+	}
+
+	# Decline
+	option = {
+		name = Brazil.commie.14.b
+		ai_chance = {
+			base = 25
+		}
+		BR3 = {
+			country_event = {
+				id = Brazil.commie.16
+				hours = 12
+			}
+		}
+	}
+}
+
+# Sul ultimatum - accepted
+country_event = {
+	id = Brazil.commie.15
+	title = Brazil.commie.15.t
+	desc = Brazil.commie.15.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR3
+	}
+
+	option = {
+		name = Brazil.commie.15.a
+		annex_country = {
+			target = SUL
+			transfer_troops = yes
+		}
+		hidden_effect = {
+			SUL = {
+				every_core_state = {
+					add_core_of = BR3
+				}
+			}
+		}
+	}
+}
+
+# Sul ultimatum - rejected
+country_event = {
+	id = Brazil.commie.16
+	title = Brazil.commie.16.t
+	desc = Brazil.commie.16.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR3
+	}
+
+	option = {
+		name = Brazil.commie.16.a
+		declare_war_on = {
+			target = SUL
+    		type = annex_everything
+		}
+	}
+}
+
+# Civil war concluded
+country_event = {
+	id = Brazil.commie.17
+	title = Brazil.commie.17.t
+	desc = Brazil.commie.17.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR3
+	}
+
+	option = {
+		name = Brazil.commie.17.a
+	}
+}
+
+# Counter-revolution intro
+country_event = {
+	id = Brazil.commie.18
+	title = Brazil.commie.18.t
+	desc = Brazil.commie.18.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR3
+	}
+
+	option = {
+		name = Brazil.commie.18.a
+		add_ideas = {
+			BR3_counter_revolution_idea
+		}
+	}
+}

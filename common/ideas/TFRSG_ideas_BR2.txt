@@ -1,0 +1,166 @@
+ideas = {
+	## NATIONAL SPIRITS ##
+	country = {			
+		BR2_rural_economy_idea = {
+			picture = USC_rural_economy
+			allowed = {
+				original_tag = BR2
+			}
+			modifier = {
+				consumer_goods_factor = 0.2
+				industrial_capacity_factory = -0.2
+				industrial_capacity_dockyard = -0.2
+				custom_modifier_tooltip = BR2_rural_economy_idea_removal_tt
+			}
+			cancel = {
+    			num_of_factories > 5
+			}
+		}
+
+		BR2_martial_law_idea = {
+			allowed = {
+				original_tag = BR2
+			}
+			modifier = {
+				offensive_war_stability_factor = 0.25
+				drift_defence_factor = 0.5
+				resistance_decay = 0.25
+				resistance_target = -0.1
+				compliance_growth = 0.15
+			}
+		}
+
+		BR2_political_opposition_idea = {
+			allowed = {
+				original_tag = BR2
+			}
+			modifier = {
+				political_power_cost = 0.01
+				market_liberal_drift = 0.01
+				social_liberal_drift = 0.01
+				social_democrat_drift = 0.01
+			}
+		}
+
+		BR2_constitutional_crisis_idea = {
+			allowed = {
+				original_tag = BR2
+			}
+			modifier = {
+				political_power_cost = 0.25
+				political_power_factor = -0.15
+				stability_weekly = -0.005
+				war_support_weekly = -0.005
+				society_development_monthly = -0.01
+			}
+		}	
+		BR2_constitutional_crisis_idea1 = {
+			name = BR2_constitutional_crisis_idea
+			allowed = {
+				original_tag = BR2
+			}
+			modifier = {
+				political_power_cost = 0.15
+				political_power_factor = -0.15
+				stability_weekly = -0.002
+				war_support_weekly = -0.002
+			}
+		}
+
+		BR2_trigger_happy_military_idea = {
+			allowed = {
+				original_tag = BR2
+			}
+			modifier = {
+				army_attack_factor = 0.15
+				army_attack_speed_factor = 0.05
+				army_defence_factor = -0.05
+				max_planning_factor = -0.5
+				experience_loss_factor = 0.1
+			}
+		}
+
+		BR2_dutiful_military_idea = {
+			allowed = {
+				original_tag = BR2
+			}
+			modifier = {
+				army_attack_factor = 0.1
+			}
+		}
+
+		BR2_bolsonarist_militias_idea = {
+			allowed = {
+				original_tag = BR2
+			}
+			modifier = {
+				non_core_manpower = 0.5
+				recruitable_population_factor = 0.25
+				modifier_army_sub_unit_militia_attack_factor = 0.15
+				modifier_army_sub_unit_militia_defence_factor = 0.15
+			}
+		}
+
+		BR2_operation_ustra_idea = {
+			allowed = {
+				original_tag = BR2
+			}
+			targeted_modifier = {
+				tag = BR1
+				breakthrough_bonus_against = 0.15
+				defense_bonus_against = 0.05
+			}
+			modifier = {
+
+			}
+		}
+
+		BR2_operation_angico_idea = {
+			allowed = {
+				original_tag = BR2
+			}
+			targeted_modifier = {
+				tag = BR3
+				attack_bonus_against = 0.05
+				breakthrough_bonus_against = 0.15
+			}
+			modifier = {
+
+			}
+		}
+
+		BR2_operation_selva_idea = {
+			allowed = {
+				original_tag = BR2
+			}
+			targeted_modifier = {
+				tag = AMZ
+				attack_bonus_against = 0.05
+				breakthrough_bonus_against = 0.15
+			}
+			modifier = {
+
+			}
+		}
+
+		BR2_operation_apocalipse_idea = {
+			allowed = {
+				original_tag = BR2
+			}
+			modifier = {
+				army_attack_factor = 0.05
+				breakthrough_factor = 0.15
+				army_defence_factor = 0.05
+			}
+		}
+
+		BR2_brazilian_army_unleashed_idea = {
+			allowed = {
+				original_tag = BR2
+			}
+			modifier = {
+				
+			}
+		}	
+	}
+}	

@@ -1,0 +1,45 @@
+spriteTypes = {	
+	#Super Event Pictures
+	
+	spriteType = {
+		name = "GFX_super_BRA_amazonian_collapse"
+		texturefile = "gfx/super_events/BRA_amazonian_collapse.png"
+		legacy_lazy_load = no
+	}	
+	
+	spriteType = {
+		name = "GFX_super_BRA_great_american_war"
+		texturefile = "gfx/super_events/BRA_great_american_war.png"
+		legacy_lazy_load = no
+	}	
+
+	spriteType = {
+		name = "GFX_super_BRA_great_american_war_brazil_victory"
+		texturefile = "gfx/super_events/BRA_great_american_war_brazil_victory.png"
+		legacy_lazy_load = no
+	}	
+
+	spriteType = {
+		name = "GFX_super_BRA_formation_of_ursal"
+		texturefile = "gfx/super_events/BRA_formation_of_ursal.png"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_super_BRA_formation_of_ussa"
+		texturefile = "gfx/super_events/BRA_formation_of_ussa.png"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_super_BRA_monarchy_restoration"
+		texturefile = "gfx/super_events/BRA_monarchy_restoration.png"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_super_BRA_ai_decolonization"
+		texturefile = "gfx/super_events/BRA_ai_decolonization.png"
+		legacy_lazy_load = no
+	}			
+}

@@ -1,0 +1,23 @@
+music = {
+	name = "TFRSG_capital_enslavement"
+	file = "TFRSG_capital_enslavement.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "TFRSG_indigena_futurista"
+	file = "TFRSG_indigena_futurista.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "TFRSG_ratos_no_poder"
+	file = "TFRSG_ratos_no_poder.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "TFRSG_america"
+	file = "TFRSG_america.ogg"
+	volume = 0.65
+}

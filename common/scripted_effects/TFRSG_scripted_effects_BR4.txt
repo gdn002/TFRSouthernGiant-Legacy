@@ -1,0 +1,68 @@
+BR4_civil_war_insurgents_scripted_effect = {
+	FROM = {
+		set_temp_variable = { BRA_civil_war_recruit_value_temp = 1 }
+        BRA_civil_war_get_state_recruitment_value = yes
+		multiply_temp_variable = { BRA_civil_war_recruit_value_temp = 2 }
+        create_unit = {
+			division = "name = \"Grupo Insurgente\" division_template = \"Brazilian Militia\"  start_experience_factor = 0.0"
+			allow_spawning_on_enemy_provs = yes
+			owner = ROOT
+            count = BRA_civil_war_recruit_value_temp
+		}
+    }
+}
+
+BR4_civil_war_extend_insurgent_spirit_effect = {
+	if = {
+		limit = { has_idea = BR4_insurgent_deception_idea }
+		modify_timed_idea = {
+		    idea = BR4_insurgent_deception_idea
+		    days = 20
+		}
+	}
+	else_if = {
+		limit = { has_idea = BR4_insurgent_deception_integralist_idea }
+		modify_timed_idea = {
+		    idea = BR4_insurgent_deception_integralist_idea
+		    days = 20
+		}
+	}
+	else_if = {
+		limit = { has_idea = BR4_insurgent_deception_monarchist_idea }
+		modify_timed_idea = {
+		    idea = BR4_insurgent_deception_monarchist_idea
+		    days = 20
+		}
+	}
+	every_enemy_country = {
+		limit = { has_idea = BR4_insurgency_deception_enemy_idea }
+		modify_timed_idea = {
+		    idea = BR4_insurgency_deception_enemy_idea
+		    days = 15
+		}
+	}
+}
+
+BR4_endgame_content = {
+    ## Sets up post-civil war skeleton content for this tag
+	if = {
+		limit = { has_government = fascist }
+		# INTEGRALISTS
+		change_gov_type_fascist_dictatorship = yes
+		set_cosmetic_tag = BR4_integralist
+	}
+	else_if = {
+		limit = { has_government = nationalist }
+		# MONARCHISTS
+		change_gov_type_absolute_monarchy = yes
+		set_cosmetic_tag = BR4_empire
+		if = {
+			limit = { date < 2024.11.08 }
+			promote_character = BR4_antonio_orleans_braganza_char
+		}
+		else = {
+			promote_character = BR4_bertrand_orleans_braganza_char
+		}		
+	}
+	change_economy_type_command_economy = yes
+}

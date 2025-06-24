@@ -1,0 +1,167 @@
+spriteTypes = {
+	### BRA SPIRITS ###
+	spriteType = {
+		name = "GFX_idea_BRA_disjointed_geography"
+		texturefile = "gfx/interface/ideas/BRA/BRA_disjointed_geography_idea.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_rise_of_evangelism"
+		texturefile = "gfx/interface/ideas/BRA/BRA_rise_of_evangelism.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_amazonian_jungle"
+		texturefile = "gfx/interface/ideas/BRA/BRA_amazonian_jungle_idea.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_brazilian_army"
+		texturefile = "gfx/interface/ideas/BRA/BRA_brazilian_army_idea.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_emergency_covid_welfare_fund"
+		texturefile = "gfx/interface/ideas/BRA/BRA_emergency_covid_welfare_fund.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_informalized_economy"
+		texturefile = "gfx/interface/ideas/BRA/BRA_informalized_economy_idea.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_oil_crisis"
+		texturefile = "gfx/interface/ideas/BRA/BRA_oil_crisis_idea.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_petrobras_liberalized"
+		texturefile = "gfx/interface/ideas/BRA/BRA_petrobras_liberalized_idea.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_petrobras_statized"
+		texturefile = "gfx/interface/ideas/BRA/BRA_petrobras_statized_idea.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_the_centrao"
+		texturefile = "gfx/interface/ideas/BRA/BRA_the_centrao_idea.png"
+	}	
+	spriteType = {
+		name = "GFX_idea_BRA_progressive_opposition"
+		texturefile = "gfx/interface/ideas/BRA/BRA_progressive_opposition_idea.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_2022_election_protests"
+		texturefile = "gfx/interface/ideas/BRA/BRA_2022_election_protests_idea.png"
+	}
+
+    ### BRA MIO ###
+    spriteType = {
+		name = "GFX_BRA_MIO_engesa"
+		texturefile = "gfx/interface/ideas/BRA/MIO/BRA_MIO_engesa.png"
+	}
+    spriteType = {
+		name = "GFX_BRA_MIO_arsenal_marinha"
+		texturefile = "gfx/interface/ideas/BRA/MIO/BRA_MIO_arsenal_marinha.png"
+	}
+    spriteType = {
+		name = "GFX_BRA_MIO_ilha_madeira"
+		texturefile = "gfx/interface/ideas/BRA/MIO/BRA_MIO_ilha_madeira.png"
+	}
+    spriteType = {
+		name = "GFX_BRA_MIO_embraer"
+		texturefile = "gfx/interface/ideas/BRA/MIO/BRA_MIO_embraer.png"
+	}    
+    spriteType = {
+		name = "GFX_BRA_MIO_helibras"
+		texturefile = "gfx/interface/ideas/BRA/MIO/BRA_MIO_helibras.png"
+	}
+    spriteType = {
+		name = "GFX_BRA_MIO_avibras"
+		texturefile = "gfx/interface/ideas/BRA/MIO/BRA_MIO_avibras.png"
+	}
+    spriteType = {
+		name = "GFX_BRA_MIO_xmobots"
+		texturefile = "gfx/interface/ideas/BRA/MIO/BRA_MIO_xmobots.png"
+	}
+    spriteType = {
+		name = "GFX_BRA_MIO_imbel"
+		texturefile = "gfx/interface/ideas/BRA/MIO/BRA_MIO_imbel.png"
+	}
+    spriteType = {
+		name = "GFX_BRA_MIO_cbc"
+		texturefile = "gfx/interface/ideas/BRA/MIO/BRA_MIO_cbc.png"
+	}
+    spriteType = {
+		name = "GFX_BRA_MIO_agrale"
+		texturefile = "gfx/interface/ideas/BRA/MIO/BRA_MIO_agrale.png"
+	}
+
+	### BRA MINISTERS ###
+	spriteType = {
+		name = "GFX_idea_BRA_anderson_torres"
+		texturefile = "gfx/interface/ideas/BRA/advisors/BRA_anderson_torres.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_andre_mendonca"
+		texturefile = "gfx/interface/ideas/BRA/advisors/BRA_andre_mendonca.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_braga_netto"
+		texturefile = "gfx/interface/ideas/BRA/advisors/BRA_braga_netto.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_carlos_favaro"
+		texturefile = "gfx/interface/ideas/BRA/advisors/BRA_carlos_favaro.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_carlos_franca"
+		texturefile = "gfx/interface/ideas/BRA/advisors/BRA_carlos_franca.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_dilma_rousseff"
+		texturefile = "gfx/interface/ideas/BRA/advisors/BRA_dilma_rousseff.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_ernesto_araujo"
+		texturefile = "gfx/interface/ideas/BRA/advisors/BRA_ernesto_araujo.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_fernando_azevedo"
+		texturefile = "gfx/interface/ideas/BRA/advisors/BRA_fernando_azevedo.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_fernando_haddad"
+		texturefile = "gfx/interface/ideas/BRA/advisors/BRA_fernando_haddad.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_flavio_dino"
+		texturefile = "gfx/interface/ideas/BRA/advisors/BRA_flavio_dino.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_hamilton_mourao"
+		texturefile = "gfx/interface/ideas/BRA/advisors/BRA_hamilton_mourao.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_jose_mucio"
+		texturefile = "gfx/interface/ideas/BRA/advisors/BRA_jose_mucio.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_mauro_vieira"
+		texturefile = "gfx/interface/ideas/BRA/advisors/BRA_mauro_vieira.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_paulo_guedes"
+		texturefile = "gfx/interface/ideas/BRA/advisors/BRA_paulo_guedes.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_ricardo_lewandowski"
+		texturefile = "gfx/interface/ideas/BRA/advisors/BRA_ricardo_lewandowski.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_sergio_moro"
+		texturefile = "gfx/interface/ideas/BRA/advisors/BRA_sergio_moro.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_sergio_nogueira"
+		texturefile = "gfx/interface/ideas/BRA/advisors/BRA_sergio_nogueira.png"
+	}
+	spriteType = {
+		name = "GFX_idea_BRA_tereza_cristina"
+		texturefile = "gfx/interface/ideas/BRA/advisors/BRA_tereza_cristina.png"
+	}
+}

@@ -1,0 +1,89 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			BRA = {
+				# Historical Brazilian inflation/debt by the start of 2020
+				# INFLATION 
+				set_temp_variable = {
+					inflation_var_temp = 0.045
+				}
+				add_inflation = yes
+
+				# DEBT
+				set_variable = {
+					debt_var = 0
+				}
+				set_temp_variable = { 
+					debt_var_temp = 1417.1
+				}
+				add_debt = yes	
+
+				# COVID
+				set_variable = { BRA_handle_covid_days_var = 150 }
+				set_variable = { BRA_covid_fadeout_days_var = 200 }
+
+				# 2022 ELECTIONS
+				set_variable = { BRA_election_approval_rating_pt_var = 0.38 }
+				set_variable = { BRA_election_approval_rating_psdb_var = 0.10 }
+				set_variable = { BRA_election_approval_rating_pl_var = 0.52 }
+
+				# CHAMBER OF DEPUTIES
+				set_variable = { BRA_chamber_total_seats_var = 513 } # UNCHANGEABLE
+				set_variable = { BRA_chamber_progressive_seats_var = 144 }
+				set_variable = { BRA_chamber_centrao_seats_var = 174 }
+				set_variable = { BRA_chamber_reactionary_seats_var = 195 }
+				set_variable = { BRA_chamber_progressive_support_var = 0 }
+				set_variable = { BRA_chamber_centrao_support_var = 8 }
+				set_variable = { BRA_chamber_reactionary_support_var = 0 }
+				set_variable = { BRA_chamber_total_support_var = 203 }
+				set_variable = { BRA_centrao_influence_var = 0.65 }
+
+				# AMAZONIAN JUNGLE
+				set_variable = { global.BRA_amazonian_preservation_var = 80.4 }
+				set_variable = { BRA_amazon_preservation_drift_dyn_var = -0.1 }							
+				BRA_recalculate_amazonian_preservation_dynamic_vars = yes
+
+				# COUNTRY FLAGS		
+				set_country_flag = BRA_reactionary_administration_flag
+
+				# COALITION
+				set_temp_variable = { coalition_partner_var_temp = token:authoritarian_democrat }
+				add_to_coalition = yes
+				set_temp_variable = { coalition_partner_var_temp = token:nationalist }
+				add_to_coalition = yes
+				set_temp_variable = { coalition_partner_var_temp = token:conservative }
+				add_to_coalition = yes
+
+				# OTHER
+				set_variable = { global.TFRSG_active_BRA_tag = BRA }
+			}			
+		}
+	}
+
+	on_monthly_BRA = {
+		effect = {
+			# AMAZONIAN PRESERVATION CHANGE
+			if = {
+    			limit = { 
+					exists = yes
+					has_country_flag = BRA_amazonian_preservation_mechanic_enabled 
+				}
+				set_temp_variable = {
+					var = BRA_amazonian_preservation_var_temp
+					value = modifier@amazonian_preservation_monthly
+				}
+				BRA_add_amazonian_preservation = yes
+			}
+
+			# CENTRAO INFLUENCE CHANGE
+			if = {
+				limit = { 
+					exists = yes
+					has_country_flag = BRA_chamber_of_deputies_enabled 
+				}
+				set_temp_variable = { BRA_centrao_influence_var_temp = modifier@centrao_influence_monthly }
+				BRA_add_centrao_influence = yes
+			}
+		}
+	}
+}

@@ -1,0 +1,27 @@
+BR3_internal_faction_balance_category = {
+	allowed = {
+		original_tag = BR3
+	}
+}
+
+BR3_great_liberation_war_category = {
+	icon = GFX_SOV_decision_nato_war_category
+	#picture = decision_SOV_nato_war 
+	visible_when_empty = yes
+	allowed = {
+		original_tag = BR3
+	}
+	priority = 10
+
+	visible = {
+		OR = {
+			#has_completed_focus = [TODO]
+		}
+		NOT = {
+			OR = {
+				has_global_flag = BR3_great_liberation_war_victory
+				has_global_flag = LATAM_great_liberation_war_victory
+			}
+		}
+	}
+}

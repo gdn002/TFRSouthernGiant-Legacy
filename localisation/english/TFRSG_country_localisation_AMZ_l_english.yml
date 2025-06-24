@@ -1,0 +1,47 @@
+﻿l_english:
+ #Leaders
+ #Focuses
+ #_desc: ""
+ #: ""
+ #_desc: ""
+ #: ""
+ #_desc: ""
+ #: ""
+ #_desc: ""
+ #: ""
+ #_desc: ""
+ #: ""
+ #_desc: ""
+ #Ideas
+ #Decision Categories
+ #Missions
+ #Decisions
+ #Country Flag
+ #Tooltips
+ #Faction
+ #Parties
+ AMZ_national_socialist_party: "§ROUTLAWED§!"
+ AMZ_national_socialist_party_long: "§ROUTLAWED§!"
+ AMZ_fascist_party: "§ROUTLAWED§!"
+ AMZ_fascist_party_long: "§ROUTLAWED§!"
+ AMZ_nationalist_party: "CM NORTE"
+ AMZ_nationalist_party_long: "Northern Military Command"
+ AMZ_authoritarian_democrat_party: "PRTB - AM"
+ AMZ_authoritarian_democrat_party_long: "Brazilian Labour Renewal Party - Amazonas"
+ AMZ_conservative_party: "PL - AM" 
+ AMZ_conservative_party_long: "Liberal Party - Sul" 
+ AMZ_market_liberal_party: "PSD - AM" 
+ AMZ_market_liberal_party_long: "Social Democratic Party - AM" 
+ AMZ_social_liberal_party: "PSDB - AM" 
+ AMZ_social_liberal_party_long: "Brazilian Social Democracy Party - Amazonas" 
+ AMZ_social_democrat_party: "PT - AM" 
+ AMZ_social_democrat_party_long: "Worker's Party - Amazonas" 
+ AMZ_libertarian_socialist_party: "COIAB"
+ AMZ_libertarian_socialist_party_long: "Coordination of the Indigenous Organizations of the Brazilian Amazon" 
+ AMZ_communist_party: "PCB - AM" 
+ AMZ_communist_party_long: "Brazilian Communist Party - Amazonas"
+ AMZ_totalitarian_socialist_party: "§ROUTLAWED§!"
+ AMZ_totalitarian_socialist_party_long: "§ROUTLAWED§!"
+ #Country
+ #Summary
+ #Events

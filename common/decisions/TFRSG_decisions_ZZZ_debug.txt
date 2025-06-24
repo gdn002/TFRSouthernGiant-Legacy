@@ -1,0 +1,146 @@
+debug_decisions = {
+    BRA_DEBUG_trigger_civil_war = {
+		cancel_if_not_visible = yes
+		fire_only_once = yes
+        allowed = {
+            tag = BRA
+        }
+		available = {
+			NOT = { has_global_flag = BRA_civil_war_started_flag }
+		}
+		complete_effect = {
+			country_event = {
+                id = Brazil.civilwar.1
+            }
+ 		}
+	}
+
+    BRA_DEBUG_force_chamber_elections = {
+		cancel_if_not_visible = yes
+		days_re_enable = 1
+        allowed = {
+            tag = BRA
+        }
+		complete_effect = {
+			BRA_chamber_of_deputies_elections = yes
+ 		}
+	}
+
+	BRA_DEBUG_gimme_osorio = {
+		cancel_if_not_visible = yes
+		fire_only_once = yes
+        allowed = {
+            is_brazilian_unifier = yes
+        }
+		complete_effect = {
+			set_technology = {
+			    improved_medium_tank_chassis = 1
+				popup = no
+			}
+			set_technology = {
+			    engine_tech_2 = 1
+				popup = no
+			}
+			create_equipment_variant = {
+			    name = "EE-T1 Osório"
+			    type = modern_tank_chassis_2
+				show_position = no
+			    modules = {
+			        main_armament_slot = tank_heavy_cannon_2
+					turret_type_slot = tank_modern_tank_turret
+					special_type_slot_1 = tank_radio_1
+					special_type_slot_2 = smoke_launchers
+					suspension_type_slot = tank_interleaved_suspension
+					armor_type_slot = tank_cast_armor
+					engine_type_slot = tank_turbo_diesel_engine
+					special_type_slot_5 = gunner_nv_2
+			    }
+			    icon = "GFX_BRA_main_battle_tank4_medium"
+			    design_team = mio:BRA_engesa
+			}
+			set_country_flag = BRA_engesa_restored_flag
+ 		}
+	}
+
+	BRA_DEBUG_force_2022_elections = {
+		cancel_if_not_visible = yes
+		fire_only_once = yes
+        allowed = {
+            tag = BRA			
+        }
+		visible = {
+			NOT = { has_country_flag = BRA_2022_elections_over_flag }
+		}
+		complete_effect = {
+			BRA_get_2022_elections_result = yes
+ 		}
+	}
+
+	BRA_DEBUG_force_2026_elections = {
+		cancel_if_not_visible = yes
+		fire_only_once = yes
+        allowed = {
+            tag = BRA
+        }
+		visible = {
+			has_country_flag = BRA_2022_elections_over_flag
+		}
+		complete_effect = {
+			country_event = {
+				id = Brazil.timeline.18
+			}
+ 		}
+	}
+
+	BRA_DEBUG_2022_elections_cheat_PT = {
+		cancel_if_not_visible = yes
+        allowed = {
+            tag = BRA			
+        }
+		visible = {
+			NOT = { has_country_flag = BRA_2022_elections_over_flag }
+		}
+		complete_effect = {
+			set_temp_variable = { BRA_election_approval_rating_pt_var_temp = 1 }
+			BRA_add_election_approval_rating_pt = yes
+ 		}
+	}
+
+	BRA_DEBUG_2022_elections_cheat_PSDB = {
+		cancel_if_not_visible = yes
+        allowed = {
+            tag = BRA			
+        }
+		visible = {
+			NOT = { has_country_flag = BRA_2022_elections_over_flag }
+		}
+		complete_effect = {
+			set_temp_variable = { BRA_election_approval_rating_psdb_var_temp = 1 }
+			BRA_add_election_approval_rating_psdb = yes
+ 		}
+	}
+
+	BRA_DEBUG_2022_elections_cheat_PL = {
+		cancel_if_not_visible = yes
+       	allowed = {
+            tag = BRA			
+        }
+		visible = {
+			NOT = { has_country_flag = BRA_2022_elections_over_flag }
+		}
+		complete_effect = {
+			set_temp_variable = { BRA_election_approval_rating_pl_var_temp = 1 }
+			BRA_add_election_approval_rating_pl = yes
+ 		}
+	}
+
+	TFRSG_DEBUG_trigger_test_decision = {
+		cancel_if_not_visible = yes
+		days_re_enable = 1
+		available = {
+			any_controlled_state = {
+				naval_base > 0
+			}
+		}
+	}
+}

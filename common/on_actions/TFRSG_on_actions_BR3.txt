@@ -1,0 +1,49 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			BR3 = {
+				# Historical Brazilian inflation/debt by the start of 2020
+				# INFLATION 
+				set_temp_variable = {
+					inflation_var_temp = 0.045
+				}
+				add_inflation = yes
+
+				# DEBT
+				set_variable = {
+					debt_var = 0
+				}
+
+				# AMAZONIAN JUNGLE
+				set_variable = { BRA_amazon_preservation_drift_dyn_var = -0.1 }
+
+				# COUNTRY FLAGS		
+
+				# COALITION
+				set_temp_variable = { coalition_partner_var_temp = token:communist }
+				add_to_coalition = yes
+				set_temp_variable = { coalition_partner_var_temp = token:totalitarian_socialist }
+				add_to_coalition = yes
+				set_temp_variable = { coalition_partner_var_temp = token:libertarian_socialist }
+				add_to_coalition = yes
+			}
+		}
+	}
+
+	on_monthly_BR3 = {
+		effect = {
+			# AMAZONIAN PRESERVATION CHANGE
+			if = {
+    			limit = { 
+					exists = yes
+					has_country_flag = BRA_amazonian_preservation_mechanic_enabled 
+				}
+				set_temp_variable = {
+					var = BRA_amazonian_preservation_var_temp
+					value = modifier@amazonian_preservation_monthly
+				}
+				BRA_add_amazonian_preservation = yes
+			}
+		}
+	}
+}

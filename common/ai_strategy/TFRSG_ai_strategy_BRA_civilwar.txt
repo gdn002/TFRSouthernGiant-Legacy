@@ -1,0 +1,324 @@
+# Federal Government
+BR1_oppose_BR2 = {
+    allowed = {
+        tag = BR1
+    }
+	enable = {
+		has_global_flag = BRA_civil_war_ongoing_flag
+	}
+	abort = {
+        has_global_flag = BRA_civil_war_ended_flag
+	}
+
+	ai_strategy = {
+	    type = antagonize
+	    id = BR2
+	    value = 5000
+	}
+}
+BR1_oppose_BR3 = {
+    allowed = {
+        tag = BR1
+    }
+	enable = {
+		has_global_flag = BRA_civil_war_ongoing_flag
+	}
+	abort = {
+        has_global_flag = BRA_civil_war_ended_flag
+	}
+
+	ai_strategy = {
+	    type = antagonize
+	    id = BR3
+	    value = 5000
+	}
+}
+BR1_oppose_BR4 = {
+    allowed = {
+        tag = BR1
+    }
+	enable = {
+		has_global_flag = BRA_civil_war_ongoing_flag
+	}
+	abort = {
+        has_global_flag = BRA_civil_war_ended_flag
+		BR4 = {
+			has_cosmetic_flag = BR4_mnpd
+		}
+	}
+
+	ai_strategy = {
+	    type = antagonize
+	    id = BR4
+	    value = 5000
+	}
+}
+BR1_oppose_AMZ = {
+    allowed = {
+        tag = BR1
+    }
+	enable = {
+		has_global_flag = BRA_civil_war_ongoing_flag
+	}
+	abort = {
+        has_global_flag = BRA_civil_war_ended_flag
+	}
+
+	ai_strategy = {
+	    type = antagonize
+	    id = AMZ
+	    value = 5000
+	}
+}
+EU_support_BR1 = {
+    allowed = {
+        OR = {
+            tag = GER
+            tag = FRA
+            tag = ENG         
+        }
+    }
+	enable = {
+		has_war = no
+		has_democratic_form_of_government = yes
+	}
+	abort = {
+        OR = {
+		    has_war = yes
+		    has_war_with = BR1
+            has_global_flag = BRA_civil_war_ended_flag
+        }
+	}
+
+	ai_strategy = {
+		type = support
+		id = BR1
+		value = 600
+	}
+}
+ARG_support_BR1 = {
+    allowed = {
+        tag = ARG
+    }
+	enable = {
+		has_war = no
+		has_democratic_form_of_government = yes
+	}
+	abort = {
+        OR = {
+		    has_war = yes
+		    has_war_with = BR1
+            has_global_flag = BRA_civil_war_ended_flag
+        }
+	}
+
+	ai_strategy = {
+		type = support
+		id = BR1
+		value = 900
+	}
+}
+
+### MILITARY JUNTA ###
+BR2_oppose_BR1 = {
+    allowed = {
+        tag = BR2
+    }
+	enable = {
+		has_global_flag = BRA_civil_war_ongoing_flag
+	}
+	abort = {
+        has_global_flag = BRA_civil_war_ended_flag
+	}
+
+	ai_strategy = {
+	    type = antagonize
+	    id = BR1
+	    value = 5000
+	}
+}
+BR2_oppose_BR3 = {
+    allowed = {
+        tag = BR2
+    }
+	enable = {
+		has_global_flag = BRA_civil_war_ongoing_flag
+	}
+	abort = {
+        has_global_flag = BRA_civil_war_ended_flag
+	}
+
+	ai_strategy = {
+	    type = antagonize
+	    id = BR3
+	    value = 5000
+	}
+}
+BR2_oppose_BR4 = {
+    allowed = {
+        tag = BR2
+    }
+	enable = {
+		has_global_flag = BRA_civil_war_ongoing_flag
+	}
+	abort = {
+        has_global_flag = BRA_civil_war_ended_flag
+	}
+
+	ai_strategy = {
+	    type = antagonize
+	    id = BR4
+	    value = 5000
+	}
+}
+BR2_oppose_AMZ = {
+    allowed = {
+        tag = BR2
+    }
+	enable = {
+		has_global_flag = BRA_civil_war_ongoing_flag
+	}
+	abort = {
+        has_global_flag = BRA_civil_war_ended_flag
+	}
+
+	ai_strategy = {
+	    type = antagonize
+	    id = AMZ
+	    value = 5000
+	}
+}
+
+### POPULAR FRONT ###
+BR3_oppose_BR1 = {
+    allowed = {
+        tag = BR3
+    }
+	enable = {
+		has_global_flag = BRA_civil_war_ongoing_flag
+	}
+	abort = {
+        has_global_flag = BRA_civil_war_ended_flag
+	}
+
+	ai_strategy = {
+	    type = antagonize
+	    id = BR1
+	    value = 5000
+	}
+}
+BR3_oppose_BR2 = {
+    allowed = {
+        tag = BR3
+    }
+	enable = {
+		has_global_flag = BRA_civil_war_ongoing_flag
+	}
+	abort = {
+        has_global_flag = BRA_civil_war_ended_flag
+	}
+
+	ai_strategy = {
+	    type = antagonize
+	    id = BR2
+	    value = 5000
+	}
+}
+BR3_oppose_BR4 = {
+    allowed = {
+        tag = BR3
+    }
+	enable = {
+		has_global_flag = BRA_civil_war_ongoing_flag
+	}
+	abort = {
+        has_global_flag = BRA_civil_war_ended_flag
+	}
+
+	ai_strategy = {
+	    type = antagonize
+	    id = BR4
+	    value = 5000
+	}
+}
+PRC_support_BR3 = {
+    allowed = {
+        tag = PRC
+    }
+	enable = {
+		has_war = no
+        OR = {
+            has_government = totalitarian_socialist
+            has_government = libertarian_socialist
+            has_government = communist
+        }	
+	}
+	abort = {
+        OR = {
+		    has_war = yes
+		    has_war_with = BR3
+            has_global_flag = BRA_civil_war_ended_flag
+        }
+	}
+
+	ai_strategy = {
+		type = support
+		id = BR3
+		value = 400
+	}
+}
+LATAM_support_BR3 = {
+    allowed = {
+        or = {
+            tag = CUB
+            tag = VEN
+        }
+    }
+	enable = {
+		has_war = no
+        OR = {
+            has_government = totalitarian_socialist
+            has_government = libertarian_socialist
+            has_government = communist
+        }	
+	}
+	abort = {
+        OR = {
+		    has_war = yes
+		    has_war_with = BR3
+            has_global_flag = BRA_civil_war_ended_flag
+        }
+	}
+
+	ai_strategy = {
+		type = support
+		id = BR3
+		value = 600
+	}
+}
+SOV_support_BR3 = {
+    allowed = {
+        tag = SOV
+    }
+	enable = {
+		has_war = no
+        OR = {
+            has_government = totalitarian_socialist
+            has_government = libertarian_socialist
+            has_government = communist
+        }	
+	}
+	abort = {
+        OR = {
+		    has_war = yes
+		    has_war_with = BR3
+            has_global_flag = BRA_civil_war_ended_flag
+        }
+	}
+
+	ai_strategy = {
+		type = support
+		id = BR3
+		value = 400
+	}
+}

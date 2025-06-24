@@ -1,0 +1,688 @@
+add_namespace = Brazil.libs
+add_namespace = Brazilnews.libs
+
+###########################
+# Core Events
+###########################
+
+# Securing Rio
+country_event = {
+	id = Brazil.libs.1
+	title = Brazil.libs.1.t
+	desc = Brazil.libs.1.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR1
+	}
+
+	option = {
+		name = Brazil.libs.1.a
+	}
+}
+
+# The emergency government
+country_event = {
+	id = Brazil.libs.2
+	title = Brazil.libs.2.t
+	desc = Brazil.libs.2.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR1
+	}
+
+	option = {
+		name = Brazil.libs.2.a
+	}
+}
+
+# Federal government civil war strategy
+country_event = {
+	id = Brazil.libs.3
+	title = Brazil.libs.3.t
+	desc = Brazil.libs.3.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR1
+	}
+
+	option = {
+		# Defensive
+		name = Brazil.libs.3.a
+		ai_chance = { base = 3 }
+		custom_effect_tooltip = BRA_when_civil_war_starts_tt
+		effect_tooltip = {
+		    add_timed_idea = {
+		        idea = BRA_civil_war_defense_idea
+		        days = 30
+		    }
+		}
+		set_country_flag = BRA_cw_picked_defense
+	}
+	option = {
+		# Offensive
+		name = Brazil.libs.3.b
+		ai_chance = { base = 2 }
+		custom_effect_tooltip = BRA_when_civil_war_starts_tt
+		effect_tooltip = {
+		    add_timed_idea = {
+		        idea = BRA_civil_war_offense_idea
+		        days = 30
+		    }
+		}
+		set_country_flag = BRA_cw_picked_offense
+	}
+}
+
+# Army brigades reporting
+country_event = {
+	id = Brazil.libs.4
+	title = Brazil.libs.4.t
+	desc = Brazil.libs.4.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR1
+	}
+
+	option = {
+		name = Brazil.libs.4.a
+		custom_effect_tooltip = BR1_cw_army_reporting_tt
+		hidden_effect = {
+			load_oob = "BR1_Civil_War"
+		}
+	}
+}
+
+# Requesting European support
+country_event = {
+	id = Brazil.libs.5
+	title = Brazil.libs.5.t
+	desc = Brazil.libs.5.d
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = BRA_civil_war_ongoing_flag
+	}
+
+	# Equipment
+	option = {
+		name = Brazil.libs.5.a
+		ai_will_do = {
+            base = 5
+			modifier = {
+				add = 5
+				BR1 = {
+					has_opinion = {
+					    target = ROOT
+					    value > 10
+					}
+				}
+			}
+        }
+		effect_tooltip = {
+			send_equipment = {
+			    equipment = infantry_equipment
+			    amount = 1000
+			    target = BR1
+			}
+			send_equipment = {
+			    equipment = support_equipment
+			    amount = 50
+			    target = BR1
+			}
+			send_equipment = {
+			    equipment = motorized_equipment
+			    amount = 200
+			    target = BR1
+			}
+			send_equipment = {
+			    equipment = artillery_equipment
+			    amount = 100
+			    target = BR1
+			}
+			send_equipment = {
+			    equipment = light_mechanized_equipment
+			    amount = 50
+			    target = BR1
+			}
+			send_equipment = {
+			    equipment = mechanized_equipment
+			    amount = 20
+			    target = BR1
+			}	
+			send_equipment = {
+			    equipment = medium_tank_chassis
+			    amount = 10
+			    target = BR1
+			}	
+		}
+		BR1 = {
+			country_event = {
+				id = Brazil.libs.6
+				hours = 18
+			}
+		}
+	}
+
+	# Expertise
+	option = {
+		name = Brazil.libs.5.b
+		ai_will_do = {
+            base = 5
+			modifier = {
+				add = 5
+				BR1 = {
+					has_opinion = {
+					    target = ROOT
+					    value > 10
+					}
+				}
+			}
+        }
+		army_experience = -25
+		add_command_power = -50
+		effect_tooltip = {
+			BR1 = {
+				army_experience = 25
+				set_temp_variable = { military_development_var_temp = 0.1 }
+				add_military_development = yes
+				random_army_leader = { gain_xp = 5 }
+			}
+		}
+		BR1 = {
+			country_event = {
+				id = Brazil.libs.7
+				hours = 18
+			}
+		}
+	}
+
+	# Volunteers
+	option = {
+		name = Brazil.libs.5.c
+		ai_will_do = {
+            base = 5
+			modifier = {
+				add = 5
+				BR1 = {
+					has_opinion = {
+					    target = ROOT
+					    value > 10
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				BR1 = {
+					has_opinion = {
+					    target = ROOT
+					    value > 20
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				BR1 = {
+					has_opinion = {
+					    target = ROOT
+					    value > 30
+					}
+				}
+			}
+			modifier = {
+				add = 5
+				BR1 = {
+					has_opinion = {
+					    target = ROOT
+					    value > 40
+					}
+				}
+			}
+        }
+		effect_tooltip = {
+			# Create Euro units
+			1460 = {
+				create_unit = {
+					division = "name = \"European Volunteers\" division_template = \"Brigada de Cavalaria Mecanizada\"  start_experience_factor = 0.0"
+					allow_spawning_on_enemy_provs = yes
+					owner = BR1
+        			   count = 1
+				}
+			}
+		}
+		BR1 = {
+			country_event = {
+				id = Brazil.libs.8
+				hours = 18
+			}
+		}
+	}
+
+	# No help
+	option = {
+		name = Brazil.libs.5.c
+		ai_will_do = {
+            base = 5
+			modifier = {
+				multiply = 200
+				has_war = yes
+			}
+        }
+		BR1 = {
+			country_event = {
+				id = Brazil.libs.9
+				hours = 18
+			}
+		}
+	}
+}
+
+# European equipment
+country_event = {
+	id = Brazil.libs.6
+	title = Brazil.libs.6.t
+	desc = Brazil.libs.6.d
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR1
+	}
+
+	option = {
+		name = Brazil.libs.6.a
+		FROM = {
+			send_equipment = {
+			    equipment = infantry_equipment
+			    amount = 1000
+			    target = BR1
+			}
+			send_equipment = {
+			    equipment = support_equipment
+			    amount = 50
+			    target = BR1
+			}
+			send_equipment = {
+			    equipment = motorized_equipment
+			    amount = 200
+			    target = BR1
+			}
+			send_equipment = {
+			    equipment = artillery_equipment
+			    amount = 100
+			    target = BR1
+			}
+			send_equipment = {
+			    equipment = light_mechanized_equipment
+			    amount = 50
+			    target = BR1
+			}
+			send_equipment = {
+			    equipment = mechanized_equipment
+			    amount = 20
+			    target = BR1
+			}	
+			send_equipment = {
+			    equipment = medium_tank_chassis
+			    amount = 10
+			    target = BR1
+			}	
+		}
+	}
+}
+
+# European expertise
+country_event = {
+	id = Brazil.libs.7
+	title = Brazil.libs.7.t
+	desc = Brazil.libs.7.d
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR1
+	}
+
+	option = {
+		name = Brazil.libs.7.a
+		army_experience = 25
+		set_temp_variable = { military_development_var_temp = 0.1 }
+		add_military_development = yes
+		random_army_leader = { gain_xp = 5 }
+	}
+}
+
+# European volunteers
+country_event = {
+	id = Brazil.libs.8
+	title = Brazil.libs.8.t
+	desc = Brazil.libs.8.d
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR1
+	}
+
+	option = {
+		name = Brazil.libs.8.a
+		1460 = {
+			create_unit = {
+				division = "name = \"European Volunteers\" division_template = \"Brigada de Cavalaria Mecanizada\"  start_experience_factor = 0.0"
+				allow_spawning_on_enemy_provs = yes
+				owner = ROOT
+        		   count = 1
+			}
+		}
+	}
+}
+
+# No Euro support
+country_event = {
+	id = Brazil.libs.9
+	title = Brazil.libs.9.t
+	desc = Brazil.libs.9.d
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR1
+	}
+
+	option = {
+		name = Brazil.libs.9.a
+	}
+}
+
+# United Nations secures Amapá
+country_event = {
+	id = Brazil.libs.10
+	title = Brazil.libs.10.t
+	desc = Brazil.libs.10.d
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR1
+	}
+
+	immediate = {
+		hidden_effect = {
+			UNB = {
+				transfer_state = 1447
+			}
+		}
+	}
+
+	option = {
+		name = Brazil.libs.10.a
+		UNB = {
+			activate_mission = UNB_cw_united_nations_mission
+		}
+	}
+}
+
+# São Paulo ultimatum
+country_event = {
+	id = Brazil.libs.11
+	title = Brazil.libs.11.t
+	desc = Brazil.libs.11.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = SPA
+	}
+
+	# Accept
+	option = {
+		name = Brazil.libs.11.a
+		ai_chance = {
+			base = 10
+		}
+		BR1 = {
+			country_event = {
+				id = Brazil.libs.12
+				hours = 12
+			}
+		}	
+	}
+
+	# Decline
+	option = {
+		name = Brazil.libs.11.b
+		ai_chance = {
+			base = 1
+		}
+		BR1 = {
+			country_event = {
+				id = Brazil.libs.13
+				hours = 12
+			}
+		}
+	}
+}
+
+# São Paulo ultimatum - accepted
+country_event = {
+	id = Brazil.libs.12
+	title = Brazil.libs.12.t
+	desc = Brazil.libs.12.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR1
+	}
+
+	option = {
+		name = Brazil.libs.12.a
+		annex_country = {
+			target = SPA
+			transfer_troops = yes
+		}
+		hidden_effect = {
+			SPA = {
+				every_core_state = {
+					add_core_of = BR1
+				}
+			}
+		}
+	}
+}
+
+# São Paulo ultimatum - rejected
+country_event = {
+	id = Brazil.libs.13
+	title = Brazil.libs.13.t
+	desc = Brazil.libs.13.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR1
+	}
+
+	option = {
+		name = Brazil.libs.13.a
+		declare_war_on = {
+			target = SPA
+    		type = annex_everything
+		}
+	}
+}
+
+# Sul ultimatum
+country_event = {
+	id = Brazil.libs.14
+	title = Brazil.libs.14.t
+	desc = Brazil.libs.14.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = SUL
+	}
+
+	# Accept
+	option = {
+		name = Brazil.libs.14.a
+		ai_chance = {
+			base = 0
+			modifier = {
+				OR = {
+					has_government = conservative
+					has_government = market_liberal
+				}
+				add = 5
+			}
+			modifier = {
+				OR = {
+					has_government = social_liberal
+					has_government = social_democrat
+				}
+				add = 10
+			}
+			modifier = {
+				has_government = BR1
+				add = 50
+			}
+		}
+		BR1 = {
+			country_event = {
+				id = Brazil.libs.15
+				hours = 12
+			}
+		}	
+	}
+
+	# Decline
+	option = {
+		name = Brazil.libs.14.b
+		ai_chance = {
+			base = 50
+		}
+		BR1 = {
+			country_event = {
+				id = Brazil.libs.16
+				hours = 12
+			}
+		}
+	}
+}
+
+# Sul ultimatum - accepted
+country_event = {
+	id = Brazil.libs.15
+	title = Brazil.libs.15.t
+	desc = Brazil.libs.15.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR1
+	}
+
+	option = {
+		name = Brazil.libs.15.a
+		annex_country = {
+			target = SUL
+			transfer_troops = yes
+		}
+		hidden_effect = {
+			SUL = {
+				every_core_state = {
+					add_core_of = BR1
+				}
+			}
+		}
+	}
+}
+
+# Sul ultimatum - rejected
+country_event = {
+	id = Brazil.libs.16
+	title = Brazil.libs.16.t
+	desc = Brazil.libs.16.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR1
+	}
+
+	option = {
+		name = Brazil.libs.16.a
+		declare_war_on = {
+			target = SUL
+    		type = annex_everything
+		}
+	}
+}
+
+###########################
+# News Events
+###########################
+
+# UN Intervenes in Brazil
+news_event = {
+	id = Brazilnews.libs.1
+	title = Brazilnews.libs.1.t
+	desc = Brazilnews.libs.1.d
+	picture = GFX_TFRSG_news_un_peacekeepers
+	major = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = UNB
+	}
+
+	option = {
+		name = Brazilnews.libs.1.a
+		trigger = {
+			OR = {
+				tag = BR2
+				tag = BR3
+				tag = BR4
+				tag = AMZ
+				tag = SUL
+				tag = SOV
+				tag = PRC
+			}
+		}
+	}
+
+	option = {
+		name = Brazilnews.libs.1.b
+		trigger = {
+			NOT = {
+				tag = BR2
+				tag = BR3
+				tag = BR4
+				tag = AMZ
+				tag = SUL
+				tag = SOV
+				tag = PRC
+			}
+		}
+	}
+}

@@ -1,0 +1,22 @@
+state={
+	id=1450
+	name="STATE_1450"
+	provinces={
+		5083 10934 12919 13083 14988 14989 14991 15024 15031 
+	}
+	manpower=1322000
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+	local_supplies=0.000
+
+	history = {
+		owner = BRA
+		add_core_of = BRA
+		buildings = {
+		}
+
+		victory_points = { 8185 1 }
+
+		add_dynamic_modifier = { modifier = BRA_amazonian_jungle_state_dynamic }
+	}
+}

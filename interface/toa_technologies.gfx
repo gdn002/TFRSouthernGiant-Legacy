@@ -1,0 +1,4 @@
+spriteTypes = {
+	# Nothing to see here, just overriding vanilla DLC spriteTypes
+	# You're looking for TFRSG_technologies.gfx
+}

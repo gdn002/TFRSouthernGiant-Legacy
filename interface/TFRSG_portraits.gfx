@@ -1,0 +1,88 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_Portrait_Brazil_Generic_land_1"
+		texturefile = "gfx/leaders/BRA/generic/BRA_genericgeneral_1.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Brazil_Generic_land_2"
+		texturefile = "gfx/leaders/BRA/generic/BRA_genericgeneral_2.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Brazil_Generic_land_3"
+		texturefile = "gfx/leaders/BRA/generic/BRA_genericgeneral_3.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Brazil_Generic_land_4"
+		texturefile = "gfx/leaders/BRA/generic/BRA_genericgeneral_4.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Brazil_Generic_land_5"
+		texturefile = "gfx/leaders/BRA/generic/BRA_genericgeneral_5.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Brazil_Generic_land_6"
+		texturefile = "gfx/leaders/BRA/generic/BRA_genericgeneral_6.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Brazil_Generic_land_7"
+		texturefile = "gfx/leaders/BRA/generic/BRA_genericgeneral_7.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Brazil_Generic_land_8"
+		texturefile = "gfx/leaders/BRA/generic/BRA_genericgeneral_8.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_Brazil_Generic_land_female_1"
+		texturefile = "gfx/leaders/BRA/generic/BRA_genericgeneral_female_1.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Brazil_Generic_land_female_2"
+		texturefile = "gfx/leaders/BRA/generic/BRA_genericgeneral_female_2.png"
+	}
+
+	spriteType = {
+		name = "GFX_Portrait_Brazil_Generic_soldier_1"
+		texturefile = "gfx/leaders/BRA/generic/BRA_genericsoldier_1.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Brazil_Generic_soldier_2"
+		texturefile = "gfx/leaders/BRA/generic/BRA_genericsoldier_2.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Brazil_Generic_soldier_3"
+		texturefile = "gfx/leaders/BRA/generic/BRA_genericsoldier_3.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Brazil_Generic_soldier_4"
+		texturefile = "gfx/leaders/BRA/generic/BRA_genericsoldier_4.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Brazil_Generic_soldier_5"
+		texturefile = "gfx/leaders/BRA/generic/BRA_genericsoldier_5.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Brazil_Generic_soldier_6"
+		texturefile = "gfx/leaders/BRA/generic/BRA_genericsoldier_6.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Brazil_Generic_soldier_7"
+		texturefile = "gfx/leaders/BRA/generic/BRA_genericsoldier_7.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Brazil_Generic_soldier_8"
+		texturefile = "gfx/leaders/BRA/generic/BRA_genericsoldier_8.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Brazil_Generic_soldier_9"
+		texturefile = "gfx/leaders/BRA/generic/BRA_genericsoldier_9.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Brazil_Generic_soldier_10"
+		texturefile = "gfx/leaders/BRA/generic/BRA_genericsoldier_10.png"
+	}
+	spriteType = {
+		name = "GFX_Portrait_Brazil_Generic_soldier_11"
+		texturefile = "gfx/leaders/BRA/generic/BRA_genericsoldier_11.png"
+	}
+}

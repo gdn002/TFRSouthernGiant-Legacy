@@ -1,0 +1,29 @@
+state={
+	id=1463
+	name="STATE_1463"
+	provinces={
+		10513 15003 15004 15005 15006 15007 15008 15009 
+	}
+	manpower=13107000
+	buildings_max_level_factor=1.000
+	state_category=metropolis
+	local_supplies=0.000
+
+	history = {
+		owner = BRA
+		add_core_of = BRA
+		add_core_of = SPA
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			arms_factory = 1
+			air_base = 5
+			office_park = 1
+		}
+
+		victory_points = { 15004 10 }
+		victory_points = { 15005 10 }
+		victory_points = { 15006 30 }
+		victory_points = { 15009 10 }
+	}
+}

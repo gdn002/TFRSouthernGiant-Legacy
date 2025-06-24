@@ -1,0 +1,739 @@
+
+category = 
+{
+ 	name = "Voices"
+ 	soundeffects = {
+		BRA_infantry_idle
+		BRA_infantry_neutral_combat
+		BRA_infantry_positive_combat
+		BRA_infantry_move_out
+		BRA_infantry_retreat
+		BR1_infantry_idle
+		BR1_infantry_neutral_combat
+		BR1_infantry_positive_combat
+		BR1_infantry_move_out
+		BR1_infantry_retreat
+		BR2_infantry_idle
+		BR2_infantry_neutral_combat
+		BR2_infantry_positive_combat
+		BR2_infantry_move_out
+		BR2_infantry_retreat
+		BR3_infantry_idle
+		BR3_infantry_neutral_combat
+		BR3_infantry_positive_combat
+		BR3_infantry_move_out
+		BR3_infantry_retreat
+		BR4_infantry_idle
+		BR4_infantry_neutral_combat
+		BR4_infantry_positive_combat
+		BR4_infantry_move_out
+		BR4_infantry_retreat
+ 	}
+	compressor = 
+ 	{
+		enabled = yes
+		pregain = 0.0
+		postgain = 2.0
+		ratio = 10.0
+		threshold = -10.0
+		attacktime = 0.030
+		releasetime = 1.2
+ 	}
+}
+
+########## BRA
+
+soundeffect = 
+{
+    name = "BRA_infantry_idle"
+    sounds = {
+		sound = BRA_Idle_001
+        sound = BRA_Idle_002
+        sound = BRA_Idle_003
+        sound = BRA_Idle_004
+        sound = BRA_Idle_005
+    }
+	max_audible = 6
+	max_audible_behaviour = fail
+	volume = 0.60
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15 }
+}
+soundeffect = 
+{
+    name = "BRA_infantry_neutral_combat"
+    sounds = {
+        sound = BRA_Neutral_001
+		sound = BRA_Neutral_002
+        sound = BRA_Neutral_003
+        sound = BRA_Neutral_004
+        sound = BRA_Neutral_005
+        sound = BRA_Neutral_006
+        sound = BRA_Neutral_007
+        sound = BRA_Neutral_008
+    }
+	max_audible = 6
+	max_audible_behaviour = fail
+	volume = 0.60
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+soundeffect = 
+{
+    name = "BRA_infantry_positive_combat"
+    sounds = {
+        sound = BRA_Positive_001
+        sound = BRA_Positive_002
+        sound = BRA_Positive_003
+        sound = BRA_Positive_004
+        sound = BRA_Positive_005
+        sound = BRA_Positive_006
+        sound = BRA_Positive_007
+        sound = BRA_Positive_008
+    }
+	max_audible = 4
+	max_audible_behaviour = fail
+	volume = 0.60
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+soundeffect = 
+{
+    name = "BRA_infantry_move_out"
+    sounds = {
+        sound = BRA_Moving_001
+        sound = BRA_Moving_002
+        sound = BRA_Moving_003
+        sound = BRA_Moving_004
+        sound = BRA_Moving_005
+        sound = BRA_Moving_006
+        sound = BRA_Moving_007
+        sound = BRA_Moving_008		
+    }
+	max_audible = 8
+	max_audible_behaviour = fail
+	volume = 0.60
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+soundeffect = 
+{
+    name = "BRA_infantry_retreat"
+    sounds = {
+        sound = BRA_Retreat_001
+        sound = BRA_Retreat_002
+        sound = BRA_Retreat_003
+        sound = BRA_Retreat_004
+        sound = BRA_Retreat_005
+		sound = BRA_Retreat_006
+		sound = BRA_Retreat_007
+		sound = BRA_Retreat_008
+    }
+	max_audible = 4
+	max_audible_behaviour = fail
+	volume = 0.60
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+
+########## BR1
+
+soundeffect = 
+{
+    name = "BR1_infantry_idle"
+    sounds = {
+		sound = BRA_Idle_001
+        sound = BRA_Idle_002
+        sound = BRA_Idle_003
+        sound = BRA_Idle_004
+        sound = BRA_Idle_005
+    }
+	max_audible = 6
+	max_audible_behaviour = fail
+	volume = 0.60
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15 }
+}
+soundeffect = 
+{
+    name = "BR1_infantry_neutral_combat"
+    sounds = {
+        sound = BRA_Neutral_001
+		sound = BRA_Neutral_002
+        sound = BRA_Neutral_003
+        sound = BRA_Neutral_004
+        sound = BRA_Neutral_005
+        sound = BRA_Neutral_006
+        sound = BRA_Neutral_007
+        sound = BRA_Neutral_008
+    }
+	max_audible = 6
+	max_audible_behaviour = fail
+	volume = 0.60
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+soundeffect = 
+{
+    name = "BR1_infantry_positive_combat"
+    sounds = {
+        sound = BRA_Positive_001
+        sound = BRA_Positive_002
+        sound = BRA_Positive_003
+        sound = BRA_Positive_004
+        sound = BRA_Positive_005
+        sound = BRA_Positive_006
+        sound = BRA_Positive_007
+        sound = BRA_Positive_008
+    }
+	max_audible = 4
+	max_audible_behaviour = fail
+	volume = 0.60
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+soundeffect = 
+{
+    name = "BR1_infantry_move_out"
+    sounds = {
+        sound = BRA_Moving_001
+        sound = BRA_Moving_002
+        sound = BRA_Moving_003
+        sound = BRA_Moving_004
+        sound = BRA_Moving_005
+        sound = BRA_Moving_006
+        sound = BRA_Moving_007
+        sound = BRA_Moving_008		
+    }
+	max_audible = 8
+	max_audible_behaviour = fail
+	volume = 0.60
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+soundeffect = 
+{
+    name = "BR1_infantry_retreat"
+    sounds = {
+        sound = BRA_Retreat_001
+        sound = BRA_Retreat_002
+        sound = BRA_Retreat_003
+        sound = BRA_Retreat_004
+        sound = BRA_Retreat_005
+		sound = BRA_Retreat_006
+		sound = BRA_Retreat_007
+		sound = BRA_Retreat_008
+    }
+	max_audible = 4
+	max_audible_behaviour = fail
+	volume = 0.60
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+
+########## BR2
+
+soundeffect = 
+{
+    name = "BR2_infantry_idle"
+    sounds = {
+		sound = BRA_Idle_001
+        sound = BRA_Idle_002
+        sound = BRA_Idle_003
+        sound = BRA_Idle_004
+        sound = BRA_Idle_005
+    }
+	max_audible = 6
+	max_audible_behaviour = fail
+	volume = 0.60
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15 }
+}
+soundeffect = 
+{
+    name = "BR2_infantry_neutral_combat"
+    sounds = {
+        sound = BRA_Neutral_001
+		sound = BRA_Neutral_002
+        sound = BRA_Neutral_003
+        sound = BRA_Neutral_004
+        sound = BRA_Neutral_005
+        sound = BRA_Neutral_006
+        sound = BRA_Neutral_007
+        sound = BRA_Neutral_008
+    }
+	max_audible = 6
+	max_audible_behaviour = fail
+	volume = 0.60
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+soundeffect = 
+{
+    name = "BR2_infantry_positive_combat"
+    sounds = {
+        sound = BRA_Positive_001
+        sound = BRA_Positive_002
+        sound = BRA_Positive_003
+        sound = BRA_Positive_004
+        sound = BRA_Positive_005
+        sound = BRA_Positive_006
+        sound = BRA_Positive_007
+        sound = BRA_Positive_008
+    }
+	max_audible = 4
+	max_audible_behaviour = fail
+	volume = 0.60
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+soundeffect = 
+{
+    name = "BR2_infantry_move_out"
+    sounds = {
+        sound = BRA_Moving_001
+        sound = BRA_Moving_002
+        sound = BRA_Moving_003
+        sound = BRA_Moving_004
+        sound = BRA_Moving_005
+        sound = BRA_Moving_006
+        sound = BRA_Moving_007
+        sound = BRA_Moving_008		
+    }
+	max_audible = 8
+	max_audible_behaviour = fail
+	volume = 0.60
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+soundeffect = 
+{
+    name = "BR2_infantry_retreat"
+    sounds = {
+        sound = BRA_Retreat_001
+        sound = BRA_Retreat_002
+        sound = BRA_Retreat_003
+        sound = BRA_Retreat_004
+        sound = BRA_Retreat_005
+		sound = BRA_Retreat_006
+		sound = BRA_Retreat_007
+		sound = BRA_Retreat_008
+    }
+	max_audible = 4
+	max_audible_behaviour = fail
+	volume = 0.60
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+
+########## BR3
+
+soundeffect = 
+{
+    name = "BR3_infantry_idle"
+    sounds = {
+		sound = BRA_Idle_001
+        sound = BRA_Idle_002
+        sound = BRA_Idle_003
+        sound = BRA_Idle_004
+        sound = BRA_Idle_005
+    }
+	max_audible = 6
+	max_audible_behaviour = fail
+	volume = 0.60
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15 }
+}
+soundeffect = 
+{
+    name = "BR3_infantry_neutral_combat"
+    sounds = {
+        sound = BRA_Neutral_001
+		sound = BRA_Neutral_002
+        sound = BRA_Neutral_003
+        sound = BRA_Neutral_004
+        sound = BRA_Neutral_005
+        sound = BRA_Neutral_006
+        sound = BRA_Neutral_007
+        sound = BRA_Neutral_008
+    }
+	max_audible = 6
+	max_audible_behaviour = fail
+	volume = 0.60
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+soundeffect = 
+{
+    name = "BR3_infantry_positive_combat"
+    sounds = {
+        sound = BRA_Positive_001
+        sound = BRA_Positive_002
+        sound = BRA_Positive_003
+        sound = BRA_Positive_004
+        sound = BRA_Positive_005
+        sound = BRA_Positive_006
+        sound = BRA_Positive_007
+        sound = BRA_Positive_008
+    }
+	max_audible = 4
+	max_audible_behaviour = fail
+	volume = 0.60
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+soundeffect = 
+{
+    name = "BR3_infantry_move_out"
+    sounds = {
+        sound = BRA_Moving_001
+        sound = BRA_Moving_002
+        sound = BRA_Moving_003
+        sound = BRA_Moving_004
+        sound = BRA_Moving_005
+        sound = BRA_Moving_006
+        sound = BRA_Moving_007
+        sound = BRA_Moving_008		
+    }
+	max_audible = 8
+	max_audible_behaviour = fail
+	volume = 0.60
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+soundeffect = 
+{
+    name = "BR3_infantry_retreat"
+    sounds = {
+        sound = BRA_Retreat_001
+        sound = BRA_Retreat_002
+        sound = BRA_Retreat_003
+        sound = BRA_Retreat_004
+        sound = BRA_Retreat_005
+		sound = BRA_Retreat_006
+		sound = BRA_Retreat_007
+		sound = BRA_Retreat_008
+    }
+	max_audible = 4
+	max_audible_behaviour = fail
+	volume = 0.60
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+
+########## BR4
+
+soundeffect = 
+{
+    name = "BR4_infantry_idle"
+    sounds = {
+		sound = BRA_Idle_001
+        sound = BRA_Idle_002
+        sound = BRA_Idle_003
+        sound = BRA_Idle_004
+        sound = BRA_Idle_005
+    }
+	max_audible = 6
+	max_audible_behaviour = fail
+	volume = 0.60
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15 }
+}
+soundeffect = 
+{
+    name = "BR4_infantry_neutral_combat"
+    sounds = {
+        sound = BRA_Neutral_001
+		sound = BRA_Neutral_002
+        sound = BRA_Neutral_003
+        sound = BRA_Neutral_004
+        sound = BRA_Neutral_005
+        sound = BRA_Neutral_006
+        sound = BRA_Neutral_007
+        sound = BRA_Neutral_008
+    }
+	max_audible = 6
+	max_audible_behaviour = fail
+	volume = 0.60
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+soundeffect = 
+{
+    name = "BR4_infantry_positive_combat"
+    sounds = {
+        sound = BRA_Positive_001
+        sound = BRA_Positive_002
+        sound = BRA_Positive_003
+        sound = BRA_Positive_004
+        sound = BRA_Positive_005
+        sound = BRA_Positive_006
+        sound = BRA_Positive_007
+        sound = BRA_Positive_008
+    }
+	max_audible = 4
+	max_audible_behaviour = fail
+	volume = 0.60
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+soundeffect = 
+{
+    name = "BR4_infantry_move_out"
+    sounds = {
+        sound = BRA_Moving_001
+        sound = BRA_Moving_002
+        sound = BRA_Moving_003
+        sound = BRA_Moving_004
+        sound = BRA_Moving_005
+        sound = BRA_Moving_006
+        sound = BRA_Moving_007
+        sound = BRA_Moving_008		
+    }
+	max_audible = 8
+	max_audible_behaviour = fail
+	volume = 0.60
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+soundeffect = 
+{
+    name = "BR4_infantry_retreat"
+    sounds = {
+        sound = BRA_Retreat_001
+        sound = BRA_Retreat_002
+        sound = BRA_Retreat_003
+        sound = BRA_Retreat_004
+        sound = BRA_Retreat_005
+		sound = BRA_Retreat_006
+		sound = BRA_Retreat_007
+		sound = BRA_Retreat_008
+    }
+	max_audible = 4
+	max_audible_behaviour = fail
+	volume = 0.60
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+
+############## AUDIO ASSETS
+
+sound = 
+{
+	name = "BRA_Idle_001"
+	file = "BRA/BRA_idle_001.wav"
+}
+sound = 
+{
+	name = "BRA_Idle_002"
+	file = "BRA/BRA_idle_002.wav"
+}
+sound = 
+{
+	name = "BRA_Idle_003"
+	file = "BRA/BRA_idle_003.wav"
+}
+
+sound = 
+{
+	name = "BRA_Idle_004"
+	file = "BRA/BRA_idle_004.wav"
+}
+
+sound = 
+{
+	name = "BRA_Idle_005"
+	file = "BRA/BRA_idle_005.wav"
+}
+
+sound = 
+{
+	name = "BRA_Neutral_001"
+	file = "BRA/BRA_neutral_001.wav"
+}
+
+sound = 
+{
+	name = "BRA_Neutral_002"
+	file = "BRA/BRA_neutral_002.wav"
+}
+
+sound = 
+{
+	name = "BRA_Neutral_003"
+	file = "BRA/BRA_neutral_003.wav"
+}
+
+sound = 
+{
+	name = "BRA_Neutral_004"
+	file = "BRA/BRA_neutral_004.wav"
+}
+
+sound = 
+{
+	name = "BRA_Neutral_005"
+	file = "BRA/BRA_neutral_005.wav"
+}
+
+sound = 
+{
+	name = "BRA_Neutral_006"
+	file = "BRA/BRA_neutral_006.wav"
+}
+
+sound = 
+{
+	name = "BRA_Neutral_007"
+	file = "BRA/BRA_neutral_007.wav"
+}
+
+sound = 
+{
+	name = "BRA_Neutral_008"
+	file = "BRA/BRA_neutral_008.wav"
+}
+
+sound = 
+{
+	name = "BRA_Moving_001"
+	file = "BRA/BRA_move_001.wav"
+}
+
+sound = 
+{
+	name = "BRA_Moving_002"
+	file = "BRA/BRA_move_002.wav"
+}
+
+sound = 
+{
+	name = "BRA_Moving_003"
+	file = "BRA/BRA_move_003.wav"
+}
+
+sound = 
+{
+	name = "BRA_Moving_004"
+	file = "BRA/BRA_move_004.wav"
+}
+
+sound = 
+{
+	name = "BRA_Moving_005"
+	file = "BRA/BRA_move_005.wav"
+}
+
+sound = 
+{
+	name = "BRA_Moving_006"
+	file = "BRA/BRA_move_006.wav"
+}
+
+sound = 
+{
+	name = "BRA_Moving_007"
+	file = "BRA/BRA_move_007.wav"
+}
+
+sound = 
+{
+	name = "BRA_Moving_008"
+	file = "BRA/BRA_move_008.wav"
+}
+
+sound = 
+{
+	name = "BRA_Positive_001"
+	file = "BRA/BRA_positive_001.wav"
+}
+
+sound = 
+{
+	name = "BRA_Positive_002"
+	file = "BRA/BRA_positive_002.wav"
+}
+
+sound = 
+{
+	name = "BRA_Positive_003"
+	file = "BRA/BRA_positive_003.wav"
+}
+
+sound = 
+{
+	name = "BRA_Positive_004"
+	file = "BRA/BRA_positive_004.wav"
+}
+
+sound = 
+{
+	name = "BRA_Positive_005"
+	file = "BRA/BRA_positive_005.wav"
+}
+
+sound = 
+{
+	name = "BRA_Positive_006"
+	file = "BRA/BRA_positive_006.wav"
+}
+
+sound = 
+{
+	name = "BRA_Positive_007"
+	file = "BRA/BRA_positive_007.wav"
+}
+
+sound = 
+{
+	name = "BRA_Positive_008"
+	file = "BRA/BRA_positive_008.wav"
+}
+
+sound = 
+{
+	name = "BRA_Retreat_001"
+	file = "BRA/BRA_retreat_001.wav"
+}
+
+sound = 
+{
+	name = "BRA_Retreat_002"
+	file = "BRA/BRA_retreat_002.wav"
+}
+
+sound = 
+{
+	name = "BRA_Retreat_003"
+	file = "BRA/BRA_retreat_003.wav"
+}
+
+sound = 
+{
+	name = "BRA_Retreat_004"
+	file = "BRA/BRA_retreat_004.wav"
+}
+
+sound = 
+{
+	name = "BRA_Retreat_005"
+	file = "BRA/BRA_retreat_005.wav"
+}
+
+sound = 
+{
+	name = "BRA_Retreat_006"
+	file = "BRA/BRA_retreat_006.wav"
+}
+
+sound = 
+{
+	name = "BRA_Retreat_007"
+	file = "BRA/BRA_retreat_007.wav"
+}
+
+sound = 
+{
+	name = "BRA_Retreat_008"
+	file = "BRA/BRA_retreat_008.wav"
+}

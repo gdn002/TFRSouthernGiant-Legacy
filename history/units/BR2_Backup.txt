@@ -1,0 +1,32 @@
+﻿units = {
+	division = {
+		name = "11a Bda Inf Mec"
+		location = 8140
+		division_template = "Brigada de Infantaria Mecanizada"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "15a Bda Inf Mec"
+		location = 10959
+		division_template = "Brigada de Infantaria Mecanizada"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "1a Bda C Mec"
+		location = 14977
+		division_template = "Brigada de Cavalaria Mecanizada"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "2a Bda C Mec"
+		location = 8140
+		division_template = "Brigada de Cavalaria Mecanizada"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "3a Bda C Mec"
+		location = 10959
+		division_template = "Brigada de Cavalaria Mecanizada"
+		start_experience_factor = 0.5		
+	}
+}

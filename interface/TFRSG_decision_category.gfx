@@ -1,0 +1,26 @@
+spriteTypes = {
+    spriteType = {
+			name = "GFX_decision_category_BRA_amazonian_jungle"  
+			texturefile = "gfx/interface/decisions/BRA/BRA_amazonian_jungle_cat.png" 
+	}
+	spriteType = {
+			name = "GFX_decision_category_BRA_chamber_of_deputies"  
+			texturefile = "gfx/interface/decisions/BRA/BRA_chamber_of_deputies_cat.png" 
+	}
+	spriteType = {
+			name = "GFX_decision_category_BRA_civil_war"  
+			texturefile = "gfx/interface/decisions/BRA/BRA_brazilian_civil_war_cat.png" 
+	}
+	spriteType = {
+			name = "GFX_decision_category_BRA_2022_elections"  
+			texturefile = "gfx/interface/decisions/BRA/BRA_2022_elections_cat.png" 
+	}
+	spriteType = {
+			name = "GFX_decision_category_BRA_south_american_sphere"  
+			texturefile = "gfx/interface/decisions/BRA/BRA_south_american_sphere_cat.png" 
+	}
+	spriteType = {
+			name = "GFX_decision_category_BRA_war_with_united_states"  
+			texturefile = "gfx/interface/decisions/BRA/BRA_war_with_usa_cat.png" 
+	}
+}

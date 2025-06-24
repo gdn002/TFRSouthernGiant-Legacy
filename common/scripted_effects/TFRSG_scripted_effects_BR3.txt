@@ -1,0 +1,134 @@
+BR3_civil_war_raid_scripted_effect = {
+    set_temp_variable = { BRA_civil_war_recruit_value_temp = 1 }
+    FROM = {        
+        BRA_civil_war_get_state_recruitment_value = yes
+    }
+    log = "TFRSG Popular Front raid value - [?BRA_civil_war_recruit_value_temp]"
+
+    set_temp_variable = { inf_equip_var = 250 }
+    set_temp_variable = { sup_equip_var = 50 }
+    set_temp_variable = { mot_equip_var = 50 }
+    set_temp_variable = { art_equip_var = 25 }
+    set_temp_variable = { lmec_equip_var = 25 }
+    set_temp_variable = { mec_equip_var = 25 }
+
+    multiply_temp_variable = { inf_equip_var = BRA_civil_war_recruit_value_temp }
+    multiply_temp_variable = { sup_equip_var = BRA_civil_war_recruit_value_temp }
+
+    subtract_from_temp_variable = { BRA_civil_war_recruit_value_temp = 1 }
+
+    multiply_temp_variable = { mot_equip_var = BRA_civil_war_recruit_value_temp }
+    multiply_temp_variable = { art_equip_var = BRA_civil_war_recruit_value_temp }
+
+    subtract_from_temp_variable = { BRA_civil_war_recruit_value_temp = 1 }
+    clamp_temp_variable = {
+        var = BRA_civil_war_recruit_value_temp
+        min = 0
+    }
+
+    multiply_temp_variable = { lmec_equip_var = BRA_civil_war_recruit_value_temp }
+
+    subtract_from_temp_variable = { BRA_civil_war_recruit_value_temp = 1 }
+    clamp_temp_variable = {
+        var = BRA_civil_war_recruit_value_temp
+        min = 0
+    }
+
+    multiply_temp_variable = { mec_equip_var = BRA_civil_war_recruit_value_temp }
+
+    if = {
+        limit = { check_variable = { inf_equip_var > 0} }
+        add_equipment_to_stockpile = {
+        	type = infantry_equipment_2
+        	amount = inf_equip_var
+	    }
+    }
+    if = {
+        limit = { check_variable = { sup_equip_var > 0} }
+	    add_equipment_to_stockpile = {
+        	type = support_equipment_1
+        	amount = sup_equip_var
+	    }
+    }
+    if = {
+        limit = { check_variable = { mot_equip_var > 0} }
+	    add_equipment_to_stockpile = {
+        	type = motorized_equipment_1
+        	amount = mot_equip_var
+	    }
+    }
+    if = {
+        limit = { check_variable = { art_equip_var > 0} }
+	    add_equipment_to_stockpile = {
+        	type = artillery_equipment_1
+        	amount = art_equip_var
+	    }
+    }
+    if = {
+        limit = { check_variable = { lmec_equip_var > 0} }	
+        add_equipment_to_stockpile = {
+        	type = light_mechanized_equipment_1
+        	amount = lmec_equip_var
+	    }
+    }
+    if = {
+        limit = { check_variable = { mec_equip_var > 0} }	
+        add_equipment_to_stockpile = {
+        	type = mechanized_equipment_1
+        	amount = mec_equip_var
+	    }
+    }
+}
+
+BR3_endgame_content = {
+    ## Sets up post-civil war skeleton content for this tag
+    if = {
+        ## HARDLINERS
+        limit = {
+            is_power_balance_in_range = {
+    			id = BR3_internal_faction_balance
+    			range < BR3_centrist_hardliner_coalition
+			}
+        }
+        set_politics = { ruling_party = totalitarian_socialist }
+        change_government_type_communist_party_state = yes
+        change_economy_type_planned_economy = yes
+        set_cosmetic_tag = BR3_hardliner
+    }
+    else_if = {
+        ## LIBERTARIANS
+        limit = {
+            is_power_balance_in_range = {
+    			id = BR3_internal_faction_balance
+    			range > BR3_centrist_libertarian_coalition
+			}
+        }
+        set_politics = {
+			ruling_party = authoritarian_democrat
+			last_election = "2022.10.27"
+			election_frequency = 48
+			elections_allowed = yes
+		}
+        change_government_type_socialist_republic = yes
+        change_economy_type_socialist_market = yes
+        set_cosmetic_tag = BR3_libertarian
+    }
+    else = {
+        ## CENTRISTS
+        set_portraits = {
+			character = BR3_leo_pericles_char
+			civilian = { large ="GFX_BR3_Leo_Pericles_president" }
+		}
+        change_government_type_communist_party_state = yes
+        change_economy_type_worker_controlled = yes
+        set_cosmetic_tag = BR3_centrist    
+    }
+
+    remove_ideas = {
+        BR3_popular_front_idea
+        BR3_counter_revolution_idea
+        BR3_liberation_army_idea
+        BR3_redirected_industrial_output_mil_idea
+        BR3_redirected_industrial_output_civ_idea
+    }
+}

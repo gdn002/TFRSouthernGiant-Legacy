@@ -1,0 +1,513 @@
+######################################################
+# Brazilian Popular Front Focus Tree
+# Shared focuses post civil war
+# By gdn001
+######################################################
+
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+
+# ------------------------------------------------------------ MILITARY ------------------------------------------------------------
+shared_focus = {
+	id = BR3_the_brazilian_liberation_army
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	x = -15
+	y = 0
+	cost = 5
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = BR3_peoples_army_focus
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BR3_the_brazilian_liberation_army
+	x = 2
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BR3_the_brazilian_liberation_army
+	}
+	mutually_exclusive = {
+		focus = BR3_red_army_focus
+	}
+	ai_will_do = {
+		base = 1
+	}
+	completion_reward = {
+		# Focus on establishing people's militias
+		# Bonuses will be geared towards militia/infantry divisions, recruitment and training
+		# Intended to be the "quantity over quality" option, allows the quick formation of a massive army but it will be a low-quality one
+	}
+}
+
+shared_focus = {
+	id = BR3_red_army_focus
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BR3_the_brazilian_liberation_army
+	x = -2
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BR3_the_brazilian_liberation_army
+	}
+	mutually_exclusive = {
+		focus = BR3_peoples_army_focus
+	}
+	ai_will_do = {
+		base = 1
+	}
+	completion_reward = {
+		# Focus on establishing a professional standing army
+		# Bonuses will be more focused towards improving combat efficiency, especially for motorized/mechanized/armored units
+		# Intended to be the "quality over quantity" option, building the army will be an uphill battle but it will perform better in combat
+	}
+}
+
+# ------------------------------------------------------------ Foreign Policy ------------------------------------------------------------
+
+shared_focus = {
+	id = BR3_international_socialism
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	x = 15
+	y = 0
+	cost = 1
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = BR3_the_ussr_focus
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BR3_international_socialism
+	x = -2
+	y = 1
+	cost = 2
+	prerequisite = {
+		focus = BR3_international_socialism
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+		# Relations with the USSR (if it has been restored)
+	}
+}
+
+shared_focus = {
+	id = BR3_the_prc_focus
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BR3_international_socialism
+	x = 2
+	y = 1
+	cost = 2
+	prerequisite = {
+		focus = BR3_international_socialism	
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+		# Relations with the PRC (if it is still socialist)
+	}
+}
+
+shared_focus = {
+	id = BR3_the_apla_focus
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BR3_international_socialism
+	x = 0
+	y = 1
+	cost = 2
+	prerequisite = {
+		focus = BR3_international_socialism	
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+		# Relations with the APLA (if it is still alive)
+	}
+}
+
+# ------------------------------------------------------------ Economic Policy ------------------------------------------------------------
+
+shared_focus = {
+	id = BR3_the_first_five_year_plan
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	
+	x = 22
+	y = 0
+	cost = 5
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = BR3_planned_economy_focus
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BR3_the_first_five_year_plan
+	x = -2
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BR3_the_first_five_year_plan
+	}
+	mutually_exclusive = {
+		focus = BR3_market_economy_focus
+		focus = BR3_economic_democracy_focus
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+		has_idea = ZZZ_planned_economy
+	}
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = BR3_market_economy_focus
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BR3_the_first_five_year_plan
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BR3_the_first_five_year_plan
+	}
+	mutually_exclusive = {
+		focus = BR3_planned_economy_focus
+		focus = BR3_economic_democracy_focus
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+		has_idea = ZZZ_socialist_market
+	}
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = BR3_worker_economy_focus
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BR3_the_first_five_year_plan
+	x = 2
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BR3_the_first_five_year_plan
+	}
+	mutually_exclusive = {
+		focus = BR3_planned_economy_focus
+		focus = BR3_market_economy_focus
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+		has_idea = ZZZ_worker_controlled_economy
+	}
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = BR3_seize_bank_assets
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BR3_planned_economy_focus
+	x = -1
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BR3_planned_economy_focus
+		focus = BR3_market_economy_focus
+		focus = BR3_worker_economy_focus
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = BR3_democracy_in_the_workplace
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BR3_market_economy_focus
+	x = 1
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BR3_planned_economy_focus
+		focus = BR3_market_economy_focus
+		focus = BR3_worker_economy_focus
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = BR3_protect_local_markets
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BR3_market_economy_focus
+	x = -1
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BR3_planned_economy_focus
+		focus = BR3_market_economy_focus
+		focus = BR3_worker_economy_focus
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = BR3_agrarian_reform
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BR3_worker_economy_focus
+	x = 1
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BR3_planned_economy_focus
+		focus = BR3_market_economy_focus
+		focus = BR3_worker_economy_focus
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = BR3_industrial_focus
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BR3_seize_bank_assets
+	x = -1
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BR3_democracy_in_the_workplace
+	}
+	prerequisite = {
+		focus = BR3_protect_local_markets
+	}
+	prerequisite = {
+		focus = BR3_seize_bank_assets
+	}
+	mutually_exclusive = {
+		focus = BR3_agrarian_focus
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = BR3_agrarian_focus
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BR3_agrarian_reform
+	x = 1
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BR3_agrarian_reform
+	}
+	prerequisite = {
+		focus = BR3_protect_local_markets
+	}
+	prerequisite = {
+		focus = BR3_democracy_in_the_workplace
+	}
+	mutually_exclusive = {
+		focus = BR3_industrial_focus
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = BR3_establish_cpec
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BR3_planned_economy_focus
+	x = 0
+	y = 3
+	cost = 5
+	prerequisite = {
+		focus = BR3_planned_economy_focus
+	}
+	prerequisite = {
+		focus = BR3_industrial_focus
+		focus = BR3_agrarian_focus
+	}
+	ai_will_do = {
+		base = 1
+	}
+	completion_reward = {
+		# CPEC - Comitê de Planejamento Econômico
+		# Basically a Brazilian GOSPLAN
+	}
+}
+
+shared_focus = {
+	id = BR3_mass_nationalization_effort
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BR3_market_economy_focus
+	x = 0
+	y = 3
+	cost = 5
+	prerequisite = {
+		focus = BR3_market_economy_focus
+	}
+	prerequisite = {
+		focus = BR3_industrial_focus
+		focus = BR3_agrarian_focus
+	}
+	ai_will_do = {
+		base = 1
+	}
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = BR3_form_union_council
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BR3_worker_economy_focus
+	x = 0
+	y = 3
+	cost = 5
+	prerequisite = {
+		focus = BR3_worker_economy_focus
+	}
+	prerequisite = {
+		focus = BR3_industrial_focus
+		focus = BR3_agrarian_focus
+	}
+	ai_will_do = {
+		base = 1
+	}
+	completion_reward = {
+
+	}
+}

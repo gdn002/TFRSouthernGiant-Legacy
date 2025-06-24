@@ -1,0 +1,184 @@
+## Civil War BOP between The President and The Military ##
+BR2_junta_power_struggle = {
+	initial_value = 0
+	left_side = BR2_president_side
+	right_side = BR2_military_side
+	decision_category = BR2_junta_power_struggle_category
+
+	# Center
+	range = {
+		id = BR2_unclear_control_range
+		min = -0.25
+		max = 0.25
+		modifier = {
+			political_power_factor = -0.25
+			war_support_factor = -0.15
+			stability_factor = -0.15
+			compliance_growth = -0.1
+			command_power_gain_mult = -0.25
+			conscription_factor = -0.1
+			resistance_decay = -0.1
+			training_time_factor = -0.1
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	# President Side
+	side = {
+		id = BR2_president_side
+		icon = GFX_bop_BR2_president
+		range = {
+			id = BR2_total_president_control_range
+			min = -1
+			max = -0.8
+			modifier = {
+				political_power_factor = 0.25
+				war_support_factor = 0.15
+				stability_factor = 0.15
+				compliance_growth = 0.3
+				command_power_gain_mult = -0.25
+				conscription_factor = -0.1
+				resistance_decay = -0.1
+				training_time_factor = -0.1
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = BR2_high_president_control_range
+			min = -0.8
+			max = -0.6
+			modifier = {
+				political_power_factor = 0.1
+				war_support_factor = 0.1
+				stability_factor = 0.1
+				compliance_growth = 0.2
+				command_power_gain_mult = -0.25
+				conscription_factor = -0.1
+				resistance_decay = -0.1
+				training_time_factor = -0.1
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = BR2_partial_president_control_range
+			min = -0.6
+			max = -0.4
+			modifier = {
+				compliance_growth = 0.1
+				command_power_gain_mult = -0.25
+				conscription_factor = -0.1
+				resistance_decay = -0.1
+				training_time_factor = -0.1
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = BR2_minor_president_control_range
+			min = -0.4
+			max = -0.25
+			modifier = {
+				political_power_factor = -0.1
+				war_support_factor = -0.1
+				stability_factor = -0.1
+				command_power_gain_mult = -0.25
+				conscription_factor = -0.1
+				resistance_decay = -0.1
+				training_time_factor = -0.1
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+	}
+
+	# Military Side
+	side = {
+		id = BR2_military_side
+		icon = GFX_bop_BR2_military
+		range = {
+			id = BR2_minor_military_control_range
+			min = 0.25
+			max = 0.4
+			modifier = {
+				political_power_factor = -0.25
+				war_support_factor = -0.15
+				stability_factor = -0.15
+				compliance_growth = -0.1
+				command_power_gain_mult = -0.1
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = BR2_partial_military_control_range
+			min = 0.4
+			max = 0.6
+			modifier = {
+				political_power_factor = -0.25
+				war_support_factor = -0.15
+				stability_factor = -0.15
+				compliance_growth = -0.1
+				conscription_factor = 0.1
+				resistance_decay = 0.1
+				training_time_factor = 0.1
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = BR2_high_military_control_range
+			min = 0.6
+			max = 0.8
+			modifier = {
+				political_power_factor = -0.25
+				war_support_factor = -0.15
+				stability_factor = -0.15
+				compliance_growth = -0.1
+				command_power_gain_mult = 0.1
+				conscription_factor = 0.2
+				resistance_decay = 0.2
+				training_time_factor = 0.2
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = BR2_total_military_control_range
+			min = 0.8
+			max = 1
+			modifier = {
+				political_power_factor = -0.25
+				war_support_factor = -0.15
+				stability_factor = -0.15
+				compliance_growth = -0.1
+				command_power_gain_mult = 0.25
+				conscription_factor = 0.3
+				resistance_decay = 0.3
+				training_time_factor = 0.3
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+	}
+}

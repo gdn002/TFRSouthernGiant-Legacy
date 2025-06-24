@@ -1,0 +1,103 @@
+characters = {
+	## POPULAR FRONT
+	BR3_leo_pericles_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BR3/BR3_Leo_Pericles.png"
+			}
+		}
+		country_leader = {
+			ideology = marxism_leninism
+			traits = {
+				hos_revolutioanry_spirit
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+	BR3_guilherme_boulos_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_Guilherme_Boulos.png"
+			}
+		}
+		country_leader = {
+			ideology = post_leftism
+			traits = {
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+		country_leader = {
+			ideology = neo_socialism_socdem
+			traits = {
+				hos_beacon_of_hope
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+	BR3_rui_costa_pimenta_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_Rui_Costa_Pimenta.png"
+			}
+		}
+		country_leader = {
+			ideology = totalism
+			traits = {
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+	BR3_sofia_manzano_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_Sofia_Manzano.png"
+			}
+		}
+		country_leader = {
+			ideology = marxism_leninism
+			traits = {
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+
+	# BR3 - REVOLUTIONARY GENERALS
+	# These get their roles through the civil war focus tree
+	BR3_leonel_radde_char = {
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/SOV/advisors/Sergey Shoygu.png"
+			}
+			army = {
+				large = "gfx/leaders/BR3/generals/BR3_Leonel_Radde.png"
+			}
+		}	
+	}	
+
+	BR3_paulo_galo_char = {
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/SOV/advisors/Sergey Shoygu.png"
+			}
+			army = {
+				large = "gfx/leaders/BR3/generals/BR3_Paulo_Galo.png"
+			}
+		}	
+	}	
+
+	BR3_pedro_che_char = {
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/SOV/advisors/Sergey Shoygu.png"
+			}
+			army = {
+				large = "gfx/leaders/BR3/generals/BR3_Pedro_Che.png"
+			}
+		}	
+	}
+}

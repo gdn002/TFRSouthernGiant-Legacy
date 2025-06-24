@@ -1,0 +1,73 @@
+﻿division_template = {
+	name = "Brazilian Militia"
+	is_locked = yes
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+		militia = { x = 0 y = 3 }
+	}
+}
+
+units = {
+	division = {
+		name = "1a Milícia Amazônica"
+		location = 15029
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "2a Milícia Amazônica"
+		location = 15029
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "3a Milícia Amazônica"
+		location = 15030
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "4a Milícia Amazônica"
+		location = 12853
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "5a Milícia Amazônica"
+		location = 12853
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "6a Milícia Amazônica"
+		location = 5214
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "1a Bda Inf Sl"
+		location = 5214
+		division_template = "Brigada de Infantaria de Selva"
+		start_experience_factor = 0.6		
+	}
+	division = {
+		name = "2a Bda Inf Sl"
+		location = 12919
+		division_template = "Brigada de Infantaria de Selva"
+		start_experience_factor = 0.6		
+	}
+	division = {
+		name = "16a Bda Inf Sl"
+		location = 15024
+		division_template = "Brigada de Infantaria de Selva"
+		start_experience_factor = 0.6		
+	}
+	division = {
+		name = "22a Bda Inf Sl"
+		location = 14995
+		division_template = "Brigada de Infantaria de Selva"
+		start_experience_factor = 0.6		
+	}
+}

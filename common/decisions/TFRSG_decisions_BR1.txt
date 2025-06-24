@@ -1,0 +1,651 @@
+#### BALANCE OF POWER ####
+BR1_federal_gov_balance_of_power_category = {
+	BR1_lula_address_the_nation = {
+		cancel_if_not_visible = yes
+		days_re_enable = 30
+		days_remove = 10
+		cost = 25
+		available = {
+			NOT = { has_country_flag = BR1_is_taking_action_bop }
+		}
+		ai_will_do = {
+			base = 1
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BR1_is_taking_action_bop
+			}
+ 		}
+		modifier = {
+			political_power_cost = 0.05
+			social_democrat_drift = 0.01
+			power_balance_daily = -0.003
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BR1_is_taking_action_bop
+			}
+		}
+	}
+	BR1_lula_meet_with_deputies = {
+		cancel_if_not_visible = yes
+		days_re_enable = 60
+		days_remove = 15
+		cost = 50
+		available = {
+			NOT = { has_country_flag = BR1_is_taking_action_bop }
+		}
+		ai_will_do = {
+			base = 1
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BR1_is_taking_action_bop
+			}
+ 		}
+		modifier = {
+			political_power_cost = 0.1
+			social_democrat_drift = 0.025
+			power_balance_daily = -0.005
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BR1_is_taking_action_bop
+			}
+		}
+	}
+
+	BR1_alckmin_address_the_nation = {
+		cancel_if_not_visible = yes
+		days_re_enable = 30
+		days_remove = 10
+		cost = 25
+		available = {
+			NOT = { has_country_flag = BR1_is_taking_action_bop }
+		}
+		ai_will_do = {
+			base = 1
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BR1_is_taking_action_bop
+			}
+ 		}
+		modifier = {
+			political_power_cost = 0.05
+			social_liberal_drift = 0.01
+			power_balance_daily = 0.003
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BR1_is_taking_action_bop
+			}
+		}
+	}
+	BR1_alckmin_meet_with_deputies = {
+		cancel_if_not_visible = yes
+		days_re_enable = 60
+		days_remove = 15
+		cost = 50
+		available = {
+			NOT = { has_country_flag = BR1_is_taking_action_bop }
+		}
+		ai_will_do = {
+			base = 1
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BR1_is_taking_action_bop
+			}
+ 		}
+		modifier = {
+			political_power_cost = 0.1
+			social_liberal_drift = 0.025
+			power_balance_daily = 0.005
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BR1_is_taking_action_bop
+			}
+		}
+	}
+
+	BR1_reinforce_the_broad_coalition = {
+		cancel_if_not_visible = yes
+		days_re_enable = 60
+		days_remove = 15
+		cost = 25
+		available = {
+			NOT = {
+				has_country_flag = BR1_is_taking_action_bop
+				is_power_balance_in_range = {
+				    id = BR1_federal_gov_balance_of_power
+				    range = BR1_equilibrium_range
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BR1_is_taking_action_bop
+			}
+ 		}
+		modifier = {
+			political_power_factor = -0.1
+			stability_weekly = 0.01
+			war_support_weekly = 0.01
+			social_democrat_drift = 0.025
+			social_liberal_drift = 0.025
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BR1_is_taking_action_bop
+			}
+			if = {
+				limit = {
+					is_power_balance_in_range = {
+    					id = BR1_federal_gov_balance_of_power
+    					range < BR1_equilibrium_range
+					}
+				}
+				add_power_balance_value = {
+    				id = BR1_federal_gov_balance_of_power
+				    value = 0.05
+				    tooltip_side = BR1_alckmin_side
+				}
+			}
+			else_if = {
+				limit = {
+					is_power_balance_in_range = {
+    					id = BR1_federal_gov_balance_of_power
+    					range > BR1_equilibrium_range
+					}
+				}
+				add_power_balance_value = {
+    				id = BR1_federal_gov_balance_of_power
+				    value = -0.05
+				    tooltip_side = BR1_lula_side
+				}
+			}	
+		}
+	}
+}
+
+#### CIVIL WAR ####
+BRA_civil_war_category = {
+    BR1_cw_attack_junta = {
+		allowed = {
+			tag = BR1
+		}
+		visible = {
+			has_completed_focus = BR1_cw_declare_state_of_emergency
+			country_exists = BR2
+			NOT = { has_war_with = BR2 }
+		}
+		ai_will_do = {
+			base = 10
+			modifier = {
+				add = 40
+				has_war = no
+			}
+			modifier = {
+				factor = 2
+				BR2 = { has_war = yes }
+			}
+		}
+		cost = 75
+		days_remove = 40
+		war_with_on_remove = BR2
+		complete_effect = {
+			add_command_power = -20
+		}
+		remove_effect = {
+			declare_war_on = {
+    			target = BR2
+    			type = annex_everything
+			}
+		}
+	}
+
+    BR1_cw_attack_front = {
+		allowed = {
+			tag = BR1
+		}
+		visible = {
+			has_completed_focus = BR1_cw_appeal_to_the_un
+			country_exists = BR3
+			NOT = { has_war_with = BR3 }
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 50
+				has_war = no
+			}
+		}
+		cost = 75
+		days_remove = 40
+		war_with_on_remove = BR3
+		complete_effect = {
+			add_command_power = -20
+		}
+		remove_effect = {
+			declare_war_on = {
+    			target = BR3
+    			type = annex_everything
+			}
+		}
+	}
+
+	BR1_cw_attack_amazon = {
+		allowed = {
+			tag = BR1
+		}
+		visible = {
+			has_completed_focus = BR1_cw_appeal_to_the_un
+			country_exists = AMZ
+			NOT = { has_war_with = AMZ }
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 50
+				has_war = no
+			}
+			modifier = {
+				add = 25
+				UNB = { has_war_with = AMZ }
+			}
+		}
+        cost = 50
+		days_remove = 20
+		war_with_on_remove = BR3
+		complete_effect = {
+			add_command_power = -10
+		}
+		remove_effect = {
+			declare_war_on = {
+    			target = AMZ
+    			type = annex_everything
+			}
+		}
+	}
+
+    BR1_cw_attack_fascists = {
+		allowed = {
+			tag = BR1
+		}
+		visible = {
+			has_completed_focus = BR1_cw_appeal_to_the_un
+			country_exists = BR4
+			NOT = { 
+                has_war_with = BR4 
+                BR4 = { has_cosmetic_tag = BR4_mnpd }
+            }
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 50
+				has_war = no
+			}
+		}
+        cost = 50
+		days_remove = 20
+		war_with_on_remove = BR4
+		complete_effect = {
+			add_command_power = -10
+		}
+		remove_effect = {
+			declare_war_on = {
+    			target = BR4
+    			type = annex_everything
+			}
+		}
+	}
+
+    BR1_cw_call_democratic_uprising = {
+		allowed = {
+			tag = BR1
+		}
+		visible = {
+			has_completed_focus = BR1_cw_declare_state_of_emergency
+			country_exists = BR4
+            BR4 = { has_cosmetic_tag = BR4_mnpd }
+		}
+		custom_cost_trigger = {
+            command_power > 10
+        }
+		ai_will_do = {
+			base = 100
+		}
+        custom_cost_text = 10cp_cost
+		days_remove = 20
+		fire_only_once = yes
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -10
+			}
+		}
+		remove_effect = {
+			BR4 = { get_current_government_type = yes }
+			puppet = {
+    			target = BR4
+    			end_wars = no
+			}
+			BR4 = { 
+				restore_previous_government_type = yes 
+				ROOT_inherit_current_scope_wars_effect = yes
+			}
+		}
+	}
+
+	BR1_cw_campaign_brazil_for_all = {
+		allowed = {
+			tag = BR1
+		}
+		visible = {
+			has_completed_focus = BR1_cw_shield_the_people
+		}
+		available = {
+			has_campaign_slot = yes
+		}
+		ai_will_do = {
+			base = 10
+		}
+		cost = 50
+		days_remove = 30
+		days_re_enable = 60
+		modifier = { 
+			political_power_cost = 0.05
+			social_democrat_drift = 0.05
+			power_balance_daily = -0.001
+			compliance_growth = 1
+        }
+		complete_effect = {
+			remove_campaign_slot = yes
+		}
+		cancel_effect = {
+			add_campaign_slot = yes
+		}	
+		remove_effect = {
+			set_temp_variable = { society_development_var_temp = 0.05 }
+			add_society_development = yes
+			set_temp_variable = { poverty_development_var_temp = 0.05 }
+			add_poverty_development = yes
+			add_campaign_slot = yes
+		}
+	}
+
+	BR1_cw_campaign_your_right_to_work = {
+		allowed = {
+			tag = BR1
+		}
+		visible = {
+			has_completed_focus = BR1_cw_the_employment_law_project
+		}
+		available = {
+			has_campaign_slot = yes
+		}
+		ai_will_do = {
+			base = 10
+		}
+		cost = 75
+		days_remove = 30
+		days_re_enable = 60
+		modifier = { 
+			political_power_cost = 0.05
+			social_democrat_drift = 0.05
+			power_balance_daily = -0.001
+			personal_value_factor = 0.1
+			production_speed_buildings_factor = 0.5
+			industrial_capacity_factory = 0.5
+			industrial_capacity_dockyard = 0.5
+        }
+		complete_effect = {
+			remove_campaign_slot = yes
+		}
+		cancel_effect = {
+			add_campaign_slot = yes
+		}	
+		remove_effect = {
+			set_temp_variable = { industrial_development_var_temp = 0.05 }
+			add_industrial_development = yes
+			set_temp_variable = { farming_development_var_temp = 0.05 }
+			add_farming_development = yes
+			set_temp_variable = { poverty_development_var_temp = 0.05 }
+			add_poverty_development = yes
+			add_campaign_slot = yes
+		}
+	}
+
+	BR1_cw_campaign_fight_for_democracy = {
+		allowed = {
+			tag = BR1
+		}
+		visible = {
+			has_completed_focus = BR1_cw_the_republic_above_all
+		}
+		available = {
+			has_campaign_slot = yes
+		}
+		ai_will_do = {
+			base = 10
+		}
+		cost = 50
+		days_remove = 30
+		days_re_enable = 60
+		modifier = { 
+			political_power_cost = 0.05
+			social_liberal_drift = 0.025
+			social_democrat_drift = 0.025
+			compliance_growth = 0.5
+			resistance_decay = 0.5
+        }
+		complete_effect = {
+			remove_campaign_slot = yes
+		}
+		cancel_effect = {
+			add_campaign_slot = yes
+		}	
+		remove_effect = {
+			set_temp_variable = { society_development_var_temp = 0.1 }
+			add_society_development = yes
+			add_campaign_slot = yes
+		}
+	}
+
+	BR1_cw_campaign_to_overcome_our_past = {
+		allowed = {
+			tag = BR1
+		}
+		visible = {
+			has_completed_focus = BR1_cw_anti_coup_constitutional_ammend
+		}
+		available = {
+			has_campaign_slot = yes
+		}
+		ai_will_do = {
+			base = 10
+		}
+		cost = 75
+		days_remove = 30
+		days_re_enable = 60
+		modifier = { 
+			political_power_cost = 0.1
+			social_liberal_drift = 0.05
+			social_democrat_drift = 0.05
+			compliance_growth = 0.75
+			resistance_decay = 0.75
+			income_growth_factor = 0.15
+			battalion_upkeep_factor = -0.25
+        }
+		complete_effect = {
+			remove_campaign_slot = yes
+		}
+		cancel_effect = {
+			add_campaign_slot = yes
+		}	
+		remove_effect = {
+			set_temp_variable = { society_development_var_temp = 0.05 }
+			add_society_development = yes
+			set_temp_variable = { military_development_var_temp = 0.05 }
+			add_military_development = yes
+			set_temp_variable = { academic_development_var_temp = 0.05 }
+			add_academic_development = yes
+			add_campaign_slot = yes
+		}
+	}
+
+	BR1_cw_campaign_defenders_of_the_economy = {
+		allowed = {
+			tag = BR1
+		}
+		visible = {
+			has_completed_focus = BR1_cw_placate_the_economy
+		}
+		available = {
+			has_campaign_slot = yes
+		}
+		ai_will_do = {
+			base = 10
+		}
+		cost = 50
+		days_remove = 30
+		days_re_enable = 60
+		modifier = { 
+			political_power_cost = 0.05
+			social_liberal_drift = 0.025
+			market_liberal_drift = 0.025
+			power_balance_daily = 0.001
+			resistance_decay = 1
+        }
+		complete_effect = {
+			remove_campaign_slot = yes
+		}
+		cancel_effect = {
+			add_campaign_slot = yes
+		}	
+		remove_effect = {
+			set_temp_variable = { society_development_var_temp = 0.05 }
+			add_society_development = yes
+			set_temp_variable = { industrial_development_var_temp = 0.05 }
+			add_industrial_development = yes
+			add_campaign_slot = yes
+		}
+	}
+
+	BR1_cw_campaign_fiscal_responsibility = {
+		allowed = {
+			tag = BR1
+		}
+		visible = {
+			has_completed_focus = BR1_cw_the_budget_law_project
+		}
+		available = {
+			has_campaign_slot = yes
+		}
+		ai_will_do = {
+			base = 10
+		}
+		cost = 75
+		days_remove = 30
+		days_re_enable = 60
+		modifier = { 
+			political_power_cost = 0.1
+			social_liberal_drift = 0.05
+			market_liberal_drift = 0.05
+			power_balance_daily = 0.001
+			business_value_factor = 0.25
+			income_growth_factor = 0.25
+			inflation_monthly = -0.002			
+        }
+		complete_effect = {
+			remove_campaign_slot = yes
+		}
+		cancel_effect = {
+			add_campaign_slot = yes
+		}	
+		remove_effect = {
+			set_temp_variable = { society_development_var_temp = 0.05 }
+			add_society_development = yes
+			set_temp_variable = { farming_development_var_temp = 0.05 }
+			add_farming_development = yes
+			set_temp_variable = { industrial_development_var_temp = 0.05 }
+			add_industrial_development = yes
+			add_campaign_slot = yes
+		}
+	}
+
+	BR1_cw_campaign_new_brazilian_army = {
+		allowed = {
+			tag = BR1
+		}
+		visible = {
+			has_completed_focus = BR1_cw_repeal_the_amnesty_law
+		}
+		available = {
+			has_campaign_slot = yes
+		}
+		ai_will_do = {
+			base = 10
+		}
+		cost = 75
+		days_remove = 30
+		days_re_enable = 60
+		modifier = { 
+			political_power_cost = 0.1	
+			army_org_factor = 0.15
+			army_morale_factor = 0.05
+			coordination_bonus = 0.15
+			training_time_factor = -0.1
+			conscription_factor = 0.15
+        }
+		complete_effect = {
+			remove_campaign_slot = yes
+		}
+		cancel_effect = {
+			add_campaign_slot = yes
+		}	
+		remove_effect = {
+			set_temp_variable = { society_development_var_temp = 0.05 }
+			add_society_development = yes
+			set_temp_variable = { military_development_var_temp = 0.05 }
+			add_military_development = yes
+			add_campaign_slot = yes
+		}
+	}
+
+	BR1_cw_campaign_all_inclusive_economy = {
+		allowed = {
+			tag = BR1
+		}
+		visible = {
+			has_completed_focus = BR1_cw_reintroduce_common_sense_regulations
+		}
+		available = {
+			has_campaign_slot = yes
+		}
+		ai_will_do = {
+			base = 10
+		}
+		cost = 75
+		days_remove = 30
+		days_re_enable = 60
+		modifier = { 
+			political_power_cost = 0.1	
+        }
+		complete_effect = {
+			remove_campaign_slot = yes
+		}
+		cancel_effect = {
+			add_campaign_slot = yes
+		}	
+		remove_effect = {
+			set_temp_variable = { society_development_var_temp = 0.05 }
+			add_society_development = yes
+			set_temp_variable = { military_development_var_temp = 0.05 }
+			add_poverty_development = yes
+			add_campaign_slot = yes
+		}
+	}
+}

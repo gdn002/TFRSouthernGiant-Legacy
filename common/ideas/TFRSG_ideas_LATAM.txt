@@ -1,0 +1,62 @@
+ideas = {
+	country = {
+        # Modifiers to prolong the Colombian civil war until Brazil is ready to deal with it
+        LATAM_stagnated_frontlines_idea = {
+            modifier = {
+                army_attack_factor = -0.1
+                army_attack_speed_factor = -0.25
+                army_defence_factor = 0.15
+                dig_in_speed_factor = 0.1
+			}
+        }
+
+        # Buff to key factions in civil wars
+        LATAM_blessed_faction = {					
+			modifier = {
+			}
+		}
+
+        # Avenge Paraguay
+        LATAM_prussia_of_the_south = {
+            modifier = {
+                weekly_casualties_war_support = 0.05
+                army_core_attack_factor  = 0.15
+                army_core_defence_factor = 0.15
+                experience_loss_factor = 0.25
+			}
+        }
+
+        # Spirit to represent the unpreparedness of the many LATAM armies to fight a large scale war
+        # Starts with strong debuffs, but can be modified into a buffing spirit
+        LATAM_baptism_by_fire_idea = {
+            modifier = {
+			}
+        }
+        LATAM_baptism_by_fire_idea1 = {
+            modifier = {
+			}
+        }
+        LATAM_baptism_by_fire_idea2 = {
+            modifier = {
+			}
+        }
+        LATAM_baptism_by_fire_idea3 = {
+            modifier = {
+			}
+        }
+        LATAM_baptism_by_fire_idea4 = {
+            modifier = {
+			}
+        }
+        LATAM_battle_hardened_idea = {
+            modifier = {
+			}
+        }
+
+        # Spirit to represent newly independent states that still lack international recognition
+        LATAM_unrecognized_state = {
+            modifier = {
+			}
+        }
+    }
+}

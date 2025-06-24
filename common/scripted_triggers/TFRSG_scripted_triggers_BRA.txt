@@ -1,0 +1,114 @@
+is_brazilian_unifier = {
+	OR = {
+		original_tag = BRA
+		original_tag = BR1
+		original_tag = BR2
+		original_tag = BR3
+		original_tag = BR4
+	}
+}
+
+is_brazilian_civilwar_faction = {
+	OR = {
+		original_tag = BRA
+		original_tag = BR1
+		original_tag = BR2
+		original_tag = BR3
+		original_tag = BR4
+		original_tag = SUL
+		original_tag = SPA
+		original_tag = AMZ
+		original_tag = UNB
+	}
+}
+
+is_south_american_tag = {
+	OR = {
+		is_brazilian_civilwar_faction = yes
+		original_tag = ARG
+		original_tag = PAT
+		original_tag = CHL
+		original_tag = URG
+		original_tag = BOL
+		original_tag = PAR
+		original_tag = PRU
+		original_tag = ECU
+		original_tag = COL
+		original_tag = CLS
+		original_tag = FRC
+		original_tag = ELN
+		original_tag = VEN
+		original_tag = GUY
+		original_tag = SUR
+		original_tag = CAY
+		original_tag = CUR
+	}
+}
+
+BRA_has_chamber_support_pl = {
+	custom_trigger_tooltip = {
+		tooltip = BRA_has_chamber_support_pl_tooltip
+		if = { 
+			limit = { 
+				is_ai = no # AI gets a pass from chamber checks
+				has_country_flag = BRA_chamber_of_deputies_enabled
+			} 
+			check_variable = {
+				var = BRA_chamber_total_support_var
+				value = 257
+				compare = greater_than_or_equals
+			}
+		}
+	}
+}
+
+BRA_has_chamber_support_pec = {
+	custom_trigger_tooltip = {
+		tooltip = BRA_has_chamber_support_pec_tooltip
+		if = { 
+			limit = { 
+				is_ai = no # AI gets a pass from chamber checks
+				has_country_flag = BRA_chamber_of_deputies_enabled
+			} 
+			check_variable = {
+				var = BRA_chamber_total_support_var
+				value = 308
+				compare = greater_than_or_equals
+			}
+		}
+	}
+}
+
+BRA_has_centrao_influence_greater_than_or_equals = {
+	custom_trigger_tooltip = {
+		tooltip = BRA_has_centrao_influence_greater_than_or_equals_tooltip
+		if = { 
+			limit = { 
+				is_ai = no # AI gets a pass from chamber checks
+				has_country_flag = BRA_chamber_of_deputies_enabled
+			} 
+			check_variable = {
+				var = BRA_centrao_influence_var
+				value = BRA_centrao_influence_trigger_temp
+				compare = greater_than_or_equals
+			}
+		}
+	}
+}
+
+BRA_has_centrao_influence_less_than_or_equals = {
+	custom_trigger_tooltip = {
+		tooltip = BRA_has_centrao_influence_less_than_or_equals_tooltip
+		if = { 
+			limit = { 
+				is_ai = no # AI gets a pass from chamber checks
+				has_country_flag = BRA_chamber_of_deputies_enabled
+			} 
+			check_variable = {
+				var = BRA_centrao_influence_var
+				value = BRA_centrao_influence_trigger_temp
+				compare = less_than_or_equals
+			}
+		}
+	}
+}

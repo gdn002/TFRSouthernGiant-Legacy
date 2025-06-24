@@ -1,0 +1,25 @@
+spriteTypes = {
+    spriteType = {
+		name = "GFX_PT_logo"
+		texturefile = "gfx/texticons/BRA/PT_logo.png"
+		legacy_lazy_load = no
+	}
+
+    spriteType = {
+		name = "GFX_PSDB_logo"
+		texturefile = "gfx/texticons/BRA/PSDB_logo.png"
+		legacy_lazy_load = no
+	}
+
+    spriteType = {
+		name = "GFX_PL_logo"
+		texturefile = "gfx/texticons/BRA/PL_logo.png"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_BR4_UNR_flag"
+		texturefile = "gfx/texticons/BR4/BR4_unr_flag.png"
+		legacy_lazy_load = no
+	}
+}

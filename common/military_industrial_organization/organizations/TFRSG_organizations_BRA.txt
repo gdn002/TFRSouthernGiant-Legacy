@@ -1,0 +1,156 @@
+############################
+########### Tanks ##########
+############################
+BRA_engesa = {
+	include = generic_tfr_tank_organization
+	icon = GFX_BRA_MIO_engesa
+	allowed = {	
+		is_brazilian_unifier = yes
+		has_dlc = "Arms Against Tyranny"
+	}
+	available = {
+		1463 = {
+			is_core_of = FROM
+			is_controlled_by = FROM
+		}
+		has_country_flag = BRA_engesa_restored_flag	
+	}
+}
+
+############################
+########### Ships ##########
+############################
+BRA_arsenal_de_marinha = {
+	include = generic_task_force_ship_organization
+	icon = GFX_BRA_MIO_arsenal_marinha
+	allowed = {	
+		is_brazilian_unifier = yes
+		has_dlc = "Arms Against Tyranny"
+	}
+	available = {
+		1460 = {
+			is_core_of = FROM
+			is_controlled_by = FROM
+		}
+	}
+}
+
+BRA_base_submarinos_ilha_da_madeira = {
+	include = generic_submarine_organization
+	icon = GFX_BRA_MIO_ilha_madeira
+	allowed = {	
+		is_brazilian_unifier = yes
+		has_dlc = "Arms Against Tyranny"
+	}
+	available = {
+		500 = {
+			is_core_of = FROM
+			is_controlled_by = FROM
+		}
+	}
+}
+
+############################
+######### Aircraft #########
+############################
+BRA_embraer = {
+	include = generic_general_aircraft_organization
+	icon = GFX_BRA_MIO_embraer
+	allowed = {	
+		is_brazilian_unifier = yes
+		has_dlc = "Arms Against Tyranny"
+	}
+	available = {
+		501 = {
+			is_core_of = FROM
+			is_controlled_by = FROM
+		}
+	}
+}
+
+############################
+######### Artillery ########
+############################
+BRA_avibras = {
+	include = generic_artillery_organization
+	icon = GFX_BRA_MIO_avibras
+	allowed = {	
+		is_brazilian_unifier = yes
+		has_dlc = "Arms Against Tyranny"
+	}
+	available = {
+		501 = {
+			is_core_of = FROM
+			is_controlled_by = FROM
+		}
+	}
+}
+
+############################
+###### Infantry Weapons ####
+############################
+BRA_xmobots = {
+	include = generic_TFR_UAV_equipment_organization
+	icon = GFX_BRA_MIO_xmobots
+	allowed = {	
+		is_brazilian_unifier = yes
+		has_dlc = "Arms Against Tyranny"
+	}
+	visible = {
+		has_country_flag = BRA_xmobots_available_flag
+	}
+	available = {
+		501 = {
+			is_core_of = FROM
+			is_controlled_by = FROM
+		}		
+	}
+}
+
+BRA_imbel = {
+	include = generic_infantry_equipment_organization
+	icon = GFX_BRA_MIO_imbel
+	allowed = {	
+		is_brazilian_unifier = yes
+		has_dlc = "Arms Against Tyranny"
+	}
+	available = {
+		1445 = {
+			is_core_of = FROM
+			is_controlled_by = FROM
+		}
+	}
+}
+
+BRA_companhia_brasileira_cartuchos = {
+	include = generic_support_equipment_organization
+	icon = GFX_BRA_MIO_cbc
+	allowed = {	
+		is_brazilian_unifier = yes
+		has_dlc = "Arms Against Tyranny"
+	}
+	available = {
+		1463 = {
+			is_core_of = FROM
+			is_controlled_by = FROM
+		}
+	}
+}
+
+###########################
+######## Motorized ########
+###########################
+BRA_agrale = {
+	include = generic_motorized_mechanized_organization
+	icon = GFX_BRA_MIO_agrale
+	allowed = {	
+		is_brazilian_unifier = yes
+		has_dlc = "Arms Against Tyranny"
+	}
+	available = {
+		502 = {
+			is_core_of = FROM
+			is_controlled_by = FROM
+		}
+	}
+}

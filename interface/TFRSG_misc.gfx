@@ -1,0 +1,7 @@
+spriteTypes = {
+    # IDEOLOGIES
+	spriteType = {
+		name = "GFX_ideology_integralism"
+		texturefile = "gfx/interface/ideologies/integralism.png"
+	}
+}

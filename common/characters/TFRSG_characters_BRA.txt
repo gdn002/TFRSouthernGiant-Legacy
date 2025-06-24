@@ -1,0 +1,594 @@
+characters = {
+	## BRAZIL
+	BRA_jair_bolsonaro_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_jair_bolsonaro.png"
+			}
+		}
+		country_leader = {
+			ideology = right_populism
+			traits = {
+				hos_divisive_populist
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+	BRA_lula_da_silva_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_Lula_da_Silva.png"
+			}
+		}
+		country_leader = {
+			ideology = left_populism
+			traits = {
+				FRA_SocDem_Strongman
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+	BRA_hamilton_mourao_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_Hamilton_Mourao.png"
+			}
+		}
+		country_leader = {
+			ideology = military_democracy
+			traits = {
+				BRA_military_politician
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+	BRA_geraldo_alckmin_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_Geraldo_Alckmin.png"
+			}
+		}
+		country_leader = {
+			ideology = centrist
+			traits = {
+				BRA_serial_centrist
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+	BRA_guilherme_boulos_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_Guilherme_Boulos.png"
+			}
+		}
+		country_leader = {
+			ideology = reformist_socialism
+			traits = {
+				hos_beacon_of_hope
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+	BRA_marco_freire_gomes_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_Marco_Freire_Gomes.png"
+			}
+			army = {
+				small = "gfx/interface/ideas/SOV/advisors/Sergey Shoygu.png"
+			}
+			army = {
+				large = "gfx/leaders/BRA/BRA_Marco_Freire_Gomes.png"
+			}
+		}
+		country_leader = {
+			ideology = military_junta
+			traits = {
+				hos_respected_general
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+		corps_commander = {
+			traits = {
+				cavalry_officer
+				expert_improviser		
+				politically_connected
+			}
+			skill = 3
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	BRA_soraya_thronicke_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_Soraya_Thronicke.png"
+			}
+		}
+		country_leader = {
+			ideology = right_libertarianism
+			traits = {
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+	BRA_sofia_manzano_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_Sofia_Manzano.png"
+			}
+		}
+		country_leader = {
+			ideology = neo_socialism
+			traits = {
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+	BRA_rui_costa_pimenta_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_Rui_Costa_Pimenta.png"
+			}
+		}
+		country_leader = {
+			ideology = jacobinism
+			traits = {
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+	BRA_arthur_lira_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_Arthur_Lira.png"
+			}				
+		}
+		country_leader = {
+			ideology = classical_liberalism
+			traits = {
+				hos_Indecisive_Leader
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+	BRA_flavio_bolsonaro_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_Flavio_Bolsonaro.png"
+			}
+		}
+		country_leader = {
+			ideology = right_populism
+			traits = {
+				hos_divisive_populist
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+	BRA_carlos_bolsonaro_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_Carlos_Bolsonaro.png"
+			}
+		}
+		country_leader = {
+			ideology = right_populism
+			traits = {
+				hos_divisive_populist
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+	BRA_eduardo_bolsonaro_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_Eduardo_Bolsonaro.png"
+			}
+		}
+		country_leader = {
+			ideology = right_populism
+			traits = {
+				hos_divisive_populist
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+	BRA_renan_bolsonaro_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_Renan_Bolsonaro.png"
+			}
+		}
+		country_leader = {
+			ideology = civic_nationalism
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+	BRA_gleisi_hoffmann_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_Gleisi_Hoffmann.png"
+			}
+		}
+		country_leader = {
+			ideology = progressivism
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+	BRA_dilma_rousseff_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_Dilma_Rousseff.png"
+			}
+		}
+		country_leader = {
+			ideology = left_populism
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+	BRA_ciro_gomes_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_Ciro_Gomes.png"
+			}
+		}
+		country_leader = {
+			ideology = social_democracy
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+	BRA_fernando_haddad_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_Fernando_Haddad.png"
+			}
+		}
+		country_leader = {
+			ideology = social_democracy
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+	BRA_tarcisio_freitas_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_Tarcisio_Freitas.png"
+			}
+		}
+		country_leader = {
+			ideology = right_centrist
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+	BRA_eduardo_leite_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_Eduardo_Leite.png"
+			}
+		}
+		country_leader = {
+			ideology = right_libertarianism
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+
+	# BRA - GENERALS
+	BRA_hertz_pires_char = {
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/SOV/advisors/Sergey Shoygu.png"
+			}
+			army = {
+				large = "gfx/leaders/BRA/generals/BRA_Hertz_Pires.png"
+			}
+		}	
+		corps_commander = {
+			traits = {
+				cavalry_officer
+				career_officer
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+	BRA_tomas_ribeiro_paiva_char = {
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/SOV/advisors/Sergey Shoygu.png"
+			}
+			army = {
+				large = "gfx/leaders/BRA/generals/BRA_Tomas_Ribeiro_Paiva.png"
+			}
+		}
+		corps_commander = {
+			traits = {
+				trickster
+				commando
+				career_officer
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	BRA_augusto_costa_neves_char = {
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/SOV/advisors/Sergey Shoygu.png"
+			}
+			army = {
+				large = "gfx/leaders/BRA/generals/BRA_Augusto_Costa_Neves.png"
+			}
+		}
+		corps_commander = {
+			traits = {
+				jungle_rat
+				infantry_leader
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	BRA_vendramin_nunes_char = {
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/SOV/advisors/Sergey Shoygu.png"
+			}
+			army = {
+				large = "gfx/leaders/BRA/generals/BRA_Vendramin_Nunes.png"
+			}
+		}
+		corps_commander = {
+			traits = {
+				expert_improviser
+				thorough_planner
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	BRA_miranda_netto_char = {
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/SOV/advisors/Sergey Shoygu.png"
+			}
+			army = {
+				large = "gfx/leaders/BRA/generals/BRA_Miranda_Netto.png"
+			}
+		}
+		corps_commander = {
+			traits = {
+				desert_fox
+				infantry_leader
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+	BRA_luiz_estorilho_char = {
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/SOV/advisors/Sergey Shoygu.png"
+			}
+			army = {
+				large = "gfx/leaders/BRA/generals/BRA_Luiz_Estorilho.png"
+			}
+		}
+		corps_commander = {
+			traits = {
+				swamp_fox
+				harsh_leader
+			}
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	BRA_kleber_nunes_char = {
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/SOV/advisors/Sergey Shoygu.png"
+			}
+			army = {
+				large = "gfx/leaders/BRA/generals/BRA_Kleber_Nunes.png"
+			}
+		}
+		corps_commander = {
+			traits = {
+				hill_fighter
+				ranger
+				career_officer
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	BRA_guido_naves_char = {
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/SOV/advisors/Sergey Shoygu.png"
+			}
+			army = {
+				large = "gfx/leaders/BRA/generals/BRA_Guido_Naves.png"
+			}
+		}
+		corps_commander = {
+			traits = {
+				urban_assault_specialist			
+				politically_connected
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	BRA_andre_miranda_char = {
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/SOV/advisors/Sergey Shoygu.png"
+			}
+			army = {
+				large = "gfx/leaders/BRA/generals/BRA_Andre_Miranda.png"
+			}
+		}
+		corps_commander = {
+			traits = {
+				ranger
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+	BRA_guilherme_cabral_char = {
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/SOV/advisors/Sergey Shoygu.png"
+			}
+			army = {
+				large = "gfx/leaders/BRA/generals/BRA_Guilherme_Cabral.png"
+			}
+		}
+		corps_commander = {
+			traits = {
+				career_officer
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	BRA_julio_cesar_arruda_char = {
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/SOV/advisors/Sergey Shoygu.png"
+			}
+			army = {
+				large = "gfx/leaders/BRA/generals/BRA_Julio_Cesar_Arruda.png"
+			}
+		}
+		corps_commander = {
+			traits = {
+				commando
+				career_officer
+				politically_connected
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	BRA_richard_fernandez_char = {
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/SOV/advisors/Sergey Shoygu.png"
+			}
+			army = {
+				large = "gfx/leaders/BRA/generals/BRA_Richard_Fernandez.png"
+			}
+		}
+		corps_commander = {
+			traits = {
+				ranger
+				trait_reckless
+			}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+
+	# ADMIRALS
+	BRA_almir_garnier_santos_char = {
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/SOV/advisors/Sergey Shoygu.png"
+			}
+			army = {
+				large = "gfx/leaders/BRA/admirals/BRA_Almir_Garnier_Santos.png"
+			}
+		}
+		navy_leader = {
+			traits = {
+				fleet_protector
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 1
+		}
+	}
+	BRA_marcos_sampaio_olsen_char = {
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/SOV/advisors/Sergey Shoygu.png"
+			}
+			army = {
+				large = "gfx/leaders/BRA/admirals/BRA_Marcos_Sampaio_Olsen.png"
+			}
+		}
+		navy_leader = {
+			traits = {
+				seawolf
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 1
+		}
+	}		
+}

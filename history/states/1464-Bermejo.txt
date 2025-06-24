@@ -1,0 +1,19 @@
+state={
+	id=1464
+	name="STATE_1464"
+	provinces={
+		10944 12922 12943 
+	}
+	manpower=532000
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+
+	history = {
+		owner = ARG
+		add_core_of = ARG
+		buildings = {
+			infrastructure = 1
+		}
+	}
+}

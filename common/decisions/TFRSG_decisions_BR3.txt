@@ -1,0 +1,622 @@
+
+# CIVIL WAR DECISIONS
+BRA_civil_war_category = {
+	BR3_cw_call_amazonian_commune = {
+		allowed = {
+			tag = BR3
+		}
+		visible = {
+			has_completed_focus = BR3_brazilian_vanguard
+		}
+		available = {
+			country_exists = AMZ
+		}
+		ai_will_do = {
+			base = 100
+		}
+		cost = 50
+		days_remove = 20
+		fire_only_once = yes
+		remove_effect = {
+			AMZ = { get_current_government_type = yes }
+			puppet = {
+    			target = AMZ
+    			end_wars = no
+			}
+			AMZ = { 
+				restore_previous_government_type = yes 
+				ROOT_inherit_current_scope_wars_effect = yes
+			}
+		}
+	}
+
+	BR3_cw_attack_government = {
+		allowed = {
+			tag = BR3
+		}
+		visible = {
+			has_completed_focus = BR3_reclaim_our_country
+			country_exists = BR1
+			NOT = { has_war_with = BR1 }
+		}
+		ai_will_do = {
+			base = 10
+			modifier = {
+				add = 40
+				has_war = no
+			}
+		}
+		cost = 75
+		days_remove = 30
+		war_with_on_remove = BR1
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			declare_war_on = {
+    			target = BR1
+    			type = annex_everything
+			}
+		}
+	}
+
+	BR3_cw_attack_junta = {
+		allowed = {
+			tag = BR3
+		}
+		visible = {
+			has_completed_focus = BR3_reclaim_our_country
+			country_exists = BR2
+			NOT = { has_war_with = BR2 }
+		}
+		ai_will_do = {
+			base = 10
+			modifier = {
+				add = 40
+				has_war = no
+			}
+		}
+		cost = 75
+		days_remove = 30
+		war_with_on_remove = BR2
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			declare_war_on = {
+    			target = BR2
+    			type = annex_everything
+			}
+		}
+	}
+
+	BR3_cw_attack_fascists = {
+		allowed = {
+			tag = BR3
+		}
+		visible = {
+			has_completed_focus = BR3_reclaim_our_country
+			country_exists = BR4
+			NOT = { has_war_with = BR4 }
+		}
+		ai_will_do = {
+			base = 10
+			modifier = {
+				add = 40
+				has_war = no
+			}
+		}
+		cost = 50
+		days_remove = 15
+		war_with_on_remove = BR4
+		complete_effect = {
+			add_command_power = -20
+		}
+		remove_effect = {
+			declare_war_on = {
+    			target = BR4
+    			type = annex_everything
+			}
+		}
+	}
+
+	BR3_cw_raid_armories = {		
+		allowed = {
+			tag = BR3
+		}
+		ai_will_do = {
+			base = 10
+			modifier = {
+				add = 40
+				stockpile_ratio = {
+				    archetype = infantry_equipment
+				    ratio < 0.75
+				}
+			}
+			modifier = {
+				add = 15
+				has_equipment = {
+				    infantry_equipment < 1000
+				}
+			}
+		}
+		custom_cost_trigger = {
+            command_power > 10
+        }
+		icon = GFX_decision_generic_industry
+        custom_cost_text = 10cp_cost
+		days_remove = 15
+		fire_only_once = yes
+		target_array = BRA.core_states
+		state_target = yes
+		on_map_mode = map_only
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT
+			}
+		}
+		visible = {
+			has_completed_focus = BR3_raid_military_bases
+		}
+		available = {
+			NOT = {
+				has_country_flag = BR3_civil_war_raiding_flag
+			}
+		}
+		complete_effect = {
+			set_country_flag = BR3_civil_war_raiding_flag
+			hidden_effect = {
+				add_command_power = -10
+			}
+		}
+		remove_effect = {
+			clr_country_flag = BR3_civil_war_raiding_flag
+			BR3_civil_war_raid_scripted_effect = yes
+		}
+		cancel_effect = {
+			clr_country_flag = BR3_civil_war_raiding_flag
+		}
+	}
+
+	BR3_cw_distribute_humanitarian_aid = {
+		allowed = {
+			tag = BR3
+		}
+		visible = {
+			has_completed_focus = BR3_social_assistance_programs
+		}
+		ai_will_do = {
+			base = 5
+			modifier = {
+				add = 20
+				has_stability < 0
+			}
+		}
+		cost = 25
+		days_remove = 15
+		days_re_enable = 30
+		modifier = { 
+			stability_weekly = 0.005
+			compliance_growth = 1			
+        }
+		remove_effect = {
+			add_stability = 0.025
+			set_temp_variable = { poverty_development_var_temp = 0.025 }
+			add_poverty_development = yes
+		}
+	}
+
+	BR3_cw_socialist_education_campaigns = {
+		allowed = {
+			tag = BR3
+		}
+		visible = {
+			has_completed_focus = BR3_guerrila_media
+		}
+		available = {
+			has_campaign_slot = yes
+		}
+		ai_will_do = {
+			base = 10
+		}
+		cost = 50
+		days_remove = 30
+		days_re_enable = 60
+		modifier = { 
+			political_power_cost = 0.05
+			power_balance_daily = 0.005
+			totalitarian_socialist_drift = 0.05
+			communist_drift = 0.05
+            libertarian_socialist_drift = 0.05
+			resistance_decay = 1
+			resistance_target = -0.2
+        }
+		
+		complete_effect = {
+			remove_campaign_slot = yes
+		}
+		remove_effect = {
+			set_temp_variable = { society_development_var_temp = 0.05 }
+			add_society_development = yes
+			add_campaign_slot = yes
+		}
+	}
+
+	BR3_cw_rally_revolutionary_labor = {
+		allowed = {
+			tag = BR3
+		}
+		visible = {
+			has_completed_focus = BR3_rally_the_workers
+		}
+		available = {
+			has_campaign_slot = yes
+		}
+		ai_will_do = {
+			base = 10
+		}
+		cost = 50
+		days_remove = 30
+		days_re_enable = 60
+		modifier = { 
+			political_power_cost = 0.05
+			power_balance_daily = -0.005
+			consumer_goods_factor = -0.25
+			production_speed_buildings_factor = 0.3
+			production_factory_efficiency_gain_factor = 0.3
+			industrial_capacity_factory = 0.5
+			industrial_capacity_dockyard = 0.5
+        }
+		
+		complete_effect = {
+			remove_campaign_slot = yes
+		}
+		remove_effect = {
+			set_temp_variable = { industrial_development_var_temp = 0.05 }
+			add_industrial_development = yes
+			add_campaign_slot = yes
+		}
+	}
+
+	BR3_cw_boost_revolutionary_morale = {
+		allowed = {
+			tag = BR3
+		}
+		visible = {
+			has_completed_focus = BR3_engage_guerrila_warfare
+		}
+		available = {
+			has_campaign_slot = yes
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_war = yes
+			}
+		}
+		cost = 50
+		days_remove = 30
+		days_re_enable = 60
+		modifier = { 
+			political_power_cost = 0.05
+			weekly_casualties_war_support = 0.015
+			power_balance_daily = -0.005
+			out_of_supply_factor = -0.25
+			army_defence_factor = 0.15
+			army_morale_factor = 0.3
+			pocket_penalty = -0.5
+        }	
+		complete_effect = {
+			remove_campaign_slot = yes
+		}
+		remove_effect = {
+			set_temp_variable = { military_development_var_temp = 0.05 }
+			add_military_development = yes
+			add_campaign_slot = yes
+		}
+	}
+
+	BR3_cw_call_for_strikes_government = {
+		allowed = {
+			tag = BR3
+		}
+		visible = {
+			has_completed_focus = BR3_workers_of_brazil_rise
+			country_exists = BR1
+		}
+		available = {
+			has_campaign_slot = yes
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_war_with = BR1
+			}
+		}
+		cost = 30
+		days_remove = 30
+		days_re_enable = 60
+		cancel_if_not_visible = yes
+		modifier = { 
+			political_power_cost = 0.05
+			resistance_target_on_our_occupied_states = 0.5
+		}
+		targeted_modifier = {
+			tag = BR1
+			attack_bonus_against = 0.1
+		}
+		complete_effect = {
+			BR1 = {
+				add_timed_idea = {
+				    idea = BR3_popular_front_strikes_idea
+				    days = 30
+				}
+			}
+			remove_campaign_slot = yes
+		}
+		remove_effect = {
+			add_campaign_slot = yes
+		}
+		cancel_effect = {
+			add_campaign_slot = yes
+		}
+	}
+
+	BR3_cw_call_for_strikes_junta = {
+		allowed = {
+			tag = BR3
+		}
+		visible = {
+			has_completed_focus = BR3_workers_of_brazil_rise
+			country_exists = BR2
+		}
+		available = {
+			has_campaign_slot = yes
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_war_with = BR2
+			}
+		}
+		cost = 30
+		days_remove = 30
+		days_re_enable = 60
+		cancel_if_not_visible = yes
+		modifier = { 
+			political_power_cost = 0.05
+			resistance_target_on_our_occupied_states = 0.5
+		}
+		targeted_modifier = {
+			tag = BR2
+			attack_bonus_against = 0.1
+		}
+		complete_effect = {
+			BR2 = {
+				add_timed_idea = {
+				    idea = BR3_popular_front_strikes_idea
+				    days = 30
+				}
+			}
+			remove_campaign_slot = yes
+		}
+		remove_effect = {
+			add_campaign_slot = yes
+		}
+		cancel_effect = {
+			add_campaign_slot = yes
+		}
+	}
+
+	BR3_cw_call_for_strikes_fascists = {
+		allowed = {
+			tag = BR3
+		}
+		visible = {
+			has_completed_focus = BR3_workers_of_brazil_rise
+			country_exists = BR4
+		}
+		available = {
+			has_campaign_slot = yes
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_war_with = BR4
+			}
+		}
+		cost = 30
+		days_remove = 30
+		days_re_enable = 60
+		cancel_if_not_visible = yes
+		modifier = { 
+			political_power_cost = 0.05
+			resistance_target_on_our_occupied_states = 0.5
+		}
+		targeted_modifier = {
+			tag = BR4
+			attack_bonus_against = 0.1
+		}
+		complete_effect = {
+			BR4 = {
+				add_timed_idea = {
+				    idea = BR3_popular_front_strikes_idea
+				    days = 30
+				}
+			}
+			remove_campaign_slot = yes
+		}
+		remove_effect = {
+			add_campaign_slot = yes
+		}
+		cancel_effect = {
+			add_campaign_slot = yes
+		}
+	}
+
+	BR3_cw_dare_to_die = {
+		allowed = {
+			tag = BR3
+		}
+		visible = {
+			has_completed_focus = BR3_establish_the_pla
+		}
+		available = {
+			has_campaign_slot = yes
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 25
+				has_war = yes
+			}
+		}
+		cost = 50
+		days_remove = 30
+		days_re_enable = 60
+		modifier = { 
+			political_power_cost = 0.05
+			weekly_casualties_war_support = 0.015
+			power_balance_daily = -0.005
+			out_of_supply_factor = -0.25
+			army_attack_factor = 0.25
+			army_attack_speed_factor = 0.1
+			breakthrough_factor = 0.15
+			experience_loss_factor = 0.35
+        }	
+		complete_effect = {
+			remove_campaign_slot = yes
+		}
+		remove_effect = {
+			set_temp_variable = { military_development_var_temp = 0.05 }
+			add_military_development = yes
+			add_campaign_slot = yes
+		}
+	}
+}
+
+BR3_internal_faction_balance_category = {
+	BR3_hardliner_push_worker_council = {
+		cancel_if_not_visible = yes
+		days_re_enable = 30
+		days_remove = 15
+		cost = 15
+		available = {
+			NOT = {
+				has_country_flag = BR3_is_taking_action_faction_bop
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BR3_is_taking_action_faction_bop
+			}
+ 		}
+		modifier = {
+			war_support_factor = 0.05
+			totalitarian_socialist_drift = 0.02
+			power_balance_daily = -0.001
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BR3_is_taking_action_faction_bop
+			}
+			add_power_balance_value = {
+    			id = BR3_internal_faction_balance
+			    value = -0.045
+			    tooltip_side = BR3_hardliner_side
+			}
+		}
+	}
+
+	BR3_centrist_push_worker_council = {
+		cancel_if_not_visible = yes
+		days_re_enable = 30
+		days_remove = 15
+		cost = 15
+		available = {
+			NOT = {
+				has_country_flag = BR3_is_taking_action_faction_bop
+				is_power_balance_in_range = {
+				    id = BR3_internal_faction_balance
+				    range = BR3_centrist_majority_range
+				}
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BR3_is_taking_action_faction_bop
+			}
+ 		}
+		modifier = {
+			political_power_factor = 0.5
+			communist_drift = 0.02
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BR3_is_taking_action_faction_bop
+			}
+			if = {
+				limit = {
+					is_power_balance_in_range = {
+    					id = BR3_internal_faction_balance
+    					range < BR3_centrist_majority_range
+					}
+				}
+				add_power_balance_value = {
+    				id = BR3_internal_faction_balance
+				    value = 0.025
+				    tooltip_side = BR3_libertarian_side
+				}
+			}
+			else_if = {
+				limit = {
+					is_power_balance_in_range = {
+    					id = BR3_internal_faction_balance
+    					range > BR3_centrist_majority_range
+					}
+				}
+				add_power_balance_value = {
+    				id = BR3_internal_faction_balance
+				    value = -0.025
+				    tooltip_side = BR3_hardliner_side
+				}
+			}	
+		}
+	}
+
+	BR3_libertarian_push_worker_council = {
+		cancel_if_not_visible = yes
+		days_re_enable = 30
+		days_remove = 15
+		cost = 15
+		available = {
+			NOT = {
+				has_country_flag = BR3_is_taking_action_faction_bop
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = BR3_is_taking_action_faction_bop
+			}
+ 		}
+		modifier = {
+			stability_factor = 0.05
+			libertarian_socialist_drift = 0.02
+			power_balance_daily = 0.001
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = BR3_is_taking_action_faction_bop
+			}
+			add_power_balance_value = {
+    			id = BR3_internal_faction_balance
+			    value = 0.045
+			    tooltip_side = BR3_libertarian_side
+			}
+		}
+	}
+}

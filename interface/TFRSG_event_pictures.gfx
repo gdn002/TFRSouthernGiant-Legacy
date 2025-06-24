@@ -1,0 +1,331 @@
+spriteTypes = {
+	#### EVENTS ####
+	#SpriteType = {
+	#	name = "GFX_"
+	#	texturefile = "gfx/event_pictures/.png"
+	#}
+
+	SpriteType = {
+		name = "GFX_BRA_2022_airport_bombed"
+		texturefile = "gfx/event_pictures/BRA_2022_airport_bombed.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_2022_blockade"
+		texturefile = "gfx/event_pictures/BRA_2022_blockade.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_2022_bomb_squad"
+		texturefile = "gfx/event_pictures/BRA_2022_bomb_squad.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_2022_car_bomb"
+		texturefile = "gfx/event_pictures/BRA_2022_car_bomb.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_2022_encampments"
+		texturefile = "gfx/event_pictures/BRA_2022_encampments.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_2022_general_strike"
+		texturefile = "gfx/event_pictures/BRA_2022_general_strike.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_2022_grid_attacks"
+		texturefile = "gfx/event_pictures/BRA_2022_grid_attacks.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_2022_left_protests"
+		texturefile = "gfx/event_pictures/BRA_2022_left_protests.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_2022_protests"
+		texturefile = "gfx/event_pictures/BRA_2022_protests.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_alckmin_and_high_command"
+		texturefile = "gfx/event_pictures/BRA_alckmin_and_high_command.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_amazon_wasteland"
+		texturefile = "gfx/event_pictures/BRA_amazon_wasteland.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_army_officers_meeting"
+		texturefile = "gfx/event_pictures/BRA_army_officers_meeting.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_bolsonaro_alt_treatments"
+		texturefile = "gfx/event_pictures/BRA_bolsonaro_alt_treatments.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_bolsonaro_and_high_command"
+		texturefile = "gfx/event_pictures/BRA_bolsonaro_and_high_command.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_bolsonaro_cry"
+		texturefile = "gfx/event_pictures/BRA_bolsonaro_cry.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_bolsonaro_mask"
+		texturefile = "gfx/event_pictures/BRA_bolsonaro_mask.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_bolsonaro_meeting"
+		texturefile = "gfx/event_pictures/BRA_bolsonaro_meeting.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_bolsonaro_moro_rift"
+		texturefile = "gfx/event_pictures/BRA_bolsonaro_moro_rift.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_bolsonaro_press_pf"
+		texturefile = "gfx/event_pictures/BRA_bolsonaro_press_pf.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_bolsonaro_sad"
+		texturefile = "gfx/event_pictures/BRA_bolsonaro_sad.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_bolsonaro_speech"
+		texturefile = "gfx/event_pictures/BRA_bolsonaro_speech.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_bolsonaro_trump_best_buddies"
+		texturefile = "gfx/event_pictures/BRA_bolsonaro_trump_best_buddies.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_brasilia_riots"
+		texturefile = "gfx/event_pictures/BRA_brasilia_riots.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_brasilia_riots_faceoff"
+		texturefile = "gfx/event_pictures/BRA_brasilia_riots_faceoff.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_brasilia_riots_mst"
+		texturefile = "gfx/event_pictures/BRA_brasilia_riots_mst.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_brasilia_riots_selfie"
+		texturefile = "gfx/event_pictures/BRA_brasilia_riots_selfie.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_brazil_start"
+		texturefile = "gfx/event_pictures/BRA_brazil_start.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_carnaval"
+		texturefile = "gfx/event_pictures/BRA_carnaval.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_centrao_comic"
+		texturefile = "gfx/event_pictures/BRA_centrao_comic.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_centrao_politicians"
+		texturefile = "gfx/event_pictures/BRA_centrao_politicians.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_chamber_voting"
+		texturefile = "gfx/event_pictures/BRA_chamber_voting.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_covid_repatriation"
+		texturefile = "gfx/event_pictures/BRA_covid_repatriation.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_covid_trials_discussion"
+		texturefile = "gfx/event_pictures/BRA_covid_trials_discussion.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_covid_trials_hearing"
+		texturefile = "gfx/event_pictures/BRA_covid_trials_hearing.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_covid_trials_propaganda"
+		texturefile = "gfx/event_pictures/BRA_covid_trials_propaganda.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_dark_xandao"
+		texturefile = "gfx/event_pictures/BRA_dark_xandao.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_elections_slip_n_slide"
+		texturefile = "gfx/event_pictures/BRA_elections_slip_n_slide.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_integralist_terrorists"
+		texturefile = "gfx/event_pictures/BRA_integralist_terrorists.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_lula_and_high_command"
+		texturefile = "gfx/event_pictures/BRA_lula_and_high_command.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_lula_election_campaign"
+		texturefile = "gfx/event_pictures/BRA_lula_election_campaign.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_lula_holding_red_mask"
+		texturefile = "gfx/event_pictures/BRA_lula_holding_red_mask.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_mandetta_fired"
+		texturefile = "gfx/event_pictures/BRA_mandetta_fired.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_military_blitz"
+		texturefile = "gfx/event_pictures/BRA_military_blitz.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_oil_crisis"
+		texturefile = "gfx/event_pictures/BRA_oil_crisis.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_palacio_planalto_contemplation"
+		texturefile = "gfx/event_pictures/BRA_palacio_planalto_contemplation.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_pix_smartphones"
+		texturefile = "gfx/event_pictures/BRA_pix_smartphones.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_popular_front_march"
+		texturefile = "gfx/event_pictures/BRA_popular_front_march.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_popular_front_supports_lula"
+		texturefile = "gfx/event_pictures/BRA_popular_front_supports_lula.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_porta_dos_fundos_attack"
+		texturefile = "gfx/event_pictures/BRA_porta_dos_fundos_attack.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_sunset_brasilia"
+		texturefile = "gfx/event_pictures/BRA_sunset_brasilia.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_sunset_military"
+		texturefile = "gfx/event_pictures/BRA_sunset_military.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_sunset_republic"
+		texturefile = "gfx/event_pictures/BRA_sunset_republic.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_sunset_rio"
+		texturefile = "gfx/event_pictures/BRA_sunset_rio.png"
+	}
+	SpriteType = {
+		name = "GFX_BRA_sunset_soccer"
+		texturefile = "gfx/event_pictures/BRA_sunset_soccer.png"
+	}
+	SpriteType = {
+		name = "GFX_SUL_sul_eh_meu_pais_march"
+		texturefile = "gfx/event_pictures/SUL_sul_eh_meu_pais_march.png"
+	}
+	SpriteType = {
+		name = "GFX_SPA_tarcisio_statement"
+		texturefile = "gfx/event_pictures/SPA_tarcisio_statement.png"
+	}
+	SpriteType = {
+		name = "GFX_AMZ_native_march"
+		texturefile = "gfx/event_pictures/AMZ_native_march.png"
+	}
+
+	#### NEWS ####
+	#SpriteType = {
+	#	name = "GFX_"
+	#	texturefile = "gfx/event_pictures/news_event/.png"
+	#}
+
+	SpriteType = {
+		name = "GFX_TFRSG_news_covid_mass_graves"
+		texturefile = "gfx/event_pictures/news_event/TFRSG_news_covid_mass_graves.png"
+	}
+	SpriteType = {
+		name = "GFX_TFRSG_news_covid_trials"
+		texturefile = "gfx/event_pictures/news_event/TFRSG_news_covid_trials.png"
+	}
+	SpriteType = {
+		name = "GFX_TFRSG_news_lula_relieved"
+		texturefile = "gfx/event_pictures/news_event/TFRSG_news_lula_relieved.png"
+	}
+	SpriteType = {
+		name = "GFX_TFRSG_news_lula_victory"
+		texturefile = "gfx/event_pictures/news_event/TFRSG_news_lula_victory.png"
+	}
+	SpriteType = {
+		name = "GFX_TFRSG_news_alckmin_victory"
+		texturefile = "gfx/event_pictures/news_event/TFRSG_news_alckmin_victory.png"
+	}
+	SpriteType = {
+		name = "GFX_TFRSG_news_bolsonaro_victory"
+		texturefile = "gfx/event_pictures/news_event/TFRSG_news_bolsonaro_victory.png"
+	}
+	SpriteType = {
+		name = "GFX_TFRSG_news_patriotic_marches"
+		texturefile = "gfx/event_pictures/news_event/TFRSG_news_patriotic_marches.png"
+	}
+	SpriteType = {
+		name = "GFX_TFRSG_news_military_convoy"
+		texturefile = "gfx/event_pictures/news_event/TFRSG_news_military_convoy.png"
+	}
+	SpriteType = {
+		name = "GFX_TFRSG_news_un_peacekeepers"
+		texturefile = "gfx/event_pictures/news_event/TFRSG_news_un_peacekeepers.png"
+	}
+	SpriteType = {
+		name = "GFX_TFRSG_news_sul_decio_victory"
+		texturefile = "gfx/event_pictures/news_event/TFRSG_news_sul_decio_victory.png"
+	}
+	SpriteType = {
+		name = "GFX_TFRSG_news_sul_elections_suspended"
+		texturefile = "gfx/event_pictures/news_event/TFRSG_news_sul_elections_suspended.png"
+	}
+	SpriteType = {
+		name = "GFX_TFRSG_news_sul_hang_victory"
+		texturefile = "gfx/event_pictures/news_event/TFRSG_news_sul_hang_victory.png"
+	}
+	SpriteType = {
+		name = "GFX_TFRSG_news_sul_leite_victory"
+		texturefile = "gfx/event_pictures/news_event/TFRSG_news_sul_leite_victory.png"
+	}
+	SpriteType = {
+		name = "GFX_TFRSG_news_sul_moro_victory"
+		texturefile = "gfx/event_pictures/news_event/TFRSG_news_sul_moro_victory.png"
+	}
+	SpriteType = {
+		name = "GFX_TFRSG_news_sul_nazi_coup"
+		texturefile = "gfx/event_pictures/news_event/TFRSG_news_sul_nazi_coup.png"
+	}
+	SpriteType = {
+		name = "GFX_TFRSG_news_sul_pcb_coup"
+		texturefile = "gfx/event_pictures/news_event/TFRSG_news_sul_pcb_coup.png"
+	}
+	SpriteType = {
+		name = "GFX_TFRSG_news_military_presidential_parade"
+		texturefile = "gfx/event_pictures/news_event/TFRSG_news_military_presidential_parade.png"
+	}
+	SpriteType = {
+		name = "GFX_TFRSG_news_military_parade_brasilia"
+		texturefile = "gfx/event_pictures/news_event/TFRSG_news_military_parade_brasilia.png"
+	}
+	SpriteType = {
+		name = "GFX_TFRSG_news_un_peacekeepers_parade"
+		texturefile = "gfx/event_pictures/news_event/TFRSG_news_un_peacekeepers_parade.png"
+	}
+	SpriteType = {
+		name = "GFX_TFRSG_news_commie_parade"
+		texturefile = "gfx/event_pictures/news_event/TFRSG_news_commie_parade.png"
+	}
+	SpriteType = {
+		name = "GFX_TFRSG_news_monarchist_parade"
+		texturefile = "gfx/event_pictures/news_event/TFRSG_news_monarchist_parade.png"
+	}
+	SpriteType = {
+		name = "GFX_TFRSG_news_integralist_parade"
+		texturefile = "gfx/event_pictures/news_event/TFRSG_news_integralist_parade.png"
+	}
+}

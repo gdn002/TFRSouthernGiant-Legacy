@@ -1,0 +1,86 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_terrain_asuncion"
+		textureFile = "gfx/interface/terrains/asuncion.png"
+	}
+	spriteType = {
+		name = "GFX_terrain_belem"
+		textureFile = "gfx/interface/terrains/belem.png"
+	}
+	spriteType = {
+		name = "GFX_terrain_belo_horizonte"
+		textureFile = "gfx/interface/terrains/belo_horizonte.png"
+	}
+	spriteType = {
+		name = "GFX_terrain_bogota"
+		textureFile = "gfx/interface/terrains/bogota.png"
+	}
+	#spriteType = {
+	#	name = "GFX_terrain_brasilia"
+	#	textureFile = "gfx/interface/terrains/brasilia.png"
+	#}
+	spriteType = {
+		name = "GFX_terrain_buenos_aires"
+		textureFile = "gfx/interface/terrains/buenos_aires.png"
+	}
+	spriteType = {
+		name = "GFX_terrain_caracas"
+		textureFile = "gfx/interface/terrains/caracas.png"
+	}
+	spriteType = {
+		name = "GFX_terrain_curitiba"
+		textureFile = "gfx/interface/terrains/curitiba.png"
+	}
+	spriteType = {
+		name = "GFX_terrain_fortaleza"
+		textureFile = "gfx/interface/terrains/fortaleza.png"
+	}
+	spriteType = {
+		name = "GFX_terrain_goiania"
+		textureFile = "gfx/interface/terrains/goiania.png"
+	}
+	spriteType = {
+		name = "GFX_terrain_la_paz"
+		textureFile = "gfx/interface/terrains/la_paz.png"
+	}
+	spriteType = {
+		name = "GFX_terrain_lima"
+		textureFile = "gfx/interface/terrains/lima.png"
+	}
+	spriteType = {
+		name = "GFX_terrain_manaus"
+		textureFile = "gfx/interface/terrains/manaus.png"
+	}
+	spriteType = {
+		name = "GFX_terrain_montevideo"
+		textureFile = "gfx/interface/terrains/montevideo.png"
+	}
+	spriteType = {
+		name = "GFX_terrain_natal"
+		textureFile = "gfx/interface/terrains/natal.png"
+	}
+	spriteType = {
+		name = "GFX_terrain_porto_alegre"
+		textureFile = "gfx/interface/terrains/porto_alegre.png"
+	}
+	spriteType = {
+		name = "GFX_terrain_quito"
+		textureFile = "gfx/interface/terrains/quito.png"
+	}
+	spriteType = {
+		name = "GFX_terrain_recife"
+		textureFile = "gfx/interface/terrains/recife.png"
+	}
+	spriteType = {
+		name = "GFX_terrain_salvador"
+		textureFile = "gfx/interface/terrains/salvador.png"
+	}
+	spriteType = {
+		name = "GFX_terrain_santiago"
+		textureFile = "gfx/interface/terrains/santiago.png"
+	}
+	spriteType = {
+		name = "GFX_terrain_sao_luis"
+		textureFile = "gfx/interface/terrains/sao_luis.png"
+	}
+}

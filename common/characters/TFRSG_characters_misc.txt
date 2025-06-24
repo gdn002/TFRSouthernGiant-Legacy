@@ -1,0 +1,47 @@
+characters = {
+	# SAO PAULO
+	SPA_tarcisio_freitas_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SPA/SPA_Tarcisio_Freitas_civilwar.png"
+			}
+		}
+		country_leader = {
+			ideology = right_centrist
+			traits = {
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+
+    # AMZ
+	AMZ_coiab_assembly_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/AMZ/AMZ_coiab_assembly.png"
+			}
+		}
+		country_leader = {
+			ideology = eco_socialism
+			traits = {
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+
+	# UNB
+	UNB_un_council_char = {
+		portraits = {
+			civilian = {			
+				large = "gfx/leaders/LRA/United Nations.dds"
+			}
+		}
+		country_leader = {
+			ideology = centrist
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+}

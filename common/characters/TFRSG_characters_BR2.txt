@@ -1,0 +1,89 @@
+characters = {		
+	## MILITARY JUNTA
+	BR2_jair_bolsonaro_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BR2/BR2_Jair_Bolsonaro_president.png"
+			}
+		}
+		country_leader = {
+			ideology = ultra_conservatism
+			traits = {
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+		country_leader = {
+			ideology = right_populism
+			traits = {
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+	BR2_braga_netto_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BR2/BR2_braga_netto.png"
+			}
+			army = {
+				large = "gfx/leaders/BR2/generals/BR2_braga_netto.png"
+			}
+		}
+		country_leader = {
+			ideology = military_junta
+			traits = {
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+		corps_commander = {
+			traits = {
+				expert_improviser		
+				politically_connected
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}	
+
+	# GENERALS
+	BR2_augusto_heleno_char = {
+		portraits = {
+			army = {
+				large = "gfx/leaders/BR2/generals/BR2_augusto_heleno.png"
+			}
+		}
+		corps_commander = {
+			traits = {
+				jungle_rat
+				infantry_leader
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}	
+	BR2_hamilton_mourao_char = {
+		portraits = {
+			army = {
+				large = "gfx/leaders/BR2/generals/BR2_Hamilton_Mourao_military.png"
+			}
+		}
+		corps_commander = {
+			traits = {
+				politically_connected
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 1
+		}
+	}	
+}

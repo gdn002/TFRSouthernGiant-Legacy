@@ -1,0 +1,4 @@
+﻿focus = {
+	current = "BRA_covid_trials_focus"
+	progress = 0
+}

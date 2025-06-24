@@ -1,0 +1,65 @@
+category = {
+		name = "TFRSG_Super_Event"
+		soundeffects = {
+            TFRSG_meus_instintos_mais_primitivos
+            TFRSG_se_amazonian_collapse
+            TFRSG_se_great_american_war
+            TFRSG_se_great_american_war_brazil_victory
+		}
+	}
+
+sound = {
+    name = "TFRSG_meus_instintos_mais_primitivos"
+    file = "Super_Events/TFRSG_meus_instintos_mais_primitivos.wav"
+    always_load = no
+}
+
+soundeffect = {
+	name = "TFRSG_meus_instintos_mais_primitivos"
+	sounds = {
+		sound = TFRSG_meus_instintos_mais_primitivos
+	}
+	volume = 3.0
+}
+
+sound = {
+    name = "TFRSG_se_amazonian_collapse"
+    file = "Super_Events/TFRSG_se_amazonian_collapse.wav"
+    always_load = no
+}
+
+soundeffect = {
+	name = "TFRSG_se_amazonian_collapse"
+	sounds = {
+		sound = TFRSG_se_amazonian_collapse
+	}
+	volume = 3.0
+}
+
+sound = {
+    name = "TFRSG_se_great_american_war"
+    file = "Super_Events/TFRSG_se_great_american_war.wav"
+    always_load = no
+}
+
+soundeffect = {
+	name = "TFRSG_se_great_american_war"
+	sounds = {
+		sound = TFRSG_se_great_american_war
+	}
+	volume = 3.0
+}
+
+sound = {
+    name = "TFRSG_se_great_american_war_brazil_victory"
+    file = "Super_Events/TFRSG_se_great_american_war_brazil_victory.wav"
+    always_load = no
+}
+
+soundeffect = {
+	name = "TFRSG_se_great_american_war_brazil_victory"
+	sounds = {
+		sound = TFRSG_se_great_american_war_brazil_victory
+	}
+	volume = 3.0
+}

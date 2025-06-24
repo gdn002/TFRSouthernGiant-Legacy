@@ -1,0 +1,20 @@
+### Air OOB ###
+
+air_wings = {
+	505 = {
+		#Transport
+		transport_plane_equipment_1 = {
+			owner = "BRA" 
+			amount = 20
+			version_name = "C-390 Millennium"
+		}
+	}
+	1460 = {
+		#Fighter
+		small_plane_airframe_1 = {
+			owner = "BRA" 
+			amount = 38
+			version_name = "EMB-314 Super Tucano"
+		}
+	}
+}

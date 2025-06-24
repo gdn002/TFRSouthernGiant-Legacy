@@ -1,0 +1,32 @@
+﻿l_english:
+ #Faction
+ LATAM_faction_sadc: "South American Defense Council" # Formed by the Federative Republic of Brazil (BRA)  
+ LATAM_faction_sato: "South American Treaty Organization" # Formed by the Federal Government (BR1)
+ LATAM_faction_sasp: "South American Security Pact" # Formed by the Military Junta (BR2)
+ LATAM_faction_oslan: "Organization of Sovereign Latin American Nations" # Formed by the Popular Front (BR3)
+ LATAM_faction_sada: "South American Defensive Axis" # Formed by the Integralist Front (BR4)
+ LATAM_faction_cdi: "Caribbean Defense Initiative" # Formed by Venezuela
+ LATAM_faction_adi: "Andean Pact" # Formed by either Peru or Colombia if they're right-wing
+ LATAM_faction_rpa: "River Plate Axis" # Formed by Argentina
+ #Ideas
+ LATAM_prussia_of_the_south: "Prussia of The South"
+ LATAM_baptism_by_fire_idea: "Baptism By Fire"
+ LATAM_baptism_by_fire_idea_desc: "As is often said in military circles, \"no plan survives contact with the enemy\". The nations of South America have been fortunate to not have been involved in any major interstate conflicts for decades, but this came at the cost of a military that lacks modern combat experience. As we find ourselves engaged in 21st century warfare, our military's lack of preparation have been laid bare on the battlefield. However, experience can be a great teacher, and we must take this opportunity to overcome our deficits and build up a truly modernized combat force."
+ LATAM_baptism_by_fire_idea1: "$LATAM_baptism_by_fire_idea$"
+ LATAM_baptism_by_fire_idea_desc1: "$LATAM_baptism_by_fire_idea_desc$"
+ LATAM_baptism_by_fire_idea2: "$LATAM_baptism_by_fire_idea$"
+ LATAM_baptism_by_fire_idea_desc2: "$LATAM_baptism_by_fire_idea_desc$"
+ LATAM_baptism_by_fire_idea3: "$LATAM_baptism_by_fire_idea$"
+ LATAM_baptism_by_fire_idea_desc3: "$LATAM_baptism_by_fire_idea_desc$"
+ LATAM_baptism_by_fire_idea4: "$LATAM_baptism_by_fire_idea$"
+ LATAM_baptism_by_fire_idea_desc4: "$LATAM_baptism_by_fire_idea_desc$"
+ LATAM_battle_hardened_idea: "Battle-Hardened Military"
+ LATAM_battle_hardened_idea_desc: "Deep in the mountains, the jungles and deserts of South America, our armies fought valiantly. We were thrust into the fire with zero experience on 21st century warfare, and we had to pay a hefty price for it. And yet, through sheer willpower and sense of patriotic duty, our soldiers held the line, adapted, prevailed over the enemy. With each engagement, we took notes. After every battle, we revised our doctrines. And after finally achieving victory, we have forged a respectable military force that could hold its own against the major powers of the world.\n\n§YSi vis pacem, para bellum.§!"
+ LATAM_unrecognized_state: "Unrecognized State"
+ #Events
+ latin_america.23.t: "The Headless Rooster"
+ latin_america.23.d: "French Guiana declares independence"
+ latin_america.23.a: "Au Revoir Frenchie!"
+ #Flags
+ LATAM_malvines_crisis_averted: "The §RMALVINES CRISIS§! has been averted!"
+ LATAM_essequibo_crisis_averted: "The §RESSEQUIBO CRISIS§! has been averted!"

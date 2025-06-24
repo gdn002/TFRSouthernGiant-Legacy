@@ -1,0 +1,25 @@
+-- LIST OF BASE TFR FILES OVERRIDEN BY TFRSG --
+These files must be kept up to date with the base TFR mod, as well as include the TFRSG content merge
+
+common\bookmarks\TFR_the_fire_rises.txt
+common\countries\colors.txt
+common\countries\cosmetic.txt
+common\decisions\TFR_decisions_COL.txt
+common\game_rules\00_game_rules.txt
+common\ideologies\TFRSG_ideologies.txt
+common\intelligence_agencies\00_intelligence_agencies.txt
+common\military_industrial_organization\organizations\TFR_organizations_ZZZ_generic.txt
+common\national_focus\TFR_national_focus_FRA_Societal_Collapse.txt
+common\on_actions\TFR_on_actions_ZZZ.txt
+common\scripted_localisation\TFR_FBI_Scripted_Loc.txt
+common\scripted_localisation\TFR_Super_Event_Scripted_Loc.txt
+common\scripted_triggers\TFR_scripted_triggers_ZZZ_generic.txt
+common\terrain\00_terrain.txt
+
+events\TFR_events_USA.txt
+
+portraits\00_portraits.txt
+
+localisation\english\replace (the whole folder)
+
+map (the whole folder)

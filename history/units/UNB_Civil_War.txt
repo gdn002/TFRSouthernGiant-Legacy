@@ -1,0 +1,41 @@
+﻿division_template = {
+	name = "UN Peacekeepers"
+	is_locked = yes
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+	}
+	
+	support = {
+		engineer = { x = 0 y = 0 }
+	}
+		
+	override_model = LRA_UN_infantry_entity
+}
+
+units = {
+	division = {
+		name = "1st Brazilian Peacekeepers"
+		location = 14996
+		division_template = "UN Peacekeepers"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "2nd Brazilian Peacekeepers"
+		location = 14996
+		division_template = "UN Peacekeepers"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "3rd Brazilian Peacekeepers"
+		location = 14995
+		division_template = "UN Peacekeepers"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "4th Brazilian Peacekeepers"
+		location = 14995
+		division_template = "UN Peacekeepers"
+		start_experience_factor = 0.2		
+	}
+}

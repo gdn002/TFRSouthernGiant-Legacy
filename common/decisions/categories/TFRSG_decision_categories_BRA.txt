@@ -1,0 +1,68 @@
+BRA_political_radicalization_category = {
+	icon = GFX_decision_category_BRA_political_radicalization
+	allowed = {
+		original_tag = BRA
+	}
+}
+
+BRA_2022_elections_category = {
+	icon = GFX_decision_category_BRA_2022_elections
+    visible_when_empty = yes
+    priority = 5
+
+	visible = {
+		has_country_flag = BRA_2022_elections_cat_enabled
+	}
+
+    allowed = {
+    	original_tag = BRA
+    }
+}
+
+BRA_chamber_of_deputies_category = {
+	icon = GFX_decision_category_BRA_chamber_of_deputies
+	visible_when_empty = yes
+	priority = 10
+	allowed = {
+		original_tag = BRA
+	}
+
+	visible = {
+		has_country_flag = BRA_chamber_of_deputies_enabled
+	}
+}
+
+BRA_coronavirus_category = {
+    icon = GFX_decision_PRC_covid_19_cat
+    picture = PRC_covid_19_cat
+    visible_when_empty = yes
+    priority = 4
+
+    allowed = {
+    	original_tag = BRA
+    }
+
+    visible = {
+		OR = {
+			has_idea = BRA_coronavirus_pandemic_idea
+			has_idea = BRA_coronavirus_pandemic_idea1
+			has_idea = BRA_coronavirus_pandemic_idea2
+			has_idea = BRA_coronavirus_pandemic_idea3
+			has_idea = BRA_coronavirus_pandemic_idea4
+		}
+    }
+}
+
+BRA_south_american_sphere_category = {
+	icon = GFX_decision_category_BRA_south_american_sphere
+    visible_when_empty = yes
+    priority = 2
+
+    allowed = {
+    	original_tag = BRA
+    }
+
+	visible = {
+		has_country_flag = BRA_south_american_sphere_mechanic_flag
+	}
+}

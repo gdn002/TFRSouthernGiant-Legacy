@@ -1,0 +1,583 @@
+add_namespace = Brazil.junta
+
+###########################
+# Core Events
+###########################
+
+# Crackdown in Brasilia
+country_event = {
+	id = Brazil.junta.1
+	title = Brazil.junta.1.t
+	desc = Brazil.junta.1.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR2
+	}
+
+	option = {
+		name = Brazil.junta.1.a
+	}
+}
+
+# Bolsonaro vs The Army
+country_event = {
+	id = Brazil.junta.2
+	title = Brazil.junta.2.t
+	desc = Brazil.junta.2.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR2
+	}
+
+	option = {
+		name = Brazil.junta.2.a		
+	}
+}
+
+# Start the civil war!
+country_event = {
+	id = Brazil.junta.3
+	title = Brazil.junta.3.t
+	desc = Brazil.junta.3.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	timeout_days = 10
+	
+	trigger = {
+		tag = BR2
+	}
+
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = Brazil.junta.16
+				days = 30
+			}
+		}
+	}
+
+	# Attack federal gov
+	option = {
+		name = Brazil.junta.3.a
+		ai_chance = {
+            base = 15
+        }
+		activate_mission = BR2_operation_ustra_mission
+		custom_effect_tooltip = BR2_cw_operation_mission_tt
+		effect_tooltip = {
+			add_timed_idea = {
+   	 			idea = BR2_operation_ustra_idea
+    			days = 30
+			}
+			declare_war_on = {
+    			target = BR1
+    			type = annex_everything
+			}
+		}
+	}
+
+	# Attack popular front
+	option = {
+		name = Brazil.junta.3.b
+		ai_chance = {
+            base = 5
+        }
+		activate_mission = BR2_operation_angico_mission
+		custom_effect_tooltip = BR2_cw_operation_mission_tt
+		effect_tooltip = {
+			add_timed_idea = {
+   	 			idea = BR2_operation_angico_idea
+    			days = 30
+			}
+			declare_war_on = {
+    			target = BR3
+    			type = annex_everything
+			}
+		}
+	}
+
+	# Attack amazon commune
+	option = {
+		name = Brazil.junta.3.c
+		ai_chance = {
+            base = 5
+        }
+		activate_mission = BR2_operation_selva_mission
+		custom_effect_tooltip = BR2_cw_operation_mission_tt
+		effect_tooltip = {
+			add_timed_idea = {
+   	 			idea = BR2_operation_selva_idea
+    			days = 30
+			}
+			declare_war_on = {
+    			target = AMZ
+    			type = annex_everything
+			}
+		}
+	}
+
+	# Attack everyone
+	option = {
+		name = Brazil.junta.3.e
+		ai_chance = {
+            base = 5
+        }
+		activate_mission = BR2_operation_apocalipse_mission
+		custom_effect_tooltip = BR2_cw_operation_mission_tt
+		effect_tooltip = {
+			add_timed_idea = {
+   	 			idea = BR2_operation_apocalipse_idea
+    			days = 30
+			}
+			declare_war_on = {
+    			target = BR1
+    			type = annex_everything
+			}
+			declare_war_on = {
+    			target = BR3
+    			type = annex_everything
+			}
+			declare_war_on = {
+    			target = AMZ
+    			type = annex_everything
+			}
+		}
+	}
+}
+
+# Army brigades reporting
+country_event = {
+	id = Brazil.junta.4
+	title = Brazil.junta.4.t
+	desc = Brazil.junta.4.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR2
+	}
+
+	option = {
+		name = Brazil.junta.4.a
+		custom_effect_tooltip = BR2_cw_army_reporting_tt		
+		hidden_effect = {
+			load_oob = "BR2_Civil_War"
+		}
+	}
+}
+
+# Civil war unifiers defeated
+country_event = {
+	id = Brazil.junta.5
+	title = Brazil.junta.5.t
+	desc = Brazil.junta.5.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR2
+	}
+
+	option = {
+		name = Brazil.junta.5.a
+		mark_focus_tree_layout_dirty = yes
+		focus_unlock = yes
+	}
+}
+
+# Purge extremist cells
+country_event = {
+	id = Brazil.junta.6
+	title = Brazil.junta.6.t
+	desc = Brazil.junta.6.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR2
+	}
+
+	# Focus on integralists
+	option = {
+		name = Brazil.junta.6.a
+		add_days_mission_timeout = {
+    		mission = BR2_integralist_uprising_mission
+    		days = 40
+		}
+	}
+
+	# Focus on monarchists
+	option = {
+		name = Brazil.junta.6.b
+		add_days_mission_timeout = {
+    		mission = BR2_monarchist_uprising_mission
+    		days = 40
+		}
+	}
+}
+
+# São Paulo ultimatum
+country_event = {
+	id = Brazil.junta.7
+	title = Brazil.junta.7.t
+	desc = Brazil.junta.7.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = SPA
+	}
+
+	# Accept
+	option = {
+		name = Brazil.junta.7.a
+		ai_chance = {
+			base = 5
+		}
+		BR2 = {
+			country_event = {
+				id = Brazil.junta.8
+				hours = 12
+			}
+		}	
+	}
+
+	# Decline
+	option = {
+		name = Brazil.junta.7.b
+		ai_chance = {
+			base = 0
+		}
+		BR2 = {
+			country_event = {
+				id = Brazil.junta.9
+				hours = 12
+			}
+		}
+	}
+}
+
+# São Paulo ultimatum - accepted
+country_event = {
+	id = Brazil.junta.8
+	title = Brazil.junta.8.t
+	desc = Brazil.junta.8.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR2
+	}
+
+	option = {
+		name = Brazil.junta.8.a
+		annex_country = {
+			target = SPA
+			transfer_troops = yes
+		}
+		hidden_effect = {
+			SPA = {
+				every_core_state = {
+					add_core_of = BR2
+				}
+			}
+		}
+	}
+}
+
+# São Paulo ultimatum - rejected
+country_event = {
+	id = Brazil.junta.9
+	title = Brazil.junta.9.t
+	desc = Brazil.junta.9.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR2
+	}
+
+	option = {
+		name = Brazil.junta.9.a
+		declare_war_on = {
+			target = SPA
+    		type = annex_everything
+		}
+	}
+}
+
+# Sul ultimatum
+country_event = {
+	id = Brazil.junta.10
+	title = Brazil.junta.10.t
+	desc = Brazil.junta.10.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = SUL
+	}
+
+	# Accept
+	option = {
+		name = Brazil.junta.10.a
+		ai_chance = {
+			base = 0
+			modifier = {
+				OR = {
+					has_government = conservative
+					has_government = market_liberal
+				}
+				add = 5
+			}
+			modifier = {
+				has_government = conservative
+				BR2 = { has_government = authoritarian_democrat }
+				add = 10
+			}
+			modifier = {
+				has_government = conservative
+				BR2 = { has_government = authoritarian_democrat }
+				BRA = { NOT = { has_country_flag = BRA_moro_quits_flag }}
+				add = 35
+			}
+		}
+		BR2 = {
+			country_event = {
+				id = Brazil.junta.11
+				hours = 12
+			}
+		}	
+	}
+
+	# Decline
+	option = {
+		name = Brazil.junta.10.b
+		ai_chance = {
+			base = 50
+		}
+		BR2 = {
+			country_event = {
+				id = Brazil.junta.12
+				hours = 12
+			}
+		}
+	}
+}
+
+# Sul ultimatum - accepted
+country_event = {
+	id = Brazil.junta.11
+	title = Brazil.junta.11.t
+	desc = Brazil.junta.11.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR2
+	}
+
+	option = {
+		name = Brazil.junta.11.a
+		annex_country = {
+			target = SUL
+			transfer_troops = yes
+		}
+		hidden_effect = {
+			SUL = {
+				every_core_state = {
+					add_core_of = BR2
+				}
+			}
+		}
+	}
+}
+
+# Sul ultimatum - rejected
+country_event = {
+	id = Brazil.junta.12
+	title = Brazil.junta.12.t
+	desc = Brazil.junta.12.d
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR2
+	}
+
+	option = {
+		name = Brazil.junta.12.a
+		declare_war_on = {
+			target = SUL
+    		type = annex_everything
+		}
+	}
+}
+
+# Integralist uprising
+country_event = {
+	id = Brazil.junta.13
+	title = Brazil.junta.13.t
+	desc = Brazil.junta.13.d
+	picture = GFX_BRA_integralist_terrorists
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR2
+	}
+
+	# Keep playing Junta
+	option = {
+		name = Brazil.junta.13.a
+		custom_effect_tooltip = BR2_integralist_uprising_mission_tt
+		BR2_civil_war_implosion = yes
+	}
+
+	# Play integralists
+	option = {
+		name = Brazil.junta.13.b
+		custom_effect_tooltip = BR2_integralist_uprising_mission_tt
+		BR2_civil_war_implosion = yes
+		BR4 = {
+			change_tag_from = BR2
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+}
+
+# Monarchist uprising
+country_event = {
+	id = Brazil.junta.14
+	title = Brazil.junta.14.t
+	desc = Brazil.junta.14.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR2
+	}
+
+	# Keep playing Junta
+	option = {
+		name = Brazil.junta.14.a
+		custom_effect_tooltip = BR2_monarchist_uprising_mission_tt
+		BR2_civil_war_implosion = yes
+	}
+
+	# Play monarchists
+	option = {
+		name = Brazil.junta.14.b
+		custom_effect_tooltip = BR2_monarchist_uprising_mission_tt
+		BR2_civil_war_implosion = yes
+		BR4 = {
+			change_tag_from = BR2
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+}
+
+# Pro-Democracy uprising
+country_event = {
+	id = Brazil.junta.15
+	title = Brazil.junta.15.t
+	desc = Brazil.junta.15.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR2
+	}
+
+	option = {
+		name = Brazil.junta.15.a
+		custom_effect_tooltip = BR2_counter_coup_uprising_mission_tt
+		BR2_civil_war_implosion = yes
+	}
+}
+
+# Uprising missions start
+country_event = {
+	id = Brazil.junta.16
+	title = Brazil.junta.16.t
+	desc = Brazil.junta.16.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR2
+	}
+
+	option = {
+		name = Brazil.junta.16.a
+		add_ideas = { BR2_political_opposition_idea }
+		activate_mission = BR2_integralist_uprising_mission
+		activate_mission = BR2_monarchist_uprising_mission
+		activate_mission = BR2_counter_coup_uprising_mission
+
+		if = {
+			limit = {
+				is_ai = yes
+				has_game_rule = {
+					rule = Brazil_civil_war_winner
+					option = Brazil_civil_war_winner_4
+				}
+			}
+			add_days_mission_timeout = {
+    			mission = BR2_integralist_uprising_mission
+    			days = -140
+			}
+		}
+		else_if = {
+			limit = {
+				is_ai = yes
+				has_game_rule = {
+					rule = Brazil_civil_war_winner
+					option = Brazil_civil_war_winner_5
+				}
+			}
+			add_days_mission_timeout = {
+    			mission = BR2_monarchist_uprising_mission
+    			days = -140
+			}
+		}
+	}
+}
+
+country_event = {
+	id = Brazil.junta.17
+	title = Brazil.junta.17.t
+	desc = Brazil.junta.17.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BR2
+	}
+
+	option = {
+		name = Brazil.junta.17.a
+		mark_focus_tree_layout_dirty = yes
+	}
+}

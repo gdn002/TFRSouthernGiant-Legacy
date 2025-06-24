@@ -1,0 +1,282 @@
+defined_text = {
+	name = get_bolsonaro_son_candidate
+
+	text = {
+		trigger = {
+			BRA = {
+				check_variable = {
+					var = BRA_2022_elections_bolsonaro_candidate
+					value = 1
+					compare = equals
+				}
+			}
+		}
+		localization_key = "BRA_flavio_bolsonaro_char"
+	}
+	text = {
+		trigger = {
+			BRA = {
+				check_variable = {
+					var = BRA_2022_elections_bolsonaro_candidate
+					value = 2
+					compare = equals
+				}
+			}
+		}
+		localization_key = "BRA_carlos_bolsonaro_char"
+	}
+	text = {
+		trigger = {
+			BRA = {
+				check_variable = {
+					var = BRA_2022_elections_bolsonaro_candidate
+					value = 3
+					compare = equals
+				}
+			}
+		}
+		localization_key = "BRA_eduardo_bolsonaro_char"
+	}
+	text = {
+		localization_key = "BRA_jair_bolsonaro_char"
+	}
+}
+
+defined_text = {
+	name = get_chamber_wing_status_progressives
+	
+	text = {
+		trigger = {
+			BRA = {
+                has_country_flag = BRA_progressive_administration_flag
+			}
+		}
+		localization_key = "chamber_of_deputies_aligned"
+	}
+    text = {
+		trigger = {
+			BRA = {
+                has_country_flag = BRA_centrist_administration_flag
+			}
+		}
+		localization_key = "chamber_of_deputies_progressives_unaligned"
+	}
+    text = {
+		trigger = {
+			BRA = {
+                has_country_flag = BRA_reactionary_administration_flag
+			}
+		}
+		localization_key = "chamber_of_deputies_opposed"
+	}
+}
+
+defined_text = {
+	name = get_chamber_wing_status_centrists
+	
+	text = {
+		trigger = {
+			BRA = {
+                has_country_flag = BRA_progressive_administration_flag
+			}
+		}
+		localization_key = "chamber_of_deputies_centrists_unaligned"
+	}
+    text = {
+		trigger = {
+			BRA = {
+                has_country_flag = BRA_centrist_administration_flag
+			}
+		}
+		localization_key = "chamber_of_deputies_aligned"
+	}
+    text = {
+		trigger = {
+			BRA = {
+                has_country_flag = BRA_reactionary_administration_flag
+			}
+		}
+		localization_key = "chamber_of_deputies_centrists_unaligned"
+	}
+}
+
+defined_text = {
+	name = get_chamber_wing_status_reactionary
+	
+	text = {
+		trigger = {
+			BRA = {
+                has_country_flag = BRA_progressive_administration_flag
+			}
+		}
+		localization_key = "chamber_of_deputies_opposed"
+	}
+    text = {
+		trigger = {
+			BRA = {
+                has_country_flag = BRA_centrist_administration_flag
+			}
+		}
+		localization_key = "chamber_of_deputies_reactionary_unaligned"
+	}
+    text = {
+		trigger = {
+			BRA = {
+                has_country_flag = BRA_reactionary_administration_flag
+			}
+		}
+		localization_key = "chamber_of_deputies_aligned"
+	}
+}
+
+defined_text = {
+	name = get_war_with_united_states_desc_text
+	
+	# TODO: To be implemented in the next major update
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "war_with_united_states_prewar_mode"
+	}
+	text = {
+		trigger = {
+			always = no
+		}
+		localization_key = "war_with_united_states_active_mode"
+	}
+}
+
+defined_text = {
+	name = get_us_disposition_towards_brazil
+	
+	# TODO: To be implemented in the next major update
+	text = {
+		trigger = {
+			check_variable = { global.USA_disposition_towards_BRA_value = 0 }
+		}
+		localization_key = "us_brazil_disposition_neutral"
+	}
+	text = {
+		trigger = {
+			check_variable = { global.USA_disposition_towards_BRA_value = 1 }
+		}
+		localization_key = "us_brazil_disposition_friendly"
+	}
+	text = {
+		trigger = {
+			check_variable = { global.USA_disposition_towards_BRA_value > 1 }
+		}
+		localization_key = "us_brazil_disposition_veryfriendly"
+	}
+	text = {
+		trigger = {
+			check_variable = { global.USA_disposition_towards_BRA_value = -1 }
+		}
+		localization_key = "us_brazil_disposition_hostile"
+	}
+	text = {
+		trigger = {
+			check_variable = { global.USA_disposition_towards_BRA_value < -1 }
+		}
+		localization_key = "us_brazil_disposition_veryhostile"
+	}
+	text = {
+		localization_key = "us_brazil_foreign_policy_uncertain"
+	}
+}
+
+defined_text = {
+	name = get_us_foreign_policy_towards_brazil
+	
+	# TODO: To be implemented in the next major update
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "us_brazil_foreign_policy_uncertain"
+	}
+	text = {
+		trigger = {
+			always = no
+		}
+		localization_key = "us_brazil_foreign_policy_isolationist"
+	}
+	text = {
+		trigger = {
+			always = no
+		}
+		localization_key = "us_brazil_foreign_policy_interventionist"
+	}
+}
+
+## VICTORY POINT STATUS ##
+defined_text = {
+	name = get_brasilia_status
+	text = {
+		trigger = {
+			FROM = {
+				controls_state = 1445
+			}
+		}
+		localization_key = "our_control"
+	}
+	text = {
+		trigger = {
+			OR = {
+				any_country = {
+					is_ally_with = BRA
+					controls_state = 1445
+				}
+			}
+		}
+		localization_key = "friendly_control"
+	}
+	text = {
+		trigger = {
+			any_country = {
+				has_war_with = BRA
+				controls_state = 1445
+			}
+		}
+		localization_key = "enemy_control"
+	}
+	text = {
+		localization_key = "neutral_control"
+	}
+}
+
+defined_text = {
+	name = get_bogota_status
+	text = {
+		trigger = {
+			FROM = {
+				controls_state = 306
+			}
+		}
+		localization_key = "our_control"
+	}
+	text = {
+		trigger = {
+			OR = {
+				any_country = {
+					is_ally_with = BRA
+					controls_state = 306
+				}
+			}
+		}
+		localization_key = "friendly_control"
+	}
+	text = {
+		trigger = {
+			any_country = {
+				has_war_with = BRA
+				controls_state = 306
+			}
+		}
+		localization_key = "enemy_control"
+	}
+	text = {
+		localization_key = "neutral_control"
+	}
+}

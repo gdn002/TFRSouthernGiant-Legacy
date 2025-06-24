@@ -1,0 +1,13 @@
+spriteTypes = {
+    spriteType = {
+		name = "GFX_BRA_bop_radicalization"
+		texturefile = "gfx/interface/bop/BRA_bop_radicalization.png"
+		legacy_lazy_load = no
+	}
+
+    spriteType = {
+		name = "GFX_BRA_bop_stabilization"
+		texturefile = "gfx/interface/bop/BRA_bop_stabilization.png"
+		legacy_lazy_load = no
+	}
+}

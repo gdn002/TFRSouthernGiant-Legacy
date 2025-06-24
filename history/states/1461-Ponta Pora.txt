@@ -1,0 +1,21 @@
+state={
+	id=1461
+	name="STATE_1461"
+	provinces={
+		5200 8224 12951 
+	}
+	manpower=331000
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+
+	history = {
+		owner = BRA
+		add_core_of = BRA
+		buildings = {
+			infrastructure = 1
+		}
+
+		victory_points = { 8224 1 }
+	}
+}

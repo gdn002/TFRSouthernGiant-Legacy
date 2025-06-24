@@ -1,0 +1,37 @@
+music_station = "TFRSG_station"
+
+music = {
+	song = "TFRSG_capital_enslavement"
+	chance = {
+		modifier = {
+			factor = 0
+		}		
+	}
+}
+
+music = {
+	song = "TFRSG_indigena_futurista"
+	chance = {
+		modifier = {
+			factor = 0
+		}		
+	}
+}
+
+music = {
+	song = "TFRSG_ratos_no_poder"
+	chance = {
+		modifier = {
+			factor = 0
+		}		
+	}
+}
+
+music = {
+	song = "TFRSG_america"
+	chance = {
+		modifier = {
+			factor = 0
+		}		
+	}
+}

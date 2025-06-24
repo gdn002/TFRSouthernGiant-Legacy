@@ -1,0 +1,62 @@
+﻿division_template = {
+	name = "Brazilian Militia"
+	is_locked = yes
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+		militia = { x = 0 y = 3 }
+	}
+}
+
+units = {
+	division = {
+		name = "1a Milícia Paulista"
+		location = 15006
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "2a Milícia Paulista"
+		location = 15009
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "3a Milícia Paulista"
+		location = 15005
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "4a Milícia Paulista"
+		location = 5112
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "5a Milícia Paulista"
+		location = 1583
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "6a Milícia Paulista"
+		location = 12937
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "Com. Mil. Sudeste"
+		location = 15006
+		division_template = "Comando Militar"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "12a Bda Inf L Amv"
+		location = 15009
+		division_template = "Brigada de Infantaria Leve (Aeromovel)"
+		start_experience_factor = 0.5		
+	}
+
+}

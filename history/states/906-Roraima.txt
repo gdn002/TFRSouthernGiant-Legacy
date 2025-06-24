@@ -1,0 +1,23 @@
+state={
+	id=906
+	name="STATE_906"
+	provinces={
+		5214 14994 
+	}
+	manpower=70900
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+
+	history = {
+		owner = BRA
+		add_core_of = BRA
+		buildings = {
+
+		}
+
+		victory_points = { 5214 5 }
+
+		add_dynamic_modifier = { modifier = BRA_amazonian_jungle_state_dynamic }
+	}
+}

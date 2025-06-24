@@ -1,0 +1,1008 @@
+add_namespace = latin_america
+
+#Chile 2021 election
+country_event = {
+	id = latin_america.1
+	title = latin_america.1.t
+	desc = latin_america.1.d
+	picture = GFX_generic_elections
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			set_party_name = {
+				ideology = social_democrat
+				long_name = CHL_SD_party_long
+				name = CHL_SD_party
+			}
+			add_popularity = {
+				ideology = conservative
+				popularity = -0.1
+			}
+		}
+	}
+	
+	option = {
+		name = latin_america.1.a
+		set_politics = {
+			ruling_party = libertarian_socialist
+			elections_allowed = yes
+			last_election = "2021.12.19"
+			election_frequency = 48
+		}
+		remove_ideas = CHL_estallido_social_idea
+		add_popularity = {
+			ideology = libertarian_socialist
+			popularity = 0.07
+		}
+		set_party_name = {
+			ideology = libertarian_socialist
+			long_name = CHL_approve_dignity_party_long
+			name = CHL_approve_dignity_party
+		}
+		set_party_name = {
+			ideology = communist
+			long_name = CHL_approve_dignity_party_long
+			name = CHL_approve_dignity_party
+		}
+		set_temp_variable = { coalition_partner_var_temp = token:communist }
+		add_to_coalition = yes
+
+		set_temp_variable = { coalition_partner_var_temp = token:social_democrat }
+		add_to_coalition = yes
+
+		hidden_effect = {
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = CLS
+				value = -100
+			}
+			add_popularity = {
+				ideology = authoritarian_democrat
+				popularity = -0.2
+			}
+		}
+		ai_chance = {
+			factor = 65
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = Chile_2021_election
+					option = Chile_2021_election_2
+					}
+			}
+		}
+	}
+	
+	option = {
+		name = latin_america.1.b
+		ai_chance = {
+			factor = 35
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = Chile_2021_election
+					option = Chile_2021_election_1
+					}
+			}
+		}
+		set_politics = {
+			ruling_party = authoritarian_democrat
+			elections_allowed = yes
+			last_election = "2021.12.19"
+			election_frequency = 48
+		}
+		set_party_name = {
+			ideology = authoritarian_democrat
+			long_name = CHL_FSC_authdem_party_long
+			name = CHL_FSC_authdem_party
+		}
+		set_temp_variable = { coalition_partner_var_temp = token:nationalist }
+		add_to_coalition = yes
+
+		hidden_effect = {
+			add_popularity = {
+				ideology = libertarian_socialist
+				popularity = -0.05
+			}
+		}
+	}
+}
+
+#Bolivian 2020 election
+country_event = {
+	id = latin_america.2
+	title = latin_america.2.t
+	desc = latin_america.2.d
+	picture = GFX_news_event_shah
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = latin_america.2.a
+		set_politics = {
+			ruling_party = social_democrat
+			elections_allowed = yes
+			last_election = "2020.10.18"
+			election_frequency = 60
+		}
+		add_popularity = {
+			ideology = nationalist
+			popularity = -0.5
+		}
+		add_popularity = {
+			ideology = communist
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = libertarian_socialist
+			popularity = 0.5
+		}
+		add_popularity = {
+			ideology = social_liberal
+			popularity = 0.24
+		}
+		add_popularity = {
+			ideology = conservative
+			popularity = 0.04
+		}
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = 0.14
+		}
+		set_party_name = {
+			ideology = social_democrat
+			long_name = BOL_MAS_acre_party_long
+			name = BOL_MAS_acre_party
+		}
+		set_party_name = {
+			ideology = libertarian_socialist
+			long_name = BOL_MAS_evo_party_long
+			name = BOL_MAS_evo_party
+		}
+		set_temp_variable = { coalition_partner_var_temp = token:communist }
+		add_to_coalition = yes
+		set_temp_variable = { coalition_partner_var_temp = token:libertarian_socialist }
+		add_to_coalition = yes
+	}
+}
+
+#Peru 2020 - Snap Parliamentary Elections
+country_event = {
+	id = latin_america.12
+	title = latin_america.12.t
+	desc = latin_america.12.d
+	picture = GFX_generic_elections
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = latin_america.13
+				days = 288
+			}
+		}
+	}
+
+	option = {
+		name = latin_america.12.a
+		set_popularities = {
+			authoritarian_democrat = 15
+			conservative = 24
+			market_liberal = 15
+			social_liberal = 12
+			social_democrat = 8
+			libertarian_socialist = 18
+			communist = 8
+		}
+		add_political_power = 25
+	}
+}
+
+#Peru 2020 - Vizcarra ousted
+country_event = {
+	id = latin_america.13
+	title = latin_america.13.t
+	desc = latin_america.13.d
+	picture = GFX_generic_media
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		hidden_effect ={
+			country_event = {
+				id = latin_america.14
+				days = 5
+			}
+		}
+	}
+
+	option = {
+		name = latin_america.13.a
+		set_politics = {
+			ruling_party = social_liberal
+			elections_allowed = yes
+			last_election = "2016.6.5"
+			election_frequency = 60
+		}
+		add_popularity = {
+			ideology = nationalist
+			popularity = 0.05
+		}
+		add_stability = -0.05
+		promote_character = PRU_manuel_merino_char
+		retire_character = PRU_martin_vizcarra_char
+	}
+}
+
+#Peru 2020 - Merino resign
+country_event = {
+	id = latin_america.14
+	title = latin_america.14.t
+	desc = latin_america.14.d
+	picture = GFX_generic_media
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = latin_america.14.a
+		set_politics = {
+			ruling_party = social_liberal
+			elections_allowed = yes
+			last_election = "2016.6.5"
+			election_frequency = 60
+		}
+		set_party_name = {
+			ideology = social_liberal
+			long_name = PRU_20_soc_lib_long
+			name = PRU_20_soc_lib_short
+		}
+		add_popularity = {
+			ideology = social_liberal
+			popularity = 0.03
+		}
+		promote_character = PRU_francisco_sagasti_char
+		add_stability = 0.1
+		add_political_power = 50
+		remove_ideas = PRU_constitutional_crisis
+	}
+}
+
+#Peru 2021 election
+country_event = {
+	id = latin_america.3
+	title = latin_america.3.t
+	desc = latin_america.3.d
+	picture = GFX_generic_elections
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = latin_america.3.a
+		set_politics = {
+			ruling_party = libertarian_socialist
+			elections_allowed = yes
+			last_election = "2021.06.06"
+			election_frequency = 60
+		}
+		add_popularity = {
+			ideology = libertarian_socialist
+			popularity = 0.2
+		}
+		set_party_name = {
+			ideology = libertarian_socialist
+			long_name = PRU_21_lib_soc_long
+			name = PRU_21_lib_soc_short
+		}
+		ai_chance = {
+			factor = 70
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = Peru_2021_election
+					option = Peru_2021_election_2
+					}
+			}
+		}
+		hidden_effect = {
+			country_event = { id = latin_america.16 days = 605 }
+		}
+	}
+	
+	option = {
+		name = latin_america.3.b
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = Peru_2021_election
+					option = Peru_2021_election_1
+					}
+			}
+		}
+		set_politics = {
+			ruling_party = authoritarian_democrat
+			elections_allowed = yes
+			last_election = "2021.06.06"
+			election_frequency = 60
+		}
+		add_ai_strategy = {
+			type = send_volunteers_desire
+			id = CLS
+			value = 100
+		}
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = 0.2
+		}
+		set_party_name = {
+			ideology = conservative
+			long_name = PRU_21_conservative_long
+			name = PRU_21_conservative_short
+		}
+		add_ideas = PRU_fujimorist_vanguard_idea
+	}
+}
+
+#Castillo self-coup attempt
+country_event = {
+	id = latin_america.16
+	title = latin_america.16.t
+	desc = latin_america.16.d
+	picture = GFX_generic_media
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = latin_america.16.a
+		set_politics = {
+			ruling_party = communist
+			elections_allowed = no
+		}
+		add_popularity = {
+			ideology = communist
+			popularity = 0.2
+		}
+		ai_chance = {
+			factor = 40
+     		modifier = {
+     			has_idea = SOV_ADS_member
+     			factor = 2.5
+     		}
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = Castillo_self_coup_attempt
+					option = Castillo_self_coup_attempt_2
+					}
+			}
+		}
+		add_timed_idea = {
+			idea = PRU_castillo_revolution_idea
+			days = 730
+		}
+		hidden_effect = {
+			news_event = { id = latin_america.20 }
+		}
+	}
+	option = {
+		name = latin_america.16.b
+		promote_character = PRU_dina_boluarte_char
+		set_politics = {
+			ruling_party = nationalist
+			elections_allowed = no
+		}
+		add_ai_strategy = {
+			type = send_volunteers_desire
+			id = CLS
+			value = 100
+		}
+		add_popularity = {
+			ideology = nationalist
+			popularity = 0.05
+		}
+		hidden_effect = {
+			country_event = { id = latin_america.19 days = 1222 }
+		}
+		hidden_effect = {
+			news_event = { id = latin_america.21 }
+		}
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = Castillo_self_coup_attempt
+					option = Castillo_self_coup_attempt_1
+					}
+			}
+		}
+	}
+}
+
+news_event = {
+	id = latin_america.20
+	title = latin_america.20.t
+	desc = latin_america.20.d
+	picture = GFX_PRU_Coup_yes
+	is_triggered_only = yes
+	
+	show_major = {
+        is_south_american_tag = yes
+    }
+
+	option = {
+		name = latin_america.20.a
+	}
+}
+news_event = {
+	id = latin_america.21
+	title = latin_america.21.t
+	desc = latin_america.21.d
+	picture = GFX_PRU_Coup_no
+	is_triggered_only = yes
+	
+	show_major = {
+        is_south_american_tag = yes
+    }
+
+	option = {
+		name = latin_america.21.a
+	}
+}
+
+#Peru 2026 election
+country_event = {
+	id = latin_america.19
+	title = latin_america.19.t
+	desc = latin_america.19.d
+	picture = GFX_generic_elections
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = latin_america.19.a
+		set_politics = {
+			ruling_party = authoritarian_democrat
+			elections_allowed = yes
+			last_election = "2026.11.06"
+			election_frequency = 60
+		}
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = 0.15
+		}
+		retire_character = PRU_keiko_fujimori_char
+		promote_character = PRU_alberto_fujimori_char
+		add_ideas = PRU_fujimorist_vanguard_idea
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = Peru_2026_election
+					option = Peru_2026_election_2
+					}
+			}
+		}
+	}
+	option = {
+		name = latin_america.19.b
+		set_politics = {
+			ruling_party = libertarian_socialist
+			elections_allowed = yes
+			last_election = "2026.11.06"
+			election_frequency = 60
+		}
+		add_popularity = {
+			ideology = libertarian_socialist
+			popularity = 0.15
+		}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = Peru_2026_election
+					option = Peru_2026_election_1
+					}
+			}
+		}
+	}
+}
+
+# Base TFR Brazil election event, now vacant
+country_event = {
+	id = latin_america.4
+	name = latin_america.4.t
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+
+	}
+
+	option = {
+		name = latin_america.4.a
+	}
+}
+
+#Honduras 2021 election
+country_event = {
+	id = latin_america.5
+	title = latin_america.5.t
+	desc = latin_america.5.d
+	picture = GFX_news_event_shah
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = latin_america.5.a
+		set_politics = {
+			ruling_party = libertarian_socialist
+			elections_allowed = yes
+			last_election = "2021.11.28"
+			election_frequency = 48
+		}
+		add_popularity = {
+			ideology = conservative
+			popularity = -0.2
+		}
+		swap_ideas = {
+			remove_idea = CEN_banana_republic
+			add_idea = CEN_banana_republic_red
+		}
+	}
+}
+#Castro retires
+country_event = {
+	id = latin_america.6
+	title = latin_america.6.t
+	desc = latin_america.6.d
+	picture = GFX_news_event_shah
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = latin_america.6.a
+		promote_character = CUB_magiel_diaz_char
+		add_ideas = CUB_socialist_market_reforms
+		remove_ideas = CUB_us_blockade_idea
+		add_timed_idea = {
+			idea = CUB_us_blockade_idea
+			days = 356
+		}
+	}
+}
+#Argentina 2023 election
+country_event = {
+	id = latin_america.7
+	title = latin_america.7.t
+	desc = latin_america.7.d
+	picture = GFX_news_event_shah
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = latin_america.7.a
+		ai_chance = {
+			factor = 3
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = Argentina_2023_election
+					option = Argentina_2023_election_2
+					}
+			}
+		}
+		set_politics = {
+			ruling_party = social_democrat
+			elections_allowed = yes
+			last_election = "2023.12.10"
+			election_frequency = 48
+		}
+		retire_character = ARG_alberto_fernandez_char
+		add_popularity = {
+			ideology = social_democrat
+			popularity = 0.1
+		}
+		set_party_name = { ideology = social_democrat long_name = ARG_social_democrat_party_2_long name = ARG_social_democrat_party_2 }
+		swap_ideas = {
+			remove_idea = ARG_bloated_social_welfare
+			add_idea = ARG_reforming_social_welfare
+		}
+	}
+	option = {
+		name = latin_america.7.b
+		ai_chance = {
+			factor = 6
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = Argentina_2023_election
+					option = Argentina_2023_election_1
+					}
+			}
+		}
+		set_politics = {
+			ruling_party = market_liberal
+			elections_allowed = yes
+			last_election = "2023.12.10"
+			election_frequency = 48
+		}
+		retire_character = ARG_alberto_fernandez_char
+		add_popularity = {
+			ideology = market_liberal
+			popularity = 0.1
+		}
+		add_ai_strategy = {
+			type = send_volunteers_desire
+			id = CLS
+			value = 100
+		}
+		remove_ideas = ARG_bloated_social_welfare
+		add_timed_idea = {
+			idea = ARG_argentine_shock_therapy
+			days = 365
+		}
+		random_list = {
+			10 = {
+				modifier = {
+				   factor = 0
+				   OR = {
+				       has_game_rule = {
+					   rule = Milei_2023_ideologies
+					   option = Milei_2023_ideologies_1
+					    }
+				       has_game_rule = {
+				       rule = Milei_2023_ideologies
+				       option = Milei_2023_ideologies_3
+					    }
+					}
+				}
+				set_country_leader_ideology = classical_liberalism
+			}
+			20 = {
+				modifier = {
+				   factor = 0
+				   OR = {
+				       has_game_rule = {
+					   rule = Milei_2023_ideologies
+				  	   option = Milei_2023_ideologies_1
+				    	}
+				       has_game_rule = {
+				       rule = Milei_2023_ideologies
+				       option = Milei_2023_ideologies_3
+					    }
+					}
+				}
+				set_country_leader_ideology = right_libertarianism
+			}
+			30 = {
+				modifier = {
+				   factor = 0
+				   OR = {
+				       has_game_rule = {
+					   rule = Milei_2023_ideologies
+				  	   option = Milei_2023_ideologies_1
+				    	}
+				       has_game_rule = {
+					   rule = Milei_2023_ideologies
+					   option = Milei_2023_ideologies_1
+					    }
+					}
+				}
+				set_country_leader_ideology = right_anarchism
+			}
+		}
+	}
+}
+
+#Guyana 2020 election
+country_event = {
+	id = latin_america.8
+	title = latin_america.8.t
+	desc = latin_america.8.d
+	picture = GFX_generic_elections
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = latin_america.8.a
+		set_politics = {
+			ruling_party = social_democrat
+			elections_allowed = yes
+			last_election = "2020.3.2"
+			election_frequency = 60
+		}
+		add_popularity = {
+			ideology = social_democrat
+			popularity = 0.05
+		}
+		ai_chance = {
+			factor = 51
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = Guyana_2020_election
+					option = Guyana_2020_election_2
+					}
+			}
+		}
+	}
+	option = {
+		name = latin_america.8.b
+		set_politics = {
+			ruling_party = libertarian_socialist
+			elections_allowed = yes
+			last_election = "2020.3.2"
+			election_frequency = 60
+		}
+		add_popularity = {
+			ideology = libertarian_socialist
+			popularity = 0.05
+		}
+		ai_chance = {
+			factor = 49
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = Guyana_2020_election
+					option = Guyana_2020_election_1
+					}
+			}
+		}
+	}
+}
+
+#Suriname 2020 election
+country_event = {
+	id = latin_america.9
+	title = latin_america.9.t
+	desc = latin_america.9.d
+	picture = GFX_generic_elections
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = latin_america.9.a
+		set_politics = {
+			ruling_party = market_liberal
+			elections_allowed = yes
+			last_election = "2020.5.25"
+			election_frequency = 60
+		}
+		add_popularity = {
+			ideology = market_liberal
+			popularity = 0.1
+		}
+		ai_chance = {
+			factor = 62
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = Suriname_2020_election
+					option = Suriname_2020_election_2
+					}
+			}
+		}
+	}
+	option = {
+		name = latin_america.9.b
+		set_politics = {
+			ruling_party = social_democrat
+			elections_allowed = yes
+			last_election = "2020.5.25"
+			election_frequency = 60
+		}
+		add_popularity = {
+			ideology = social_democrat
+			popularity = 0.05
+		}
+		ai_chance = {
+			factor = 38
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = Suriname_2020_election
+					option = Suriname_2020_election_1
+					}
+			}
+		}
+	}
+}
+
+#Ecuador 2021 Election
+country_event = {
+	id = latin_america.10
+	title = latin_america.10.t
+	desc = latin_america.10.d
+	picture = GFX_generic_elections
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = latin_america.10.a
+		set_politics = {
+			ruling_party = market_liberal
+			elections_allowed = yes
+			last_election = "2021.4.11"
+			election_frequency = 48
+		}
+		set_party_name = {
+			ideology = communist
+			long_name = ECU_2021_communist_long
+			name = ECU_2021_communist_short
+		}
+		set_party_name = {
+			ideology = libertarian_socialist
+			long_name = ECU_2021_libertarian_socialist_long
+			name = ECU_2021_libertarian_socialist_short
+		}
+		set_party_name = {
+			ideology = market_liberal
+			long_name = ECU_2021_market_liberal_long
+			name = ECU_2021_market_liberal_short
+		}
+		set_popularities = {
+			social_democrat = 15
+			market_liberal = 23
+			conservative = 10
+			social_liberal = 6
+			communist = 2
+			libertarian_socialist = 40
+			authoritarian_democrat = 4
+		}
+		hidden_effect = {
+			country_event = { id = latin_america.11 days = 861 }
+		}
+	}
+}
+#Ecuador 2023 Snap Election
+country_event = {
+	id = latin_america.11
+	title = latin_america.11.t
+	desc = latin_america.11.d
+	picture = GFX_generic_elections
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = latin_america.11.a
+		set_politics = {
+			ruling_party = social_liberal
+			elections_allowed = yes
+			last_election = "2021.4.11"
+			election_frequency = 48
+		}
+		create_country_leader = {
+			name = ECU_daniel_noboa_char
+			picture = "gfx/Leaders/ECU/ECU_daniel_noboa.png"
+			ideology = centrist
+		}
+		set_party_name = {
+			ideology = social_liberal
+			long_name = ECU_2023_social_liberal_long
+			name = ECU_2023_social_liberal_short
+		}
+		set_party_name = {
+			ideology = social_democrat
+			long_name = ECU_2023_social_liberal_long
+			name = ECU_2023_social_liberal_short
+		}
+		set_popularities = {
+			social_democrat = 5
+			market_liberal = 20
+			conservative = 11
+			social_liberal = 16
+			communist = 5
+			libertarian_socialist = 40
+			authoritarian_democrat = 3
+		}
+	}
+}
+#Paraguay 2023 Election
+country_event = {
+	id = latin_america.15
+	title = latin_america.15.t
+	desc = latin_america.15.d
+	picture = GFX_generic_elections
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = latin_america.15.a
+		retire_character = PAR_mario_abdo_benitez_char
+		promote_character = PAR_santiago_pena_char
+	}
+}
+#Costa Rica 2022 Election
+country_event = {
+	id = latin_america.17
+	title = latin_america.17.t
+	desc = latin_america.17.d
+	picture = GFX_generic_elections
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = latin_america.17.a
+		set_politics = {
+			ruling_party = market_liberal
+			elections_allowed = yes
+			last_election = "2022.4.3"
+			election_frequency = 48
+		}
+		add_popularity = {
+			ideology = market_liberal
+			popularity = 0.15
+		}
+		add_popularity = {
+			ideology = social_democrat
+			popularity = -0.15
+		}
+	}
+}
+
+#Guatemala 2023
+country_event = {
+	id = latin_america.18
+	title = latin_america.18.t
+	desc = latin_america.18.d
+	picture = GFX_generic_elections
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = latin_america.18.a
+		set_politics = {
+			ruling_party = social_democrat
+			elections_allowed = yes
+			last_election = "2023.8.20"
+			election_frequency = 48
+		}
+		add_popularity = {
+			ideology = social_democrat
+			popularity = 0.15
+		}
+	}
+}
+
+#Uruguay 2020 presidential term ends
+country_event = {
+	id = latin_america.22
+	title = latin_america.22.t
+	desc = latin_america.22.d
+	picture = GFX_generic_media
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = latin_america.22.a
+		set_politics = {
+			ruling_party = conservative
+			elections_allowed = yes
+			last_election = "2019.10.27"
+			election_frequency = 60
+		}
+		add_popularity = {
+			ideology = conservative
+			popularity = 0.05
+		}
+	}
+}
+
+# French Guiana declares independence
+country_event = {
+	id = latin_america.23
+	title = latin_america.23.t
+	desc = latin_america.23.d
+	picture = GFX_generic_media
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = latin_america.23.a
+	}
+}

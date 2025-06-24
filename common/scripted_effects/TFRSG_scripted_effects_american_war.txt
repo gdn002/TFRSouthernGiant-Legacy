@@ -1,0 +1,11 @@
+TFRSG_recalculate_USA_disposition_towards_BRA = {
+    # TODO: This will be implemented in the next major update
+	hidden_effect = {
+		# Disposition is represented by a global variable that ranges from -2 to 2
+        # The value is calculated by adding an "alignment" value and a "threat" value
+        # The "alignment" value is defined by how closely the US and BR regimes are aligned, based on which tags are active and which sub-paths were taken
+        # The "threat" value is defined by Brazil's regional policy: 
+        # - If Brazil has successfuly formed a military alliance with other LATAM countries, subtract 1
+        # - If Brazil has successfuly formed an unified LATAM nation, subtract 2
+	}
+}

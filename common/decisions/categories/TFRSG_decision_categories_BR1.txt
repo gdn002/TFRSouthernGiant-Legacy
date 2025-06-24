@@ -1,0 +1,6 @@
+BR1_federal_gov_balance_of_power_category = {
+	icon = GFX_decision_category_BR1_federal_gov_balance_of_power_category
+	allowed = {
+		original_tag = BR1
+	}
+}

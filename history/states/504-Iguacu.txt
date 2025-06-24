@@ -1,0 +1,27 @@
+state={
+	# Mato Grosso do Sul
+	id=504
+	name="STATE_504"
+	provinces={
+		2181 8189 10959 
+	}
+	resources={
+		steel=6.000
+		rubber=12.000
+	}
+	manpower=2541000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+
+	history = {
+		owner = BRA
+		add_core_of = BRA
+		buildings = {
+			infrastructure = 1
+			air_base = 1
+		}
+
+		victory_points = { 10959 10 }
+	}
+}

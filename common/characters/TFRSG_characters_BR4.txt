@@ -1,0 +1,60 @@
+characters = {
+	## JUNTA BREAKAWAYS
+	BR4_moises_lima_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BR4/BR4_Moises_Lima.png"
+			}
+		}
+		country_leader = {
+			ideology = integralism
+			traits = {
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+	BR4_national_restoration_comitee_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BR4/BR4_National_Restoration_Comitee.png"
+			}
+		}
+		country_leader = {
+			ideology = radical_nationalism
+			traits = {
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+	BR4_antonio_orleans_braganza_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BR4/BR4_Antonio_Orleans_Braganza_absolutist.png"
+			}
+		}
+		country_leader = {
+			ideology = absolute_monarchist
+			traits = {
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+
+	BR4_bertrand_orleans_braganza_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BR4/BR4_Bertrand_Orleans_Braganza_absolutist.png"
+			}
+		}
+		country_leader = {
+			ideology = absolute_monarchist
+			traits = {
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+}

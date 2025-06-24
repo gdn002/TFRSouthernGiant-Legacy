@@ -1,0 +1,128 @@
+characters = {
+    # SUL
+	SUL_ivan_feloniuk_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SUL/SUL_Ivan_Feloniuk.png"
+			}
+		}
+		country_leader = {
+			ideology = hybrid_regime
+			traits = {
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+		country_leader = {
+			ideology = radical_nationalism
+			traits = {
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+    
+    SUL_decio_lima_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SUL/SUL_Decio_Lima.png"
+			}
+		}
+		country_leader = {
+			ideology = left_centrist
+			traits = {
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+
+    SUL_eduardo_leite_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_Eduardo_Leite.png"
+			}
+		}
+		country_leader = {
+			ideology = liberal_socialism
+			traits = {
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+
+    SUL_sergio_moro_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SUL/SUL_Sergio_Moro.png"
+			}
+		}
+		country_leader = {
+			ideology = constitutionalist
+			traits = {
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+
+	SUL_luciano_hang_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SUL/SUL_Luciano_Hang.png"
+			}
+		}
+		country_leader = {
+			ideology = civic_nationalism
+			traits = {
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+
+    SUL_carlos_messalla_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SUL/SUL_Carlos_Messalla.png"
+			}
+		}
+        country_leader = {
+			ideology = eurocommunism
+			traits = {
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+		country_leader = {
+			ideology = left_nationalism
+			traits = {
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+        country_leader = {
+			ideology = neo_stalinism
+			traits = {
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+
+    SUL_salvador_da_raca_char = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SUL/SUL_Salvador_da_Raca.png"
+			}
+		}
+        country_leader = {
+			ideology = neonazism
+			traits = {
+			}
+			expire = "1.1.1.1"
+			id = -1
+		}
+	}
+}

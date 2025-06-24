@@ -1,0 +1,54 @@
+spriteTypes = {
+	#Decisions
+	
+	#Ideologies
+	
+	#Generic
+
+	#BRA
+	spriteType = {
+		name = "GFX_BRA_amazon_burning"
+		texturefile = "gfx/texticons/banners/BRA/BRA_amazon_burning.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BRA_disjointed_geography"
+		texturefile = "gfx/texticons/banners/BRA/BRA_disjointed_geography.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BRA_chamber_of_deputies"
+		texturefile = "gfx/texticons/banners/BRA/BRA_chamber_of_deputies.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BRA_informal_economy"
+		texturefile = "gfx/texticons/banners/BRA/BRA_informal_economy.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BRA_power_of_the_future"
+		texturefile = "gfx/texticons/banners/BRA/BRA_power_of_the_future.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BRA_electronic_voting_booth"
+		texturefile = "gfx/texticons/banners/BRA/BRA_electronic_voting_booth.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BRA_south_america_map"
+		texturefile = "gfx/texticons/banners/BRA/BRA_south_america_map.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_BRA_monroe_doctrine"
+		texturefile = "gfx/texticons/banners/BRA/BRA_monroe_doctrine.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_Ideology_Integralism"
+		texturefile = "gfx/texticons/banners/ideology/Ideology_Integralism.png"
+		legacy_lazy_load = no
+	}
+}

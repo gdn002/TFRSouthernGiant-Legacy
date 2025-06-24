@@ -1,0 +1,79 @@
+﻿division_template = {
+	name = "Brazilian Militia"
+	is_locked = yes
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+		militia = { x = 0 y = 3 }
+	}
+}
+
+units = {
+	division = {
+		name = "1a Milícia Sulista"
+		location = 1458
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "2a Milícia Sulista"
+		location = 10405
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "3a Milícia Sulista"
+		location = 4533
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "4a Milícia Sulista"
+		location = 10447
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "5a Milícia Sulista"
+		location = 5178
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "6a Milícia Sulista"
+		location = 12466
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "7a Milícia Sulista"
+		location = 4604
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "8a Milícia Sulista"
+		location = 15000
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
+		name = "5a Bda C Bld"
+		location = 8239
+		division_template = "Brigada de Cavalaria Blindada"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "6a Bda Inf Bld"
+		location = 1598
+		division_template = "Brigada de Infantaria Blindada"
+		start_experience_factor = 0.5		
+	}
+	division = {
+		name = "Com. Mil. Sul"
+		location = 10447
+		division_template = "Comando Militar"
+		start_experience_factor = 0.5		
+	}
+}

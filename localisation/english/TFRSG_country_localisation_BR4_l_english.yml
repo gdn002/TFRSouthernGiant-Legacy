@@ -1,0 +1,69 @@
+﻿l_english:
+ #Leaders
+ #Focuses
+ BR4_cw_our_time_to_rise: "§aOur Time To Rise§!"
+ BR4_cw_god: "§aGOD§!"
+ BR4_cw_country: "§aCOUNTRY§!"
+ BR4_cw_family: "§aFAMILY§!"
+ BR4_cw_keep_the_momentum: "Not a Step Back"
+ BR4_cw_great_patriotic_army: "Our Great Patriotic Army"
+ BR4_cw_rise_of_integralism: "§PRise Of Integralism§!"
+ BR4_cw_the_new_greenshirts: "Rally The New Greenshirts"
+ BR4_cw_undo_the_great_mistake: "§aTo Undo The Great Mistake§!"
+ BR4_cw_royal_militias: "Form The Royal Militias"
+ BR4_cw_fan_brazilian_irredentism: "Fan Brazilian Irredentism"
+ BR4_cw_our_workers: "Our Workers"
+ BR4_cw_our_nation: "Our Nation"
+ BR4_cw_our_soldiers: "Our Soldiers"
+ BR4_cw_the_loose_ends: "Tie The Loose Ends"
+ BR4_cw_our_inevitable_victory: "§aOur Inevitable Victory§!"
+ #Ideas
+ BR4_insurgent_deception_idea: "Insurgent Deception"
+ BR4_fight_for_democracy_idea: "Fight For Democracy"
+ BR4_integralist_front_idea: "The Integralist Front"
+ BR4_national_restoration_idea: "National Restoration"
+ BR4_total_anarchy_idea: "Total Anarchy"
+ #Decision Categories
+ #Missions
+ #Decisions
+ BR4_insurgency_targeted_decision: "Insurgency in [FROM.GetName]"
+ BR4_raid_armories_targeted_decision: "Raid armories in [FROM.GetName]"
+ BR4_reintegrate_targeted_decision: "Enforce compliance in [FROM.GetName]"
+ BR4_cw_attack_government: "End the [BR1.GetFlag] §Ycorrupt republic§! once and for all"
+ BR4_cw_attack_front: "Crush the [BR3.GetFlag] §Ycommunist pigs§!"
+ #Country Flag
+ #Tooltips
+ BR4_insurgency_cost_tt: "§YThe cost of this decision will increase every time it is taken, up to a maximum of 100.§!"
+ BR4_integration_cost_tt: "§YThe cost of this decision will increase every time it is taken, up to a maximum of 50.§!"
+ BR4_integralist_end_tt: "Anauê! No more are we under the rule of degenerate communists, corrupt elites or populist puppets. Brazil finally has a true patriotic government to call its own, and we shall take our country down a road of greatness, no matter what the world throws at us! Our glory must be cut short, however, as this is where TFRSG's preview content ends.\n\n§YPLANNED CONTENT:§!\n- Bring tradition and real values to Brazil under a truly patriotic §Bintegral republic§!. Will you model it by the words of Plínio Salgado, or reform integralism for a new millennium?\n- §BSubjugate South America§!, asserting Brazil's dominance over the continent and becoming a global force to be reckoned with.\n- Prepare yourself for the ultimate trial of the Latin American people: The §BUnited States§! will not remain embroiled in war forever, and once the fires die down, it may decide to settle the §RMonroe Doctrine§! once and for all.\n\n§YTHANK YOU FOR TRYING TFRSG - GDN001§!"
+ BR4_monarchist_end_tt: "A century of mistakes, to be undone. The first step has been taken in returning Brazil to its golden years by crowning its rightful emperor, but the task ahead of us is gargantuan and not helped by rising tensions around the globe. But perhaps we can exploit them... Another time, as this is where TFRSG's preview content ends.\n\n§YPLANNED CONTENT:§!\n- Ressurrect the glory of the §GBrazilian Empire§!, either through a modernized parliamentary monarchy model, or an old-school absolutist monarchy.\n- Redefine the §GBrazilian identity§!: Pursue the concept of the Juçara ethnicity and form a Greater Brazilian Empire, unite the Lusosphere into a new globe-spanning modern hegemony, or reclaim your European origins and carve your own sphere of influence in the European continent§R*§!. \n- Prepare yourself for the ultimate trial of the Latin American people: The §BUnited States§! will not remain embroiled in war forever, and once the fires die down, it may decide to settle the §RMonroe Doctrine§! once and for all.\n§R*HIGHLY EXPERIMENTAL PATH CONCEPT, MAY COME LATER§!\n\n§YTHANK YOU FOR TRYING TFRSG - GDN001§!"
+ #Faction
+ #Parties
+ BR4_national_socialist_party: "§ROUTLAWED§!"
+ BR4_national_socialist_party_long: "§ROUTLAWED§!"
+ BR4_fascist_party: "FIB"
+ BR4_fascist_party_long: "Brazilian Integralist Front"
+ BR4_nationalist_party: "UNR"
+ BR4_nationalist_party_long: "National Restoration Union"
+ BR4_authoritarian_democrat_party: "MNPD"
+ BR4_authoritarian_democrat_party_long: "National Movement for Democracy"
+ BR4_conservative_party: "MNPD - Conservatives"
+ BR4_conservative_party_long: "National Movement for Democracy - Conservatives" 
+ BR4_market_liberal_party: "MNPD - Elites"
+ BR4_market_liberal_party_long: "National Movement for Democracy - Elites" 
+ BR4_social_liberal_party: "MNPD - Liberals"
+ BR4_social_liberal_party_long: "National Movement for Democracy - Liberals" 
+ BR4_social_democrat_party: "MNPD - Progressives"
+ BR4_social_democrat_party_long: "National Movement for Democracy - Progressives" 
+ BR4_libertarian_socialist_party: "§ROUTLAWED§!"
+ BR4_libertarian_socialist_party_long: "§ROUTLAWED§!"
+ BR4_communist_party: "§ROUTLAWED§!"
+ BR4_communist_party_long: "§ROUTLAWED§!"
+ BR4_totalitarian_socialist_party: "§ROUTLAWED§!"
+ BR4_totalitarian_socialist_party_long: "§ROUTLAWED§!"
+
+ BR4_nationalist_party_monarchist: "House of Orléans-Braganza"
+ BR4_nationalist_party_monarchist_long: "House of Orléans-Braganza"
+ #Country
+ #Summary
+ #Events

@@ -1,0 +1,959 @@
+######################################################
+# Brazilian Popular Front Focus Tree
+# By gdn001
+######################################################
+
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+
+focus_tree = {
+	id = BR3_Focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 20
+			original_tag = BR3
+		}
+	}
+
+    # ------------------------------------------------------------ CIVIL WAR FOCUSES ------------------------------------------------------------
+	# Intended duration: Until the civil war is done
+    focus = {
+		id = BR3_cw_popular_front_rises
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		x = 5
+		y = 0
+		cost = 3
+		allow_branch = {
+			NOT = {
+				has_global_flag = BRA_civil_war_ended_flag
+			}
+		}
+		available_if_capitulated = no
+		cancelable = no
+		ai_will_do = {
+			base = 1
+		}
+		available = {
+			hidden_trigger = {
+				has_global_flag = BRA_civil_war_started_flag
+			}
+		}
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.05
+			add_war_support = 0.05
+			# The popular front has risen up!
+			country_event = {
+				id = Brazil.commie.1
+				hours = 12
+			}
+		}
+	}
+
+    focus = {
+		id = BR3_cw_mount_a_workers_council
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR3_cw_popular_front_rises
+		x = 0
+		y = 1
+		cost = 1
+		prerequisite = {
+			focus = BR3_cw_popular_front_rises
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			# We set up a provisional popular government
+			add_political_power = 100
+			add_stability = 0.1
+			set_power_balance = {
+				id = BR3_internal_faction_balance
+				left_side = BR3_hardliner_side
+				right_side = BR3_libertarian_side
+				set_value = 0.25
+			}
+			country_event = {
+				id = Brazil.commie.2
+				hours = 12
+			}
+		}
+	}
+
+    focus = {
+		id = BR3_cw_link_up_with_pf_cells
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR3_cw_mount_a_workers_council
+		x = 0
+		y = 1
+		cost = 1
+		prerequisite = {
+			focus = BR3_cw_mount_a_workers_council
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			custom_effect_tooltip = BR3_cw_link_up_with_pf_cells_tt
+			hidden_effect = {
+				transfer_state = 497
+				transfer_state = 498
+				transfer_state = 499
+				transfer_state = 1451
+				transfer_state = 1452
+				transfer_state = 1453
+				transfer_state = 1454
+				transfer_state = 1455
+				transfer_state = 1456
+				add_state_core = 497
+				add_state_core = 498
+				add_state_core = 499
+				add_state_core = 1451
+				add_state_core = 1452
+				add_state_core = 1453
+				add_state_core = 1454
+				add_state_core = 1455
+				add_state_core = 1456
+			}
+		}
+	}
+
+    focus = {
+		id = BR3_cw_revolution_is_imminent
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR3_cw_link_up_with_pf_cells
+		x = 0
+		y = 1
+		cost = 1
+		prerequisite = {
+			focus = BR3_cw_link_up_with_pf_cells
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_war_support = 0.1
+			custom_effect_tooltip = BR3_civil_war_militias_spawn_tt			
+			country_event = {
+				id = Brazil.commie.3
+				hours = 6
+			}
+			hidden_effect = {
+				load_oob = "BR3_Civil_War"
+			}
+		}
+	}
+
+	# MILITARY MINI-BRANCH
+	# Improves the combat spirit and expands recruitment options
+	focus = {
+		id = BR3_raise_revolutionary_militias
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR3_cw_revolution_is_imminent
+		x = -3
+		y = 1
+		cost = 3
+		allow_branch = {
+			has_global_flag = BRA_civil_war_ongoing_flag
+		}
+		prerequisite = {
+			focus = BR3_cw_revolution_is_imminent
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			add_war_support = 0.05
+			set_country_flag = BRA_civil_war_recruitment_allowed_flag
+			custom_effect_tooltip = BRA_civil_war_recruitment_unlocked_tt
+			add_corps_commander_role = {
+			    Character = BR3_leonel_radde_char
+			    skill = 1
+			    attack_skill = 1
+			    defense_skill = 1
+			    planning_skill = 2
+			    logistics_skill = 1
+			}
+			add_corps_commander_role = {
+			    Character = BR3_paulo_galo_char
+			    skill = 1
+			    attack_skill = 2
+			    defense_skill = 1
+			    planning_skill = 1
+			    logistics_skill = 1
+			}
+			add_corps_commander_role = {
+			    Character = BR3_pedro_che_char
+			    skill = 1
+			    attack_skill = 1
+			    defense_skill = 2
+			    planning_skill = 1
+			    logistics_skill = 1
+			}
+		}
+	}	
+
+	focus = {
+		id = BR3_engage_guerrila_warfare
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR3_raise_revolutionary_militias
+		x = 0
+		y = 1
+		cost = 3
+		prerequisite = {
+			focus = BR3_raise_revolutionary_militias
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			unlock_decision_tooltip = BR3_cw_boost_revolutionary_morale
+			add_war_support = 0.05
+			swap_ideas = {
+				remove_idea = BR3_disorganized_warfare_idea
+				add_idea = BR3_guerrila_warfare_idea
+			}
+		}
+	}
+
+	focus = {
+		id = BR3_raid_military_bases
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR3_engage_guerrila_warfare
+		x = -1
+		y = 1
+		cost = 3
+		prerequisite = {
+			focus = BR3_engage_guerrila_warfare
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			custom_effect_tooltip = BR3_raid_military_bases_tt
+			add_war_support = 0.1
+			add_equipment_to_stockpile = {
+    			type = infantry_equipment_2
+    			amount = 5000
+			}
+			add_equipment_to_stockpile = {
+    			type = support_equipment_1
+    			amount = 800
+			}
+			add_equipment_to_stockpile = {
+    			type = motorized_equipment_1
+    			amount = 400
+			}
+			add_equipment_to_stockpile = {
+    			type = artillery_equipment_1
+    			amount = 200
+			}		
+		}
+	}
+
+	focus = {
+		id = BR3_the_convict_question
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR3_engage_guerrila_warfare
+		x = 1
+		y = 1
+		cost = 3
+		prerequisite = {
+			focus = BR3_engage_guerrila_warfare
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Get the option to free convicts and use them for labor or combat
+			country_event = {
+				id = Brazil.commie.4
+				hours = 12
+			}
+			swap_ideas = {
+				add_idea = high_prison
+				remove_idea = low_prison
+			}
+		}
+	}
+
+	focus = {
+		id = BR3_sway_the_soldier
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR3_raid_military_bases
+		x = 1
+		y = 1
+		cost = 3
+		prerequisite = {
+			focus = BR3_raid_military_bases
+		}
+		prerequisite = {
+			focus = BR3_the_convict_question
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			add_war_support = 0.15
+			# Get a proper military division and general
+			country_event = {
+				id = Brazil.commie.5
+				days = 3
+			}
+		}
+	}
+
+	# POLITICAL MINI-BRANCH
+	# Boosts political power and unlocks civil war decisions
+	focus = {
+		id = BR3_social_assistance_programs
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR3_cw_revolution_is_imminent
+		x = 0
+		y = 1
+		cost = 3
+		allow_branch = {
+			has_global_flag = BRA_civil_war_ongoing_flag
+		}
+		prerequisite = {
+			focus = BR3_cw_revolution_is_imminent
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Provide humanitarian aid to Brazilians displaced by the civil war
+			unlock_decision_tooltip = BR3_cw_distribute_humanitarian_aid
+			add_stability = 0.15
+			add_political_power = 50
+			set_temp_variable = { poverty_development_var_temp = 0.25 }
+			add_poverty_development = yes
+			swap_ideas = {
+				add_idea = low_welfare
+				remove_idea = lower_welfare
+			}
+		}
+	}
+
+	focus = {
+		id = BR3_fan_up_class_consciousness
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR3_social_assistance_programs
+		x = 0
+		y = 1
+		cost = 3
+		prerequisite = {
+			focus = BR3_social_assistance_programs
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Raise class consciousness and political participation in the people
+			add_war_support = 0.05
+			set_temp_variable = { society_development_var_temp = 0.25 }
+			add_society_development = yes
+		}
+	}
+
+	focus = {
+		id = BR3_guerrila_media
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR3_fan_up_class_consciousness
+		x = 0
+		y = 1
+		cost = 3
+		prerequisite = {
+			focus = BR3_fan_up_class_consciousness
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Use alternative/independent media to spread the revolution
+			unlock_decision_tooltip = BR3_cw_socialist_education_campaigns
+			add_political_power = 100
+			custom_effect_tooltip = TFRSG_add_campaign_slot_tt
+			add_campaign_slot = yes
+		}
+	}
+
+	focus = {
+		id = BR3_brazilian_vanguard
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR3_guerrila_media
+		x = 0
+		y = 1
+		cost = 3
+		prerequisite = {
+			focus = BR3_guerrila_media
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Consolidate the Popular Front as a legitimate vanguard party
+			unlock_decision_tooltip = BR3_cw_call_amazonian_commune
+			remove_ideas = {
+				BRA_systemic_corruption_idea
+			}
+			BRA_civil_war_add_claims = yes
+		}
+	}
+
+	# INDUSTRIAL MINI-BRANCH
+	# Improves productive capacities
+	focus = {
+		id = BR3_seize_the_means_of_production
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR3_cw_revolution_is_imminent
+		x = 3
+		y = 1
+		cost = 3
+		allow_branch = {
+			has_global_flag = BRA_civil_war_ongoing_flag
+		}
+		prerequisite = {
+			focus = BR3_cw_revolution_is_imminent
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Seize property for the cause
+			remove_ideas = {
+				BRA_informalized_economy_idea
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = BR3_rally_the_workers
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR3_seize_the_means_of_production
+		x = 0
+		y = 1
+		cost = 3
+		prerequisite = {
+			focus = BR3_seize_the_means_of_production
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			unlock_decision_tooltip = BR3_cw_rally_revolutionary_labor
+			add_political_power = -50
+			swap_ideas = {
+				remove_idea = BR3_uncontrolled_industrial_output_idea
+				add_idea = BR3_redirected_industrial_output_idea
+			}
+		}
+	}
+
+	focus = {
+		id = BR3_civilian_industry
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR3_rally_the_workers
+		x = -1
+		y = 1
+		cost = 3
+		prerequisite = {
+			focus = BR3_rally_the_workers
+		}
+		mutually_exclusive = {
+			focus = BR3_revolutionary_industry
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			add_stability = 0.15
+			swap_ideas = {
+				remove_idea = BR3_redirected_industrial_output_idea
+				add_idea = BR3_redirected_industrial_output_civ_idea
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = BR3_revolutionary_industry
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR3_rally_the_workers
+		x = 1
+		y = 1
+		cost = 3
+		prerequisite = {
+			focus = BR3_rally_the_workers
+		}
+		mutually_exclusive = {
+			focus = BR3_civilian_industry
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = BR3_redirected_industrial_output_idea
+				add_idea = BR3_redirected_industrial_output_mil_idea
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = BR3_workers_of_brazil_rise
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR3_civilian_industry
+		x = 1
+		y = 1
+		cost = 3
+		prerequisite = {
+			focus = BR3_civilian_industry
+			focus = BR3_revolutionary_industry
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Enables worker strikes against other factions
+			custom_effect_tooltip = BR3_workers_of_brazil_rise_tt
+			set_temp_variable = { industrial_development_var_temp = 0.25 }
+			add_industrial_development = yes
+		}
+	}
+
+	focus = {
+		id = BR3_establish_the_pla
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR3_brazilian_vanguard
+		x = 0
+		y = 1
+		cost = 3
+		prerequisite = {
+			focus = BR3_sway_the_soldier
+		}
+		prerequisite = {
+			focus = BR3_brazilian_vanguard
+		}
+		prerequisite = {
+			focus = BR3_workers_of_brazil_rise
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Awards the powerful PLA idea and unlocks training of professional divisions
+			unlock_decision_tooltip = BR3_cw_dare_to_die
+			add_command_power = 50
+			country_lock_all_division_template = no
+			custom_effect_tooltip = TFRSG_inherited_templates_hint_tt
+			swap_ideas = {
+				remove_idea = BR3_guerrila_warfare_idea
+				add_idea = BR3_liberation_army_idea
+			}
+			set_party_name = {
+			    ideology = nationalist
+			    name = BR3_nationalist_party_pla
+			    long_name = BR3_nationalist_party_pla_long
+			}
+			set_temp_variable = { coalition_partner_var_temp = token:nationalist }
+			add_to_coalition = yes
+			set_temp_variable = { military_development_var_temp = 0.25 }
+			add_military_development = yes
+		}
+	}
+
+	focus = {
+		id = BR3_reclaim_our_country
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR3_establish_the_pla
+		x = 0
+		y = 1
+		cost = 3
+		prerequisite = {
+			focus = BR3_establish_the_pla
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			custom_effect_tooltip = BRA_civil_war_coring_unlocked_tt
+			unlock_decision_tooltip = BR3_cw_attack_government
+			unlock_decision_tooltip = BR3_cw_attack_junta
+			unlock_decision_tooltip = BR3_cw_attack_fascists	
+			add_war_support = 0.05
+			# Enables reintegration of Brazilian states
+			set_country_flag = BRA_civil_war_reintegration_allowed_flag
+		}
+	}
+
+	focus = {
+		id = BR3_proclaim_peoples_mandate
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR3_reclaim_our_country
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = BR3_reclaim_our_country
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = BRA_civil_war_unifiers_defeated_tt
+				NOT = {
+					country_exists = BR1
+					country_exists = BR2
+					country_exists = BR4
+				}
+			}
+		}
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			add_political_power = 200
+			add_stability = 0.25
+			country_event = {
+				id = Brazil.commie.7
+				days = 2
+			}			
+		}
+	}
+
+	focus = {
+		id = BR3_bring_the_north_into_harbor
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR3_proclaim_peoples_mandate
+		x = -2
+		y = 1
+		cost = 2
+		allow_branch = {
+			has_completed_focus = BR3_proclaim_peoples_mandate
+		}
+		prerequisite = {
+			focus = BR3_proclaim_peoples_mandate
+		}	
+		bypass = {
+			NOT = { country_exists = AMZ }
+		}	
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Amazon breakaway ultimatum
+			AMZ = {
+				country_event = {
+					id = Brazil.commie.8
+					days = 3
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = BR3_sao_paulo_ultimatum
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR3_proclaim_peoples_mandate
+		x = 0
+		y = 1
+		cost = 2
+		allow_branch = {
+			has_completed_focus = BR3_proclaim_peoples_mandate
+		}
+		prerequisite = {
+			focus = BR3_proclaim_peoples_mandate
+		}
+		bypass = {
+			NOT = { country_exists = SPA }
+		}		
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# São Paulo breakaway ultimatum
+			SPA = {
+				country_event = {
+					id = Brazil.commie.11
+					days = 3
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = BR3_crush_sul_separatists
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR3_proclaim_peoples_mandate
+		x = 2
+		y = 1
+		cost = 2
+		allow_branch = {
+			has_completed_focus = BR3_proclaim_peoples_mandate
+		}
+		prerequisite = {
+			focus = BR3_proclaim_peoples_mandate
+		}	
+		bypass = {
+			NOT = { country_exists = SUL }
+		}		
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# Sul breakaway ultimatum
+			SUL = {
+				country_event = {
+					id = Brazil.commie.14
+					days = 3
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = BR3_end_of_brazilian_humiliation
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+        relative_position_id = BR3_sao_paulo_ultimatum
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = BR3_bring_the_north_into_harbor
+		}	
+		prerequisite = {
+			focus = BR3_sao_paulo_ultimatum
+		}
+		prerequisite = {
+			focus = BR3_crush_sul_separatists
+		}
+		available = {
+			has_war = no
+			custom_trigger_tooltip = {
+				tooltip = BRA_civil_war_breakaways_defeated_tt
+				NOT = {
+					country_exists = AMZ
+					country_exists = SPA
+					country_exists = SUL
+				}
+			}
+		}		
+		available_if_capitulated = no
+		cancelable = yes
+		ai_will_do = {
+			base = 1
+		}
+		completion_reward = {
+			# The civil war will be over!
+			BRA_civil_war_end = yes
+
+			country_event = {
+				id = Brazil.timeline.15
+				days = 7
+			}
+
+			hidden_effect = {
+				news_event = {
+					id = Brazilnews.11
+					hours = 12
+				}
+			}
+
+			set_variable = { global.TFRSG_active_BRA_tag = BR3 }
+		}
+	}
+}

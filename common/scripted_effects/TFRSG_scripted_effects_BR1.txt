@@ -1,0 +1,95 @@
+# CIVIL WAR
+BR1_improve_command_insecurity = {
+	if = {
+		limit = {
+			has_idea = BR1_insecure_command_idea
+		}
+		swap_ideas = {
+			remove_idea = BR1_insecure_command_idea
+			add_idea = BR1_insecure_command_idea1
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = BR1_insecure_command_idea1
+		}
+		swap_ideas = {
+			remove_idea = BR1_insecure_command_idea1
+			add_idea = BR1_insecure_command_idea2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = BR1_insecure_command_idea2
+		}
+		remove_ideas = BR1_insecure_command_idea2
+	}
+}
+
+BR1_endgame_content = {
+    ## Sets up post-civil war skeleton content for this tag
+    set_portraits = {
+		character = BR1_lula_da_silva_char
+		civilian = { large ="GFX_BRA_Lula_da_Silva_sunglasses" }
+	}
+	set_portraits = {
+		character = BR1_geraldo_alckmin_char
+		civilian = { large ="GFX_BRA_Geraldo_Alckmin_Reelection" }
+	}
+
+	if = {
+        # LULA
+        limit = {
+            is_power_balance_in_range = {
+    			id = BR1_federal_gov_balance_of_power
+    			range < BR1_lula_lean_range
+			}
+        }
+		set_politics = {
+			ruling_party = social_democrat
+			last_election = "2022.10.27"
+			election_frequency = 48
+			elections_allowed = yes
+		}		
+		change_government_type_presidential_republic = yes
+		change_economy_type_left_corporatism = yes
+		set_cosmetic_tag = BR1_union
+    }
+	else_if = {
+        # ALCKMIN
+        limit = {
+            is_power_balance_in_range = {
+    			id = BR1_federal_gov_balance_of_power
+    			range > BR1_alckmin_lean_range
+			}
+        }
+		set_politics = {
+			ruling_party = social_liberal
+			last_election = "2022.10.27"
+			election_frequency = 48
+			elections_allowed = yes
+		}		
+		change_government_type_presidential_republic = yes
+		change_economy_type_corporatism = yes
+		set_cosmetic_tag = BR1_federation
+    }
+    else = {
+        # BALANCED
+        change_government_type_semi_presidential_system = yes
+		change_economy_type_liberal_corporatism = yes
+		set_cosmetic_tag = BR1_unitedstates
+    }
+
+    remove_ideas = {
+        BR1_emergency_government_idea
+		BR1_state_of_emergency_idea
+		BR1_insecure_command_idea
+		BR1_insecure_command_idea1
+		BR1_insecure_command_idea2
+		BR1_economic_crisis_idea
+		BR1_economic_crisis_idea1
+		BR1_broad_coalition_idea
+		BR1_broad_coalition_idea_weak1
+		BR1_broad_coalition_idea_weak2
+    }
+}

@@ -1,0 +1,117 @@
+ideas = {
+	## NATIONAL SPIRITS ##
+	country = {	
+		BRA_civil_war_defense_idea = {
+			allowed = {
+				is_brazilian_unifier = yes
+			}
+			modifier = {
+				army_defence_factor = 0.15
+				dig_in_speed_factor = 0.5
+				max_dig_in_factor = 0.25
+				army_attack_factor = -0.15
+				army_speed_factor = -0.25
+			}
+		}
+
+		BRA_civil_war_offense_idea = {
+			allowed = {
+				is_brazilian_unifier = yes
+			}
+			modifier = {
+				army_attack_factor = 0.15
+				breakthrough_factor = 0.25
+				army_attack_speed_factor = 0.5
+				army_defence_factor = -0.15
+				dig_in_speed_factor = -0.25
+			}
+		}
+
+		BRA_civil_war_maneuver_idea = {
+			allowed = {
+				is_brazilian_unifier = yes
+			}
+			modifier = {
+				army_speed_factor = 0.3
+				army_morale_factor = 0.25
+				terrain_penalty_reduction = 0.15
+				out_of_supply_factor = 0.15
+				army_attack_factor = -0.05
+				army_defence_factor = -0.05
+			}
+		}
+
+		BRA_brazilian_civil_war_idea = {
+			allowed = {
+				is_brazilian_civilwar_faction = yes
+			}
+			modifier = {
+				stability_factor = -0.25
+				academic_development_monthly = -0.025
+				poverty_development_monthly = -0.025
+				farming_development_monthly = -0.025
+				industrial_development_monthly = -0.025
+				society_development_monthly = -0.025
+				hidden_modifier = {
+					ai_focus_aggressive_factor = 100
+					ai_call_ally_desire_factor = 100
+					ai_join_ally_desire_factor = 100
+				}
+			}
+			cancel = {
+				has_global_flag = BRA_civil_war_ended_flag
+			}
+		}
+
+		AMZ_jungle_warriors_idea = {
+			allowed = {
+				original_tag = AMZ
+			}
+			modifier = {
+				army_core_defence_factor = 0.05
+				max_dig_in = 10
+				cas_damage_reduction = 0.25
+				terrain_penalty_reduction = 0.5
+			}
+		}
+
+		UNB_peacekeeping_mission_idea = {
+			allowed = {
+				original_tag = UNB
+			}
+			modifier = {
+				non_core_manpower = 0.5
+				supply_factor = 0.25
+				resistance_decay = 0.25
+				resistance_target = -0.15
+				compliance_growth = 0.25
+			}
+		}	
+	}
+
+	hidden_ideas = {
+		BRA_civil_war_gamerule_blessing = {
+			allowed = {
+				is_brazilian_unifier = yes
+			}
+			modifier = {
+				surrender_limit = 5
+				army_attack_factor = 1
+				army_attack_speed_factor = 0.3
+				breakthrough_factor = 0.5
+				army_defence_factor = 1
+				army_morale_factor = 0.5
+				army_org_factor = 0.5
+				initiative_factor = 0.5
+				ai_focus_aggressive_factor = 500
+			}
+
+			cancel = {
+				OR = {
+					has_global_flag = BRA_civil_war_ended_flag
+					is_ai = no
+				}
+			}
+		}
+	}
+}	

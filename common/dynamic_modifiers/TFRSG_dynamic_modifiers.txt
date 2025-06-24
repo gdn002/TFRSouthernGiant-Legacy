@@ -1,0 +1,23 @@
+# Variables are calculated in BRA_recalculate_amazonian_preservation_dynamic_vars
+BRA_amazonian_jungle_dynamic = {
+    icon = GFX_idea_BRA_amazonian_jungle
+    enable = { has_country_flag = BRA_amazonian_preservation_mechanic_enabled }
+    
+    amazonian_preservation_monthly = BRA_amazon_preservation_drift_dyn_var
+    stability_factor = global.BRA_amazon_stability_factor_dyn_var
+    political_power_factor = global.BRA_amazon_pp_factor_dyn_var
+    research_speed_factor = global.BRA_amazon_research_speed_dyn_var
+    society_development_monthly = global.BRA_amazon_society_development_dyn_var
+    academic_development_monthly = global.BRA_amazon_academic_development_dyn_var
+}
+
+BRA_amazonian_jungle_state_dynamic = {
+    icon = GFX_idea_BRA_amazonian_jungle
+
+    state_production_speed_infrastructure_factor = global.BRA_amazon_production_speed_infra_dyn_var
+    state_production_speed_rail_way_factor = global.BRA_amazon_production_speed_rail_dyn_var
+    state_production_speed_supply_node_factor = global.BRA_amazon_production_speed_hub_dyn_var
+    local_building_slots_factor = global.BRA_amazon_local_build_slots_dyn_var
+    local_resources = global.BRA_amazon_local_resources_dyn_var
+    local_supplies = global.BRA_amazon_local_supplies_dyn_var
+}

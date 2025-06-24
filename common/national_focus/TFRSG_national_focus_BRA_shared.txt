@@ -1,0 +1,1228 @@
+######################################################
+# Federative Republic of Brazil Focus Tree
+# Shared focuses post 2022 elections
+# By gdn001
+######################################################
+
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+
+# ------------------------------------------------------------ MILITARY ------------------------------------------------------------
+shared_focus = {
+	id = BRA_begin_military_reforms
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	x = -15
+	y = 0
+	cost = 5
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = BRA_revoke_amnesty_law
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_begin_military_reforms
+	x = 2
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_begin_military_reforms
+	}
+	mutually_exclusive = {
+		focus = BRA_military_maintain_status_quo
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+		# In order to unlock this branch:
+		# The Jan 8th riots must happen under the far-right (against the progressives or centrists)
+		# The investigations into the resulting coup attempt must be allowed to proceed
+		# Once the investigations conclude in mid-2025, Bolsonaro and the military must be condemned
+	}
+	completion_reward = {
+		# The military will be rebellious for a while, but as the reforms take place it will eventually become much stronger
+	}
+}
+
+shared_focus = {
+	id = BRA_military_maintain_status_quo
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_begin_military_reforms
+	x = -2
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_begin_military_reforms
+	}
+	mutually_exclusive = {
+		focus = BRA_revoke_amnesty_law
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+		# Quickly gets rid of the Self Indulgent Military spirit, but merely replaces it with a slightly better spirit
+	}
+}
+
+# -- Army --
+shared_focus = {
+	id = BRA_raise_military_budget
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_military_maintain_status_quo
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_military_maintain_status_quo
+	}
+	ai_will_do = {
+		base = 1
+	}
+	completion_reward = {
+		# More money for the army!
+	}
+}
+
+shared_focus = {
+	id = BRA_purge_reactionary_officers
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_revoke_amnesty_law
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_revoke_amnesty_law
+	}
+	ai_will_do = {
+		base = 1
+	}
+	completion_reward = {
+		# Gets rid of a bunch of generals but reduces military backlash
+	}
+}
+
+shared_focus = {
+	id = BRA_military_clean_the_books
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_begin_military_reforms
+	x = 0
+	y = 2
+	cost = 5
+	prerequisite = {
+		focus = BRA_begin_military_reforms
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+		NOT = {
+			has_idea = BRA_self_indulgent_military_idea
+		}
+	}
+	completion_reward = {
+		# Reduce army costs
+	}
+}
+
+shared_focus = {
+	id = BRA_military_government_integration
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_raise_military_budget
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_raise_military_budget
+	}
+	prerequisite = {
+		focus = BRA_military_clean_the_books
+	}
+	ai_will_do = {
+		base = 1
+	}
+	completion_reward = {
+		# Bring the army and government closer together
+	}
+}
+
+shared_focus = {
+	id = BRA_new_military_reeducation_program
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_purge_reactionary_officers
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_purge_reactionary_officers
+	}
+	prerequisite = {
+		focus = BRA_military_clean_the_books
+	}
+	ai_will_do = {
+		base = 1
+	}
+	completion_reward = {
+		# End pro-coup sentiment in the army training system
+	}
+}
+
+shared_focus = {
+	id = BRA_expand_aman
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_military_clean_the_books
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_military_clean_the_books
+	}
+	prerequisite = {
+		focus = BRA_raise_military_budget
+		focus = BRA_purge_reactionary_officers
+	}
+	ai_will_do = {
+		base = 1
+	}
+	completion_reward = {
+		# Improve high command military education
+	}
+}
+
+shared_focus = {
+	id = BRA_reboot_military_industry
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_expand_aman
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_expand_aman
+	}
+	prerequisite = {
+		focus = BRA_military_government_integration
+		focus = BRA_new_military_reeducation_program
+	}
+	ai_will_do = {
+		base = 1
+	}
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = BRA_infantry_equipment_focus
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_reboot_military_industry
+	x = -2
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_reboot_military_industry
+	}
+	ai_will_do = {
+		base = 1
+	}
+	completion_reward = {
+		# Infantry tech bonuses
+	}
+}
+
+shared_focus = {
+	id = BRA_support_equipment_focus
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_reboot_military_industry
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_reboot_military_industry
+	}
+	ai_will_do = {
+		base = 1
+	}
+	completion_reward = {
+		# Support tech bonuses
+	}
+}
+
+shared_focus = {
+	id = BRA_motorized_equipment_focus
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_reboot_military_industry
+	x = 2
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_reboot_military_industry
+	}
+	ai_will_do = {
+		base = 1
+	}
+	completion_reward = {
+		# Motorized tech bonuses
+	}
+}
+
+shared_focus = {
+	id = BRA_armored_equipment_focus
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_support_equipment_focus
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_infantry_equipment_focus
+	}
+	prerequisite = {
+		focus = BRA_support_equipment_focus
+	}
+	prerequisite = {
+		focus = BRA_motorized_equipment_focus
+	}
+	ai_will_do = {
+		base = 1
+	}
+	completion_reward = {
+		# Tank bonuses and enables retrieving the Osorio and restoring Engesa
+	}
+}
+
+# -- Navy --
+shared_focus = {
+	id = BRA_rejuvenate_the_navy
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_begin_military_reforms
+	x = -6
+	y = 2
+	cost = 5
+	prerequisite = {
+		focus = BRA_military_maintain_status_quo
+		focus = BRA_revoke_amnesty_law
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+		NOT = {
+			has_idea = BRA_self_indulgent_military_idea
+		}
+	}
+	completion_reward = {
+		# Navy Branch
+	}
+}
+
+shared_focus = {
+	id = BRA_tamandare_class_project
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_rejuvenate_the_navy
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_rejuvenate_the_navy
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+	}
+	completion_reward = {
+		# Frigate and other screen tech bonuses
+	}
+}
+
+shared_focus = {
+	id = BRA_integrate_sisgaaz
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_rejuvenate_the_navy
+	x = 2
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_rejuvenate_the_navy
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+	}
+	completion_reward = {
+		# Radar and engineering tech bonuses
+	}
+}
+
+shared_focus = {
+	id = BRA_dockyard_investment_package
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_rejuvenate_the_navy
+	x = -2
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_rejuvenate_the_navy
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+	}
+	completion_reward = {
+		# Get more dockyards
+	}
+}
+
+shared_focus = {
+	id = BRA_submarine_warfare_focus
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_tamandare_class_project
+	x = 2
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_tamandare_class_project
+		focus = BRA_integrate_sisgaaz
+	}
+	mutually_exclusive = {
+		focus = BRA_brazilian_carrier_program
+		focus = BRA_minas_geraes_legacy
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+	}
+	completion_reward = {
+		# Sub tech focus
+	}
+}
+
+shared_focus = {
+	id = BRA_brazilian_carrier_program
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_tamandare_class_project
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_tamandare_class_project
+		focus = BRA_integrate_sisgaaz
+		focus = BRA_dockyard_investment_package
+	}
+	mutually_exclusive = {
+		focus = BRA_minas_geraes_legacy
+		focus = BRA_submarine_warfare_focus
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+	}
+	completion_reward = {
+		# Carrier tech focus
+	}
+}
+
+shared_focus = {
+	id = BRA_minas_geraes_legacy
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_tamandare_class_project
+	x = -2
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_tamandare_class_project
+		focus = BRA_dockyard_investment_package
+	}
+	mutually_exclusive = {
+		focus = BRA_brazilian_carrier_program
+		focus = BRA_submarine_warfare_focus
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+	}
+	completion_reward = {
+		# Battleship tech focus
+	}
+}
+
+shared_focus = {
+	id = BRA_nuclear_propulsion_project
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_brazilian_carrier_program
+	x = 1
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_brazilian_carrier_program
+		focus = BRA_submarine_warfare_focus
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+	}
+	completion_reward = {
+		# Nuclear subs tech focus
+	}
+}
+
+shared_focus = {
+	id = BRA_mansup_project
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_brazilian_carrier_program
+	x = -1
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_brazilian_carrier_program
+		focus = BRA_minas_geraes_legacy
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+	}
+	completion_reward = {
+		# Anti-ship missile tech focus
+	}
+}
+
+shared_focus = {
+	id = BRA_rising_naval_power
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_brazilian_carrier_program
+	x = 0
+	y = 2
+	cost = 5
+	prerequisite = {
+		focus = BRA_mansup_project
+		focus = BRA_nuclear_propulsion_project
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+	}
+	completion_reward = {
+		# Navy buff spirit
+	}
+}
+
+# -- Airforce --
+shared_focus = {
+	id = BRA_airforce_of_the_future
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_begin_military_reforms
+	x = 5
+	y = 2
+	cost = 5
+	prerequisite = {
+		focus = BRA_military_maintain_status_quo
+		focus = BRA_revoke_amnesty_law
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+		NOT = {
+			has_idea = BRA_self_indulgent_military_idea
+		}
+	}
+	completion_reward = {
+		# Air Branch
+	}
+}
+
+shared_focus = {
+	id = BRA_fifth_gen_aircraft
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_airforce_of_the_future
+	x = 1
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_airforce_of_the_future
+	}
+	mutually_exclusive = {
+		focus = BRA_embrace_drone_warfare
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+	}
+	completion_reward = {
+		# Focus on traditional aircraft and pilots
+	}
+}
+
+shared_focus = {
+	id = BRA_professional_pilots
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_fifth_gen_aircraft
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_fifth_gen_aircraft
+	}
+	ai_will_do = {
+		base = 1
+	}
+	completion_reward = {
+		# Air exp bonuses
+	}
+}
+
+shared_focus = {
+	id = BRA_the_brazilian_fighter_project
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_professional_pilots
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_professional_pilots
+	}
+	ai_will_do = {
+		base = 1
+	}
+	completion_reward = {
+		# Fighter jet tech bonuses
+	}
+}
+
+shared_focus = {
+	id = BRA_embrace_drone_warfare
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_airforce_of_the_future
+	x = -1
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_airforce_of_the_future
+	}
+	mutually_exclusive = {
+		focus = BRA_fifth_gen_aircraft
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+	}
+	completion_reward = {
+		# Focus on drone swarms as the future of air warfare
+	}
+}
+
+shared_focus = {
+	id = BRA_invest_in_uav_startups
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_embrace_drone_warfare
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_embrace_drone_warfare
+	}
+	ai_will_do = {
+		base = 1
+	}
+	completion_reward = {
+		# Unlocks Xmobots MIO
+	}
+}
+
+shared_focus = {
+	id = BRA_drone_battlefield_integration
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_invest_in_uav_startups
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_invest_in_uav_startups
+	}
+	ai_will_do = {
+		base = 1
+	}
+	completion_reward = {
+		# General tech bonuses related to UAVs and drones
+	}
+}
+
+shared_focus = {
+	id = BRA_project_lessonia
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_drone_battlefield_integration
+	x = 1
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_drone_battlefield_integration
+		focus = BRA_the_brazilian_fighter_project
+	}
+	ai_will_do = {
+		base = 1
+	}
+	completion_reward = {
+		# Low orbit satellite monitoring project
+	}
+}
+
+shared_focus = {
+	id = BRA_revisit_the_nuclear_question
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_armored_equipment_focus
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_rising_naval_power
+	}
+	prerequisite = {
+		focus = BRA_armored_equipment_focus
+	}
+	prerequisite = {
+		focus = BRA_project_lessonia
+	}
+	ai_will_do = {
+		base = 1
+	}
+	completion_reward = {
+		# Enables decisions to initiate a Brazilian nuclear weapon program
+	}
+}
+
+# ------------------------------------------------------------ Foreign Policy ------------------------------------------------------------
+
+shared_focus = {
+	id = BRA_brazilian_foreign_policy
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	x = 15
+	y = 0
+	cost = 1
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = BRA_bear_the_torch_of_liberty
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_brazilian_foreign_policy
+	x = -2
+	y = 1
+	cost = 2
+	prerequisite = {
+		focus = BRA_brazilian_foreign_policy
+	}
+	mutually_exclusive = {
+		focus = BRA_maintain_strategic_neutrality
+		focus = BRA_embrace_multipolarity
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+		# Align with the international liberal order and EU/NATO
+	}
+}
+
+shared_focus = {
+	id = BRA_maintain_strategic_neutrality
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_brazilian_foreign_policy
+	x = 0
+	y = 1
+	cost = 2
+	prerequisite = {
+		focus = BRA_brazilian_foreign_policy	
+	}
+	mutually_exclusive = {
+		focus = BRA_bear_the_torch_of_liberty
+		focus = BRA_embrace_multipolarity
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = BRA_the_international_mediator
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_maintain_strategic_neutrality
+	x = -2
+	y = 1
+	cost = 2
+	prerequisite = {
+		focus = BRA_maintain_strategic_neutrality
+	}
+	mutually_exclusive = {
+		focus = BRA_era_of_brazilian_isolationism
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+		# Non-aligned foreign policy
+	}
+}
+
+shared_focus = {
+	id = BRA_era_of_brazilian_isolationism
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_maintain_strategic_neutrality
+	x = 0
+	y = 1
+	cost = 2
+	prerequisite = {
+		focus = BRA_maintain_strategic_neutrality
+	}
+	mutually_exclusive = {
+		focus = BRA_the_international_mediator
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+		# Isolationist foreign policy
+	}
+}
+
+shared_focus = {
+	id = BRA_south_american_unity
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_maintain_strategic_neutrality
+	x = 2
+	y = 1
+	cost = 2
+	prerequisite = {
+		focus = BRA_maintain_strategic_neutrality
+	}
+	mutually_exclusive = {
+		focus = BRA_the_international_mediator
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+		# Align with South America under Mercosul
+	}
+}
+
+shared_focus = {
+	id = BRA_embrace_multipolarity
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_brazilian_foreign_policy
+	x = 2
+	y = 1
+	cost = 2
+	prerequisite = {
+		focus = BRA_brazilian_foreign_policy
+	}
+	mutually_exclusive = {
+		focus = BRA_bear_the_torch_of_liberty
+		focus = BRA_maintain_strategic_neutrality
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+		# Align with the international multipolar movement and BRICS
+	}
+}
+
+# ------------------------------------------------------------ Economic Policy ------------------------------------------------------------
+
+shared_focus = {
+	id = BRA_brazilian_economic_policy
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	
+	x = 20
+	y = 0
+	cost = 5
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = BRA_reorganize_bndes
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_brazilian_economic_policy
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_brazilian_economic_policy
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = BRA_draft_economic_plans
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_reorganize_bndes
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_reorganize_bndes
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = BRA_agrarian_focus
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_draft_economic_plans
+	x = -5
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_draft_economic_plans
+	}
+	mutually_exclusive = {
+		focus = BRA_industry_focus
+		focus = BRA_service_focus
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = BRA_industry_focus
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_draft_economic_plans
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_draft_economic_plans
+	}
+	mutually_exclusive = {
+		focus = BRA_agrarian_focus
+		focus = BRA_service_focus
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = BRA_service_focus
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_draft_economic_plans
+	x = 5
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_draft_economic_plans
+	}
+	mutually_exclusive = {
+		focus = BRA_industry_focus
+		focus = BRA_agrarian_focus
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = BRA_placeholder_agrarian
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_agrarian_focus
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_agrarian_focus
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = BRA_placeholder_mining
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_industry_focus
+	x = -2.5
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_agrarian_focus
+		focus = BRA_industry_focus
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = BRA_placeholder_industry
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_industry_focus
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_industry_focus
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = BRA_placeholder_research
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_industry_focus
+	x = 2.5
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_service_focus
+		focus = BRA_industry_focus
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = BRA_placeholder_service
+	search_filters = {
+		FOCUS_FILTER_POLITICAL
+	}
+	relative_position_id = BRA_service_focus
+	x = 0
+	y = 1
+	cost = 5
+	prerequisite = {
+		focus = BRA_service_focus
+	}
+	ai_will_do = {
+		base = 1
+	}
+	available = {
+
+	}
+	completion_reward = {
+
+	}
+}
