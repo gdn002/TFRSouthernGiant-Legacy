@@ -11,5 +11,5 @@ dependencies={
 	"The Fire Rises"
 }
 supported_version="1.16.*"
-path="C:/Users/Pichau/Documents/Paradox Interactive/Hearts of Iron IV/mod/TFRSouthernGiant"
+path="C:/Users/Pichau/Documents/Paradox Interactive/Hearts of Iron IV/mod/TFRSouthernGiant-Legacy"
 remote_file_id="3505314013"

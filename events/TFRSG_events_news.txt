@@ -883,6 +883,16 @@ news_event = {
 
 	option = {
 		name = Brazilnews.8.a
+		hidden_effect = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				set_country_flag = BRA_brazilian_civil_war_se_flag
+				scoped_sound_effect = TFRSG_se_great_american_war
+				scoped_play_song = "one_minute_of_silence"
+			}
+		}
 	}
 }
 

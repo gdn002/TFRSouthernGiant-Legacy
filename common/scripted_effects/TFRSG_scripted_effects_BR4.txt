@@ -2,7 +2,6 @@ BR4_civil_war_insurgents_scripted_effect = {
 	FROM = {
 		set_temp_variable = { BRA_civil_war_recruit_value_temp = 1 }
         BRA_civil_war_get_state_recruitment_value = yes
-		multiply_temp_variable = { BRA_civil_war_recruit_value_temp = 2 }
         create_unit = {
 			division = "name = \"Grupo Insurgente\" division_template = \"Brazilian Militia\"  start_experience_factor = 0.0"
 			allow_spawning_on_enemy_provs = yes

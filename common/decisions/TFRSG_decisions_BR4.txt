@@ -22,7 +22,7 @@ BRA_civil_war_category = {
 			custom_effect_tooltip = BR4_insurgency_cost_tt
 			if = {
 				limit = { check_variable = { BR4_insurgency_cost_var < 100 } }
-				add_to_variable	= { BR4_insurgency_cost_var = 10 }
+				add_to_variable	= { BR4_insurgency_cost_var = 25 }
 			}		
 		}
 		remove_effect = {
@@ -126,7 +126,7 @@ BRA_civil_war_category = {
 			custom_effect_tooltip = BR4_insurgency_cost_tt
 			if = {
 				limit = { check_variable = { BR4_integration_cost_var < 50 } }
-				add_to_variable	= { BR4_integration_cost_var = 5 }
+				add_to_variable	= { BR4_integration_cost_var = 10 }
 			}
 		}
 		remove_effect = {

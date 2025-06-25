@@ -553,6 +553,12 @@
 		# TFRSG TITLES
 		text = { 
 			trigger = {
+				has_country_flag = BRA_brazilian_civil_war_se_flag
+			}
+			localization_key = "BRA_brazilian_civil_war_super"
+		}
+		text = { 
+			trigger = {
 				has_country_flag = BRA_great_american_war_se_flag
 			}
 			localization_key = "BRA_great_american_war_super"
@@ -1145,6 +1151,12 @@
 		# TFRSG QUOTES
 		text = { 
 			trigger = {
+				has_country_flag = BRA_brazilian_civil_war_se_flag
+			}
+			localization_key = "BRA_brazilian_civil_war_super_text"
+		}
+		text = { 
+			trigger = {
 				has_country_flag = BRA_great_american_war_se_flag
 			}
 			localization_key = "BRA_great_american_war_super_text"
@@ -1735,6 +1747,12 @@
 		}
 
 		# TFRSG BUTTONS
+		text = { 
+			trigger = {
+				has_country_flag = BRA_brazilian_civil_war_se_flag
+			}
+			localization_key = "BRA_brazilian_civil_war_super_button"
+		}
 		text = { 
 			trigger = {
 				has_country_flag = BRA_great_american_war_se_flag
