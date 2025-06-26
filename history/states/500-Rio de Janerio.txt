@@ -6,7 +6,7 @@ state={
 		steel=8.000
 	}
 	provinces={
-		5172 8190 12996 15013 
+		5172 8190 12996 15016 
 	}
 	manpower=9873000
 	buildings_max_level_factor=1.000

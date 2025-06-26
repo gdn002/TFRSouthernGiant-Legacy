@@ -12,13 +12,13 @@
 units = {
 	division = {
 		name = "1a Milícia Popular"
-		location = 15019
+		location = 15022
 		division_template = "Brazilian Militia"
 		start_experience_factor = 0.2		
 	}
 	division = {
 		name = "2a Milícia Popular"
-		location = 15019
+		location = 15022
 		division_template = "Brazilian Militia"
 		start_experience_factor = 0.2		
 	}

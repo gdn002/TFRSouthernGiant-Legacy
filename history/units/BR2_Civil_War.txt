@@ -12,25 +12,25 @@
 units = {
 	division = {
 		name = "1a Milícia Patriota"
-		location = 14977
+		location = 14980
 		division_template = "Brazilian Militia"
 		start_experience_factor = 0.2		
 	}
 	division = {
 		name = "2a Milícia Patriota"
-		location = 14974
+		location = 14977
 		division_template = "Brazilian Militia"
 		start_experience_factor = 0.2		
 	}
 	division = {
 		name = "3a Milícia Patriota"
-		location = 14975
+		location = 14978
 		division_template = "Brazilian Militia"
 		start_experience_factor = 0.2		
 	}
 	division = {
 		name = "4a Milícia Patriota"
-		location = 14978
+		location = 14981
 		division_template = "Brazilian Militia"
 		start_experience_factor = 0.2		
 	}
@@ -48,13 +48,13 @@ units = {
 	}
 	division = {
 		name = "7a Milícia Patriota"
-		location = 14982
+		location = 14985
 		division_template = "Brazilian Militia"
 		start_experience_factor = 0.2		
 	}
 	division = {
 		name = "8a Milícia Patriota"
-		location = 14985
+		location = 14988
 		division_template = "Brazilian Militia"
 		start_experience_factor = 0.2		
 	}
@@ -78,7 +78,7 @@ units = {
 	}
 	division = {
 		name = "17a Bda Inf Sl"
-		location = 14985
+		location = 14988
 		division_template = "Brigada de Infantaria de Selva"
 		start_experience_factor = 0.6		
 	}
@@ -90,7 +90,7 @@ units = {
 	}
 	division = {
 		name = "Com. Mil. Planalto"
-		location = 14977
+		location = 14980
 		division_template = "Comando Militar"
 		start_experience_factor = 0.5		
 	}

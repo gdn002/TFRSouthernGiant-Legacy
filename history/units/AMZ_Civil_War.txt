@@ -12,19 +12,19 @@
 units = {
 	division = {
 		name = "1a Milícia Amazônica"
-		location = 15029
+		location = 15032
 		division_template = "Brazilian Militia"
 		start_experience_factor = 0.2		
 	}
 	division = {
 		name = "2a Milícia Amazônica"
-		location = 15029
+		location = 15032
 		division_template = "Brazilian Militia"
 		start_experience_factor = 0.2		
 	}
 	division = {
 		name = "3a Milícia Amazônica"
-		location = 15030
+		location = 15033
 		division_template = "Brazilian Militia"
 		start_experience_factor = 0.2		
 	}
@@ -60,13 +60,13 @@ units = {
 	}
 	division = {
 		name = "16a Bda Inf Sl"
-		location = 15024
+		location = 15027
 		division_template = "Brigada de Infantaria de Selva"
 		start_experience_factor = 0.6		
 	}
 	division = {
 		name = "22a Bda Inf Sl"
-		location = 14995
+		location = 14998
 		division_template = "Brigada de Infantaria de Selva"
 		start_experience_factor = 0.6		
 	}

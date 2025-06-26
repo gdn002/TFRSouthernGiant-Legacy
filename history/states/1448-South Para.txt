@@ -2,7 +2,7 @@ state={
 	id=1448
 	name="STATE_1448"
 	provinces={
-		2035 2214 8172 10874 10956 12853 12999 15023 15027 15030 
+		2035 2214 8172 10874 10956 12853 12999 15026 15030 15033 
 	}
 	resources={
 		steel=98.000
@@ -26,7 +26,7 @@ state={
 		}
 
 		victory_points = { 12853 10 }
-		victory_points = { 15030 5 }
+		victory_points = { 15033 5 }
 
 		add_dynamic_modifier = { modifier = BRA_amazonian_jungle_state_dynamic }
 	}

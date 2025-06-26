@@ -13,7 +13,7 @@
 	}
 	division = {
 		name = "1a Bda C Mec"
-		location = 14977
+		location = 14980
 		division_template = "Brigada de Cavalaria Mecanizada"
 		start_experience_factor = 0.5		
 	}

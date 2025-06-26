@@ -54,7 +54,7 @@ units = {
 	}
 	division = {
 		name = "8a Milícia Sulista"
-		location = 15000
+		location = 15003
 		division_template = "Brazilian Militia"
 		start_experience_factor = 0.2		
 	}

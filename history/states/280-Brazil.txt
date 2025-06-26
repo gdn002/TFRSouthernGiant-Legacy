@@ -3,7 +3,7 @@ state={
 	id=280
 	name="STATE_280"
 	provinces={
-		2111 2142 2147 2204 5148 8175 11010 15014 15015 15016 15018 
+		2111 2142 2147 2204 5148 8175 11010 15017 15018 15019 15021 
 	}
 	manpower=3797000
 	buildings_max_level_factor=1.000
@@ -19,6 +19,6 @@ state={
 		}
 
 		victory_points = { 2111 5 }
-		victory_points = { 15014 1 }
+		victory_points = { 15017 1 }
 	}
 }

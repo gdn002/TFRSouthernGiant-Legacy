@@ -12,19 +12,19 @@
 units = {
 	division = {
 		name = "1a Milícia Paulista"
-		location = 15006
-		division_template = "Brazilian Militia"
-		start_experience_factor = 0.2		
-	}
-	division = {
-		name = "2a Milícia Paulista"
 		location = 15009
 		division_template = "Brazilian Militia"
 		start_experience_factor = 0.2		
 	}
 	division = {
+		name = "2a Milícia Paulista"
+		location = 15012
+		division_template = "Brazilian Militia"
+		start_experience_factor = 0.2		
+	}
+	division = {
 		name = "3a Milícia Paulista"
-		location = 15005
+		location = 15008
 		division_template = "Brazilian Militia"
 		start_experience_factor = 0.2		
 	}
@@ -48,13 +48,13 @@ units = {
 	}
 	division = {
 		name = "Com. Mil. Sudeste"
-		location = 15006
+		location = 15009
 		division_template = "Comando Militar"
 		start_experience_factor = 0.5		
 	}
 	division = {
 		name = "12a Bda Inf L Amv"
-		location = 15009
+		location = 15012
 		division_template = "Brigada de Infantaria Leve (Aeromovel)"
 		start_experience_factor = 0.5		
 	}
