@@ -16,25 +16,25 @@
 units = {
 	division = {
 		name = "1st Brazilian Peacekeepers"
-		location = 14999
+		location = 14998
 		division_template = "UN Peacekeepers"
 		start_experience_factor = 0.2		
 	}
 	division = {
 		name = "2nd Brazilian Peacekeepers"
-		location = 14999
+		location = 14998
 		division_template = "UN Peacekeepers"
 		start_experience_factor = 0.2		
 	}
 	division = {
 		name = "3rd Brazilian Peacekeepers"
-		location = 14998
+		location = 14997
 		division_template = "UN Peacekeepers"
 		start_experience_factor = 0.2		
 	}
 	division = {
 		name = "4th Brazilian Peacekeepers"
-		location = 14998
+		location = 14997
 		division_template = "UN Peacekeepers"
 		start_experience_factor = 0.2		
 	}

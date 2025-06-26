@@ -2,7 +2,7 @@ state={
 	id=1449
 	name="STATE_1449"
 	provinces={
-		5008 14995 14996 
+		5008 14994 14995 
 	}
 	resources={
 		steel=12.000

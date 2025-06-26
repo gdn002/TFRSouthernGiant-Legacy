@@ -17,27 +17,27 @@
  # NEW
  # Mato Grosso
  VICTORY_POINTS_2111: "Cuiabá"
- VICTORY_POINTS_15017: "Rondonópolis"
+ VICTORY_POINTS_15016: "Rondonópolis"
  # Mato Grosso do Sul
  VICTORY_POINTS_8224: "Dourados"
  VICTORY_POINTS_10959: "Campo Grande"
  # Goias - DF
  VICTORY_POINTS_5115: "Rio Verde"
  VICTORY_POINTS_8140: "Goiânia"
- VICTORY_POINTS_14980: "Brasília"
+ VICTORY_POINTS_14979: "Brasília"
  # Northern Brazil
  VICTORY_POINTS_5214: "Boa Vista"
  VICTORY_POINTS_5216: "Rio Branco"
  VICTORY_POINTS_8185: "Tabatinga"
  VICTORY_POINTS_12853: "Belém"
  VICTORY_POINTS_12965: "Lábrea"
- VICTORY_POINTS_14988: "Porto Velho"
- VICTORY_POINTS_14998: "Macapá"
- VICTORY_POINTS_15032: "Manaus"
- VICTORY_POINTS_15033: "Santarém"
+ VICTORY_POINTS_14987: "Porto Velho"
+ VICTORY_POINTS_14997: "Macapá"
+ VICTORY_POINTS_15031: "Manaus"
+ VICTORY_POINTS_15032: "Santarém"
  # Tocantins
  VICTORY_POINTS_2168: "Araguaína"
- VICTORY_POINTS_14985: "Palmas"
+ VICTORY_POINTS_14984: "Palmas"
  # Maranhao-Piaui
  VICTORY_POINTS_2228: "Parnaíba"
  VICTORY_POINTS_5153: "Teresina"
@@ -57,8 +57,8 @@
  VICTORY_POINTS_8197: "Ilhéus"
  VICTORY_POINTS_11002: "Porto Seguro"
  # Salvador
- VICTORY_POINTS_15022: "Salvador"
- VICTORY_POINTS_15024: "Camaçari"
+ VICTORY_POINTS_15021: "Salvador"
+ VICTORY_POINTS_15023: "Camaçari"
  # Minas Gerais
  VICTORY_POINTS_4570: "Governador Valadares"
  VICTORY_POINTS_8148: "Belo Horizonte"
@@ -70,18 +70,18 @@
  VICTORY_POINTS_5172: "Angra dos Reis"
  VICTORY_POINTS_12996: "Campos dos Goytacazes"
  # Guanabara
- VICTORY_POINTS_15013: "Rio de Janeiro"
- VICTORY_POINTS_15014: "Niterói"
+ VICTORY_POINTS_15012: "Rio de Janeiro"
+ VICTORY_POINTS_15013: "Niterói"
  # Sao Paulo
  VICTORY_POINTS_1583: "Presidente Prudente"
  VICTORY_POINTS_5112: "Santos"
  VICTORY_POINTS_10360: "Campinas"
  VICTORY_POINTS_12937: "São José do Rio Preto"
  # SP Metro
- VICTORY_POINTS_15007: "São Bernardo do Campo"
- VICTORY_POINTS_15008: "Osasco"
- VICTORY_POINTS_15009: "São Paulo"
- VICTORY_POINTS_15012: "Guarulhos"
+ VICTORY_POINTS_15006: "São Bernardo do Campo"
+ VICTORY_POINTS_15007: "Osasco"
+ VICTORY_POINTS_15008: "São Paulo"
+ VICTORY_POINTS_15011: "Guarulhos"
  # Parana
  VICTORY_POINTS_5178: "Cascavel"
  VICTORY_POINTS_8181: "Curitiba"
@@ -89,7 +89,7 @@
  VICTORY_POINTS_4533: "Joinville"
  VICTORY_POINTS_10405: "Florianópolis"
  VICTORY_POINTS_12466: "Chapecó"
- VICTORY_POINTS_15003: "Blumenau"
+ VICTORY_POINTS_15002: "Blumenau"
  # Rio Grande do Sul
  VICTORY_POINTS_4604: "Santa Maria"
  VICTORY_POINTS_7638: "Pelotas"

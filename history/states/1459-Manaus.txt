@@ -2,7 +2,7 @@ state={
 	id=1459
 	name="STATE_1459"
 	provinces={
-		14993 15031 15032 
+		14992 15030 15031 
 	}
 	manpower=2256000
 	buildings_max_level_factor=1.000
@@ -19,6 +19,6 @@ state={
 			air_base = 2
 		}
 
-		victory_points = { 15032 15 }
+		victory_points = { 15031 15 }
 	}
 }

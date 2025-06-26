@@ -30,37 +30,37 @@ units = {
 	}
 	division = {
 		name = "4a Milícia Restauradora"
-		location = 14986
+		location = 14985
 		division_template = "Brazilian Militia"
 		start_experience_factor = 0.2		
 	}
 	division = {
 		name = "5a Milícia Restauradora"
-		location = 14986
+		location = 14985
 		division_template = "Brazilian Militia"
 		start_experience_factor = 0.2		
 	}
 	division = {
 		name = "6a Milícia Restauradora"
-		location = 14986
+		location = 14985
 		division_template = "Brazilian Militia"
 		start_experience_factor = 0.2		
 	}
 	division = {
 		name = "7a Milícia Restauradora"
-		location = 14985
+		location = 14984
 		division_template = "Brazilian Militia"
 		start_experience_factor = 0.2		
 	}
 	division = {
 		name = "8a Milícia Restauradora"
-		location = 14985
+		location = 14984
 		division_template = "Brazilian Militia"
 		start_experience_factor = 0.2		
 	}
 	division = {
 		name = "9a Milícia Restauradora"
-		location = 14985
+		location = 14984
 		division_template = "Brazilian Militia"
 		start_experience_factor = 0.2		
 	}
