@@ -2397,7 +2397,7 @@ country_event = {
 		add_stability = -0.3
 		damage_building = {
 			type = air_base
-			state = 1445
+			state = 1466
 			damage = 5
 		}
 		add_power_balance_value = {
@@ -2507,7 +2507,7 @@ country_event = {
     		value = -0.075
    	 		tooltip_side = BRA_radicalization_side
 		}
-		1445 = { set_demilitarized_zone = yes }
+		1466 = { set_demilitarized_zone = yes }
 	}
 }
 
@@ -2786,7 +2786,7 @@ country_event = {
     		value = -0.05
    	 		tooltip_side = BRA_radicalization_side
 		}
-		1445 = { set_demilitarized_zone = yes }
+		1466 = { set_demilitarized_zone = yes }
 	}
 }
 
@@ -3678,10 +3678,10 @@ country_event = {
 				}
 			}		
 			# SPAWN MILITARY JUNTA IN DF
-			1445 = { set_demilitarized_zone = no }
+			1466 = { set_demilitarized_zone = no }
 			BR2 = {
-				transfer_state = 1445
-				add_state_core = 1445
+				transfer_state = 1466
+				add_state_core = 1466
 				BRA_civil_war_tag_setup = yes
 			}
 		}
@@ -3691,7 +3691,7 @@ country_event = {
 		name = Brazil.civilwar.4.a
 		effect_tooltip = {
 			BR2 = {
-				transfer_state = 1445
+				transfer_state = 1466
 			}			
 		}
 	}

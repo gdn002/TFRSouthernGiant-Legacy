@@ -216,7 +216,7 @@ defined_text = {
 	text = {
 		trigger = {
 			FROM = {
-				controls_state = 1445
+				controls_state = 1466
 			}
 		}
 		localization_key = "our_control"
@@ -226,7 +226,7 @@ defined_text = {
 			OR = {
 				any_country = {
 					is_ally_with = BRA
-					controls_state = 1445
+					controls_state = 1466
 				}
 			}
 		}
@@ -236,7 +236,7 @@ defined_text = {
 		trigger = {
 			any_country = {
 				has_war_with = BRA
-				controls_state = 1445
+				controls_state = 1466
 			}
 		}
 		localization_key = "enemy_control"

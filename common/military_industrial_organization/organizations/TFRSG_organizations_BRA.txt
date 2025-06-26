@@ -115,7 +115,7 @@ BRA_imbel = {
 		has_dlc = "Arms Against Tyranny"
 	}
 	available = {
-		1445 = {
+		1466 = {
 			is_core_of = FROM
 			is_controlled_by = FROM
 		}

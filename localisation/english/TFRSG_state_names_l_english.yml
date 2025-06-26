@@ -16,7 +16,6 @@
  STATE_906: "Roraima"
  STATE_908: "Rondônia"
  #NEW
- STATE_1445: "Distrito Federal"
  STATE_1446: "Tocantins"
  STATE_1447: "Amapá"
  STATE_1448: "Southern Pará"
@@ -37,3 +36,4 @@
  STATE_1463: "São Paulo Metro Area"
  STATE_1464: "Formosa"
  STATE_1465: "Misiones"
+ STATE_1466: "Distrito Federal"

@@ -917,7 +917,7 @@ BRA_2022_elections_category = {
 		}
 		timeout_effect = {
 			remove_ideas = BRA_2022_election_protests_idea
-			1445 = { set_demilitarized_zone = no }
+			1466 = { set_demilitarized_zone = no }
 			country_event = {
 				id = Brazil.89
 				days = 3
